@@ -1,22 +1,19 @@
 /*
- Theme Name:   Psygrad Theme
+ Theme Name:   Medvedica Theme
  Description:  Based on the7
  Template:     dt-the7
-<<<<<<< Updated upstream
- Version:      1.0.77
-=======
- Version:      1.0.85
->>>>>>> Stashed changes
+ Version:      1.0.0
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
- Text Domain:  psygrad
+ Text Domain:  medvedica
 */
 
 .admin-bar #main {
     padding: 50px 0;
+    min-height: 467px;
 }
 
 #presscore-contact-info-widget-4 {
-    paddding-left: 0;
+    padding-left: 0;
 }
 
 .all-partners-link > i::before {
@@ -40,11 +37,6 @@
 .testimonial-field-name {
     font-weight: 400;
     padding-right: 5px;
-}
-
-.admin-bar #main {
->>>>>>> Stashed changes
-    min-height: 467px;
 }
 
 #main {
