@@ -1,0 +1,316 @@
+/*
+ Theme Name:   Psygrad Theme
+ Description:  Based on the7
+ Template:     dt-the7
+<<<<<<< Updated upstream
+ Version:      1.0.77
+=======
+ Version:      1.0.85
+>>>>>>> Stashed changes
+ Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
+ Text Domain:  psygrad
+*/
+
+.admin-bar #main {
+    padding: 50px 0;
+}
+
+#presscore-contact-info-widget-4 {
+    paddding-left: 0;
+}
+
+.all-partners-link > i::before {
+    margin-left: 0;
+}
+
+.all-partners-link > i {
+    vertical-align: top;
+    font-size: 50px;
+}
+
+.testimonial-vcard {
+    display: table;
+    margin-top: 0;
+}
+
+.testimonial-vcard .specialist {
+    font-weight: 400;
+}
+
+.testimonial-field-name {
+    font-weight: 400;
+    padding-right: 5px;
+}
+
+.admin-bar #main {
+>>>>>>> Stashed changes
+    min-height: 467px;
+}
+
+#main {
+    padding: 50px 0;
+    min-height: 485px;
+}
+
+/** Fancy date*/
+.circle-fancy-style .fancy-date a {
+    min-width: 45px;
+    min-height: 45px;
+}
+
+.fancy-date .entry-month, .fancy-date .entry-year {
+    font: 700 9px/17px Arial,Verdana,sans-serif;
+}
+.fancy-date .entry-date {
+    font: 700 16px/20px Arial,Verdana,sans-serif;
+}
+
+
+.entry-meta {
+    font-size: 14px;
+}
+
+.entry-content .entry-meta {
+    margin-top: 20px;
+}
+
+.entry-content .entry-meta .author .fn {
+    color: #4dc26b;
+    font-weight: 400;
+}
+/*
+.blog-content .entry-meta {
+    margin-top: -10px;
+    text-align: center;
+}*/
+
+#content .share-buttons-list {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+#content .share-buttons-list li {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.single .post-meta {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+@media (min-width: 800px) {
+    .single .post:not(.type-event) .post-thumbnail {
+        position: relative;
+        margin-bottom: 10px;
+        line-height: 0;
+        float: left;
+        width: 52%;
+        margin-right: 3%;
+    }
+}
+
+.single .entry-content {
+    margin-bottom: 20px;
+}
+
+.emodal-title {
+    margin-bottom: 20px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.psy-spec-metabox {
+    float: right;
+    padding: 0 20px 20px;
+    z-index: 10;
+    position: relative;
+}
+
+#content .psy-doc-img {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.psy-spec-meta-wrapper {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    width: 260px;
+    margin-top: -35px;
+}
+
+.ult-carousel-wrapper.psy-docs-carousel {
+    margin-bottom: 0;
+}
+
+.eModal-1.dt-btn {
+    display: block;
+    margin: 10px 0;
+}
+
+#content .dt-btn.psy-service-btn {
+    margin: 5px 0;
+    display: block;
+}
+
+h2, h3, h4 {
+    margin-bottom: 20px;
+    clear: none;
+}
+
+.scroll-top {
+    bottom: 50px;
+}
+
+#content hr {
+    margin: 20px 0;
+}
+
+/**  Список с зелеными стрелочками */
+
+.entry-content ul li:before {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+.entry-content ul li:after {
+    top: 0;
+    margin-top: 0;
+    height: 13px;
+    background-position: 0 center;
+}
+
+.entry-content ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.entry-content ul {
+    margin: 0 0 15px;
+}
+
+.entry-content ul li:after, .entry-content ul li:before {
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    content: "";
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    top: 6px;
+    margin-top: 0;
+}
+
+.entry-content ul li:after {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='13px' viewBox='0 0 13 13' enable-background='new 0 0 13 13' fill='white' xml:space='preserve'%3E%3Cpolygon points='5.159,2.802 8.841,6.57 5.314,10.291 4.237,9.254 6.897,6.51 4.159,3.833 '/%3E%3C/svg%3E");
+}
+
+.entry-content ul li:before {
+    color: #fff;
+    background-color: #4dc26b;
+}
+
+.widget-title {
+    font-size: 22px;
+}
+
+blockquote:not(.shortcode-blockquote), blockquote.shortcode-blockquote.block-style-widget, .block-style-widget {
+    background-color: inherit;
+    border-top: 3px solid green;
+    border-bottom: 1px solid green;
+    font-weight: bold;
+    margin: 2em 0;
+    font-size: 1em;
+}
+
+
+.site-name {
+    color: black;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 10em;
+}
+
+.site-name:hover {
+    color: inherit;
+}
+
+.footer .widget {
+    margin-bottom: 10px;
+}
+
+.branding > a {
+    padding-right: 10px;
+}
+
+/** Преимущества */
+
+.psy-benefits {
+    text-align: center;
+}
+
+.psy-ben-item {
+    width: 150px;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.psy-ben-icon {
+    border: 6px solid #53c171;
+    border-radius: 50%;
+    display: block;
+    height: 65px;
+    margin: 10px auto;
+    padding: 15px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.psy-ben-icon > img {
+    width: 50px;
+}
+
+.psy-ben-item > p {
+    color: black;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 5em;
+    font-size: 0.9em;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+
+a.psy-item-link:hover + .psy-ben-icon {
+    border-color: #44AA66;
+    background-color: rgba(80, 222, 137, 0.2);
+    transition: 1s;
+}
+
+a.psy-item-link:hover + .psy-ben-icon + p {
+    color: #44AA66;
+    transition: 0.2s;
+}
+
+a.psy-item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
