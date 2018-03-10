@@ -555,7 +555,7 @@ msgstr "Нет описания"
 msgid "View posts by %s"
 msgstr "Просмотр записей автора %s"
 
-#: wp-admin/includes/class-wp-users-list-table.php:492
+#: wp-admin/includes/class-wp-users-list-table.php:496
 msgctxt "name"
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -2071,7 +2071,7 @@ msgstr "%1$s %2$s"
 msgid "View all drafts"
 msgstr "Посмотреть все черновики"
 
-#: wp-admin/includes/class-wp-users-list-table.php:566
+#: wp-admin/includes/class-wp-users-list-table.php:570
 msgctxt "no user roles"
 msgid "None"
 msgstr "Нет"
@@ -2411,7 +2411,7 @@ msgstr[0] "Ваша тема поддерживает %s меню. Выбери�
 msgstr[1] "Ваша тема поддерживает %s меню. Выберите, какое меню выводить в каждой области."
 msgstr[2] "Ваша тема поддерживает %s меню. Выберите, какое меню выводить в каждой области."
 
-#: wp-admin/includes/class-wp-users-list-table.php:505
+#: wp-admin/includes/class-wp-users-list-table.php:509
 msgid "%s post by this author"
 msgid_plural "%s posts by this author"
 msgstr[0] "%s запись этого автора"

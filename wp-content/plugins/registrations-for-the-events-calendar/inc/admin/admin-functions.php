@@ -605,7 +605,8 @@ function rtec_event_csv() {
 		}
 		foreach ( $event_obj->registrants_data as $registration ) {
 
-			$formatted_registration = array( 'registration_date' => $registration['registration_date'] );
+			$time_format = rtec_get_time_format();
+			$formatted_registration = array( 'registration_date' => date_i18n( 'F jS, ' . $time_format, strtotime( $registration['registration_date'] ) + rtec_get_time_zone_offset() ) );
 
 			foreach ( $event_obj->column_label as $column => $label ) {
 
@@ -675,7 +676,7 @@ function rtec_get_search_results() {
 	if ( ! empty( $WP_offset ) ) {
 		$tz_offset = $WP_offset * HOUR_IN_SECONDS;
 	} else {
-		$timezone = isset( $options['timezone'] ) ? $options['timezone'] : 'America/New_York';
+		$timezone = isset( $options['timezone'] ) ? $rtec_options['timezone'] : 'America/New_York';
 		// use php DateTimeZone class to handle the date formatting and offsets
 		$date_obj = new DateTime( date( 'm/d g:i a' ), new DateTimeZone( "UTC" ) );
 		$date_obj->setTimeZone( new DateTimeZone( $timezone ) );
@@ -741,6 +742,20 @@ function rtec_get_search_results() {
 	die();
 }
 add_action( 'wp_ajax_rtec_get_search_results', 'rtec_get_search_results' );
+
+function rtec_dismiss_new() {
+	$nonce = $_POST['rtec_nonce'];
+
+	if ( ! wp_verify_nonce( $nonce, 'rtec_nonce' ) ) {
+		die ( 'You did not do this the right way!' );
+	}
+
+	$rtec = RTEC();
+	$rtec->db_frontend->dismiss_new();
+
+	die();
+}
+add_action( 'wp_ajax_rtec_dismiss_new', 'rtec_dismiss_new' );
 
 /**
  * Some CSS and JS needed in the admin area as well
@@ -894,6 +909,17 @@ function rtec_db_update_check() {
 		$db = new RTEC_Db_Admin();
 		$db->maybe_add_index( 'event_id', 'event_id' );
 		$db->maybe_add_index( 'status', 'status' );
+	}
+
+	if ( $db_ver < 1.5 ) {
+		update_option( 'rtec_db_version', RTEC_DBVERSION );
+
+		$db = new RTEC_Db_Admin();
+		$db->maybe_add_column_to_table_no_string( 'guests', 'INT(11) UNSIGNED' );
+		$db->maybe_add_column_to_table( 'reminder', 'VARCHAR(40)', 'pending', true );
+		$db->maybe_add_index( 'reminder', 'reminder' );
+		$db->maybe_add_column_to_table( 'action_key', 'VARCHAR(40)', '', true );
+		$db->maybe_add_column_to_table_no_string( 'user_id', 'BIGINT(20) UNSIGNED' );
 	}
 
 }

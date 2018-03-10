@@ -120,7 +120,7 @@ class The7_Option_Field_Spacing {
 	/**
 	 * Split spacing string to array( 'val' => '', 'units' => '' ).
 	 *
-	 * @param string $value
+	 * @param string|array $value
 	 *
 	 * @return array
 	 */

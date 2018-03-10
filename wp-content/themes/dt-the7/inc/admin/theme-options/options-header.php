@@ -62,12 +62,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 		$options[] = array( 'name' => _x( 'Classic header layout settings', 'theme-options', 'the7mk2' ),'class' => 'header-layout-classic-settings', 'type' => 'block' );
 
 			$options['header-classic-height'] = array(
-				'id'         => 'header-classic-height',
-				'name'       => _x( 'Header height (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '140',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'header-classic-height',
+				'name'  => _x( 'Header height', 'theme-options', 'the7mk2' ),
+				'std'   => '140px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			$options['header-classic-menu-position'] = array(
@@ -146,12 +145,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 		$options[] = array( 'name' => _x( 'Inline header layout settings', 'theme-options', 'the7mk2' ), 'class' => 'header-layout-inline-settings', 'type' => 'block' );
 
 			$options['header-inline-height'] = array(
-				'id'         => 'header-inline-height',
-				'name'       => _x( 'Header height (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '140',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'header-inline-height',
+				'name'  => _x( 'Header height', 'theme-options', 'the7mk2' ),
+				'std'   => '140px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			$options['header-inline-menu-position'] = array(
@@ -209,12 +207,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 			);
 
 			$options['header-split-height'] = array(
-				'id'         => 'header-split-height',
-				'name'       => _x( 'Header height (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '100',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'header-split-height',
+				'name'  => _x( 'Header height', 'theme-options', 'the7mk2' ),
+				'std'   => '100px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			$options['header-split-menu-position'] = array(
@@ -272,11 +269,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 			);
 
 			$options['header-side-width'] = array(
-				'id'		=> 'header-side-width',
-				'name'		=> _x( 'Header width (px or %)', 'theme-options', 'the7mk2' ),
-				'type'		=> 'text',
-				'std'		=> '300px', 
-				'sanitize'	=> 'css_width',
+				'id'    => 'header-side-width',
+				'name'  => _x( 'Header width', 'theme-options', 'the7mk2' ),
+				'std'   => '300px',
+				'type'  => 'number',
+				'units' => 'px|%',
 			);
 
 			$options['header-side-position'] = array(
@@ -320,12 +317,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 
 			// Top line.
 			$options['layout-top_line-height'] = array(
-				'id'       => 'layout-top_line-height',
-				'name'       => _x( 'Top line height (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '130',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'layout-top_line-height',
+				'name'  => _x( 'Top line height', 'theme-options', 'the7mk2' ),
+				'std'   => '130px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			$options['layout-top_line-logo-position'] = array(
@@ -397,12 +393,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 
 			// Top line.
 			$options['layout-side_line-height'] = array(
-				'id'       => 'header-side_line-width',
-				'name'       => _x( 'Side line width (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '60',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'header-side_line-width',
+				'name'  => _x( 'Side line width', 'theme-options', 'the7mk2' ),
+				'std'   => '60px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 			$options['layout-side_line-v_position'] = array(
 				'id'       => 'layout-side_line-v_position',
@@ -524,11 +519,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 				);
 
 				$options['header-slide_out-width'] = array(
-					'id'       => 'header-slide_out-width',
-					'name'     => _x( 'Navigation area width (px or %)', 'theme-options', 'the7mk2' ),
-					'type'     => 'text',
-					'std'      => '300px', 
-					'sanitize' => 'css_width',
+					'id'    => 'header-slide_out-width',
+					'name'  => _x( 'Navigation area width', 'theme-options', 'the7mk2' ),
+					'std'   => '300px',
+					'type'  => 'number',
+					'units' => 'px|%',
 				);
 
 				$options['header-slide_out-position'] = array(
@@ -599,7 +594,7 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 
 				presscore_options_apply_template( $options, 'side-header-content', 'header-overlay', array(
 						'content-width' => array(
-							'name' => _x( 'Navigation area width (px or %)', 'theme-options', 'the7mk2' ),
+							'name' => _x( 'Navigation area width', 'theme-options', 'the7mk2' ),
 							'std' => '400px',
 						),
 						'content-position' => array(
@@ -1649,37 +1644,35 @@ $options[] = array( 'name' => _x( 'Microwidgets', 'theme-options', 'the7mk2' ), 
 		$options[] = array( 'type' => 'divider' );
 
 		$options['header-elements-soc_icons-bg-size'] = array(
-			"desc"		=> '',
-			"name"		=> _x( ' Icons background size (in "px")', 'theme-options', 'the7mk2' ),
-			"id"		=> "header-elements-soc_icons-bg-size",
-			"std"		=> '26px', 
-			"type"		=> "text",
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Icons background size', 'theme-options', 'the7mk2' ),
+			'id'    => 'header-elements-soc_icons-bg-size',
+			'std'   => '26px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options['header-elements-soc_icons-size'] = array(
-			"desc"		=> '',
-			"name"		=> _x( ' Icons size (in "px")', 'theme-options', 'the7mk2' ),
-			"id"		=> "header-elements-soc_icons-size",
-			"std"		=> '16px', 
-			"type"		=> "text",
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Icons size', 'theme-options', 'the7mk2' ),
+			'id'    => 'header-elements-soc_icons-size',
+			'std'   => '16px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options['header-elements-soc_icons_border_width'] = array(
-			"name"		=> _x( 'Icons border width (px)', 'theme-options', 'the7mk2' ),
-			"id"		=> 'header-elements-soc_icons_border_width',
-			"std"		=> '1px',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Icons border width', 'theme-options', 'the7mk2' ),
+			'id'    => 'header-elements-soc_icons_border_width',
+			'std'   => '1px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options['header-elements-soc_icons_border_radius'] = array(
-			"name"		=> _x( 'Icons border radius (px)', 'theme-options', 'the7mk2' ),
-			"id"		=> 'header-elements-soc_icons_border_radius',
-			"std"		=> '100px',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Icons border radius', 'theme-options', 'the7mk2' ),
+			'id'    => 'header-elements-soc_icons_border_radius',
+			'std'   => '100px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 		$options[] = array( 'name' => _x( 'Icons margins', 'theme-options', 'the7mk2' ), 'type' => 'title' );
 
@@ -1942,21 +1935,19 @@ $options[] = array( 'name' => _x( 'Microwidgets', 'theme-options', 'the7mk2' ), 
 
 
 
-	
+
 $options[] = array( 'name' => _x( 'Top bar', 'theme-options', 'the7mk2' ), 'type' => 'heading', 'id' => 'topbar' );
 
 		$options[] = array( 'name' => _x( 'Top bar background', 'theme-options', 'the7mk2' ), 'type' => 'block' );
 
 			// if not disabled
 			$options['top-bar-height'] = array(
-				'id'         => 'top-bar-height',
-				'name'       => _x( 'Top bar height (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '0',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'id'    => 'top-bar-height',
+				'name'  => _x( 'Top bar height', 'theme-options', 'the7mk2' ),
+				'std'   => '0px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
-
 
 			$options['top_bar-padding'] = array(
 				'name' => _x( 'Top bar paddings', 'theme-options', 'the7mk2' ),
@@ -2035,10 +2026,11 @@ $options[] = array( 'name' => _x( 'Top bar', 'theme-options', 'the7mk2' ), 'type
 			),
 		);
 		$options['top_bar-line_size'] = array(
-			'id'   => 'top_bar-line_size',
-			'name' => _x( 'Line height (px)', 'theme-options', 'the7mk2' ),
-			'type' => 'text',
-			'std'  => '1',
+			'id'         => 'top_bar-line_size',
+			'name'       => _x( 'Line height', 'theme-options', 'the7mk2' ),
+			'std'        => '1px',
+			'type'       => 'number',
+			'units'      => 'px',
 			'dependency' => array(
 				array(
 					array(
@@ -2167,6 +2159,15 @@ $options[] = array( 'name' => _x( 'Header', 'theme-options', 'the7mk2' ), 'type'
 				),
 			),
 			'class'   => 'small',
+			'dependency' => array(
+				array(
+					array(
+						'field' => 'header_navigation',
+						'operator' => '!=',
+						'value' => 'overlay',
+					),
+				),
+			),
 		);
 
 			$options['header-decoration-color'] = array(
@@ -2294,20 +2295,18 @@ $options[] = array( 'name' => _x( 'Header', 'theme-options', 'the7mk2' ), 'type'
 
 		$options['header-menu_icon-bg-size'] = array(
 			'id'         => 'header-menu_icon-bg-size',
-			'name'       => _x( 'Background size (px)', 'theme-options', 'the7mk2' ),
-			'type'       => 'text',
-			'std'        => '54',
-			'class'      => 'mini',
-			'sanitize'   => 'dimensions',
+			'name'       => _x( 'Background size', 'theme-options', 'the7mk2' ),
+			'std'        => '54px',
+			'type'       => 'number',
+			'units'      => 'px',
 		);
 
 		$options['header-menu_icon-bg-border-radius'] = array(
 			'id'         => 'header-menu_icon-bg-border-radius',
-			'name'       => _x( 'Background border radius (px)', 'theme-options', 'the7mk2' ),
-			'type'       => 'text',
-			'std'        => '0',
-			'class'      => 'mini',
-			'sanitize'   => 'dimensions',
+			'name'       => _x( 'Background border radius', 'theme-options', 'the7mk2' ),
+			'std'        => '0px',
+			'type'       => 'number',
+			'units'      => 'px',
 		);
 
 		$options[] = array( 'type' => 'divider' );
@@ -2615,11 +2614,10 @@ $options[] = array( 'name' => _x( 'Menu', 'theme-options', 'the7mk2' ), 'type' =
 
 			$options['header-menu-item-surround_margins-custom-margin'] = array(
 				'id'         => 'header-menu-item-surround_margins-custom-margin',
-				'name'       => _x( 'Custom margin (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '0',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'name'       => _x( 'Custom margin', 'theme-options', 'the7mk2' ),
+				'std'        => '0px',
+				'type'       => 'number',
+				'units'      => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -2694,11 +2692,11 @@ $options[] = array( 'name' => _x( 'Menu', 'theme-options', 'the7mk2' ), 'type' =
 			);
 
 				$options['header-menu-dividers-height'] = array(
-					'id'		=> 'header-menu-dividers-height',
-					'name'		=> _x( "Height (px)", 'theme-options', 'the7mk2' ),
-					'type'		=> 'text',
-					'std'		=> 20,
-					'sanitize'	=> 'slider',
+					'id'         => 'header-menu-dividers-height',
+					'name'       => _x( 'Height', 'theme-options', 'the7mk2' ),
+					'std'        => '20px',
+					'type'       => 'number',
+					'units'      => 'px',
 					'dependency' => array(
 						array(
 							array(
@@ -2850,10 +2848,11 @@ $options[] = array( 'name' => _x( 'Menu', 'theme-options', 'the7mk2' ), 'type' =
 				);
 
 			$options['header-menu-decoration-underline-line_size'] = array(
-				'id'   => 'header-menu-decoration-underline-line_size',
-				'name' => _x( 'Line size (px)', 'theme-options', 'the7mk2' ),
-				'type' => 'text',
-				'std'  => '2',
+				'id'         => 'header-menu-decoration-underline-line_size',
+				'name'       => _x( 'Line size', 'theme-options', 'the7mk2' ),
+				'std'        => '2px',
+				'type'       => 'number',
+				'units'      => 'px',
 			);
 
 		$options[] = array( 'type' => 'js_hide_end' );
@@ -3296,9 +3295,10 @@ $options[] = array( 'name' => _x( 'Menu', 'theme-options', 'the7mk2' ), 'type' =
 
 			$options['header-menu-decoration-other-line_size'] = array(
 				'id'      => 'header-menu-decoration-other-line_size',
-				'name'    => _x( 'Line size (px)', 'theme-options', 'the7mk2' ),
-				'type'    => 'text',
-				'std'     => '2',
+				'name'    => _x( 'Line size', 'theme-options', 'the7mk2' ),
+				'std'     => '2px',
+				'type'    => 'number',
+				'units'   => 'px',
 				'divider' => 'top',
 			);
 
@@ -3595,11 +3595,11 @@ $options[] = array( 'name' => _x( 'Floating header', 'theme-options', 'the7mk2' 
 		$options[] = array( 'type' => 'js_hide_begin' );
 
 			$options['header-floating_navigation-height'] = array(
-				'id'		=> 'header-floating_navigation-height',
-				'name'		=> _x( 'Height (px)', 'theme-options', 'the7mk2' ),
-				'type'		=> 'text',
-				'std'		=> '100',
-				'sanitize'	=> 'slider'
+				'id'      => 'header-floating_navigation-height',
+				'name'    => _x( 'Height', 'theme-options', 'the7mk2' ),
+				'std'     => '100px',
+				'type'    => 'number',
+				'units'   => 'px',
 			);
 
 			$options['header-floating_navigation-bg-color'] = array(
@@ -3670,11 +3670,11 @@ $options[] = array( 'name' => _x( 'Floating header', 'theme-options', 'the7mk2' 
 			);
 
 			$options['header-floating_navigation-show_after'] = array(
-				'id'		=> 'header-floating_navigation-show_after',
-				'name'		=> _x( 'Show after scrolling (px)', 'theme-options', 'the7mk2' ),
-				'type'		=> 'text',
-				'std'		=> '150',
-				'sanitize'	=> 'slider',
+				'id'         => 'header-floating_navigation-show_after',
+				'name'       => _x( 'Show after scrolling', 'theme-options', 'the7mk2' ),
+				'std'        => '150px',
+				'type'       => 'number',
+				'units'      => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -3829,11 +3829,10 @@ $options[] = array( 'name' => _x( 'Mobile header', 'theme-options', 'the7mk2' ),
 
 			$options['header-mobile-menu_icon-bg-size'] = array(
 				'id'         => 'header-mobile-menu_icon-bg-size',
-				'name'       => _x( 'Background size (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '36',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'name'       => _x( 'Background size', 'theme-options', 'the7mk2' ),
+				'std'        => '36px',
+				'type'       => 'number',
+				'units'      => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -3847,11 +3846,10 @@ $options[] = array( 'name' => _x( 'Mobile header', 'theme-options', 'the7mk2' ),
 
 			$options['header-mobile-menu_icon-bg-border-radius'] = array(
 				'id'         => 'header-mobile-menu_icon-bg-border-radius',
-				'name'       => _x( 'Background border radius (px)', 'theme-options', 'the7mk2' ),
-				'type'       => 'text',
-				'std'        => '0',
-				'class'      => 'mini',
-				'sanitize'   => 'dimensions',
+				'name'       => _x( 'Background border radius', 'theme-options', 'the7mk2' ),
+				'std'        => '0px',
+				'type'       => 'number',
+				'units'      => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -3981,16 +3979,15 @@ $options[] = array( 'name' => _x( 'Mobile header', 'theme-options', 'the7mk2' ),
 		);
 
 		$options['header-mobile-menu-bg-width'] = array(
-			'id'       => 'header-mobile-menu-bg-width',
-			'name'     => _x( 'Maximum background width (px)', 'theme-options', 'the7mk2' ),
-			'type'     => 'text',
-			'std'      => '400',
-			'class'    => 'mini',
-			'sanitize' => 'dimensions',
+			'id'    => 'header-mobile-menu-bg-width',
+			'name'  => _x( 'Maximum background width', 'theme-options', 'the7mk2' ),
+			'std'   => '400px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options[] = array( 'type' => 'divider' );
-		
+
 		$options[] = array( 'name' => _x( 'Mobile menu position', 'theme-options', 'the7mk2' ), 'type' => 'title' );
 
 		$options['header-mobile-menu-align'] = array(

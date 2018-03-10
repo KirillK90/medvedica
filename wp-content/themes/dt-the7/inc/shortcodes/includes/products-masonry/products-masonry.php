@@ -56,7 +56,7 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 				'responsiveness' => 'browser_width_based',
 				'bwb_columns' => 'desktop:4|h_tablet:3|v_tablet:2|phone:1',
 				'pwb_column_min_width' => '',
-				'pwb_columns' => '',
+				'pwb_columns'                    => '',
 				'loading_mode' => 'disabled',
 				'dis_posts_total' => '-1',
 				'st_posts_per_page' => '',
@@ -137,6 +137,9 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 
 			if ( 'standard' == $loading_mode ) {
 				$filter_class[] = 'without-isotope';
+			}
+			if ( 'grid' === $this->get_att( 'mode' ) ) {
+				$filter_class[] = 'css-grid-filter';
 			}
 
 			if ( ! $this->get_flag( 'show_orderby_filter' ) && ! $this->get_flag( 'show_order_filter' ) ) {
@@ -294,6 +297,9 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 			if ( of_get_option( 'woocommerce_hover_image' ) ) {
 				$class[] = 'wc-img-hover';
 			}
+			if ( 'grid' === $this->get_att( 'mode' ) ) {
+				$class[] = 'dt-css-grid-wrap';
+			}
 
 			$class = $this->add_responsiveness_class( $class );
 
@@ -319,7 +325,7 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 		 */
 		protected function iso_container_class( $class = array() ) {
 			if ( 'grid' === $this->get_att( 'mode' ) ) {
-				$class[] = 'iso-grid';
+				$class[] = 'dt-css-grid';
 			} else {
 				$class[] = 'iso-container';
 			}
@@ -472,6 +478,25 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 					$gap_before_pagination = $this->get_att( 'jsm_gap_before_pagination', '' );
 					break;
 			}
+			if ( 'browser_width_based' === $this->get_att( 'responsiveness' ) ) {
+				$bwb_columns = DT_VCResponsiveColumnsParam::decode_columns( $this->get_att( 'bwb_columns' ) );
+				$columns = array(
+					'desktop'  => 'desktop',
+					'v_tablet' => 'v-tablet',
+					'h_tablet' => 'h-tablet',
+					'phone'    => 'phone',
+				);
+
+				foreach ( $columns as $column => $data_att ) {
+					$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
+					$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+					
+					$less_vars->add_keyword( $data_att. '-columns-num', esc_attr( $val ) );
+			
+				}
+			};
+			$less_vars->add_pixel_number( 'grid-posts-gap', $this->get_att( 'gap_between_posts' ) );
+			$less_vars->add_pixel_number( 'grid-post-min-width', $this->get_att( 'pwb_column_min_width' ));
 			$less_vars->add_pixel_number( 'shortcode-pagination-gap', $gap_before_pagination );
 			$less_vars->add_keyword( 'shortcode-filter-color', $this->get_att( 'navigation_font_color', '~""' ) );
 			$less_vars->add_keyword( 'shortcode-filter-accent', $this->get_att( 'navigation_accent_color', '~""' ) );
@@ -526,23 +551,14 @@ if ( ! class_exists( 'DT_Shortcode_ProductsMasonry', false ) ):
 			$attributes = &$this->atts;
 			//global $woocommerce;
 			$show_products_attd = $this->get_att( 'show_products' );
-			$orderby = '';
-			$meta_query = $tax_query = '';
-			if(!isset($order)): $order = 'desc'; endif;
-			//if(!isset($category)): $category = ''; endif;
-			if(!isset($ids)): $ids = ''; endif;
-			switch ( $attributes['orderby'] ) {
-				case 'date':
-					$orderby = 'date';
-					break;
-				case 'id':
-					$orderby = 'ID';
-					break;
-				case 'author':
-					$orderby = 'author';
-					break;
+			$orderby = $attributes['orderby'];
+			if ( 'id' === $orderby ) {
+				$orderby = 'ID';
 			}
 
+			$meta_query = $tax_query = '';
+			if(!isset($order)): $order = 'desc'; endif;
+			if(!isset($ids)): $ids = ''; endif;
 
 			if($show_products_attd == "featured_products"){
 				$meta_query  = WC()->query->get_meta_query();

@@ -281,7 +281,7 @@
 	&:not(.testimonial-item-slider) {
 		padding: 20px 25px 20px;
 	}
-	.dt-testimonials-shortcode .iso-grid & {
+	.dt-testimonials-shortcode .dt-css-grid & {
 		height: 100%;
 	}
 }
@@ -601,7 +601,7 @@ body.testimonials {
 	}
 		min-width: 100%;
 	
-	.dt-team-shortcode .iso-grid & {
+	.dt-team-shortcode .dt-css-grid & {
 		height: 100%;
 	}
 }
@@ -677,12 +677,16 @@ body.testimonials {
 			}
 			-ms-flex: 0 0 auto;
 		}
+
 	}
 	.team-media {
 		position: relative;
 		line-height: 0;
 		.content-align-center & {
 			text-align: center;
+		}
+		.dt-css-grid & {
+			-ms-flex: 0 0 auto;
 		}
 		& > a,
 		& > span {

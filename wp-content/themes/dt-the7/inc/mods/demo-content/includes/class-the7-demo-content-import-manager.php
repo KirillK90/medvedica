@@ -45,7 +45,8 @@ class The7_Demo_Content_Import_Manager {
 		$download_response = $the7_remote_api->download_dummy( $item, $code, $download_dir );
 
 		if ( is_wp_error( $download_response ) ) {
-			$error = ( the7_is_debug_on() ? $download_response->get_error_message() : sprintf( __( 'Import failed due to repository server error. Please try again in 30-60 minutes.
+			$error_code = $download_response->get_error_code();
+			$error = ( ( the7_is_debug_on() || 'the7_auto_deactivated' === $error_code ) ? $download_response->get_error_message() : sprintf( __( 'Import failed due to repository server error. Please try again in 30-60 minutes.
 If the problem persists, please don\'t hesitate to contact our <a href="%s" target="_blank">support</a>.', 'the7mk2' ), 'http://support.dream-theme.com/' ) );
 			$this->add_error($error);
 			return false;

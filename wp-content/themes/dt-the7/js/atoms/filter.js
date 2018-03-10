@@ -110,23 +110,37 @@
 		});
 	});
 
+
+
 	//List filter
-	$(".mode-list .filter-categories > a:not(.show-all)").each(function(){
+	$(".mode-list .filter-categories > a:not(.show-all), .dt-css-grid-wrap .filter-categories > a:not(.show-all)").each(function(){
 		$this = $(this),
 		$dataFiltr = $this.attr("data-filter");
 		$newDataFilter = $dataFiltr.substring(1, $dataFiltr.length);
-		$this.attr("data-filter", $newDataFilter)
+		$this.attr("data-filter", $newDataFilter);
+		$this.parents().removeClass('iso-filter');
 	})
 	$.fn.shortcodesFilter = function() {
-		var $el = $(this),
-			$elFilter = $el.find(".filter-categories"),
-			$elPaginator = $el.find(".paginator"),
-			$elSort = $el.find(".filter-by"),
-			$elOrder = $el.find(".filter-sorting"),
-			$elDefaultSort = $el.find(".filter-by .act").attr('data-by'),
-			$elDefaultOrder = $el.find(".filter-sorting .act").attr('data-sort'),
-			$paginationMode = $el.attr("data-pagination-mode"),
-			$postLimit = $el.attr("data-post-limit");
+		var $el = $(this);
+		if($el.hasClass("dt-css-grid")){
+			var $elFilter = $el.parent().find(".filter-categories"),
+				$elPaginator = $el.parent().find(".paginator"),
+				$elSort = $el.parent().find(".filter-by"),
+				$elOrder = $el.parent().find(".filter-sorting"),
+				$elDefaultSort = $el.parent().find(".filter-by .act").attr('data-by'),
+				$elDefaultOrder = $el.parent().find(".filter-sorting .act").attr('data-sort'),
+				$paginationMode = $el.parent().attr("data-pagination-mode"),
+				$postLimit = $el.parent().attr("data-post-limit");
+		}else{
+			var $elFilter = $el.find(".filter-categories"),
+				$elPaginator = $el.find(".paginator"),
+				$elSort = $el.find(".filter-by"),
+				$elOrder = $el.find(".filter-sorting"),
+				$elDefaultSort = $el.find(".filter-by .act").attr('data-by'),
+				$elDefaultOrder = $el.find(".filter-sorting .act").attr('data-sort'),
+				$paginationMode = $el.attr("data-pagination-mode"),
+				$postLimit = $el.attr("data-post-limit");
+		}
 
 		$el.Filterade({
 			// Pagination
@@ -147,14 +161,47 @@
 			defaultOrder: $elDefaultOrder,
             loadMoreButtonLabel: dtLocal.moreButtonText.loadMore
 		});
+		$el.on('updateReady', function(){
+			loadingEffects();
+			if($el.parent().hasClass("content-rollover-layout-list") && ! $el.parent().hasClass("disable-layout-hover")){
+				$el.find(".post-entry-wrapper").each(function(){
+					var $this = $(this),
+						$thisOfTop = $this.find(".entry-excerpt").height() + $this.find(".post-details").innerHeight();
+					$this.stop().velocity({
+						translateY : $thisOfTop
+					}, 0);
+					$this.parents(".post").first().on("mouseenter", function(e) {
+						$this.stop().velocity({
+							translateY : 0
+						}, 0);
+					});
+					$this.parents(".post").first().on("mouseleave", function(e) {
+						$this.stop().velocity({
+							translateY : $thisOfTop
+						}, 0);
+					});
+				})
+			}
+		})
 		function lazyLoading() {
-			if($el.hasClass("lazy-loading-mode")){
-				var buttonOffset = $el.find('.button-load-more').offset();
-				if ( buttonOffset && $window.scrollTop() > (buttonOffset.top - $window.height()) / 2){
-					$el.find('.button-load-more').trigger('click');
-				
+			if($el.hasClass("dt-css-grid")){
+				if($el.parent().hasClass("lazy-loading-mode")){
+					var buttonOffset = $el.find('.button-load-more').offset();
+					if ( buttonOffset && $window.scrollTop() > (buttonOffset.top - $window.height()) / 2){
+						$el.find('.button-load-more').trigger('click');
+					
+					}
+					
 				}
-				
+			}else{
+				if($el.hasClass("lazy-loading-mode")){
+					var buttonOffset = $el.find('.button-load-more').offset();
+					if ( buttonOffset && $window.scrollTop() > (buttonOffset.top - $window.height()) / 2){
+						$el.find('.button-load-more').trigger('click');
+					
+					}
+					
+				}
 			}
 		}
 		$window.on('scroll', function () {
@@ -164,7 +211,7 @@
 
 	}
 
-	$('.blog-shortcode.mode-list.jquery-filter').each(function(){
+	$('.blog-shortcode.mode-list.jquery-filter, .jquery-filter .dt-css-grid').each(function(){
 		var $this = $(this);
 		$this.shortcodesFilter();
 	});

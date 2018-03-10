@@ -1013,6 +1013,12 @@ div.dt-web-fonts-preview span {
 	clear: both
 }
 
+/* Number */
+.section-number input {
+	max-width: 60px;
+	margin-right: 10px;
+}
+
 /* The7 Customizer */
 .the7-customizer #wpfooter {
 	display: none;

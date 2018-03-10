@@ -20,7 +20,7 @@
 	function loadingEffects() {
 
 		var $isotope = $(".dt-isotope"),
-			$grid = $(".iso-grid .wf-cell:not(.shown)");
+			$grid = $(".iso-grid .wf-cell:not(.shown), .dt-css-grid .wf-cell:not(.shown)");
 
 		if ($grid.exists()) {
 			precessEffects($grid);
@@ -83,7 +83,7 @@
 			var $this = $(this);
 			$this.find(".iso-item.shown, .wf-cell.shown").removeClass("start-animation").removeClass("animation-triggered").removeClass("shown");
 
-	})
+		})
 		
 	};
 
@@ -604,7 +604,7 @@
 
 	var $isotope = $(".dt-isotope"),
 		$isoFallback = $(".iso-item:not(.shown):not(.is-visible)"),
-		$grid = $(".iso-grid .wf-cell:not(.shown):not(.is-visible)");
+		$grid = $(".iso-grid .wf-cell:not(.shown):not(.is-visible), .dt-css-grid .wf-cell:not(.shown):not(.is-visible)");
 
 	if ($isotope.exists() || $isoFallback.exists() || $grid.exists()) {
 		setTimeout(function () {

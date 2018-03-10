@@ -29,6 +29,10 @@ class The7_Admin_Dashboard {
 				'capability' => 'edit_theme_options',
 			),
 		);
+
+		if ( defined( 'ENVATO_HOSTED_SITE' ) ) {
+			unset( $this->pages['the7-status'] );
+		}
 	}
 
 	/**

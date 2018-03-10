@@ -307,7 +307,7 @@ $DT_META_BOXES['dt_page_box-header_options'] = array(
 		// Header overlapping
 		array(
 			// container begin !!!
-			'before'      => '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}background_settings" . '">',
+			'before'      => '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}background_settings" . '">',
 
 			'name'        => '',
 			'id'          => "{$prefix}background",
@@ -327,7 +327,7 @@ $DT_META_BOXES['dt_page_box-header_options'] = array(
 
 		array(
 			// container begin !!!
-			'before'      => "<div class=\"rwmb-flickering-field rwmb-input-{$prefix}header-below-slideshow\">",
+			'before'      => "<div class=\"the7-mb-flickering-field the7-mb-input-{$prefix}header-below-slideshow\">",
 
 			"type"        => "radio",
 			"id"          => "{$prefix}background_below_slideshow",
@@ -356,7 +356,7 @@ $DT_META_BOXES['dt_page_box-header_options'] = array(
 
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}transparent_settings" . '">',
+			'before'		=> '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}transparent_settings" . '">',
 
 			'name'    		=> _x(' Top bar color', 'backend metabox', 'the7mk2'),
 			'id'      		=> "{$prefix}transparent_top_bar_bg_color",
@@ -398,7 +398,7 @@ $DT_META_BOXES['dt_page_box-header_options'] = array(
 		// Disable page title.
 		array(
 			// container begin !!!
-			'before'      => '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}background-disabled-settings" . '">',
+			'before'      => '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}background-disabled-settings" . '">',
 
 			'name'        => '',
 			'id'          => "{$prefix}disabled_background",
@@ -415,7 +415,7 @@ $DT_META_BOXES['dt_page_box-header_options'] = array(
 		),
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}background-disabled-transparent_settings" . '">',
+			'before'		=> '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}background-disabled-transparent_settings" . '">',
 
 			'name'    		=> _x('Transparent background color', 'backend metabox', 'the7mk2'),
 			'id'      		=> "{$prefix}disabled_transparent_bg_color",
@@ -519,7 +519,7 @@ $DT_META_BOXES['dt_page_box-slideshow_options'] = array(
 		// Slideshow layout
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-input-' . $prefix . 'porthole_container rwmb-flickering-field">',
+			'before'		=> '<div class="the7-mb-input-' . $prefix . 'porthole_container the7-mb-flickering-field">',
 
 			'name'			=> _x('Slider layout', 'backend metabox', 'the7mk2'),
 			'id'      	=> "{$prefix}layout",
@@ -591,7 +591,7 @@ $DT_META_BOXES['dt_page_box-slideshow_options'] = array(
 
 		array(
 			// container begin !!!
-			'before'	=> '<div class="rwmb-input-' . $prefix . 'photo_scroller_container rwmb-flickering-field">',
+			'before'	=> '<div class="the7-mb-input-' . $prefix . 'photo_scroller_container the7-mb-flickering-field">',
 
 			'name'		=> _x( 'Layout', 'backend metabox', 'the7mk2' ),
 			'id'		=> "{$prefix}photo_scroller_layout",
@@ -763,7 +763,7 @@ $DT_META_BOXES['dt_page_box-slideshow_options'] = array(
 		// LayerSlider
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-input-' . $prefix . 'layer_container rwmb-flickering-field">',
+			'before'		=> '<div class="the7-mb-input-' . $prefix . 'layer_container the7-mb-flickering-field">',
 
 			'name'     		=> _x('Choose slider', 'backend metabox', 'the7mk2'),
 			'id'       		=> "{$prefix}layer_slider",
@@ -880,7 +880,7 @@ $DT_META_BOXES['dt_page_box-fancy_header_options'] = array(
 		// Breadcrumbs text color
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}breadcrumbs_settings" . '">',
+			'before'		=> '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}breadcrumbs_settings" . '">',
 
 			'name'    		=> _x('Breadcrumbs text color', 'backend metabox', 'the7mk2'),
 			'id'      		=> "{$prefix}breadcrumbs_text_color",
@@ -973,7 +973,7 @@ $DT_META_BOXES['dt_page_box-fancy_header_options'] = array(
 		// Title color
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}title_color_settings" . '">',
+			'before'		=> '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}title_color_settings" . '">',
 
 			'name'    		=> '&nbsp;',
 			'id'      		=> "{$prefix}title_color",
@@ -1048,7 +1048,7 @@ $DT_META_BOXES['dt_page_box-fancy_header_options'] = array(
 		// Subtitle color
 		array(
 			// container begin !!!
-			'before'		=> '<div class="rwmb-flickering-field ' . "rwmb-input-{$prefix}subtitle_color_settings" . '">',
+			'before'		=> '<div class="the7-mb-flickering-field ' . "the7-mb-input-{$prefix}subtitle_color_settings" . '">',
 
 			'name'    		=> '&nbsp;',
 			'id'      		=> "{$prefix}subtitle_color",

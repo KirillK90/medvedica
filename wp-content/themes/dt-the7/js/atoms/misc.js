@@ -531,18 +531,18 @@ $window.trigger("dt.removeLoading");
 					if (window.innerWidth > 1050) {
 						if (dtGlobals.winScrollTop + $phantom.height() > offset.top) {
 							if (dtGlobals.winScrollTop + $phantom.height() + $floatContentHeight + 40 < $scrollOffset.top + $parentHeight) {
-								$sidebar.stop().velocity({
-									translateY : dtGlobals.winScrollTop - offset.top + $phantom.height() + 5 - topBarH
-								}, 300);
+								$sidebar.css(
+									'transform', 'translateY(' + (dtGlobals.winScrollTop - offset.top + $phantom.height() + 5 - topBarH) + 'px)'
+								);
 							} else {
-								$sidebar.stop().velocity({
-									translateY: $parentHeight - $floatContentHeight - 40 - topBarH
-								}, 300)
+								$sidebar.css(
+									'transform', 'translateY(' + ($parentHeight - $floatContentHeight - 40 - topBarH) + 'px)'
+								);
 							}
 						} else {
-							$sidebar.stop().velocity({
-								translateY: 0
-							}, 300)
+							$sidebar.css(
+								'transform', 'translateY(0px)'
+							);
 						}
 					} else {
 						$sidebar
@@ -567,13 +567,13 @@ $window.trigger("dt.removeLoading");
 	$.fancyFeaderCalc = function() {
 		$(".branding .preload-me").loaded(null, function() {
 			if (fancyFeaderOverlap) {
-				$(".transparent #fancy-header > .wf-wrap").css({
-					"padding-top" : $(".masthead:not(.side-header)").height()
+				$(".transparent #fancy-header").css({
+					"padding-top" : $(".masthead").height()
 				});
 			};
 			if (titleOverlap) {
-				$(".transparent .page-title > .wf-wrap").css({
-					"padding-top" : $(".masthead:not(.side-header)").height()
+				$(".transparent .page-title").css({
+					"padding-top" : $(".masthead").height()
 				});
 				$(".transparent .page-title").css("visibility", "visible");
 			};
@@ -959,5 +959,24 @@ $window.trigger("dt.removeLoading");
 		if(!$(".footer .widget").length > 0) {
 			$(".footer").addClass("empty-footer");
 		};
-
+//Blog
+if($(".dt-css-grid").parent().hasClass("content-rollover-layout-list") && ! $(".dt-css-grid").parent().hasClass("disable-layout-hover")){
+	$(".content-rollover-layout-list:not(.disable-layout-hover) .dt-css-grid ").find(".post-entry-wrapper").each(function(){
+		var $this = $(this),
+			$thisOfTop = $this.find(".entry-excerpt").height() + $this.find(".post-details").innerHeight();
+		$this.css(
+			'transform', 'translateY(' + $thisOfTop + 'px)'
+		);
+		$this.parents(".post").first().on("mouseenter", function(e) {
+			$this.css(
+				'transform', 'translateY(0px)'
+			);
+		});
+		$this.parents(".post").first().on("mouseleave", function(e) {
+			$this.css(
+				'transform', 'translateY(' + $thisOfTop + 'px)'
+			);
+		});
+	})
+}
 

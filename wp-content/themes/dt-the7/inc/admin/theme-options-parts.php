@@ -306,10 +306,10 @@ if ( ! class_exists( 'Presscore_Lib_Options_SideHeaderContentTemplate', false ) 
 			$_fields = array();
 
 			$_fields['content-width'] = array(
-				'name'     => _x( 'Width of header content (px or %)', 'theme-options', 'the7mk2' ),
-				'type'     => 'text',
-				'std'      => '220px', 
-				'sanitize' => 'css_width',
+				'name'  => _x( 'Width of header content', 'theme-options', 'the7mk2' ),
+				'std'   => '220px',
+				'type'  => 'number',
+				'units' => 'px|%',
 			);
 
 			$_fields['content-position'] = array(
@@ -372,11 +372,10 @@ if ( ! class_exists( 'Presscore_Lib_Options_MobileHeaderTemplate', false ) ) :
 			$_fields = array();
 
 			$_fields['after'] = array(
-				'name'     => _x( 'Switch after (px)', 'theme-options', 'the7mk2' ),
-				'type'     => 'text',
-				'std'      => '1024',
-				'class'    => 'mini',
-				'sanitize' => 'dimensions',
+				'name'  => _x( 'Switch after', 'theme-options', 'the7mk2' ),
+				'std'   => '1024px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			$_fields['layout'] = array(
@@ -392,11 +391,10 @@ if ( ! class_exists( 'Presscore_Lib_Options_MobileHeaderTemplate', false ) ) :
 			);
 
 			$_fields['height'] = array(
-				'name'     => _x( 'Header height (px)', 'theme-options', 'the7mk2' ),
-				'type'     => 'text',
-				'std'      => '150',
-				'class'    => 'mini',
-				'sanitize' => 'dimensions',
+				'name'  => _x( 'Header height', 'theme-options', 'the7mk2' ),
+				'std'   => '150px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			return $_fields;

@@ -206,7 +206,7 @@ if ( ! class_exists( 'Presscore_Modules_Posts_Defaults', false ) ) {
                 <button type="button" id="the7-post-meta-save-preset" class="button button-primary" <?php echo $preset_action_status ?>><?php esc_html_e( 'Save', 'the7mk2' ) ?></button>
                 <button type="button" id="the7-post-meta-delete-preset" class="button button-secondary" <?php echo $preset_action_status ?>><?php esc_html_e( 'Delete', 'the7mk2' ) ?></button>
             </p>
-            <div class="rwmb-field rwmb-heading-wrapper"><div class="dt_hr dt_hr-top"></div><h4><?php esc_html_e( 'Preset Actions', 'the7mk2' ) ?></h4></div>
+            <div class="the7-mb-field the7-mb-heading-wrapper"><div class="dt_hr dt_hr-top"></div><h4><?php esc_html_e( 'Preset Actions', 'the7mk2' ) ?></h4></div>
             <p>
                 <button type="button" id="the7-post-meta-save-defaults" class="button button-secondary"><?php esc_html_e( 'Save as default', 'the7mk2' ) ?></button>
                 <button type="button" id="the7-post-meta-apply-preset" class="button button-primary" <?php echo $preset_action_status ?>><?php esc_html_e( 'Apply to this page', 'the7mk2' ) ?></button>

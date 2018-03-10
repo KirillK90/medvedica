@@ -6,19 +6,19 @@ class The7_Orphaned_Shortcodes_Handler {
 
 	public static function set_unique_shortcode_id( DT_Shortcode_With_Inline_Css $shortcode_obj ) {
 		$shortcode_obj->allow_to_print_inline_css();
-		$shortcode_obj->set_unique_class( self::get_unique_id() );
+		$shortcode_obj->set_unique_class( self::get_unique_id( $shortcode_obj->get_tag() ) );
 	}
 
-	public static function get_unique_id() {
+	public static function get_unique_id( $tag ) {
 		$str = 'orphaned-shortcode-';
 
-		return $str . md5( $str . self::$id );
+		return $str . md5( $tag . self::$id );
 	}
 
 	public static function get_inline_css( $_, DT_Shortcode_With_Inline_Css $shortcode_obj ) {
 		$shortcode_obj->allow_to_print_inline_css();
 		$css_list = (array) get_option( self::CACHE_OPTION_ID, array() );
-		$unique_id = self::get_unique_id();
+		$unique_id = self::get_unique_id( $shortcode_obj->get_tag() );
 
 		if ( array_key_exists( $unique_id,  $css_list ) ) {
 			return $css_list[ $unique_id ];

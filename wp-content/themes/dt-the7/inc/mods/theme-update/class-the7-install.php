@@ -35,7 +35,11 @@ class The7_Install {
 		'6.1.1' => array(
 			'the7_update_611_page_transparent_top_bar_migration',
 			'the7_update_611_db_version',
-		)
+		),
+		'6.2.0' => array(
+			'the7_mass_regenerate_short_codes_inline_css',
+			'the7_update_620_db_version',
+		),
 	);
 
     public static function init() {

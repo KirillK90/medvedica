@@ -46,6 +46,7 @@ require_once OPTIONS_FRAMEWORK_DIR . 'classes/class-template.php';
 
 require_once OPTIONS_FRAMEWORK_DIR . 'options-custom.php';
 include_once OPTIONS_FRAMEWORK_DIR . 'fields/class-the7-option-field-spacing.php';
+include_once OPTIONS_FRAMEWORK_DIR . 'fields/class-the7-option-field-number.php';
 
 /* If the user can't edit theme options, no use running this plugin */
 add_action( 'init', 'optionsframework_rolescheck', 20 );

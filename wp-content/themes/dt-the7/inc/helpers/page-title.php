@@ -214,7 +214,7 @@ if ( ! function_exists( 'presscore_get_page_title_breadcrumbs' ) ) :
 		}
 
 		$default_args = array(
-			'beforeBreadcrumbs' => '<div class="wf-td">',
+			'beforeBreadcrumbs' => '<div class="page-title-breadcrumbs">',
 			'afterBreadcrumbs' => '</div>',
 			'listAttr' => ' class="' . $breadcrumbs_class . '"'
 		);

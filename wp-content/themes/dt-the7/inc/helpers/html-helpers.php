@@ -1547,6 +1547,17 @@ if ( ! function_exists( 'presscore_bottom_bar_class' ) ) :
 				break;
 			// default - content_width_line
 		}
+		switch( presscore_config()->get( 'template.bottom_bar.layout' ) ) {
+			case 'logo_left' :
+				$output[] = 'logo-left';
+				break;
+			case 'logo_center' :
+				$output[] = 'logo-center';
+				break;
+			case 'split' :
+				$output[] = 'logo-split';
+				break;
+		}
 
 		$output = apply_filters( 'presscore_bottom_bar_class', $output );
 

@@ -89,7 +89,6 @@
 			}
 		}
 
-
 		dtGlobals.resetMobileSizes = function (sliderHeihgt) {
 			if (window.innerWidth > dtLocal.themeSettings.mobileHeader.firstSwitchPoint) {
 				if($(".is-safari").length > 0){
@@ -178,6 +177,7 @@
 			var posScrollTop = dtGlobals.winScrollTop;
 
 			// Making header sticky (rewrite relative to $stickyHeader position)
+
 			if ((posScrollTop > mobileMenuT) && (!mobileHeaderDocked) && $(document).height() > $(window).height()) {
 				$stickyMobileHeader.removeClass('sticky-mobile-off').addClass('sticky-mobile-on');
 				if(headerBelowSliderExists && stickyMobileHeaderExists){	
@@ -345,11 +345,19 @@
 				});
 			};
 
+
 			if($(".is-safari").length > 0){
-				$stickyHeader.css({
-					"width":  document.documentElement.clientWidth,
-					"max-width":  document.documentElement.clientWidth
-				});
+				if ($page.hasClass("boxed")) {
+					$stickyHeader.css({
+						"width":  $page.width(),
+						"max-width":  $page.width()
+					});
+				}else{
+					$stickyHeader.css({
+						"width":  document.documentElement.clientWidth,
+						"max-width":  document.documentElement.clientWidth
+					});
+				}
 			}
 		};
 
@@ -427,23 +435,7 @@
 			};
 		});		
 	};
-	if ( $mainSlider.find('.rev_slider').exists() && floatingNavigationBelowSliderExists ) {
-	    var revSlider = $mainSlider.find('.rev_slider').first();
-	    $mastheadHeader.css({"opacity": "0", "transition": "opacity 0.3s ease" });
-	    revSlider.bind('revolution.slide.onloaded', function() {
-	    	if ($.isFunction(dtGlobals.resetSizes)) {
-	        	dtGlobals.resetSizes($mainSlider.height());
-	        }
-	        if ($.isFunction(dtGlobals.resetMobileSizes)) {
-	       		dtGlobals.resetMobileSizes($mainSlider.height());
-	       	}
-	        $(window).trigger('scroll');
-	        $mastheadHeader.css({"opacity": "1"});
-	        setTimeout(function(){
-	        	$mastheadHeader.css({"transition": ""});
-	        }, 200)
-	    });
-	}
+
 	//Sticky top line
 	if(stickyTopLine.exists()) {
 		var stickyTopLineH = stickyTopLine.find('.header-bar').height(),
@@ -460,7 +452,7 @@
 			var posScrollTop = dtGlobals.winScrollTop, //window scroll top position
 				stickyTopLineH = stickyTopLine.height(),
 				showstickyTopLineAfter = posScrollTop > stickyTopLineH;
-				if (showstickyTopLineAfter && !topLineDocked){  
+				if (showstickyTopLineAfter && !topLineDocked){
 					stickyTopLine.addClass("sticky-top-line-on");
 					topLineDocked = true;
 				}
@@ -550,7 +542,7 @@
 				};
 				
 				if ($page.hasClass("boxed")) {
-					$phantom.addClass("boxed").velocity({ translateX : "-50%" }, 0).find(".ph-wrap").addClass("boxed");
+					$phantom.addClass("boxed").find(".ph-wrap").addClass("boxed");
 				}
 
 				/* Hide floating on load */

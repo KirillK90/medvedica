@@ -188,6 +188,10 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 			if ( 'standard' == $loading_mode ) {
 				$filter_class[] = 'without-isotope';
 			}
+			if ( 'grid' === $this->get_att( 'mode' ) ) {
+				$filter_class[] = 'css-grid-filter';
+			}
+
 
 			if ( ! $this->get_flag( 'show_orderby_filter' ) && ! $this->get_flag( 'show_order_filter' ) ) {
 				$filter_class[] = 'extras-off';
@@ -472,6 +476,9 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 			) {
 				$class[] = 'disable-layout-hover';
 			}
+			if ( 'grid' === $this->get_att( 'mode' ) ) {
+				$class[] = 'dt-css-grid-wrap';
+			}
 
 
 			if ( $this->get_flag( 'image_hover_bg_color' ) ) {
@@ -503,7 +510,7 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 		 */
 		protected function iso_container_class( $class = array() ) {
 			if ( 'grid' === $this->get_att( 'mode' ) ) {
-				$class[] = 'iso-grid';
+				$class[] = 'dt-css-grid';
 			} else {
 				$class[] = 'iso-container';
 			}
@@ -561,7 +568,9 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 				foreach ( $columns as $column => $data_att ) {
 					$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
 					$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+			
 				}
+
 			}
 
 			return $data_atts;
@@ -622,8 +631,8 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 			$config->set( 'post.preview.background.style', '' );
 			$config->set( 'post.preview.media.width', 30 );
 			$config->set( 'post.preview.width.min', $this->get_att( 'pwb_column_min_width' ) );
-
 			$config->set( 'template.columns.number', $this->get_att( 'pwb_columns' ) );
+
 			$config->set( 'template.posts_filter.terms.enabled', $this->get_flag( 'show_categories_filter' ) );
 			$config->set( 'template.posts_filter.orderby.enabled', $this->get_flag( 'show_orderby_filter' ) );
 			$config->set( 'template.posts_filter.order.enabled', $this->get_flag( 'show_order_filter' ) );
@@ -689,6 +698,27 @@ if ( ! class_exists( 'DT_Shortcode_BlogMasonry', false ) ):
 				'post-thumb-padding-bottom',
 				'post-thumb-padding-left',
 			), $this->get_att( 'image_paddings' ), '%|px' );
+
+			if ( 'browser_width_based' === $this->get_att( 'responsiveness' ) ) {
+				$bwb_columns = DT_VCResponsiveColumnsParam::decode_columns( $this->get_att( 'bwb_columns' ) );
+				$columns = array(
+					'desktop'  => 'desktop',
+					'v_tablet' => 'v-tablet',
+					'h_tablet' => 'h-tablet',
+					'phone'    => 'phone',
+				);
+
+				foreach ( $columns as $column => $data_att ) {
+					$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
+					$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+					
+					$less_vars->add_keyword( $data_att. '-columns-num', esc_attr( $val ) );
+			
+				}
+			};
+			$less_vars->add_pixel_number( 'grid-posts-gap', $this->get_att( 'gap_between_posts' ) );
+			$less_vars->add_pixel_number( 'grid-post-min-width', $this->get_att( 'pwb_column_min_width' ));
+
 
 			$less_vars->add_keyword( 'fancy-data-color', $this->get_att( 'fancy_date_font_color', '~""' ) );
 			$less_vars->add_keyword( 'fancy-data-bg', $this->get_att( 'fancy_date_bg_color', '~""' ) );

@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="the7-column-container">
 
-            <?php if ( is_super_admin() ): ?>
+            <?php if ( ! defined( 'ENVATO_HOSTED_SITE' ) && is_super_admin() ): ?>
             <div class="the7-column" style="width: 40%">
                 <h3>
                     <?php 
@@ -87,6 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 
+    <?php if ( ! defined( 'ENVATO_HOSTED_SITE' ) ): ?>
     <div class="the7-postbox">
         <h2><?php esc_html_e( 'System Status', 'the7mk2' ); ?></h2>
         <table class="the7-system-status" cellspacing="0" cellpadding="0">
@@ -225,6 +226,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php endif; ?>
         </table>
     </div>
+    <?php endif; ?>
 
     <?php include dirname( __FILE__ ) . '/partials/the7-dashboard/settings.php'; ?>
 </div>

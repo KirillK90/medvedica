@@ -189,9 +189,9 @@ $(window).trigger("resize");
 var pageSlideshowHeader = {
 	_isSlideshow: false,
 	_isTransOrNormal: false,
-	_headerTitle: $('.rwmb-input-_dt_header_title input'),
-	_headerBg: $('.rwmb-input-_dt_header_background input'),
-	_target: $( '.rwmb-input-_dt_header_header-below-slideshow' ),
+	_headerTitle: $('.the7-mb-input-_dt_header_title input'),
+	_headerBg: $('.the7-mb-input-_dt_header_background input'),
+	_target: $( '.the7-mb-input-_dt_header_header-below-slideshow' ),
 	init: function() {
 		var self = this;
 
@@ -242,7 +242,7 @@ jQuery(function($) {
 	};
 
 	// show/hide slideshow and fancy header meta boxes
-	$('.rwmb-input-_dt_header_title input[type="radio"]').on('change', function(e){
+	$('.the7-mb-input-_dt_header_title input[type="radio"]').on('change', function(e){
 		var $this = $(this),
 			val = $this.val(),
 			$wpMetaBoxesSwitcher = $('#adv-settings'),
@@ -271,10 +271,10 @@ jQuery(function($) {
 	$("#page_template").on('dtBoxesToggled', function(){
 		var template = $(this).val();
 
-		$('.rwmb-input-_dt_header_title input[type="radio"]:checked').trigger('change');
+		$('.the7-mb-input-_dt_header_title input[type="radio"]:checked').trigger('change');
 	
 		// show/hide meta box fields for templates
-		$('.rwmb-hidden-field.hide-if-js').each(function(e){
+		$('.the7-mb-hidden-field.hide-if-js').each(function(e){
 			var $this = $(this),
 				attr = $this.attr('data-show-on');
 			
@@ -288,9 +288,9 @@ jQuery(function($) {
 	});
 
 	// change event for radio buttons
-	$('.rwmb-radio-hide-fields').each(function() {
+	$('.the7-mb-radio-hide-fields').each(function() {
 		var $miniContainer = $(this),
-			$container = $miniContainer.parents('.rwmb-field').first();
+			$container = $miniContainer.parents('.the7-mb-field').first();
 
 		$miniContainer.find('input[type="radio"]').on('click', function(e){
 			var $input = $(this),
@@ -306,7 +306,7 @@ jQuery(function($) {
 
 			/*// hide fields
 			for( var i = 0; i < ids.length; i++ ) {
-				$('.rwmb-input-'+ids[i]).parent().hide();
+				$('.the7-mb-input-'+ids[i]).parent().hide();
 				
 				var showIndex = showIds.indexOf(ids[i]);
 				if ( showIndex > -1 ) {
@@ -316,12 +316,12 @@ jQuery(function($) {
 
 			// show hidden fields
 			for( i = 0; i < showIds.length; i++ ) {
-				$('.rwmb-input-'+showIds[i]).parent().show();
+				$('.the7-mb-input-'+showIds[i]).parent().show();
 			}*/
 
 			// hide fields
 			for( var i = 0; i < ids.length; i++ ) {
-				$('.rwmb-input-'+ids[i]).closest('.rwmb-field, .rwmb-flickering-field').hide();
+				$('.the7-mb-input-'+ids[i]).closest('.the7-mb-field, .the7-mb-flickering-field').hide();
 				
 				var showIndex = showIds.indexOf(ids[i]);
 				if ( showIndex > -1 ) {
@@ -331,7 +331,7 @@ jQuery(function($) {
 
 			// show hidden fields
 			for( i = 0; i < showIds.length; i++ ) {
-				$('.rwmb-input-'+showIds[i]).closest('.rwmb-field, .rwmb-flickering-field').show();
+				$('.the7-mb-input-'+showIds[i]).closest('.the7-mb-field, .the7-mb-flickering-field').show();
 			}
 
 			// store hidden ids
@@ -341,9 +341,9 @@ jQuery(function($) {
 	});
 
 	// change event for checkboxes
-	$('.rwmb-checkbox-hide-fields').each(function() {
+	$('.the7-mb-checkbox-hide-fields').each(function() {
 		var $miniContainer = $(this),
-			$container = $miniContainer.parents('.rwmb-field').first();
+			$container = $miniContainer.parents('.the7-mb-field').first();
 
 		$miniContainer.find('input[type="checkbox"]').on('change', function(e){
 			var $input = $(this),
@@ -361,14 +361,14 @@ jQuery(function($) {
 
 				// show hidden fields
 				for( i = 0; i < ids.length; i++ ) {
-					$('.rwmb-input-'+ids[i]).parent().show();
+					$('.the7-mb-input-'+ids[i]).parent().show();
 				}
 
 			} else {
 
 				// hide fields
 				for( var i = 0; i < ids.length; i++ ) {
-					$('.rwmb-input-'+ids[i]).parent().hide();
+					$('.the7-mb-input-'+ids[i]).parent().hide();
 /*					
 					var showIndex = showIds.indexOf(ids[i]);
 					if ( showIndex > -1 ) {
@@ -391,10 +391,10 @@ jQuery(function($) {
 	// Proportions slider
 	/*****************************************************************************************/
 
-	$( '.rwmb-proportion_slider-wrapper .rwmb-slider' ).each( function() {
+	$( '.the7-mb-proportion_slider-wrapper .the7-mb-slider' ).each( function() {
 		var $this = $(this),
-			$prview = $this.parents('.rwmb-proportion_slider-wrapper').find('.rwmb-proportion_slider-prop-box'),
-			propIndex = parseInt( $this.parents('.rwmb-input').find('input').val() ), // proportion index
+			$prview = $this.parents('.the7-mb-proportion_slider-wrapper').find('.the7-mb-proportion_slider-prop-box'),
+			propIndex = parseInt( $this.parents('.the7-mb-input').find('input').val() ), // proportion index
 			w = 80, // preview width in pixels
 			h = 80, // preview height in pixels
 			sliderWidth = 407;
@@ -402,20 +402,20 @@ jQuery(function($) {
 		// add legend
 		//store our select options in an array so we can call join(delimiter) on them
 		var options = [];
-		for(var index in rwmbImageRatios) {
+		for(var index in the7mbImageRatios) {
 			if ( 'length' == index ) continue;
-		  	options.push(rwmbImageRatios[index].desc);
+		  	options.push(the7mbImageRatios[index].desc);
 		}
 
 		//how far apart each option label should appear
 		var width = parseInt(Math.round( sliderWidth / (options.length - 1) ));
 
 		//after the slider create a containing div with p tags of a set width.
-		$this.after('<div class="ui-slider-legend"><p style="width:' + width + 'px;">' + options.join('</p><p style="width:' + width + 'px;">') +'</p></div><div class="rwmb-slider-prop-label"><span></span></div>');
+		$this.after('<div class="ui-slider-legend"><p style="width:' + width + 'px;">' + options.join('</p><p style="width:' + width + 'px;">') +'</p></div><div class="the7-mb-slider-prop-label"><span></span></div>');
 
 		// get new dimensions
 		var res = dtResizeSquare( propIndex, w, h ),
-			$label = $this.siblings('.rwmb-slider-prop-label').find('span');
+			$label = $this.siblings('.the7-mb-slider-prop-label').find('span');
 
 		// set new dimesions for preview
 		$prview.css('width', res.w);
@@ -452,7 +452,7 @@ function dtResizeSquare( propIndex, w, h ) {
 	if ( !propIndex ) propIndex = def;
 
 	// get proportion from global object
-	prop = rwmbImageRatios[ propIndex ].ratio;
+	prop = the7mbImageRatios[ propIndex ].ratio;
 
 	if ( propIndex < def ) {
 		newH = parseInt(Math.round( w / prop ));
@@ -465,15 +465,15 @@ function dtResizeSquare( propIndex, w, h ) {
 		newH = parseInt(Math.round( newW / prop ));
 	}
 
-	return { w: newW, h: newH, desc: rwmbImageRatios[ propIndex ].desc };
+	return { w: newW, h: newH, desc: the7mbImageRatios[ propIndex ].desc };
 }
 
 function dtGetDefaultIndex() {
-	var length = rwmbImageRatios.length,
+	var length = the7mbImageRatios.length,
 		def = 1;
 
 	for ( var i=1; i<=length; i++ ) {
-		if ( 1 == rwmbImageRatios[i].ratio ) {
+		if ( 1 == the7mbImageRatios[i].ratio ) {
 			def = i;
 			break;
 		}
@@ -583,7 +583,7 @@ jQuery(document).ready( function($) {
     }
 
     function getPostMeta() {
-        return $('.rwmb-field').find(':input').serializeArray();
+        return $('.the7-mb-field').find(':input').serializeArray();
     }
 
     function presetActionsVisibilityCheck() {

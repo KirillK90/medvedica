@@ -157,13 +157,12 @@ $options[] = array( "name" => _x( "Footer layout", "theme-options", 'the7mk2' ),
 	$options[] = array( "type" => "divider" );
 
 	$options[] = array(
-		"desc"		=> _x( "E.g. 20 pixel padding will give you 40 pixel gap between columns.", "theme-options", 'the7mk2' ),
-		"name"		=> _x( "Padding between footer columns (px)", "theme-options", 'the7mk2' ),
-		"id"		=> "footer-paddings-columns",
-		"std"		=> 44,
-		"type"		=> "text",
-		"class"		=> "mini",
-		"sanitize"	=> "dimensions"
+		'desc'  => _x( 'E.g. 20 pixel padding will give you 40 pixel gap between columns.', 'theme-options', 'the7mk2' ),
+		'name'  => _x( 'Padding between footer columns', 'theme-options', 'the7mk2' ),
+		'id'    => 'footer-paddings-columns',
+		'std'   => '44px',
+		'type'  => 'number',
+		'units' => 'px',
 	);
 
 	$options[] = array( "type" => "divider" );
@@ -174,19 +173,17 @@ $options[] = array( "name" => _x( "Footer layout", "theme-options", 'the7mk2' ),
 		"id"		=> "footer-layout",
 		"std"		=> "1/4+1/4+1/4+1/4",
 		"type"		=> "text",
-		// "class"		=> "mini"
 	);
 
 	$options[] = array( "type" => "divider" );
 
 	$options[] = array(
-		"name"		=> _x( "Collapse to one column after (px)", "theme-options", 'the7mk2' ),
-		"desc"		=> _x( "Won't have any effect if responsiveness is disabled.", "theme-options", 'the7mk2' ),
-		"id"		=> "footer-collapse_after",
-		"std"		=> 760,
-		"type"		=> "text",
-		"class"		=> "mini",
-		"sanitize"	=> "dimensions"
+		'name'  => _x( 'Collapse to one column after', 'theme-options', 'the7mk2' ),
+		'desc'  => _x( "Won't have any effect if responsiveness is disabled.", 'theme-options', 'the7mk2' ),
+		'id'    => 'footer-collapse_after',
+		'std'   => '760px',
+		'type'  => 'number',
+		'units' => 'px',
 	);
 
 $options[] = array( "name" => _x( "Bottom bar", "theme-options", 'the7mk2' ), "type" => "heading", "id" => "bottom-bar" );
@@ -257,6 +254,63 @@ $options[] = array( "name" => _x( "Bottom bar style", "theme-options", 'the7mk2'
 		);
 
 	$options[] = array( "type" => "js_hide_end" );
+
+$options[] = array( "name" => _x( "Bottom bar layout", "theme-options", 'the7mk2' ), "type" => "block" );
+
+	$options[] = array(
+		"name"		=> _x( "Layout", "theme-options", 'the7mk2' ),
+		"id"		=> "bottom_bar-layout",
+		"std"		=> "logo_left",
+		'type'		=> 'images',
+		'class'     => 'small',
+		"options"	=> array(
+			'logo_left'	=> array(
+				'title' => _x( "Side", "theme-options", 'the7mk2' ),
+				'src' => '/inc/admin/assets/images/bb02.gif',
+			),
+			'split'		=>  array(
+				'title' => _x( "Split", "theme-options", 'the7mk2' ),
+				'src' => '/inc/admin/assets/images/bbsplit.gif',
+			),
+			'logo_center'		=>  array(
+				'title' => _x( "Centered", "theme-options", 'the7mk2' ),
+				'src' => '/inc/admin/assets/images/bb01.gif',
+			),
+		),
+	);
+
+	$options[] = array( "type" => "divider" );
+
+	$options['bottom_bar-height'] = array(
+		'id'    => 'bottom_bar-height',
+		'name'  => _x( 'Height', 'theme-options', 'the7mk2' ),
+		'std'   => '60px',
+		'type'  => 'number',
+		'units' => 'px',
+	);
+
+	$options['bottom_bar-padding'] = array(
+		'name' => _x( 'Paddings', 'theme-options', 'the7mk2' ),
+		'id' => 'bottom_bar-padding',
+		'type' => 'spacing',
+		'std' => '10 10',
+		'units' => 'px',
+		'fields' => array(
+			_x( 'Top', 'theme-options', 'the7mk2' ),
+			_x( 'Bottom', 'theme-options', 'the7mk2' ),
+		),
+	);
+
+
+	$options[] = array(
+		'name'  => _x( 'Enable responsive layout after', 'theme-options', 'the7mk2' ),
+		'desc'  => _x( "Won't have any effect if responsiveness is disabled.", 'theme-options', 'the7mk2' ),
+		'id'    => 'bottom_bar-collapse_after',
+		'std'   => '990px',
+		'type'  => 'number',
+		'units' => 'px',
+		'divider' => 'top',
+	);
 
 $options[] = array(	"name" => _x( 'Bottom bar font color', 'theme-options', 'the7mk2' ), "type" => "block" );
 

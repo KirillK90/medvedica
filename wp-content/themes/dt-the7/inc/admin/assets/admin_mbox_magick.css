@@ -440,58 +440,58 @@ div.dt-no-image {
 /* Meta-box styles */
 /*
 
-.rwmb-radio-wrapper label {
+.the7-mb-radio-wrapper label {
 	margin-right: 5px;
 }
-.rwmb-label {
+.the7-mb-label {
 	margin: 0 0 1em 0;
 	width: 100%;
 }
-.rwmb-label label {
+.the7-mb-label label {
 	font-weight: bold;
 }
-.rwmb-field {
+.the7-mb-field {
 	margin: 1em 0;
 }
-#post-body .rwmb-select {
+#post-body .the7-mb-select {
 	min-width: 0px;
 }
-.rwmb-radio-wrapper .rwmb-label {
+.the7-mb-radio-wrapper .the7-mb-label {
 	display: inline-block;
 	width: auto;
 	margin: 0 0.5em 0 0;
 }
-#side-sortables .rwmb-checkbox-wrapper .rwmb-label,
-.rwmb-checkbox-wrapper .rwmb-label,
-#side-sortables .rwmb-select-wrapper .rwmb-label,
-.rwmb-select-wrapper .rwmb-label
+#side-sortables .the7-mb-checkbox-wrapper .the7-mb-label,
+.the7-mb-checkbox-wrapper .the7-mb-label,
+#side-sortables .the7-mb-select-wrapper .the7-mb-label,
+.the7-mb-select-wrapper .the7-mb-label
 {
 	display: inline-block;
 	width: auto;
 }
-.rwmb-checkbox-wrapper .rwmb-label {
+.the7-mb-checkbox-wrapper .the7-mb-label {
 	margin: 0 0 0 0.5em;
 }
-#side-sortables .rwmb-checkbox-wrapper .rwmb-label label,
-.rwmb-checkbox-wrapper .rwmb-label label{
+#side-sortables .the7-mb-checkbox-wrapper .the7-mb-label label,
+.the7-mb-checkbox-wrapper .the7-mb-label label{
 	font-weight: normal;
 }
-#side-sortables .rwmb-checkbox-wrapper .rwmb-input,
-.rwmb-checkbox-wrapper .rwmb-input {
+#side-sortables .the7-mb-checkbox-wrapper .the7-mb-input,
+.the7-mb-checkbox-wrapper .the7-mb-input {
 	display: inline-block;
 	float: left;
 	width: auto;
 }
-.rwmb-label ~ .rwmb-input.dt_radio-img {
+.the7-mb-label ~ .the7-mb-input.dt_radio-img {
 	width: 100%;
 }
 */
 
-.rwmb-field .dt_radio-img {
+.the7-mb-field .dt_radio-img {
 	width: 100%;
 }
 
-.rwmb-radio-wrapper label {
+.the7-mb-radio-wrapper label {
 	margin-right: 20px;
 }
 
@@ -499,36 +499,36 @@ div.dt-no-image {
 /* Proportions slider */
 /*****************************************************************************************/
 
-.rwmb-proportion_slider-wrapper .rwmb-slider {
+.the7-mb-proportion_slider-wrapper .the7-mb-slider {
 	width: 407px;
 }
 
-#side-sortables .rwmb-proportion_slider-wrapper .rwmb-slider {
+#side-sortables .the7-mb-proportion_slider-wrapper .the7-mb-slider {
 	width: 190px;
 }
 
-.rwmb-proportion_slider-wrapper .rwmb-slider-value-label {
+.the7-mb-proportion_slider-wrapper .the7-mb-slider-value-label {
 	display: none;
 }
 
-.rwmb-proportion_slider-wrapper .ui-slider-legend p {
+.the7-mb-proportion_slider-wrapper .ui-slider-legend p {
 	display: inline-block;
 	text-align: center;
 }
 
-.rwmb-proportion_slider-wrapper .ui-slider-legend {
+.the7-mb-proportion_slider-wrapper .ui-slider-legend {
 	margin-left: -14px;
 }
 
-.rwmb-proportion_slider-wrapper .ui-slider-legend {
+.the7-mb-proportion_slider-wrapper .ui-slider-legend {
 	display: block;
 }
 
-#side-sortables .rwmb-proportion_slider-wrapper .ui-slider-legend {
+#side-sortables .the7-mb-proportion_slider-wrapper .ui-slider-legend {
 	display: none;
 }
 
-.rwmb-proportion_slider-wrapper .rwmb-proportion_slider-preview-container {
+.the7-mb-proportion_slider-wrapper .the7-mb-proportion_slider-preview-container {
 	width: 240px;
 	height: 242px;
 	line-height: 240px;
@@ -539,7 +539,7 @@ div.dt-no-image {
 	border-width: 2px;
 }
 
-.rwmb-proportion_slider-wrapper .rwmb-proportion_slider-prop-box {
+.the7-mb-proportion_slider-wrapper .the7-mb-proportion_slider-prop-box {
 	width: 80px;
 	height: 80px;
 	vertical-align: middle;
@@ -549,11 +549,11 @@ div.dt-no-image {
 	border-color: black;
 }
 
-.rwmb-proportion_slider-wrapper .rwmb-slider-prop-label {
+.the7-mb-proportion_slider-wrapper .the7-mb-slider-prop-label {
 	display: none;
 }
 
-#side-sortables .rwmb-proportion_slider-wrapper .rwmb-slider-prop-label {
+#side-sortables .the7-mb-proportion_slider-wrapper .the7-mb-slider-prop-label {
 	display: inline-block;
 	margin-left: 20px;
 	border-width: 1px;
@@ -563,7 +563,7 @@ div.dt-no-image {
 	text-align: center;
 }
 
-.rwmb-meta-box p.description {
+.the7-mb-meta-box p.description {
 	font-size: 11px;
 	line-height: 18px;
 	color: #aaaaaa;

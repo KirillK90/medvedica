@@ -734,7 +734,7 @@ if ( ! function_exists( 'presscore_fancy_header_controller' ) ) :
 		$container_classes = array( 'fancy-header' );
 
 		if ( $title ) {
-			$title = '<div class="wf-td hgroup">' . $title . '</div>';
+			$title = '<div class="fancy-title-head hgroup">' . $title . '</div>';
 
 		// if title and subtitle empty
 		} else {
@@ -750,8 +750,8 @@ if ( ! function_exists( 'presscore_fancy_header_controller' ) ) :
 		if ( 'enabled' == $config->get( 'fancy_header.breadcrumbs' ) ) {
 
 			$breadcrumbs_args = array(
-				'beforeBreadcrumbs' => '<div class="wf-td">',
-				'afterBreadcrumbs' => '</div>'
+				'beforeBreadcrumbs' => '',
+				'afterBreadcrumbs' => ''
 			);
 
 			$breadcrumbs_class = 'breadcrumbs text-small';
@@ -866,8 +866,6 @@ if ( ! function_exists( 'presscore_fancy_header_controller' ) ) :
 		/////////////////////
 
 		$min_h_height = ' style="min-height: ' . $config->get('fancy_header.height') . 'px;"';
-		$wf_table_height = ' style="height: ' . $config->get('fancy_header.height') . 'px;"';
-		$container_style[] = 'min-height: ' . $config->get('fancy_header.height') . 'px';
 		$container_style[] = 'padding-top: ' . $config->get('fancy_header.padding.top') . '';
 		$container_style[] = 'padding-bottom: ' . $config->get('fancy_header.padding.bottom') . '';
 		//////////////
@@ -876,16 +874,13 @@ if ( ! function_exists( 'presscore_fancy_header_controller' ) ) :
 
 		printf(
 			'<header id="fancy-header" class="%1$s" style="%2$s" %3$s>
-			<div class="wf-wrap">
-				<div class="wf-table"%5$s>%4$s</div>
-			</div>
+			<div class="wf-wrap"%5$s>%4$s</div>
 			<span class="fancy-header-overlay" style="background-color: ' . esc_attr( $overlay_transparent_bg_color ) . ';"></span>
 			</header>',
 			esc_attr( implode( ' ', $container_classes ) ),
 			esc_attr( implode( '; ', $container_style ) ),
 			implode( ' ', $data_attr ),
 			$content,
-			$wf_table_height,
 			$min_h_height
 		);
 	}
@@ -927,35 +922,30 @@ if ( ! function_exists( 'presscore_page_title_controller' ) ) :
 		?>
 		<div <?php echo presscore_get_page_title_wrap_html_class( 'page-title' ), $page_title_wrap_attrs; ?>>
 			<div class="wf-wrap">
-				<div class="wf-container-title">
-					<div class="wf-table">
 
-						<?php
-						// get page title
-						if ( $config->get( 'page_title.enabled' ) ) {
-							$page_title = '<div class="wf-td hgroup"><h1 ' . presscore_get_page_title_html_class() . '>' . presscore_get_page_title() . '</h1></div>';
-						} else {
-							$page_title = '';
-						}
-						$page_title = apply_filters( 'presscore_page_title', $page_title );
+				<?php
+				// get page title
+				if ( $config->get( 'page_title.enabled' ) ) {
+					$page_title = '<div class="page-title-head hgroup"><h1 ' . presscore_get_page_title_html_class() . '>' . presscore_get_page_title() . '</h1></div>';
+				} else {
+					$page_title = '';
+				}
+				$page_title = apply_filters( 'presscore_page_title', $page_title );
 
-						// get breadcrumbs
-						if ( $config->get( 'page_title.breadcrumbs.enabled' ) ) {
-							$breadcrumbs = presscore_get_page_title_breadcrumbs();
-						} else {
-							$breadcrumbs = '';
-						}
+				// get breadcrumbs
+				if ( $config->get( 'page_title.breadcrumbs.enabled' ) ) {
+					$breadcrumbs = presscore_get_page_title_breadcrumbs();
+				} else {
+					$breadcrumbs = '';
+				}
 
-						// output
-						if ( 'right' == $config->get( 'page_title.align' ) ) {
-							echo $breadcrumbs, $page_title;
-						} else {
-							echo $page_title, $breadcrumbs;
-						}
-						?>
-
-					</div>
-				</div>
+				// output
+				if ( 'right' == $config->get( 'page_title.align' ) ) {
+					echo $breadcrumbs, $page_title;
+				} else {
+					echo $page_title, $breadcrumbs;
+				}
+				?>
 			</div>
 		</div>
 

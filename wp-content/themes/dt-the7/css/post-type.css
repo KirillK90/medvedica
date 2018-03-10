@@ -11,7 +11,7 @@
 .testimonial-item:not(.testimonial-item-slider) {
   padding: 20px 25px 20px;
 }
-.dt-testimonials-shortcode .iso-grid .testimonial-item {
+.dt-testimonials-shortcode .dt-css-grid .testimonial-item {
   height: 100%;
 }
 .testimonial-item .ts-slide {
@@ -402,7 +402,7 @@ body.testimonials {
   -ms-align-content: center;
   align-content: center;
 }
-.dt-team-shortcode .iso-grid .team-container {
+.dt-team-shortcode .dt-css-grid .team-container {
   height: 100%;
 }
 .bg-on.team-container:not(.fullwidth-img) {
@@ -491,6 +491,9 @@ body.testimonials {
 }
 .content-align-center .team-media {
   text-align: center;
+}
+.dt-css-grid .team-media {
+  -ms-flex: 0 0 auto;
 }
 .team-media > a,
 .team-media > span {

@@ -3,7 +3,7 @@
 ================================================== */
 
 // jQuery(document).ready(function($) {
-	var $moveBody = $("html");
+	var $moveBody = $("html, body");
 	var phantomStickyExists = $(".phantom-sticky").exists(),
 		sideHeaderHStrokeExists = $(".sticky-top-line").exists(),
 		stickyMobileHeader = $(".sticky-mobile-header").exists(),
@@ -69,50 +69,44 @@
 			if( typeof urlHash != 'undefined' && urlHash.length > 0 ) {
 				if(urlHash == "up") {
 					$.closeMobileHeader();
-					$moveBody.stop().velocity("scroll", { 
-						offset: 0,
-						duration: 600,
-						mobileHA: false,
-						complete: function(elements) { $.closeSideHeader(); }
+					$moveBody.stop().animate({
+						scrollTop: 0
+					}, 600, 'swing',
+					function() { 
+						$.closeSideHeader();
 					});
 
 				}else{
 					setTimeout(function(){
-						$moveBody.stop().velocity("scroll", { 
-							offset: $("#" + urlHash).offset().top - floatMenuH,
-							duration: 600,
-							mobileHA: false,
-							complete: function(elements) {
+						$moveBody.stop().animate({
+							scrollTop: $("#" + urlHash).offset().top - floatMenuH
+						}, 600, 'swing',
+						function() { 
 
-								if(window.innerWidth < dtLocal.themeSettings.mobileHeader.firstSwitchPoint && !$body.hasClass("responsive-off")){
-									if(stickyMobileHeader){
-										if(mobileHeaderDocked){
-											$moveBody.stop().velocity("scroll", { 
-												offset: $("#" + urlHash).offset().top - $(".masthead-mobile-header .mobile-header-bar").height(),
-												duration: 650,
-												mobileHA: false 
-											});
-										}else{
-											$moveBody.stop().velocity("scroll", { 
-												offset: $("#" + urlHash).offset().top - $($headerBar, $phantom).height(),
-												duration: 650,
-												mobileHA: false 
-											});
-										}
+							if(window.innerWidth < dtLocal.themeSettings.mobileHeader.firstSwitchPoint && !$body.hasClass("responsive-off")){
+								if(stickyMobileHeader){
+									if(mobileHeaderDocked){
+										$moveBody.stop().animate({
+											scrollTop: $("#" + urlHash).offset().top - $(".masthead-mobile-header .mobile-header-bar").height()
+											}, 650, 'swing');
+									}else{
+										$moveBody.stop().animate({
+											scrollTop: $("#" + urlHash).offset().top - $($headerBar, $phantom).height()
+											}, 650, 'swing');
 									}
-								}else{
-									if(phantomStickyExists ||  sideHeaderHStrokeExists){
-										
+
+								}
+							}else{
+								if(phantomStickyExists ||  sideHeaderHStrokeExists){
 									
-										$moveBody.stop().velocity("scroll", { 
-											offset: $("#" + urlHash).offset().top - $($headerBar, $phantom).height(),
-											duration: 650,
-											mobileHA: false 
-										});
+								
+									$moveBody.stop().animate({
+										scrollTop: $("#" + urlHash).offset().top - $($headerBar, $phantom).height()
+									}, 650, 'swing');
 
-									}
 								}
 							}
+							//}
 						});
 					},300)
 				}
@@ -166,29 +160,25 @@
 				if($body.hasClass("overlay-navigation")){
 					$.closeMobileHeader();
 					$.closeSideHeader();
-					$moveBody.stop().velocity("scroll", { 
-						offset: top - floatMenuH,
-						duration: speed,
-						mobileHA: false 
-					});
+					$moveBody.stop().animate({
+						scrollTop: top - floatMenuH
+					}, speed, 'swing');
 				}else{
 					$.closeMobileHeader();
-					$moveBody.stop().velocity("scroll", { 
-						offset: 0,
-						duration: speed,
-						mobileHA: false,
-						complete: function(elements) { $.closeSideHeader(); }
-					});
+					$moveBody.stop().animate({
+						scrollTop: 0
+					}, speed, 'swing',
+					function() { $.closeSideHeader(); }
+					);
 				}
 			}else {
 				if($body.hasClass("overlay-navigation")){
 					$.closeMobileHeader();
 					$.closeSideHeader();
-					$moveBody.stop().velocity("scroll", { 
-						offset: top - floatMenuH ,
-						duration: speed,
-						mobileHA: false,
-						complete: function(elements) { 
+					$moveBody.stop().animate({
+						scrollTop: top - floatMenuH
+					}, speed, 'swing',
+						function() { 
 							if(window.innerWidth < dtLocal.themeSettings.mobileHeader.firstSwitchPoint && !$body.hasClass("responsive-off")){
 								if(stickyMobileHeader){
 									if(mobileHeaderDocked){
@@ -197,34 +187,30 @@
 										$newScrollPosition = ( top - $($headerBar, $phantom).height() );
 									}
 
-									$moveBody.stop().velocity("scroll", { 
-										offset: $newScrollPosition,
-										duration: 650,
-										mobileHA: false,
-									});
+									$moveBody.stop().animate({
+										scrollTop: $newScrollPosition
+									}, 650, 'swing');
 
 								}
 							}else{
 								if(sideHeaderHStrokeExists){
 									$newScrollPosition = ( top - $(".sticky-top-line").height() )
 
-									$moveBody.stop().velocity("scroll", { 
-										offset: $newScrollPosition,
-										duration: 650,
-										mobileHA: false,
-									});
+									$moveBody.stop().animate({
+										scrollTop: $newScrollPosition
+									}, 650, 'swing');
 								
 								}
 							}
-						}
+						
 					});
 				}else{
 					$.closeMobileHeader();
-					$moveBody.stop().velocity("scroll", { 
-						offset: top - floatMenuH ,
-						duration: speed,
-						mobileHA: false,
-						complete: function(elements) {
+					$moveBody.stop().animate({
+						scrollTop: top - floatMenuH
+					}, speed, 'swing',
+						function() { 
+
 							$.closeSideHeader();
 
 							if(window.innerWidth < dtLocal.themeSettings.mobileHeader.firstSwitchPoint && !$body.hasClass("responsive-off")){
@@ -237,11 +223,9 @@
 										$newScrollPosition = ( top - $($headerBar, $phantom).height() );
 									}
 
-									$moveBody.stop().velocity("scroll", { 
-										offset: $newScrollPosition,
-										duration: 650,
-										mobileHA: false,
-									});
+									$moveBody.stop().animate({
+										scrollTop: $newScrollPosition
+									}, 650, 'swing');
 								}
 							}else{
 								if(phantomStickyExists ||  sideHeaderHStrokeExists){
@@ -251,17 +235,15 @@
 										$newScrollPosition = ( top - $(".sticky-top-line").height() )
 									}
 
-									$moveBody.stop().velocity("scroll", { 
-										offset: $newScrollPosition,
-										duration: 650,
-										mobileHA: false,
-									});
+									$moveBody.stop().animate({
+										scrollTop: $newScrollPosition
+									}, 650, 'swing');
 								
 								}
 							}
 
 						
-						}
+						//}
 					});
 				}
 			};

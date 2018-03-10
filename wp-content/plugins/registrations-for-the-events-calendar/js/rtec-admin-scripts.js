@@ -1,6 +1,5 @@
 jQuery(document).ready(function($){
 
-
     // FORM tab
     var $body = $('body');
     $body.on('click', '.rtec_require_checkbox', function (event) {
@@ -13,6 +12,22 @@ jQuery(document).ready(function($){
         if (!$(event.target).is(':checked')) {
             $(event.target).closest('.rtec-checkbox-row').find('.rtec_require_checkbox').prop( "checked", false );
         }
+    });
+
+    $body.on('click', '.rtec-reveal-field-atts', function (event) {
+        var $self = $(event.target);
+        $self.next().slideToggle();
+    });
+
+    $('.rtec-field-wrapper-email .rtec_include_checkbox').click(function() {
+        var $self = $(this);
+
+        if (!$self.is(':checked')) {
+            if (!confirm('This field is used for sending all emails to your attendees. Removing it from this form will prevent confirmation emails from being sent. Continue?')) {
+                $self.attr('checked',true);
+            }
+        }
+
     });
 
     var $rtecAttendanceMessageType = $('.rtec_attendance_message_type');
@@ -55,7 +70,7 @@ jQuery(document).ready(function($){
 
         $(this).closest('div').before(
             '<div id="rtec-custom-field-'+customFieldID+'" class="rtec-field-options-wrapper rtec-custom-field" data-name="custom'+customFieldID+'">' +
-                '<a href="JavaScript:void(0);" class="rtec-custom-field-remove"><i class="fa fa-trash" aria-hidden="true"></i></a>' +
+                '<a href="JavaScript:void(0);" class="rtec-custom-field-remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>' +
                 '<h4>Custom Field '+customFieldID+'</h4> ' +
                 '<p>' +
                     '<label>Label:</label><input type="text" name="rtec_options[custom'+customFieldID+'_label]" value="Custom '+customFieldID+'" class="large-text">' +
@@ -232,6 +247,22 @@ jQuery(document).ready(function($){
         clearTimeout(typingTimer);
     });
 
+    // dismiss new
+    $('#rtec-new-dismiss').click(function(event) {
+        event.preventDefault();
+        $('#rtec-new-dismiss,.rtec-notice-admin-reg-count').remove();
+
+        var submitData = {
+                action: 'rtec_dismiss_new',
+                rtec_nonce : rtecAdminScript.rtec_nonce
+            },
+            successFunc = function (data) {
+                $('#rtec-new-dismiss,.rtec-notice-admin-reg-count').remove();
+                $('.rtec-notice-new').hide();
+                console.log('done');
+            };
+        rtecRegistrationAjax(submitData,successFunc);
+    });
     $('.rtec-hidden-options').hide();
 
     var $rtecOptionsHandle = $('.rtec-event-options .handlediv');

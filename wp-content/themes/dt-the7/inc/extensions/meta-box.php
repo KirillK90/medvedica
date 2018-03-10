@@ -18,7 +18,7 @@ require_once( PRESSCORE_EXTENSIONS_DIR . '/custom-meta-boxes/override-fields.php
  * Include Meta-Box framework.
  *
  */
-require_once( RWMB_DIR . 'meta-box.php' );
+require_once( THE7_RWMB_DIR . 'meta-box.php' );
 
 /**
  * Include custom metaboxes.
@@ -31,7 +31,7 @@ require_once( PRESSCORE_EXTENSIONS_DIR . '/custom-meta-boxes/metabox-fields.php'
  */
 function presscore_register_meta_boxes() {
 	// Make sure there's no errors when the plugin is deactivated or during upgrade
-	if ( !class_exists( 'RW_Meta_Box' ) ) {
+	if ( !class_exists( 'The7_RW_Meta_Box' ) ) {
 		return;
 	}
 
@@ -40,7 +40,7 @@ function presscore_register_meta_boxes() {
 	do_action( 'the7_before_meta_box_registration' );
 
 	foreach ( $DT_META_BOXES as $meta_box ) {
-		new RW_Meta_Box( $meta_box );
+		new The7_RW_Meta_Box( $meta_box );
 	}
 }
 add_action( 'admin_init', 'presscore_register_meta_boxes', 30 );

@@ -367,7 +367,7 @@ if ( ! class_exists( 'DT_Shortcode_Team_Masonry', false ) ) :
 		 */
 		protected function iso_container_class( $class = array() ) {
 			if ( 'grid' === $this->get_att( 'type' ) ) {
-				$class[] = 'iso-grid';
+				$class[] = 'dt-css-grid';
 			} else {
 				$class[] = 'iso-container';
 			}
@@ -527,6 +527,26 @@ if ( ! class_exists( 'DT_Shortcode_Team_Masonry', false ) ) :
 				'post-title-font-weight',
 				'post-title-text-transform',
 			), $this->get_att( 'post_title_font_style' ) );
+			if ( 'browser_width_based' === $this->get_att( 'responsiveness' ) ) {
+				$bwb_columns = DT_VCResponsiveColumnsParam::decode_columns( $this->get_att( 'bwb_columns' ) );
+				$columns = array(
+					'desktop'  => 'desktop',
+					'v_tablet' => 'v-tablet',
+					'h_tablet' => 'h-tablet',
+					'phone'    => 'phone',
+				);
+
+				foreach ( $columns as $column => $data_att ) {
+					$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
+					$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+					
+					$less_vars->add_keyword( $data_att. '-columns-num', esc_attr( $val ) );
+			
+				}
+			};
+			$less_vars->add_pixel_number( 'grid-posts-gap', $this->get_att( 'gap_between_posts' ) );
+			$less_vars->add_pixel_number( 'grid-post-min-width', $this->get_att( 'pwb_column_min_width' ));
+			$less_vars->add_pixel_number( 'grid-desire-col-num', $this->get_att( 'pwb_columns' ) );
 			$less_vars->add_pixel_number( 'post-title-font-size', $this->get_att( 'post_title_font_size' ) );
 			$less_vars->add_pixel_number( 'post-title-line-height', $this->get_att( 'post_title_line_height' ) );
 			$less_vars->add_pixel_number( 'team-position-font-size', $this->get_att( 'team_position_font_size' ) );

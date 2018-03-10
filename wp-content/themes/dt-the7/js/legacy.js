@@ -62,56 +62,7 @@ jQuery(document).ready(function($){
         var $headerBar = $(".masthead:not(.side-header):not(.side-header-v-stroke) .header-bar");
     }
 
-
-    // function setFloatinProjectContent() {
-    //     $(".project-slider .preload-me").loaded(null, function() {
-    //         var $sidebar = $(".floating-content");
-    //         if ($(".floating-content").length > 0) {
-    //             var offset = $sidebar.offset();
-    //             if($(".top-bar").length > 0 && $(".phantom-sticky").length > 0){
-    //                 var topBarH = $(".top-bar").height();
-    //             }else{
-    //                 var topBarH = 0;
-    //             }
-    //                 //$scrollHeight = $(".project-post").height();
-    //             var $scrollOffset = $(".project-post").offset();
-    //             //var $headerHeight = $phantom.height();
-    //             console.log($parentHeight, $floatContentHeight, $floatContent);
-    //             $window.on("scroll", function () {
-    //                 if (window.innerWidth > 1050) {
-    //                     if (dtGlobals.winScrollTop + $phantom.height() > offset.top) {
-    //                         if (dtGlobals.winScrollTop + $phantom.height() + $floatContentHeight + 40 < $scrollOffset.top + $parentHeight) {
-    //                             $sidebar.stop().velocity({
-    //                                 translateY : dtGlobals.winScrollTop - offset.top + $phantom.height() + 5 - topBarH
-    //                             }, 300);
-    //                         } else {
-    //                             $sidebar.stop().velocity({
-    //                                 translateY: $parentHeight - $floatContentHeight - 40 - topBarH
-    //                             }, 300)
-    //                         }
-    //                     } else {
-    //                         $sidebar.stop().velocity({
-    //                             translateY: 0
-    //                         }, 300)
-    //                     }
-    //                 } else {
-    //                     $sidebar
-    //                         .css({
-    //                             "transform": "translateY(0)",
-    //                             "-webkit-transform" : "translateY(0)",
-    //                         });
-    //                 }
-    //             })
-    //         }
-    //     }, true);
-    // }
-    //     setFloatinProjectContent();
-    
     $window.on("debouncedresize", function( event ) {
-        // $parentHeight = $floatContent.siblings(".project-wide-col").height();
-        // $floatContentHeight = $floatContent.height();
-       // setFloatinProjectContent();
-    
         
         //Set full height stripe
         $(".stripe").each(function(){

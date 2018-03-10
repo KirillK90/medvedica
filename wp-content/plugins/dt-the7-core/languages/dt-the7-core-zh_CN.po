@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DT The7 Core\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dt-the7-core\n"
-"POT-Creation-Date: 2018-02-19 13:21:53+00:00\n"
+"POT-Creation-Date: 2018-02-28 13:06:20+00:00\n"
 "PO-Revision-Date: 2016-12-04 16:56+0000\n"
 "Last-Translator: 刁 可永 <dky@yntcjz.com>\n"
 "Language-Team: Chinese (China)\n"
@@ -367,7 +367,7 @@ msgstr "内容"
 #: mods/portfolio/public/shortcodes/mod-portfolio-shortcodes-bridge.php:273
 #: mods/portfolio/public/shortcodes/mod-portfolio-shortcodes-bridge.php:287
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:566
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2227
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2225
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:310
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1583
 msgid "Content alignment"
@@ -680,6 +680,7 @@ msgstr ""
 msgid "Number of logotypes to show"
 msgstr "要显示的标识数量"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:217
 #: mods/portfolio/admin/options/options-portfolio.php:217
 msgid "Related Projects"
 msgstr "相关项目"
@@ -957,29 +958,29 @@ msgstr "排序方式："
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:330
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2048
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2100
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2151
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2188
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2046
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2098
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2149
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2186
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:262
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1817
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1869
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1920
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1957
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1815
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1867
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1918
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1955
 #, fuzzy
 msgid "Total number of posts"
 msgstr "文章数量："
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:335
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2057
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2109
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2160
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2197
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2055
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2107
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2158
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2195
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:267
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1826
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1878
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1929
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1966
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1824
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1876
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1927
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1964
 msgid "Leave empty to display all posts."
 msgstr ""
 
@@ -1149,9 +1150,9 @@ msgstr ""
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:486
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1999
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1997
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:480
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1767
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1765
 #, fuzzy
 msgid "Gap between columns "
 msgstr "图像之间的间距（px）"
@@ -1191,25 +1192,25 @@ msgid "Autoplay speed"
 msgstr "自动播放速度："
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:551
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2212
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2210
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:545
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1981
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1979
 msgid "Extra Class"
 msgstr ""
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:558
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2219
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2217
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:552
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1988
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1986
 #, fuzzy
 msgid "Extra class name (optional)"
 msgstr "标题（可选）："
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:561
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2222
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2220
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:555
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1991
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1989
 msgid ""
 "Style particular elements differently - add a class name and refer to it in "
 "custom CSS."
@@ -1241,38 +1242,38 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:831
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:844
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:860
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2236
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2244
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2251
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2261
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2271
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2279
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2287
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2295
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2306
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2313
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2327
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2341
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2353
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2366
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2378
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2381
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2405
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2419
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2430
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2444
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2458
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2470
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2483
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2491
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2504
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2520
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2234
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2242
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2249
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2259
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2269
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2277
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2285
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2293
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2304
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2311
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2325
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2339
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2351
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2364
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2376
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2379
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2403
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2417
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2428
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2442
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2456
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2468
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2481
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2489
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2502
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2518
 #, fuzzy
 msgid "Team Member"
 msgstr "团队成员"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:579
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2240
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2238
 #, fuzzy
 msgid "Team Member Name"
 msgstr "团队修改设计"
@@ -1280,15 +1281,15 @@ msgstr "团队修改设计"
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:586
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:649
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:762
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2247
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2309
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2422
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2245
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2307
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2420
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:580
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:663
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:760
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2015
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2098
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2197
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2013
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2096
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2195
 msgid "Font style"
 msgstr ""
 
@@ -1296,23 +1297,23 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:593
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:660
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:773
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2254
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2320
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2433
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2252
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2318
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2431
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:591
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:674
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:767
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2026
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2109
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2204
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2024
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2107
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2202
 #, fuzzy
 msgid "Font size"
 msgstr "标题字体大小"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:599
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2260
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2258
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:597
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2032
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2030
 msgid "Leave empty to use H4 font size."
 msgstr ""
 
@@ -1320,23 +1321,23 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:603
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:674
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:787
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2264
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2334
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2447
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2262
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2332
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2445
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:605
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:688
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:777
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2040
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2123
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2214
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2038
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2121
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2212
 #, fuzzy
 msgid "Line height"
 msgstr "比例：高度"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:609
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2270
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2268
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:611
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2046
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2044
 msgid "Leave empty to use H4 line height."
 msgstr ""
 
@@ -1344,139 +1345,139 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:613
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:688
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:801
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2012
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2274
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2348
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2461
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2010
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2272
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2346
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2459
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:619
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:702
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:787
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1780
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2054
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2137
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2224
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1778
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2052
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2135
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2222
 #, fuzzy
 msgid "Font color"
 msgstr "图标颜色"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:617
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2016
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2278
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2014
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2276
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:623
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1784
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2058
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1782
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2056
 msgid "Leave empty to use headers color."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:621
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2282
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2280
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:631
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2066
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2064
 msgid "Gap below name"
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:630
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2291
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2289
 #, fuzzy
 msgid "Team Member Position"
 msgstr "团队修改设计"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:637
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2298
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2296
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:651
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2086
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2084
 #, fuzzy
 msgid "Show position"
 msgstr "显示项目描述"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:666
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2326
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2324
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:773
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2210
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2208
 msgid "Leave empty to use large font size."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:680
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2340
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2338
 msgid "Leave empty to use large line height."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:692
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:706
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2141
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2139
 msgid "Leave empty to use accent text color."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:700
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2360
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2358
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:714
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2149
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2147
 msgid "Gap below position"
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:714
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2374
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2372
 #, fuzzy
 msgid "Team Member Description"
 msgstr "团队修改设计"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:722
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2382
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2380
 #, fuzzy
 msgid "Show description"
 msgstr "显示相册描述"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:732
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2392
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2390
 #, fuzzy
 msgid "Team member content or excerpt"
 msgstr "显示团队成员摘要："
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:748
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2408
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2406
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:747
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2184
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2182
 #, fuzzy
 msgid "Maximum number of words"
 msgstr "项目文章最大数量"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:758
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2418
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2416
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:752
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2189
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2187
 msgid "Leave empty to show full text."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:783
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2443
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2441
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:680
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2115
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2113
 msgid "Leave empty to use medium font size."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:797
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2457
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2455
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:694
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:783
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2129
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2220
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2127
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2218
 msgid "Leave empty to use medium line height."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:809
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2469
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2467
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:791
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2228
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2226
 msgid "Leave empty to use primary text color."
 msgstr ""
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:813
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2473
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2471
 #, fuzzy
 msgid "Gap below description"
 msgstr "显示相册描述"
@@ -1484,20 +1485,20 @@ msgstr "显示相册描述"
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:827
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:834
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2487
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2494
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2485
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2492
 #, fuzzy
 msgid "\"View Details\" Button"
 msgstr "显示“详情”按钮"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:845
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2505
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2503
 msgid ""
 "Visible only if link to team member details page is enabled in post settings."
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:848
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2508
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2506
 msgid "Button text"
 msgstr ""
 
@@ -1522,82 +1523,82 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1070
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1080
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1092
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2524
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2535
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2550
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2562
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2572
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2584
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2596
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2608
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2618
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2630
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2642
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2657
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2669
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2679
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2691
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2703
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2718
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2730
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2740
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2752
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2522
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2533
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2548
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2560
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2570
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2582
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2594
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2606
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2616
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2628
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2640
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2655
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2667
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2677
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2689
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2701
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2716
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2728
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2738
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2750
 #, fuzzy
 msgid "Social Links"
 msgstr "显示链接"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:865
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2525
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2523
 #, fuzzy
 msgid "Show social links"
 msgstr "显示链接"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:876
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2536
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2534
 #, fuzzy
 msgid "Social links position"
 msgstr "显示链接图标："
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:891
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2551
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2549
 #, fuzzy
 msgid "Icon size"
 msgstr "图标大小（以像素为单位）"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:903
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2563
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2561
 #, fuzzy
 msgid "Icon Background"
 msgstr "图标背景"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:913
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2573
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2571
 #, fuzzy
 msgid "Background size"
 msgstr "背景大小（以px为单位）"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:925
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2585
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2583
 #, fuzzy
 msgid "Border width"
 msgstr "项目宽度"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:937
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2597
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2595
 #, fuzzy
 msgid "Border radius"
 msgstr "边框半径（以px为单位）"
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:949
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2609
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2607
 #, fuzzy
 msgid "Normal"
 msgstr "正常"
@@ -1605,8 +1606,8 @@ msgstr "正常"
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:959
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1020
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2619
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2680
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2617
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2678
 #, fuzzy
 msgid "Icon color"
 msgstr "图标颜色"
@@ -1625,12 +1626,12 @@ msgstr "图标颜色"
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1337
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1629
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1641
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2620
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2632
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2666
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2681
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2693
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2727
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2618
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2630
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2664
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2679
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2691
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2725
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:937
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:949
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:976
@@ -1645,8 +1646,8 @@ msgstr ""
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:971
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1032
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2631
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2692
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2629
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2690
 #, fuzzy
 msgid "Icon border color  "
 msgstr "图标悬停颜色"
@@ -1654,8 +1655,8 @@ msgstr "图标悬停颜色"
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:983
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1044
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2643
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2704
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2641
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2702
 #, fuzzy
 msgid "Show icon background"
 msgstr "图标背景"
@@ -1663,30 +1664,30 @@ msgstr "图标背景"
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:998
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1059
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2658
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2719
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2656
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2717
 #, fuzzy
 msgid "Icon background color"
 msgstr "图标背景"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1010
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2670
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2668
 msgid "Hover"
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1071
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2731
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2729
 msgid "Icons gaps"
 msgstr ""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1081
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2741
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2739
 msgid "Gap below icons"
 msgstr ""
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1093
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2753
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2751
 #, fuzzy
 msgid "Gap between icons"
 msgstr "图像之间的间距（px）"
@@ -1972,17 +1973,17 @@ msgid "Bullets Position"
 msgstr "位置："
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1719
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2765
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2763
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1420
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2242
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2240
 msgid "CSS box"
 msgstr ""
 
 # @ the7mk2
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1721
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2767
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2765
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1422
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2244
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2242
 #, fuzzy
 msgid "Design Options"
 msgstr "媒体选项"
@@ -2025,96 +2026,101 @@ msgstr "评论数量"
 msgid "Column minimum width"
 msgstr "列的最小宽度（像素）"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2004
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1772
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1992
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1760
+msgid "Affects only masonry layout"
+msgstr ""
+
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2002
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1770
 msgid ""
 "Please note that this setting affects post paddings. So, for example: a "
 "value 10px will give you 20px gaps between posts)"
 msgstr ""
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2007
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1775
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2005
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1773
 msgid "Pagination colors"
 msgstr ""
 
 # @ the7mk2
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2019
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1787
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2017
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1785
 #, fuzzy
 msgid "Accent color"
 msgstr "图标颜色"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2023
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1791
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2021
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1789
 msgid "Leave empty to use accent color."
 msgstr ""
 
 # @ the7mk2
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2027
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1796
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2025
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1794
 #, fuzzy
 msgid "Pagination"
 msgstr "动画"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2033
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1802
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2031
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1800
 msgid "Pagination mode"
 msgstr ""
 
 # @ the7mk2
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2061
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2112
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2163
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2200
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1830
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1881
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1932
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1969
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2059
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2110
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2161
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2198
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1828
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1879
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1930
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1967
 #, fuzzy
 msgid "Number of posts to display on one page"
 msgstr "在一页上显示的项目数："
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2070
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2121
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2172
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2209
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1839
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1890
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1941
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1978
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2068
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2119
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2170
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2207
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1837
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1888
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1939
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1976
 msgid "Leave empty to use number from wp settings."
 msgstr ""
 
 # @ the7mk2
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2073
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2124
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1842
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1893
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2071
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2122
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1840
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1891
 #, fuzzy
 msgid "Show all pages in paginator"
 msgstr "显示分页中的所有页面："
 
 # @ the7mk2
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2087
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2138
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2175
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1856
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1907
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1944
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2085
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2136
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2173
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1854
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1905
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1942
 #, fuzzy
 msgid "Gap before pagination"
 msgstr "显示相册描述"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2096
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2147
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2184
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1865
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1916
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1953
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2094
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2145
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2182
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1863
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1914
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1951
 msgid "Leave empty to use default gap"
 msgstr ""
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2352
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2350
 msgid " Leave empty to use accent text color."
 msgstr ""
 
@@ -2192,7 +2198,7 @@ msgid "Show image"
 msgstr "显示日期"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:562
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1997
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1995
 #, fuzzy
 msgid "Testimonial Author Name"
 msgstr "推荐分类"
@@ -2221,57 +2227,57 @@ msgstr "推荐分类"
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:784
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:792
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:801
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2001
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2012
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2019
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2033
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2047
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2059
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2071
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2083
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2094
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2102
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2116
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2130
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2142
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2155
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2165
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2169
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2181
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2190
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2201
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2211
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2221
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2229
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2238
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1999
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2010
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2017
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2031
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2045
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2057
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2069
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2081
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2092
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2100
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2114
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2128
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2140
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2153
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2163
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2167
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2179
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2188
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2199
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2209
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2219
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2227
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2236
 #, fuzzy
 msgid "Testimonial"
 msgstr "推荐"
 
 # @ the7mk2
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:569
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2004
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2002
 #, fuzzy
 msgid "Show author name"
 msgstr "显示作者"
 
 # @ the7mk2
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:644
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2079
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2077
 #, fuzzy
 msgid "Testimonial Author Position"
 msgstr "推荐选项"
 
 # @ the7mk2
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:735
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2172
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2170
 #, fuzzy
 msgid "Testimonial content or excerpt"
 msgstr "显示团队成员摘要："
 
 # @ the7mk2
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:795
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2232
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2230
 #, fuzzy
 msgid "Gap below testimonial"
 msgstr "显示相册描述"
@@ -2282,7 +2288,7 @@ msgid "Testimonials Masonry & Grid"
 msgstr "砖石砌体&网格"
 
 #: mods/testimonials/public/shortcodes/testimonials-carousel/testimonials-carousel.php:399
-#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:443
+#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:444
 #: mods/testimonials/public/templates/testimonials-post.php:69
 msgid "read more"
 msgstr "阅读更多"
@@ -2543,6 +2549,7 @@ msgid "Post types"
 msgstr "文章类型"
 
 #: includes/theme-options/modules.php:19
+#: mods/portfolio/admin/options/options-portfolio-old.php:15
 #: mods/portfolio/admin/options/options-portfolio.php:15
 msgctxt "theme-options"
 msgid "Portfolio"
@@ -2556,6 +2563,10 @@ msgstr "项目"
 #: mods/albums/admin/options/options-albums.php:35
 #: mods/albums/admin/options/options-albums.php:62
 #: mods/albums/admin/options/options-albums.php:102
+#: mods/portfolio/admin/options/options-portfolio-old.php:63
+#: mods/portfolio/admin/options/options-portfolio-old.php:90
+#: mods/portfolio/admin/options/options-portfolio-old.php:130
+#: mods/portfolio/admin/options/options-portfolio-old.php:199
 #: mods/portfolio/admin/options/options-portfolio.php:63
 #: mods/portfolio/admin/options/options-portfolio.php:90
 #: mods/portfolio/admin/options/options-portfolio.php:130
@@ -2572,6 +2583,10 @@ msgstr "启用"
 #: mods/albums/admin/options/options-albums.php:39
 #: mods/albums/admin/options/options-albums.php:66
 #: mods/albums/admin/options/options-albums.php:106
+#: mods/portfolio/admin/options/options-portfolio-old.php:67
+#: mods/portfolio/admin/options/options-portfolio-old.php:94
+#: mods/portfolio/admin/options/options-portfolio-old.php:134
+#: mods/portfolio/admin/options/options-portfolio-old.php:203
 #: mods/portfolio/admin/options/options-portfolio.php:67
 #: mods/portfolio/admin/options/options-portfolio.php:94
 #: mods/portfolio/admin/options/options-portfolio.php:134
@@ -2622,6 +2637,7 @@ msgstr "画廊"
 
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:24
+#: mods/portfolio/admin/options/options-portfolio-old.php:52
 #: mods/portfolio/admin/options/options-portfolio.php:52
 msgctxt "theme-options"
 msgid "Previous &amp; next buttons"
@@ -2636,6 +2652,8 @@ msgstr "在画廊相册中显示"
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:50
 #: mods/albums/admin/options/options-albums.php:55
+#: mods/portfolio/admin/options/options-portfolio-old.php:78
+#: mods/portfolio/admin/options/options-portfolio-old.php:83
 #: mods/portfolio/admin/options/options-portfolio.php:78
 #: mods/portfolio/admin/options/options-portfolio.php:83
 msgctxt "theme-options"
@@ -2644,6 +2662,7 @@ msgstr "后退按钮："
 
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:78
+#: mods/portfolio/admin/options/options-portfolio-old.php:106
 #: mods/portfolio/admin/options/options-portfolio.php:106
 msgctxt "theme-options"
 msgid "Choose page"
@@ -2652,6 +2671,8 @@ msgstr "选择页面"
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:90
 #: mods/albums/admin/options/options-albums.php:95
+#: mods/portfolio/admin/options/options-portfolio-old.php:118
+#: mods/portfolio/admin/options/options-portfolio-old.php:123
 #: mods/portfolio/admin/options/options-portfolio.php:118
 #: mods/portfolio/admin/options/options-portfolio.php:123
 msgctxt "theme-options"
@@ -2660,6 +2681,7 @@ msgstr "属性信息"
 
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:119
+#: mods/portfolio/admin/options/options-portfolio-old.php:147
 #: mods/portfolio/admin/options/options-portfolio.php:147
 msgctxt "theme-options"
 msgid "Date"
@@ -2667,6 +2689,7 @@ msgstr "日期"
 
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:128
+#: mods/portfolio/admin/options/options-portfolio-old.php:156
 #: mods/portfolio/admin/options/options-portfolio.php:156
 msgctxt "theme-options"
 msgid "Author"
@@ -2674,6 +2697,7 @@ msgstr "作者"
 
 # @ the7mk2
 #: mods/albums/admin/options/options-albums.php:137
+#: mods/portfolio/admin/options/options-portfolio-old.php:165
 #: mods/portfolio/admin/options/options-portfolio.php:165
 msgctxt "theme-options"
 msgid "Categories"
@@ -2716,6 +2740,7 @@ msgid "Portfolio archives"
 msgstr "项目归档"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:20
 #: mods/portfolio/admin/options/options-portfolio.php:20
 #, fuzzy
 msgctxt "theme-options"
@@ -2723,6 +2748,7 @@ msgid "Single project featured image"
 msgstr "特色图像"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:23
 #: mods/portfolio/admin/options/options-portfolio.php:23
 #, fuzzy
 msgctxt "theme-options"
@@ -2730,6 +2756,7 @@ msgid "Featured image sizing"
 msgstr "特色图像"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:28
 #: mods/portfolio/admin/options/options-portfolio.php:28
 #, fuzzy
 msgctxt "theme-options"
@@ -2737,18 +2764,21 @@ msgid "Preserve images proportions"
 msgstr "图像比例"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:29
 #: mods/portfolio/admin/options/options-portfolio.php:29
 #, fuzzy
 msgctxt "theme-options"
 msgid "Resize images"
 msgstr "Retina图像："
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:31
 #: mods/portfolio/admin/options/options-portfolio.php:31
 msgctxt "theme-options"
 msgid "Doesn't affect legacy project media settings."
 msgstr ""
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:35
 #: mods/portfolio/admin/options/options-portfolio.php:35
 #, fuzzy
 msgctxt "theme-options"
@@ -2756,18 +2786,22 @@ msgid "Featured image proportions"
 msgstr "图像比例"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:56
 #: mods/portfolio/admin/options/options-portfolio.php:56
 msgctxt "theme-options"
 msgid "Show in portfolio posts"
 msgstr "在项目文章中显示"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:174
 #: mods/portfolio/admin/options/options-portfolio.php:174
 msgctxt "theme-options"
 msgid "Number of comments"
 msgstr "评论数量"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:187
+#: mods/portfolio/admin/options/options-portfolio-old.php:192
 #: mods/portfolio/admin/options/options-portfolio.php:187
 #: mods/portfolio/admin/options/options-portfolio.php:192
 msgctxt "theme-options"
@@ -2775,98 +2809,133 @@ msgid "Related projects"
 msgstr "相关项目"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:215
 #: mods/portfolio/admin/options/options-portfolio.php:215
 msgctxt "theme-options"
 msgid "Title"
 msgstr "标题"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:223
 #: mods/portfolio/admin/options/options-portfolio.php:223
 msgctxt "theme-options"
 msgid "Show titles"
 msgstr "显示标题"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:231
 #: mods/portfolio/admin/options/options-portfolio.php:231
 msgctxt "theme-options"
 msgid "Show excerpts"
 msgstr "显示摘要"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:239
 #: mods/portfolio/admin/options/options-portfolio.php:239
 msgctxt "theme-options"
 msgid "Show date"
 msgstr "显示日期"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:247
 #: mods/portfolio/admin/options/options-portfolio.php:247
 msgctxt "theme-options"
 msgid "Show author"
 msgstr "显示作者"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:255
 #: mods/portfolio/admin/options/options-portfolio.php:255
 msgctxt "theme-options"
 msgid "Show number of comments"
 msgstr "显示评论数量"
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:263
 #: mods/portfolio/admin/options/options-portfolio.php:263
 msgctxt "theme-options"
 msgid "Show categories"
 msgstr "显示分类"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:271
 #: mods/portfolio/admin/options/options-portfolio.php:271
 msgctxt "theme-options"
 msgid "Link icon on hover"
 msgstr ""
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:279
 #: mods/portfolio/admin/options/options-portfolio.php:279
 msgctxt "theme-options"
 msgid "Zoom icon on hover"
 msgstr ""
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:287
 #: mods/portfolio/admin/options/options-portfolio.php:287
 msgctxt "theme-options"
 msgid "Details icon on hover"
 msgstr ""
 
 # @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio-old.php:295
 #: mods/portfolio/admin/options/options-portfolio.php:295
 msgctxt "theme-options"
 msgid "Maximum number of projects posts"
 msgstr "项目文章最大数量"
 
 # @ the7mk2
-#: mods/portfolio/admin/options/options-portfolio.php:309
+#: mods/portfolio/admin/options/options-portfolio-old.php:309
 msgctxt "theme-options"
 msgid "Related posts height for fullwidth posts (px)"
 msgstr "相关文章中全宽文章的高度（px）"
 
 # @ the7mk2
-#: mods/portfolio/admin/options/options-portfolio.php:319
+#: mods/portfolio/admin/options/options-portfolio-old.php:319
+#: mods/portfolio/admin/options/options-portfolio.php:318
 msgctxt "theme-options"
 msgid "Related posts width for fullwidth posts"
 msgstr "相关文章中全宽文章的宽度"
 
 # @ the7mk2
-#: mods/portfolio/admin/options/options-portfolio.php:332
-#: mods/portfolio/admin/options/options-portfolio.php:367
+#: mods/portfolio/admin/options/options-portfolio-old.php:332
+#: mods/portfolio/admin/options/options-portfolio-old.php:367
 msgctxt "theme-options"
 msgid "Width (px)"
 msgstr "宽度（px）"
 
 # @ the7mk2
-#: mods/portfolio/admin/options/options-portfolio.php:344
+#: mods/portfolio/admin/options/options-portfolio-old.php:344
 msgctxt "theme-options"
 msgid "Related posts height for posts with sidebar (px)"
 msgstr "相关文章中含侧边栏的文章的高度（px）"
 
 # @ the7mk2
-#: mods/portfolio/admin/options/options-portfolio.php:354
+#: mods/portfolio/admin/options/options-portfolio-old.php:354
+#: mods/portfolio/admin/options/options-portfolio.php:351
 msgctxt "theme-options"
 msgid "Related posts width for posts with sidebar"
 msgstr "相关文章中含侧边栏的文章的宽度（px）"
+
+# @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio.php:309
+#, fuzzy
+msgctxt "theme-options"
+msgid "Related posts height for fullwidth posts"
+msgstr "相关文章中全宽文章的高度（px）"
+
+# @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio.php:331
+#: mods/portfolio/admin/options/options-portfolio.php:364
+#, fuzzy
+msgctxt "theme-options"
+msgid "Width"
+msgstr "宽度（px）"
+
+# @ the7mk2
+#: mods/portfolio/admin/options/options-portfolio.php:342
+#, fuzzy
+msgctxt "theme-options"
+msgid "Related posts height for posts with sidebar"
+msgstr "相关文章中含侧边栏的文章的高度（px）"
 
 # @ the7mk2
 #: mods/portfolio/admin/options/options-slug-portfolio.php:14
@@ -3957,7 +4026,7 @@ msgctxt "vc inline dummy"
 msgid "Team Carousel"
 msgstr "团队分类"
 
-#: mods/team/public/shortcodes/team-masonry/team-masonry.php:602
+#: mods/team/public/shortcodes/team-masonry/team-masonry.php:622
 #, fuzzy
 msgctxt "vc inline dummy"
 msgid "Team Masonry & Grid"
@@ -3984,7 +4053,7 @@ msgctxt "vc inline dummy"
 msgid "Testimonials Carousel"
 msgstr "推荐幻灯片"
 
-#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:626
+#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:646
 #, fuzzy
 msgctxt "vc inline dummy"
 msgid "Testimonials Masonry & Grid"

@@ -41,7 +41,9 @@ function rtec_the_registration_form( $atts = array() )
 
 	$form->set_display_type( $atts );
 
-	if ( $event_meta['show_registrants_data'] && ! $doing_shortcode && ! $form->registrations_are_disabled() ) {
+	$shortcode_attendee_disable = isset( $atts['attendeelist'] ) ? ($atts['attendeelist'] !== 'true') : true;
+
+	if ( $event_meta['show_registrants_data'] && ( ! $doing_shortcode || ! $shortcode_attendee_disable ) && ! $form->registrations_are_disabled() ) {
 
 		$attendee_list_fields = array();
 		$attendee_list_fields = apply_filters( 'rtec_attendee_list_fields', $attendee_list_fields );
@@ -66,6 +68,7 @@ function rtec_the_registration_form( $atts = array() )
 
 			if ( $doing_shortcode ) {
 				$return_html .= $form->get_form_html( $fields_atts );
+				return $return_html;
 			} else {
 				echo $form->get_form_html( $fields_atts );
 			}
@@ -76,6 +79,7 @@ function rtec_the_registration_form( $atts = array() )
 			$message = $form->get_success_message_html();
 			if ( $doing_shortcode ) {
 				$return_html .= $message;
+				return $return_html;
 			} else {
 				echo $message;
 			}
@@ -197,6 +201,98 @@ function rtec_form_location_init()
 	add_action( $location, 'rtec_the_registration_form' );
 }
 add_action( 'plugins_loaded', 'rtec_form_location_init', 1 );
+
+function rtec_check_action_before_post() {
+
+	if ( ! is_admin() && isset( $_GET['action'] ) && $_GET['action'] === 'unregister' ) {
+		global $rtec_options;
+		$rtec = RTEC();
+		$action = sanitize_text_field( $_GET['action'] );
+
+        $verification_data = array(
+            'email' => isset( $_GET['email'] ) ? sanitize_text_field( $_GET['email'] ) : '',
+            'token' => isset( $_GET['token'] ) ? sanitize_text_field( $_GET['token'] ) : '',
+            'action' => sanitize_text_field( $action )
+        );
+
+        $entry_exists = $rtec->db_frontend->maybe_verify_token( $verification_data );
+
+        if ( $verification_data['action'] === 'unregister' && $entry_exists && $verification_data['token'] !== '' ) {
+
+            $message = isset( $rtec_options['success_unregistration'] ) ? $rtec_options['success_unregistration'] : __( 'You have been unregistered.', 'registrations-for-the-events-calendar' );
+            $o_message = rtec_get_text( $message, __( 'You have been unregistered.', 'registrations-for-the-events-calendar' ) );
+
+            if ( method_exists ( 'Tribe__Notices' , 'set_notice' ) ) {
+                Tribe__Notices::set_notice( 'unregistered', $o_message );
+            }
+
+        } else {
+
+	        if ( method_exists ( 'Tribe__Notices' , 'set_notice' ) ) {
+		        Tribe__Notices::set_notice( 'unregistered', __( 'No record found.', 'registrations-for-the-events-calendar' ) );
+	        }
+        }
+
+    }
+
+}
+add_action( 'init', 'rtec_check_action_before_post' );
+
+function rtec_action_check_after_post() {
+	if ( ! is_admin() && isset( $_GET['action'] ) && $_GET['action'] === 'unregister' ) {
+		global $rtec_options;
+		$rtec = RTEC();
+		$action = sanitize_text_field( $_GET['action'] );
+
+        $verification_data = array(
+            'email' => isset( $_GET['email'] ) ? sanitize_text_field( $_GET['email'] ) : '',
+            'token' => isset( $_GET['token'] ) ? sanitize_text_field( $_GET['token'] ) : '',
+            'action' => $action
+        );
+
+		$entry_exists = $rtec->db_frontend->maybe_verify_token( $verification_data );
+
+		if ( $verification_data['action'] === 'unregister' && $entry_exists && $verification_data['token'] !== '' ) {
+
+            $event_id = get_the_ID();
+            $record_was_deleted = $rtec->db_frontend->remove_record_by_action_key( $verification_data['token'] );
+
+            if ( $record_was_deleted ) {
+                $rtec->db_frontend->update_num_registered_meta_for_event( $event_id );
+                $disable_notification = isset( $rtec_options['disable_notification'] ) ? $rtec_options['disable_notification'] : false;
+
+                if ( ! $disable_notification ) {
+
+                    require_once RTEC_PLUGIN_DIR . 'inc/class-rtec-email.php';
+                    $notification_message = new RTEC_Email();
+
+                    $recipients = rtec_get_notification_email_recipients( $event_id );
+                    $email = isset( $verification_data['email'] ) ? '(' . $verification_data['email'] . ')' : '';
+                    $message                 = sprintf( __( 'A registrant %s has unregistered from this event %s.', 'registrations-for-the-events-calendar' ), $email, get_the_permalink() );
+                    $args                    = array(
+                        'template_type' => 'notification',
+                        'content_type'  => 'plain',
+                        'recipients'    => $recipients,
+                        'subject'       => array(
+                            'text' => 'Notification of Unregistration',
+                            'data' => array()
+                        ),
+                        'body'          => array(
+                            'message' => $message,
+                            'data'    => array()
+                        )
+                    );
+                    $notification_message->build_email( $args );
+                    $success = $notification_message->send_email();
+                }
+
+            }
+
+        }
+
+	}
+}
+add_action( 'tribe_events_single_event_before_the_content', 'rtec_action_check_after_post' );
 
 function rtec_the_default_attendee_list( $registrants_data )
 {

@@ -130,9 +130,9 @@ $options[] = array(
 $options[] = array(
 	'name'  => _x( 'Column minimum width', 'theme-options', 'the7mk2' ),
 	'id'    => 'woocommerce_shop_template_column_min_width',
-	'class' => 'mini',
-	'std'   => '220',
-	'type'  => 'text',
+	'std'   => '220px',
+	'type'  => 'number',
+	'units' => 'px',
 	'dependency' => array(
 		array(
 			array(
@@ -157,18 +157,22 @@ $options[] = array(
 				'operator' => '==',
 				'value'    => 'post_width_based',
 			),
+			array(
+				'field'    => 'woocommerce_shop_template_isotope',
+				'operator' => '==',
+				'value'    => 'masonry',
+			),
 		),
 	),
 );
 $options[] = array( 'type' => 'divider' );
 $options[] = array(
-	'name'     => _x( 'Gap between columns (px)', 'theme-options', 'the7mk2' ),
-	'desc'     => _x( 'For example: a value 10px will give you 20px gaps between posts', 'theme-options', 'the7mk2' ),
-	'id'       => 'woocommerce_shop_template_gap',
-	'class'    => 'mini',
-	'std'      => '22',
-	'type'     => 'text',
-	'sanitize' => 'dimensions',
+	'name'  => _x( 'Gap between columns', 'theme-options', 'the7mk2' ),
+	'desc'  => _x( 'For example: a value 10px will give you 20px gaps between posts', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_shop_template_gap',
+	'std'   => '22px',
+	'type'  => 'number',
+	'units' => 'px',
 );
 $options[] = array( 'type' => 'divider' );
 $options[] = array(
@@ -194,20 +198,18 @@ $options[] = array(
 	'type'  => 'block',
 );
 $options[] = array(
-	'name' => _x( "Image width (in 'px' or '%')", 'theme-options', 'the7mk2' ),
-	'id' => 'woocommerce_shop_template_img_width',
-	'class' => 'mini',
-	'std' => '30%',
-	'type' => 'text',
-	'sanitize' => 'css_width',
+	'name'  => _x( 'Image width', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_shop_template_img_width',
+	'std'   => '30%',
+	'type'  => 'number',
+	'units' => 'px|%',
 );
 $options[] = array(
-	'name'     => _x( 'Switch to mobile layout after (px)', 'theme-options', 'the7mk2' ),
-	'id'       => 'woocommerce_list_switch',
-	'class'    => 'mini',
-	'std'      => '500px',
-	'type'     => 'text',
-	'sanitize' => 'dimensions',
+	'name'  => _x( 'Switch to mobile layout after', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_list_switch',
+	'std'   => '500px',
+	'type'  => 'number',
+	'units' => 'px',
 );
 
 $options[] = array( 'name' => _x( 'Appearance', 'theme-options', 'the7mk2' ), 'type' => 'block' );
@@ -287,20 +289,18 @@ $options[] = array(
 	'sanitize' => 'slider',
 );
 $options[] = array(
-	'name' => _x( "Product image width (in 'px' or '%')", 'theme-options', 'the7mk2' ),
-	'id' => 'woocommerce_product_img_width',
-	'class' => 'mini',
-	'std' => '30%',
-	'type' => 'text',
-	'sanitize' => 'css_width'
+	'name'  => _x( 'Product image width', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_product_img_width',
+	'std'   => '30%',
+	'type'  => 'number',
+	'units' => 'px|%',
 );
 $options[] = array(
-	'name'     => _x( 'Switch to one column layout after (px)', 'theme-options', 'the7mk2' ),
-	'id'       => 'woocommerce_product_switch',
-	'class'    => 'mini',
-	'std'      => '768',
-	'type'     => 'text',
-	'sanitize' => 'dimensions',
+	'name'  => _x( 'Switch to one column layout after', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_product_switch',
+	'std'   => '768px',
+	'type'  => 'number',
+	'units' => 'px',
 );
 $options[] = array(
 	'id'      => 'woocommerce-product_zoom',
@@ -322,21 +322,19 @@ $options[] = array(
 
 $options[] = array( 'name' => _x( 'Cart settings', 'theme-options', 'the7mk2' ), 'type' => 'block' );
 $options[] = array(
-	'name' => _x( "Side column width (in 'px' or '%')", 'theme-options', 'the7mk2' ),
-	'id' => 'woocommerce_cart_total_width',
-	'class' => 'mini',
-	'std' => '30%',
-	'desc'      => _x( 'Use 100% to place side column below checkout content', 'theme-options', 'the7mk2' ),
-	'type' => 'text',
-	'sanitize' => 'css_width'
+	'name'  => _x( 'Side column width', 'theme-options', 'the7mk2' ),
+	'desc'  => _x( 'Use 100% to place side column below checkout content', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_cart_total_width',
+	'std'   => '30%',
+	'type'  => 'number',
+	'units' => 'px|%',
 );
 $options[] = array(
-	'name'     => _x( 'Switch to one column layout after (px)', 'theme-options', 'the7mk2' ),
-	'id'       => 'woocommerce_cart_switch',
-	'class'    => 'mini',
-	'std'      => '700',
-	'type'     => 'text',
-	'sanitize' => 'dimensions',
+	'name'  => _x( 'Switch to one column layout after', 'theme-options', 'the7mk2' ),
+	'id'    => 'woocommerce_cart_switch',
+	'std'   => '700px',
+	'type'  => 'number',
+	'units' => 'px',
 );
 $options[] = array( 'type' => 'divider' );
 $options[] = array(

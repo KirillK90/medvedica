@@ -198,3 +198,7 @@ function the7_update_611_page_transparent_top_bar_migration() {
 function the7_update_611_db_version() {
 	The7_Install::update_db_version( '6.1.1' );
 }
+
+function the7_update_620_db_version() {
+	The7_Install::update_db_version( '6.2.0' );
+}

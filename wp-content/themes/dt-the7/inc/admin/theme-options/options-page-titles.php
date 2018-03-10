@@ -48,12 +48,11 @@ $options[] = array( 'name' => _x( 'Layout', 'theme-options', 'the7mk2' ), 'type'
 		$options[] = array( 'type' => 'divider' );
 
 		$options['general-title_height'] = array(
-			'id'		=> 'general-title_height',
-			'name'		=> _x( 'Title area height (px)', 'theme-options', 'the7mk2' ),
-			'type'		=> 'text',
-			'std'		=> '170',
-			'class'		=> 'mini',
-			'sanitize'	=> 'dimensions',
+			'id'    => 'general-title_height',
+			'name'  => _x( 'Title area height', 'theme-options', 'the7mk2' ),
+			'std'   => '170px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options[] = array( 'type' => 'divider' );
@@ -153,13 +152,13 @@ $options[] = array( 'name' => _x( 'Style', 'theme-options', 'the7mk2' ), 'type' 
 					);
 
 					$options['general-title_decoration_outline_height'] = array(
-						"name"		=> _x( "Border height (px)", "theme-options", 'the7mk2' ),
-						"id"		=> "general-title_decoration_outline_height",
-						"class"		=> "mini",
-						"std"		=> '1',
-						"type"		=> "text",
-						"sanitize"	=> "dimensions",
+						'name'  => _x( 'Border height', 'theme-options', 'the7mk2' ),
+						'id'    => 'general-title_decoration_outline_height',
+						'std'   => '1px',
+						'type'  => 'number',
+						'units' => 'px',
 					);
+
 					$options['general-title_decoration_outline_style'] = array(
 						'name' => _x( 'Border style', "theme-options", 'the7mk2' ),
 						"id" => 'general-title_decoration_outline_style',
@@ -391,12 +390,11 @@ $options[] = array( 'name' => _x( 'Style', 'theme-options', 'the7mk2' ), 'type' 
 				);
 
 				$options['general-title_decoration_line_height'] = array(
-					"name"		=> _x( "Height (px)", "theme-options", 'the7mk2' ),
-					"id"		=> "general-title_decoration_line_height",
-					"class"		=> "mini",
-					"std"		=> '1',
-					"type"		=> "text",
-					"sanitize"	=> "dimensions",
+					'name'  => _x( 'Height', 'theme-options', 'the7mk2' ),
+					'id'    => 'general-title_decoration_line_height',
+					'std'   => '1px',
+					'type'  => 'number',
+					'units' => 'px',
 				);
 				$options['general-title_decoration_line_style'] = array(
 					'name' => _x( 'Style', "theme-options", 'the7mk2' ),
@@ -718,12 +716,11 @@ $options[] = array( 'name' => _x( 'Breadcrumbs', 'theme-options', 'the7mk2' ), '
 			);
 
 			$options['breadcrumbs_border_radius'] = array(
-				"name"		=> _x( "Border radius (px)", "theme-options", 'the7mk2' ),
-				"id"		=> "breadcrumbs_border_radius",
-				"class"		=> "mini",
-				"std"		=> 2,
-				"type"		=> "text",
-				"sanitize"	=> "dimensions",
+				'name'  => _x( 'Border radius', 'theme-options', 'the7mk2' ),
+				'id'    => 'breadcrumbs_border_radius',
+				'std'   => '2px',
+				'type'  => 'number',
+				'units' => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -736,12 +733,11 @@ $options[] = array( 'name' => _x( 'Breadcrumbs', 'theme-options', 'the7mk2' ), '
 			);
 
 			$options['breadcrumbs_border_width'] = array(
-				"name"		=> _x( "Border width (px)", "theme-options", 'the7mk2' ),
-				"id"		=> "breadcrumbs_border_width",
-				"class"		=> "mini",
-				"std"		=> 0,
-				"type"		=> "text",
-				"sanitize"	=> "dimensions",
+				'name'  => _x( 'Border width', 'theme-options', 'the7mk2' ),
+				'id'    => 'breadcrumbs_border_width',
+				'std'   => '0px',
+				'type'  => 'number',
+				'units' => 'px',
 				'dependency' => array(
 					array(
 						array(
@@ -792,26 +788,25 @@ $options[] = array( 'name' => _x( 'Responsiveness', 'theme-options', 'the7mk2' )
 				'1' => true,
 			),
 		);
-		
 
 		$options[] = array( 'type' => 'js_hide_begin' );
 
-			$options[] = array(
-				"name"		=> _x('Switch to responsive layout after (px)', 'theme-options', 'the7mk2'),
-				"id"		=> 'general-titles-responsiveness-switch',
-				"std"		=> "990",
-				"type"		=> "text",
-				"class"		=> "mini",
-				"sanitize"	=> "dimensions"
+			$options['general-titles-responsiveness-switch'] = array(
+				'name'  => _x( 'Switch to responsive layout after', 'theme-options', 'the7mk2' ),
+				'id'    => 'general-titles-responsiveness-switch',
+				'std'   => '990px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
+
 			$options['general-responsive_title_height'] = array(
-				'id'		=> 'general-responsive_title_height',
-				'name'		=> _x( 'Responsive title area height (px)', 'theme-options', 'the7mk2' ),
-				'type'		=> 'text',
-				'std'		=> '150',
-				'class'		=> 'mini',
-				'sanitize'	=> 'dimensions',
+				'name'  => _x( 'Responsive title area height', 'theme-options', 'the7mk2' ),
+				'id'    => 'general-responsive_title_height',
+				'std'   => '150px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
+
 			$options['general-responsive_title_size'] = array(
 				"name"      => _x( 'Responsive title font size', 'theme-options', 'the7mk2' ),
 				"id"        => "general-responsive_title_size",

@@ -1,21 +1,21 @@
 jQuery( function( $ )
 {
-	var template = $( '#tmpl-rwmb-file-advanced' ).html();
+	var template = $( '#tmpl-the7-mb-file-advanced' ).html();
 
-	$( 'body' ).on( 'click', '.rwmb-file-advanced-upload', function( e )
+	$( 'body' ).on( 'click', '.the7-mb-file-advanced-upload', function( e )
 	{
 		e.preventDefault();
 
 		var $uploadButton = $( this ),
-			$fileList = $uploadButton.siblings( '.rwmb-uploaded' ),
+			$fileList = $uploadButton.siblings( '.the7-mb-uploaded' ),
 			maxFileUploads = $fileList.data( 'max_file_uploads' ),
 			mimeType = $fileList.data( 'mime_type' ),
-			msg = maxFileUploads > 1 ? rwmbFile.maxFileUploadsPlural : rwmbFile.maxFileUploadsSingle,
+			msg = maxFileUploads > 1 ? the7mbFile.maxFileUploadsPlural : the7mbFile.maxFileUploadsSingle,
 			frame,
 			frameOptions = {
-				className: 'media-frame rwmb-file-frame',
+				className: 'media-frame the7-mb-file-frame',
 				multiple: true,
-				title: rwmbFileAdvanced.frameTitle
+				title: the7mbFileAdvanced.frameTitle
 			};
 
 		msg = msg.replace( '%d', maxFileUploads );
@@ -62,7 +62,7 @@ jQuery( function( $ )
 			{
 				// Attach attachment to field and get HTML
 				var data = {
-					action: 'rwmb_attach_file',
+					action: 'the7_mb_attach_file',
 					post_id: $( '#post_ID' ).val(),
 					field_id: $fileList.data( 'field_id' ),
 					attachment_ids: ids,
@@ -78,7 +78,7 @@ jQuery( function( $ )
 								interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
 								escape:      /\{\{([^\}]+?)\}\}(?!\})/g
 							} ) )
-							.trigger( 'update.rwmbFile' );
+							.trigger( 'update.the7mbFile' );
 					}
 				}, 'json' );
 			}

@@ -339,29 +339,18 @@
 		});
 	});
 
-	$('.of-radio-img-radio').hide();
-	// Image Options
-	$(".wpb_el_type_dt_radio_image").each(function() {
-		var $thisList = $(this);
-		var iconS = $("input.radio-img", $thisList).val();
-		// $(".of-radio-img-img", $thisList).each(function(){
-		// 	if($(this).attr('alt') == iconS){
-		// 		$(this).addClass('of-radio-img-selected');
-		// 		console.log(iconS);
-		// 	}
-		// })
-		$('.of-radio-img-img').click(function(){
-			var $this = $(this);
-            var $container = $this.closest('.edit_form_line');
-            var value = $this.siblings('input').first().val();
-			$container.find('input.radio-img').val(value);
-			$container.find('.of-radio-img-img').removeClass('of-radio-img-selected');
-            $this.addClass('of-radio-img-selected');
-		});
-	})
+    // Image Options.
+	$(".of-radio-img-radio").hide();
+    $(".wpb_el_type_dt_radio_image .of-radio-img-img").click(function () {
+        var $this = $(this);
+        var $container = $this.closest(".edit_form_line");
+        var value = $this.siblings("input").first().val();
+        $container.find("input.wpb_vc_param_value").val(value).trigger("change");
+        $container.find(".of-radio-img-img").removeClass("of-radio-img-selected");
+        $this.addClass("of-radio-img-selected");
+    })
 }(window.jQuery);
 
-	function dtRadioImagesSetCheckbox( target ) {
-		jQuery('#'+target).trigger('click');
-		console.log(target)
-	}
+function dtRadioImagesSetCheckbox( target ) {
+    jQuery("#"+target).trigger("click");
+}

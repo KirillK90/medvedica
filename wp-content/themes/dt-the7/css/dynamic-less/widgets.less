@@ -345,6 +345,9 @@ a.rsswidget:hover {
 		.standard-arrow-ico(fade(@widget-footer-color, 50%));
 	}
 }
+.standard-arrow-ico-footer-mixin(@customColor, @opacity:100%) when (iscolor(@customColor)){
+	.standard-arrow-ico(fade(@customColor, 100%));
+}
 .custom-menu a:hover:after,
 .custom-menu .act > a:after {
 	.standard-arrow-ico(@secondary-color-temp);
@@ -353,6 +356,7 @@ a.rsswidget:hover {
 	}
 	.footer & {
 		.standard-arrow-ico(fade(@accent-bg-color, 100%));
+		.standard-arrow-ico-footer-mixin(@widget-footer-accent-color, @opacity:100%);
 	}
 }
 

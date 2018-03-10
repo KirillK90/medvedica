@@ -79,7 +79,7 @@
 	
 		$nodes = $([]);
 		$nodes.$nodesCache = $([]);
-		$container.children("article").each(function() {
+		$container.find("> article, .wf-cell").each(function() {
 			var $this = $(this);
 			$nodes.push({
 				node: this,
@@ -162,10 +162,11 @@
                         }
 
 					    pageControls.append('<a href="#" class="' + (options.pagerClass || defaults.pagerClass) + '" data-page="' + +i + '">' + i + '</a>');
+					    console.log(pageControls)
 					}
 
 					if (activePage < pageCount) {
-					pageControls.append('<a href="#" class="' + (options.nextButtonClass || defaults.nextButtonClass) + '">' + (options.nextButtonLabel || defaults.nextButtonLabel) + '</a>');
+						pageControls.append('<a href="#" class="' + (options.nextButtonClass || defaults.nextButtonClass) + '">' + (options.nextButtonLabel || defaults.nextButtonLabel) + '</a>');
 					}
 					pageControls.find('a[data-page="' + activePage + '"]').addClass(options.activeClass || defaults.activeClass);
 					pageControls.find('a.' + (options.pagerClass || defaults.pagerClass)).click(function(e) {
@@ -189,31 +190,31 @@
 						
 					});
 					pageControls.find('a.' + (options.previousButtonClass || defaults.previousButtonClass)).click(function(e) {
-					e.preventDefault();
-					activePage--;
-					//Scroll to top of container
-					var $scrollTo = $container.offset().top - 40;
+						e.preventDefault();
+						activePage--;
+						//Scroll to top of container
+						var $scrollTo = $container.offset().top - 40;
 
-					
-					$("html, body").animate({
-						scrollTop: $scrollTo - $("#phantom").height()
-					}, 400);
-					return updateView();
+						
+						$("html, body").animate({
+							scrollTop: $scrollTo - $("#phantom").height()
+						}, 400);
+						return updateView();
 					});
 					return pageControls.find('a.' + (options.nextButtonClass || defaults.nextButtonClass)).click(function(e) {
-					e.preventDefault();
-					activePage++;
-					//Scroll to top of container
-					var $scrollTo = $container.offset().top - 40;
+						e.preventDefault();
+						activePage++;
+						//Scroll to top of container
+						var $scrollTo = $container.offset().top - 40;
 
-					// if (!$scrollTo.exists()) {
-					// 	$scrollTo = $container;
-					// 	//paddingTop = 50;
-					// }
-					$("html, body").animate({
-						scrollTop: $scrollTo - $("#phantom").height()
-					}, 400);
-					return updateView();
+						// if (!$scrollTo.exists()) {
+						// 	$scrollTo = $container;
+						// 	//paddingTop = 50;
+						// }
+						$("html, body").animate({
+							scrollTop: $scrollTo - $("#phantom").height()
+						}, 400);
+						return updateView();
 					});
 				}
 			}
@@ -269,6 +270,8 @@
 				$nodesShow.removeClass("hidden").addClass("visible");
 				$nodesShow.removeClass("first");
 				$nodesShow.first().addClass("first");
+				
+			$container.trigger("updateReady");
 				
 			}
 		};
@@ -364,6 +367,9 @@
 				}	
 			}
 			$(".layzr-loading-on .blog-shortcode.jquery-filter.mode-list .visible:not(.shown)").layzrBlogInitialisation();
+			$(".layzr-loading-on .blog-shortcode.jquery-filter.dt-css-grid-wrap .visible:not(.shown)").layzrBlogInitialisation();
+			//$(".dt-css-grid").loadingCssEffects();
+			//$container.trigger("updateReady");
 		};
 	
 		/*

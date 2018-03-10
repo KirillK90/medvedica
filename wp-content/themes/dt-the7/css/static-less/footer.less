@@ -53,37 +53,84 @@
 #bottom-bar {
 	position: relative;
 	z-index: 9;
-	min-height: 30px;
 	margin: 0 auto;
 }
 
-	#bottom-bar .wf-table {
-		height: 60px;
+	.wf-container-bottom {
+		#bottom-bar & {
+			.flex-display(@display: flex);
+			.align-items(@align: center);
+			.justify-content(@justify: space-between);
+			box-sizing: border-box;
+			.logo-center& {
+				.flex-flow( column wrap);
+				.justify-content(@justify: center);
+			}
+		}
 	}
-			#bottom-bar .wf-td p {
+			#bottom-bar p {
 				margin-bottom: 0;
 			}
 			.bottom-text-block {
 				text-align: right;
+				&:not(:first-child) {
+					margin-left: 20px;
+				}
+				.logo-center & {
+					text-align: center;
+					&:not(:first-child) {
+						margin-left: 0;
+					}
+				}
 			}
 
 			#branding-bottom {
-				width: 1px;
 				padding: 10px 10px 10px 0;
 				line-height: 0;
 				font-size: 0;
+				.logo-split & {
+					.flex-order(@order: 1);
+				}
 			}
 
-		#bottom-bar .wf-float-left {
-			margin-right: 40px;
+		.wf-float-left {
+			#bottom-bar & {
+				margin-right: 10px;
+				.logo-center& {
+					margin-right: 0;
+				}
+				.logo-split& {
+					text-align: right;
+				}
+			}
+			#bottom-bar.logo-split & {
+				.flex(@columns: 1 1 0%);
+			}
 		}
 		#bottom-bar .wf-float-left:last-of-type {
 			margin-right: 0;
 		}
 
-		#bottom-bar .wf-float-right {
-			margin-left: 40px;
-			margin-right: 0;
+		.wf-float-right {
+			#bottom-bar & {
+				.flex-display(@display: flex);
+				flex-grow: 1;
+				.justify-content(@justify: flex-end);
+				margin-left: 10px;
+				margin-right: 0;
+				.logo-center& {
+					margin-left: 0;
+					.flex-flow( column wrap);
+					.justify-content(@justify: center);
+				}
+				.logo-split& {
+					.justify-content(@justify: flex-start);
+				}
+			}
+			#bottom-bar.logo-split & {
+				.flex-order(@order: 2);
+				.flex(@columns: 1 1 0%);
+			}
 		}
 		
 			#bottom-bar .sub-nav {
@@ -116,4 +163,10 @@
 		}
 			#bottom-bar .mini-nav ul {
 				display: block;
+				.logo-center& {
+					text-align: center;
+				}
+			}
+			#bottom-bar .wf-float-right .mini-nav ul li {
+				vertical-align: baseline;
 			}

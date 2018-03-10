@@ -453,7 +453,7 @@ if ( ! function_exists( 'presscore_admin_post_scripts' ) ) :
 		// Proportions slider data.
 		$proportions = presscore_meta_boxes_get_images_proportions();
 		$proportions['length'] = count( $proportions );
-		wp_localize_script( 'the7-meta-box-magic', 'rwmbImageRatios', $proportions );
+		wp_localize_script( 'the7-meta-box-magic', 'the7mbImageRatios', $proportions );
 
 		// Localize meta boxes dependencies.
 		global $DT_META_BOXES;
@@ -726,6 +726,11 @@ if ( ! function_exists( 'presscore_of_localized_vars_filter' ) ) :
 						'operator' => '==',
 						'value' => 'top_line',
 					),
+					array(
+						'field' => 'header_navigation',
+						'operator' => '==',
+						'value' => 'slide_out',
+					),
 				),
 				array(
 					array(
@@ -733,12 +738,23 @@ if ( ! function_exists( 'presscore_of_localized_vars_filter' ) ) :
 						'operator' => '==',
 						'value' => 'side_line',
 					),
+					array(
+						'field' => 'header_navigation',
+						'operator' => '==',
+						'value' => 'slide_out',
+					),
 				),
 				array(
 					array(
 						'field' => 'header-layout',
 						'operator' => '==',
 						'value' => 'menu_icon',
+					),
+					
+					array(
+						'field' => 'header_navigation',
+						'operator' => '==',
+						'value' => 'slide_out',
 					),
 				)
 			),

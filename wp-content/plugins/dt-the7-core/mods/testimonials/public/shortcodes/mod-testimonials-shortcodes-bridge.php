@@ -1757,10 +1757,8 @@ vc_map( array(
 			'value' => '',
 			'units' => '',
 			'max' => 12,
-			'dependency'	=> array(
-				'element'	=> 'responsiveness',
-				'value'		=> 'post_width_based',
-			),
+			"description" => __("Affects only masonry layout", "the7mk2"),
+			"dependency" => array("element" => "responsiveness", "value" => 'post_width_based' ),
 			'edit_field_class' => 'vc_col-xs-12 vc_column dt_row-6',
 		),
 	  	array(

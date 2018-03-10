@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The7 core 5.6.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dt-the7-core\n"
-"POT-Creation-Date: 2018-02-19 13:21:53+00:00\n"
+"POT-Creation-Date: 2018-02-28 13:06:20+00:00\n"
 "PO-Revision-Date: 2017-11-09 17:19-0300\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
@@ -352,7 +352,7 @@ msgstr "Contenido"
 #: mods/portfolio/public/shortcodes/mod-portfolio-shortcodes-bridge.php:273
 #: mods/portfolio/public/shortcodes/mod-portfolio-shortcodes-bridge.php:287
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:566
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2227
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2225
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:310
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1583
 msgid "Content alignment"
@@ -634,6 +634,7 @@ msgstr ""
 msgid "Number of logotypes to show"
 msgstr "Número de logotipos para mostrar"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:217
 #: mods/portfolio/admin/options/options-portfolio.php:217
 msgid "Related Projects"
 msgstr "Proyectos relacionados"
@@ -882,28 +883,28 @@ msgid "Order"
 msgstr "Orden"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:330
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2048
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2100
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2151
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2188
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2046
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2098
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2149
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2186
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:262
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1817
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1869
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1920
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1957
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1815
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1867
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1918
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1955
 msgid "Total number of posts"
 msgstr "Total de publicaciones:"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:335
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2057
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2109
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2160
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2197
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2055
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2107
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2158
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2195
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:267
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1826
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1878
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1929
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1966
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1824
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1876
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1927
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1964
 msgid "Leave empty to display all posts."
 msgstr "Dejar en blanco para mostrar todas las publicaciones."
 
@@ -1054,9 +1055,9 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:486
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1999
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1997
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:480
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1767
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1765
 msgid "Gap between columns "
 msgstr "Espaciado entre columnas"
 
@@ -1091,23 +1092,23 @@ msgid "Autoplay speed"
 msgstr "Velocidad de la reproducción automática:"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:551
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2212
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2210
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:545
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1981
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1979
 msgid "Extra Class"
 msgstr "Clase extra"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:558
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2219
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2217
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:552
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1988
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1986
 msgid "Extra class name (optional)"
 msgstr "Nombre extra para la clase (opcional)"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:561
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2222
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2220
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:555
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1991
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1989
 msgid ""
 "Style particular elements differently - add a class name and refer to it in "
 "custom CSS."
@@ -1141,235 +1142,235 @@ msgstr ""
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:831
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:844
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:860
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2236
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2244
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2251
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2261
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2271
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2279
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2287
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2295
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2306
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2313
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2327
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2341
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2353
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2366
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2378
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2381
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2405
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2419
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2430
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2444
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2458
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2470
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2483
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2491
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2504
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2520
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2234
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2242
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2249
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2259
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2269
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2277
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2285
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2293
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2304
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2311
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2325
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2339
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2351
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2364
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2376
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2379
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2403
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2417
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2428
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2442
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2456
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2468
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2481
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2489
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2502
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2518
 msgid "Team Member"
 msgstr "Miembro de equipo "
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:579
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2240
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2238
 msgid "Team Member Name"
 msgstr "Nombre de miembro de Equipo"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:586
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:649
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:762
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2247
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2309
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2422
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2245
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2307
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2420
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:580
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:663
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:760
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2015
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2098
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2197
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2013
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2096
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2195
 msgid "Font style"
 msgstr "Estilo de tipografía"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:593
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:660
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:773
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2254
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2320
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2433
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2252
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2318
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2431
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:591
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:674
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:767
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2026
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2109
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2204
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2024
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2107
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2202
 msgid "Font size"
 msgstr "Tamaño de fuente"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:599
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2260
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2258
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:597
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2032
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2030
 msgid "Leave empty to use H4 font size."
 msgstr "Dejar en blanco para utilizar tamaño de tipografía H4"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:603
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:674
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:787
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2264
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2334
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2447
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2262
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2332
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2445
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:605
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:688
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:777
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2040
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2123
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2214
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2038
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2121
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2212
 msgid "Line height"
 msgstr "Alto de línea"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:609
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2270
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2268
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:611
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2046
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2044
 msgid "Leave empty to use H4 line height."
 msgstr "Dejar en blanco para utilizar alto de línea de tipografía H4"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:613
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:688
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:801
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2012
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2274
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2348
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2461
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2010
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2272
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2346
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2459
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:619
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:702
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:787
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1780
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2054
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2137
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2224
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1778
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2052
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2135
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2222
 msgid "Font color"
 msgstr "Color de fuente"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:617
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2016
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2278
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2014
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2276
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:623
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1784
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2058
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1782
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2056
 msgid "Leave empty to use headers color."
 msgstr "Dejar en blanco para utilizar color de encabezado de títulos."
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:621
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2282
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2280
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:631
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2066
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2064
 msgid "Gap below name"
 msgstr "Espaciado debajo del nombre"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:630
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2291
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2289
 msgid "Team Member Position"
 msgstr "Posición de miembro de Equipo"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:637
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2298
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2296
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:651
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2086
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2084
 msgid "Show position"
 msgstr "Mostrar posición"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:666
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2326
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2324
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:773
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2210
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2208
 msgid "Leave empty to use large font size."
 msgstr "Dejar en blanco para utilizar tamaño de tipografía grande"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:680
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2340
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2338
 msgid "Leave empty to use large line height."
 msgstr "Dejar en blanco para utilizar alto de línea grande"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:692
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:706
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2141
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2139
 msgid "Leave empty to use accent text color."
 msgstr "Dejar en blanco para utilizar color de acento para texto"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:700
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2360
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2358
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:714
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2149
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2147
 msgid "Gap below position"
 msgstr "Espaciado debajo de posición"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:714
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2374
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2372
 msgid "Team Member Description"
 msgstr "Descripción de miembro de Equipo"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:722
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2382
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2380
 msgid "Show description"
 msgstr "Mostrar descripción"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:732
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2392
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2390
 msgid "Team member content or excerpt"
 msgstr "Extracto o contenido de miembros del equipo:"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:748
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2408
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2406
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:747
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2184
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2182
 msgid "Maximum number of words"
 msgstr "Número máximo de palabras"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:758
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2418
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2416
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:752
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2189
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2187
 msgid "Leave empty to show full text."
 msgstr "Dejar en blanco para mostrar texto completo."
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:783
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2443
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2441
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:680
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2115
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2113
 msgid "Leave empty to use medium font size."
 msgstr "Dejar en blanco para utilizar tamaño de tipografía mediano"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:797
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2457
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2455
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:694
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:783
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2129
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2220
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2127
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2218
 msgid "Leave empty to use medium line height."
 msgstr "Dejar en blanco para utilizar alto de línea mediano"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:809
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2469
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2467
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:791
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2228
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2226
 msgid "Leave empty to use primary text color."
 msgstr "Dejar en blanco para utilizar color de texto primario"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:813
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2473
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2471
 msgid "Gap below description"
 msgstr "Espaciado debajo de descripción"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:827
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:834
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2487
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2494
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2485
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2492
 msgid "\"View Details\" Button"
 msgstr "Mostrar botón \"Ver Detalles\""
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:845
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2505
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2503
 msgid ""
 "Visible only if link to team member details page is enabled in post settings."
 msgstr ""
@@ -1377,7 +1378,7 @@ msgstr ""
 "en la config. de la publicación"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:848
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2508
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2506
 msgid "Button text"
 msgstr "Texto del botón"
 
@@ -1401,73 +1402,73 @@ msgstr "Texto del botón"
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1070
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1080
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1092
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2524
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2535
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2550
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2562
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2572
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2584
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2596
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2608
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2618
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2630
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2642
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2657
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2669
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2679
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2691
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2703
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2718
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2730
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2740
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2752
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2522
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2533
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2548
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2560
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2570
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2582
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2594
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2606
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2616
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2628
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2640
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2655
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2667
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2677
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2689
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2701
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2716
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2728
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2738
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2750
 msgid "Social Links"
 msgstr "Enlaces Sociales"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:865
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2525
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2523
 msgid "Show social links"
 msgstr "Mostrar enlaces sociales"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:876
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2536
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2534
 msgid "Social links position"
 msgstr "Posición de enlances sociales"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:891
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2551
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2549
 msgid "Icon size"
 msgstr "Tamaño de icono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:903
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2563
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2561
 msgid "Icon Background"
 msgstr "Fondo del icono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:913
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2573
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2571
 msgid "Background size"
 msgstr "Tamaño del fondo"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:925
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2585
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2583
 msgid "Border width"
 msgstr "Ancho del borde"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:937
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2597
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2595
 msgid "Border radius"
 msgstr "Redondez del borde"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:949
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2609
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2607
 msgid "Normal"
 msgstr "Normal"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:959
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1020
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2619
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2680
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2617
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2678
 msgid "Icon color"
 msgstr "Color del icono"
 
@@ -1485,12 +1486,12 @@ msgstr "Color del icono"
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1337
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1629
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1641
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2620
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2632
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2666
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2681
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2693
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2727
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2618
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2630
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2664
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2679
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2691
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2725
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:937
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:949
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:976
@@ -1504,42 +1505,42 @@ msgstr "Dejar en blanco para usar color de acento"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:971
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1032
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2631
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2692
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2629
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2690
 msgid "Icon border color  "
 msgstr "Borde de color del icono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:983
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1044
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2643
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2704
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2641
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2702
 msgid "Show icon background"
 msgstr "Mostrar fondo de icono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:998
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1059
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2658
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2719
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2656
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2717
 msgid "Icon background color"
 msgstr "Color de fondo de icono"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1010
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2670
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2668
 msgid "Hover"
 msgstr "Señalación con cursor"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1071
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2731
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2729
 msgid "Icons gaps"
 msgstr "Espaciado de los iconos"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1081
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2741
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2739
 msgid "Gap below icons"
 msgstr "Espaciado debajo de los iconos"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1093
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2753
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2751
 msgid "Gap between icons"
 msgstr "Espaciado entre iconos"
 
@@ -1789,16 +1790,16 @@ msgid "Bullets Position"
 msgstr "Posición de viñeta"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1719
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2765
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2763
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1420
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2242
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2240
 msgid "CSS box"
 msgstr "Cuadro de CSS"
 
 #: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1721
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2767
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2765
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1422
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2244
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2242
 msgid "Design Options"
 msgstr "Ajustes de diseño"
 
@@ -1832,8 +1833,13 @@ msgstr "Número de columnas"
 msgid "Column minimum width"
 msgstr "Ancho mínimo de columna"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2004
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1772
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:1992
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1760
+msgid "Affects only masonry layout"
+msgstr ""
+
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2002
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1770
 msgid ""
 "Please note that this setting affects post paddings. So, for example: a "
 "value 10px will give you 20px gaps between posts)"
@@ -1842,79 +1848,79 @@ msgstr ""
 "publicaciones. Por ejemplo, un valor de 10px dará por resultado un espaciado "
 "de 20px."
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2007
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1775
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2005
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1773
 msgid "Pagination colors"
 msgstr "Color de la paginación"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2019
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1787
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2017
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1785
 msgid "Accent color"
 msgstr "Color de acento"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2023
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1791
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2021
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1789
 msgid "Leave empty to use accent color."
 msgstr "Dejar en blanco para usar el color de acento"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2027
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1796
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2025
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1794
 msgid "Pagination"
 msgstr "Paginación"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2033
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1802
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2031
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1800
 msgid "Pagination mode"
 msgstr "Modo de paginación"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2061
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2112
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2163
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2200
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1830
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1881
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1932
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1969
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2059
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2110
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2161
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2198
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1828
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1879
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1930
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1967
 msgid "Number of posts to display on one page"
 msgstr "Número de publicaciones para mostrar en una página"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2070
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2121
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2172
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2209
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1839
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1890
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1941
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1978
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2068
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2119
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2170
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2207
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1837
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1888
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1939
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1976
 msgid "Leave empty to use number from wp settings."
 msgstr "Dejar en blanco para usar el valor segun los ajustes de WP."
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2073
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2124
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1842
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1893
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2071
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2122
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1840
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1891
 msgid "Show all pages in paginator"
 msgstr "Mostrar todas las páginas en paginador"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2087
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2138
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2175
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1856
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1907
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1944
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2085
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2136
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2173
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1854
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1905
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1942
 msgid "Gap before pagination"
 msgstr "Espaciado antes del paginador"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2096
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2147
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2184
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1865
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1916
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1953
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2094
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2145
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2182
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1863
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1914
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1951
 msgid "Leave empty to use default gap"
 msgstr "Dejar en blanco para usar el espaciado por defecto"
 
-#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2352
+#: mods/team/public/shortcodes/mod-team-shortcodes-bridge.php:2350
 msgid " Leave empty to use accent text color."
 msgstr "Dejar en blanco para usar el color de acento en el texto"
 
@@ -1981,7 +1987,7 @@ msgid "Show image"
 msgstr "Mostrar imagen"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:562
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1997
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1995
 msgid "Testimonial Author Name"
 msgstr "Nombre de autor de testimonio"
 
@@ -2008,49 +2014,49 @@ msgstr "Nombre de autor de testimonio"
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:784
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:792
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:801
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2001
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2012
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2019
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2033
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2047
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2059
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2071
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2083
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2094
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2102
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2116
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2130
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2142
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2155
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2165
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2169
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2181
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2190
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2201
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2211
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2221
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2229
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2238
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:1999
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2010
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2017
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2031
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2045
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2057
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2069
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2081
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2092
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2100
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2114
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2128
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2140
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2153
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2163
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2167
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2179
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2188
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2199
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2209
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2219
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2227
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2236
 msgid "Testimonial"
 msgstr "Testimonial"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:569
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2004
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2002
 msgid "Show author name"
 msgstr "Mostrar nombre del autor"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:644
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2079
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2077
 msgid "Testimonial Author Position"
 msgstr "Mostra pisición del autor de testimonio"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:735
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2172
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2170
 msgid "Testimonial content or excerpt"
 msgstr "Mostrar extracto o contenido de testimonios"
 
 #: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:795
-#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2232
+#: mods/testimonials/public/shortcodes/mod-testimonials-shortcodes-bridge.php:2230
 msgid "Gap below testimonial"
 msgstr "Espaciado debajo de testimonio"
 
@@ -2059,7 +2065,7 @@ msgid "Testimonials Masonry & Grid"
 msgstr "Testimonio Cuadrícula irregular y lineal"
 
 #: mods/testimonials/public/shortcodes/testimonials-carousel/testimonials-carousel.php:399
-#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:443
+#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:444
 #: mods/testimonials/public/templates/testimonials-post.php:69
 msgid "read more"
 msgstr "leer más"
@@ -2310,6 +2316,7 @@ msgid "Post types"
 msgstr "Tipos de publicación"
 
 #: includes/theme-options/modules.php:19
+#: mods/portfolio/admin/options/options-portfolio-old.php:15
 #: mods/portfolio/admin/options/options-portfolio.php:15
 msgctxt "theme-options"
 msgid "Portfolio"
@@ -2322,6 +2329,10 @@ msgstr "Portafolio"
 #: mods/albums/admin/options/options-albums.php:35
 #: mods/albums/admin/options/options-albums.php:62
 #: mods/albums/admin/options/options-albums.php:102
+#: mods/portfolio/admin/options/options-portfolio-old.php:63
+#: mods/portfolio/admin/options/options-portfolio-old.php:90
+#: mods/portfolio/admin/options/options-portfolio-old.php:130
+#: mods/portfolio/admin/options/options-portfolio-old.php:199
 #: mods/portfolio/admin/options/options-portfolio.php:63
 #: mods/portfolio/admin/options/options-portfolio.php:90
 #: mods/portfolio/admin/options/options-portfolio.php:130
@@ -2337,6 +2348,10 @@ msgstr "Activado"
 #: mods/albums/admin/options/options-albums.php:39
 #: mods/albums/admin/options/options-albums.php:66
 #: mods/albums/admin/options/options-albums.php:106
+#: mods/portfolio/admin/options/options-portfolio-old.php:67
+#: mods/portfolio/admin/options/options-portfolio-old.php:94
+#: mods/portfolio/admin/options/options-portfolio-old.php:134
+#: mods/portfolio/admin/options/options-portfolio-old.php:203
 #: mods/portfolio/admin/options/options-portfolio.php:67
 #: mods/portfolio/admin/options/options-portfolio.php:94
 #: mods/portfolio/admin/options/options-portfolio.php:134
@@ -2386,6 +2401,7 @@ msgid "Gallery"
 msgstr "Galería"
 
 #: mods/albums/admin/options/options-albums.php:24
+#: mods/portfolio/admin/options/options-portfolio-old.php:52
 #: mods/portfolio/admin/options/options-portfolio.php:52
 msgctxt "theme-options"
 msgid "Previous &amp; next buttons"
@@ -2398,6 +2414,8 @@ msgstr "Mostrar en galería álbumes"
 
 #: mods/albums/admin/options/options-albums.php:50
 #: mods/albums/admin/options/options-albums.php:55
+#: mods/portfolio/admin/options/options-portfolio-old.php:78
+#: mods/portfolio/admin/options/options-portfolio-old.php:83
 #: mods/portfolio/admin/options/options-portfolio.php:78
 #: mods/portfolio/admin/options/options-portfolio.php:83
 msgctxt "theme-options"
@@ -2405,6 +2423,7 @@ msgid "Back button"
 msgstr "Botón atrás"
 
 #: mods/albums/admin/options/options-albums.php:78
+#: mods/portfolio/admin/options/options-portfolio-old.php:106
 #: mods/portfolio/admin/options/options-portfolio.php:106
 msgctxt "theme-options"
 msgid "Choose page"
@@ -2412,6 +2431,8 @@ msgstr "Elegir página"
 
 #: mods/albums/admin/options/options-albums.php:90
 #: mods/albums/admin/options/options-albums.php:95
+#: mods/portfolio/admin/options/options-portfolio-old.php:118
+#: mods/portfolio/admin/options/options-portfolio-old.php:123
 #: mods/portfolio/admin/options/options-portfolio.php:118
 #: mods/portfolio/admin/options/options-portfolio.php:123
 msgctxt "theme-options"
@@ -2419,18 +2440,21 @@ msgid "Meta information"
 msgstr "Metainformación"
 
 #: mods/albums/admin/options/options-albums.php:119
+#: mods/portfolio/admin/options/options-portfolio-old.php:147
 #: mods/portfolio/admin/options/options-portfolio.php:147
 msgctxt "theme-options"
 msgid "Date"
 msgstr "Fecha"
 
 #: mods/albums/admin/options/options-albums.php:128
+#: mods/portfolio/admin/options/options-portfolio-old.php:156
 #: mods/portfolio/admin/options/options-portfolio.php:156
 msgctxt "theme-options"
 msgid "Author"
 msgstr "Autor"
 
 #: mods/albums/admin/options/options-albums.php:137
+#: mods/portfolio/admin/options/options-portfolio-old.php:165
 #: mods/portfolio/admin/options/options-portfolio.php:165
 msgctxt "theme-options"
 msgid "Categories"
@@ -2472,141 +2496,187 @@ msgctxt "theme-options"
 msgid "Portfolio archives"
 msgstr "Archivos del portafolio"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:20
 #: mods/portfolio/admin/options/options-portfolio.php:20
 msgctxt "theme-options"
 msgid "Single project featured image"
 msgstr "Imagen de portada Proyecto individual"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:23
 #: mods/portfolio/admin/options/options-portfolio.php:23
 msgctxt "theme-options"
 msgid "Featured image sizing"
 msgstr "Tamaño foto Portada"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:28
 #: mods/portfolio/admin/options/options-portfolio.php:28
 msgctxt "theme-options"
 msgid "Preserve images proportions"
 msgstr "Preservar proporcion de imagen"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:29
 #: mods/portfolio/admin/options/options-portfolio.php:29
 msgctxt "theme-options"
 msgid "Resize images"
 msgstr "Recortar imagen"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:31
 #: mods/portfolio/admin/options/options-portfolio.php:31
 msgctxt "theme-options"
 msgid "Doesn't affect legacy project media settings."
 msgstr "No afecta la configuración antigua de multimedia"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:35
 #: mods/portfolio/admin/options/options-portfolio.php:35
 msgctxt "theme-options"
 msgid "Featured image proportions"
 msgstr "Proporción imagen de portada"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:56
 #: mods/portfolio/admin/options/options-portfolio.php:56
 msgctxt "theme-options"
 msgid "Show in portfolio posts"
 msgstr "Mostrar en publicaciones de portafolio"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:174
 #: mods/portfolio/admin/options/options-portfolio.php:174
 msgctxt "theme-options"
 msgid "Number of comments"
 msgstr "Número de comentarios"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:187
+#: mods/portfolio/admin/options/options-portfolio-old.php:192
 #: mods/portfolio/admin/options/options-portfolio.php:187
 #: mods/portfolio/admin/options/options-portfolio.php:192
 msgctxt "theme-options"
 msgid "Related projects"
 msgstr "Proyectos relacionados"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:215
 #: mods/portfolio/admin/options/options-portfolio.php:215
 msgctxt "theme-options"
 msgid "Title"
 msgstr "Título"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:223
 #: mods/portfolio/admin/options/options-portfolio.php:223
 msgctxt "theme-options"
 msgid "Show titles"
 msgstr "Mostrar títulos"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:231
 #: mods/portfolio/admin/options/options-portfolio.php:231
 msgctxt "theme-options"
 msgid "Show excerpts"
 msgstr "Mostrar extractos:"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:239
 #: mods/portfolio/admin/options/options-portfolio.php:239
 msgctxt "theme-options"
 msgid "Show date"
 msgstr "Mostrar fecha"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:247
 #: mods/portfolio/admin/options/options-portfolio.php:247
 msgctxt "theme-options"
 msgid "Show author"
 msgstr "Mostrar el autor"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:255
 #: mods/portfolio/admin/options/options-portfolio.php:255
 msgctxt "theme-options"
 msgid "Show number of comments"
 msgstr "Mostrar número de comentarios"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:263
 #: mods/portfolio/admin/options/options-portfolio.php:263
 msgctxt "theme-options"
 msgid "Show categories"
 msgstr "Mostrar categorías"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:271
 #: mods/portfolio/admin/options/options-portfolio.php:271
 #, fuzzy
 msgctxt "theme-options"
 msgid "Link icon on hover"
 msgstr "Color de flecha al señalar con el cursor"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:279
 #: mods/portfolio/admin/options/options-portfolio.php:279
 #, fuzzy
 msgctxt "theme-options"
 msgid "Zoom icon on hover"
 msgstr "Color de flecha al señalar con el cursor"
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:287
 #: mods/portfolio/admin/options/options-portfolio.php:287
 #, fuzzy
 msgctxt "theme-options"
 msgid "Details icon on hover"
 msgstr "Habiliar animacion de escala al pasar el cursor."
 
+#: mods/portfolio/admin/options/options-portfolio-old.php:295
 #: mods/portfolio/admin/options/options-portfolio.php:295
 msgctxt "theme-options"
 msgid "Maximum number of projects posts"
 msgstr "Número máximo de proyectos"
 
-#: mods/portfolio/admin/options/options-portfolio.php:309
+#: mods/portfolio/admin/options/options-portfolio-old.php:309
 msgctxt "theme-options"
 msgid "Related posts height for fullwidth posts (px)"
 msgstr ""
 "Altura de publicaciones relacionadas para publicaciones de ancho completo "
 "(px)"
 
-#: mods/portfolio/admin/options/options-portfolio.php:319
+#: mods/portfolio/admin/options/options-portfolio-old.php:319
+#: mods/portfolio/admin/options/options-portfolio.php:318
 msgctxt "theme-options"
 msgid "Related posts width for fullwidth posts"
 msgstr ""
 "Ancho de publicaciones relacionadas para publicaciones de ancho completo (px)"
 
-#: mods/portfolio/admin/options/options-portfolio.php:332
-#: mods/portfolio/admin/options/options-portfolio.php:367
+#: mods/portfolio/admin/options/options-portfolio-old.php:332
+#: mods/portfolio/admin/options/options-portfolio-old.php:367
 msgctxt "theme-options"
 msgid "Width (px)"
 msgstr "Ancho (px)"
 
-#: mods/portfolio/admin/options/options-portfolio.php:344
+#: mods/portfolio/admin/options/options-portfolio-old.php:344
 msgctxt "theme-options"
 msgid "Related posts height for posts with sidebar (px)"
 msgstr ""
 "Altura de publicaciones relacionadas para publicaciones con barra lateral "
 "(px)"
 
-#: mods/portfolio/admin/options/options-portfolio.php:354
+#: mods/portfolio/admin/options/options-portfolio-old.php:354
+#: mods/portfolio/admin/options/options-portfolio.php:351
 msgctxt "theme-options"
 msgid "Related posts width for posts with sidebar"
 msgstr ""
 "Anchura de publicaciones relacionadas para publicaciones con barra lateral "
+"(px)"
+
+#: mods/portfolio/admin/options/options-portfolio.php:309
+#, fuzzy
+msgctxt "theme-options"
+msgid "Related posts height for fullwidth posts"
+msgstr ""
+"Altura de publicaciones relacionadas para publicaciones de ancho completo "
+"(px)"
+
+#: mods/portfolio/admin/options/options-portfolio.php:331
+#: mods/portfolio/admin/options/options-portfolio.php:364
+#, fuzzy
+msgctxt "theme-options"
+msgid "Width"
+msgstr "Ancho (px)"
+
+#: mods/portfolio/admin/options/options-portfolio.php:342
+#, fuzzy
+msgctxt "theme-options"
+msgid "Related posts height for posts with sidebar"
+msgstr ""
+"Altura de publicaciones relacionadas para publicaciones con barra lateral "
 "(px)"
 
 #: mods/portfolio/admin/options/options-slug-portfolio.php:14
@@ -3543,7 +3613,7 @@ msgctxt "vc inline dummy"
 msgid "Team Carousel"
 msgstr "Carrusel de Equipo"
 
-#: mods/team/public/shortcodes/team-masonry/team-masonry.php:602
+#: mods/team/public/shortcodes/team-masonry/team-masonry.php:622
 msgctxt "vc inline dummy"
 msgid "Team Masonry & Grid"
 msgstr "Equipo Cuadrícula irregular & lineal"
@@ -3563,7 +3633,7 @@ msgctxt "vc inline dummy"
 msgid "Testimonials Carousel"
 msgstr "Carrusel de Testimonios"
 
-#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:626
+#: mods/testimonials/public/shortcodes/testimonials-masonry/testimonials-masonry.php:646
 msgctxt "vc inline dummy"
 msgid "Testimonials Masonry & Grid"
 msgstr "Testimonios Cuadrícula irregular & lineal"

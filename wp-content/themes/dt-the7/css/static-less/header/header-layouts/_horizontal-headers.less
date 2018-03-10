@@ -1,5 +1,17 @@
+
+/*Top header content width*/
 .masthead:not(.side-header) {
-	max-width: 1200px;
+	max-width: 100%;
+}
+/*Transparent header*/
+.transparent:not(.photo-scroller-album):not(.phantom-sticky) .masthead {
+	position: absolute;
+	width: 100%;
+	z-index: 102;
+}
+.masthead:not(.side-header):not(.full-width):not(.side-header-v-stroke):not(.side-header-menu-icon) {
+	padding: 0 44px;
+	box-sizing: border-box;
 }
 //Fix flexbox bugs in ie
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

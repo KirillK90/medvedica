@@ -895,3 +895,25 @@ function of_sanitize_responsive_columns( $input = '' ) {
     return array_map( 'absint', $input );
 }
 add_filter( 'of_sanitize_responsive_columns', 'of_sanitize_responsive_columns' );
+
+/**
+ * Sanitize number value.
+ *
+ * @param string|array $input
+ * @param array $definition
+ *
+ * @return string
+ */
+function of_sanitize_number( $input, $definition ) {
+	if ( is_array( $input ) ) {
+		$input = $input['val'] . $input['units'];
+	}
+	$units = 'px';
+	if ( isset( $definition['units'] ) ) {
+		$units = $definition['units'];
+	}
+	$number = The7_Option_Field_Number::sanitize( $input, $units );
+
+	return The7_Option_Field_Number::encode( $number );
+}
+add_filter( 'of_sanitize_number', 'of_sanitize_number', 10, 2 );

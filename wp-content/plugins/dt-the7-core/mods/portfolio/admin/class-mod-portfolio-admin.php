@@ -84,7 +84,12 @@ class Presscore_Mod_Portfolio_Admin {
 
 	public function add_options( $options ) {
 		if ( array_key_exists( 'of-blog-and-portfolio-menu', $options ) ) {
-			$options['of-portfolio-mod-injected-options'] = plugin_dir_path( __FILE__ ) . 'options/options-portfolio.php';
+			if ( defined( 'PRESSCORE_STYLESHEETS_VERSION' ) && version_compare( PRESSCORE_STYLESHEETS_VERSION, '6.2.0', '>=' ) ) {
+				$options_file = 'options/options-portfolio.php';
+			} else {
+				$options_file = 'options/options-portfolio-old.php';
+			}
+			$options['of-portfolio-mod-injected-options'] = plugin_dir_path( __FILE__ ) . $options_file;
 			$options['of-portfolio-mod-injected-slug-options'] = plugin_dir_path( __FILE__ ) . 'options/options-slug-portfolio.php';
 		}
 		if ( function_exists( 'presscore_module_archive_get_menu_slug' ) && array_key_exists( presscore_module_archive_get_menu_slug(), $options ) ) {

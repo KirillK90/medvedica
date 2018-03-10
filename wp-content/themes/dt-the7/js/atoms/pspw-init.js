@@ -287,7 +287,7 @@ $.fn.photoswipeGallery = function(gallerySelector){
             getTextForShare: function( shareButtonData ) {
 
                 var htmlString= gallery.currItem.title;
-                var stripedHtml = htmlString.replace(/<[^>]+>/g, '');
+                var stripedHtml = (typeof htmlString !="undefined") ? htmlString.replace(/<[^>]+>/g, '') : '';
                 return stripedHtml || '';
             },
 
@@ -607,7 +607,7 @@ $.fn.photoswipe = function(options){
             },
             getTextForShare: function( shareButtonData ) {
                 var htmlString= gallery.currItem.title;
-                var stripedHtml = htmlString.replace(/<[^>]+>/g, '');
+                var stripedHtml = (typeof htmlString !="undefined") ? htmlString.replace(/<[^>]+>/g, '') : '';
                 return stripedHtml || '';
             },
 

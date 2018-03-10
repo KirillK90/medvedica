@@ -1046,3 +1046,59 @@ if ( ! function_exists( 'presscore_lazy_loading_enabled' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'presscore_theme_color_meta' ) ) :
+
+	/**
+	 * Display "theme-color" meta. Uses accent color.
+	 */
+	function presscore_theme_color_meta() {
+		if ( 'gradient' === of_get_option( 'general-accent_color_mode' ) ) {
+			$color = of_get_option( 'general-accent_bg_color_gradient' );
+			$color = isset( $color[0] ) ? $color[0] : '#ffffff';
+		} else {
+			$color = of_get_option( 'general-accent_bg_color' );
+		}
+
+		printf( '<meta name="theme-color" content="%s"/>', $color );
+	}
+
+endif;
+
+if ( ! function_exists( 'presscore_js_resize_event_hack' ) ):
+
+	/**
+	 * Output js resize event hack that improves performance on mobile.
+     *
+	 * @since 6.2.1
+	 * @uses  of_get_option
+	 */
+	function presscore_js_resize_event_hack() {
+		if ( ! of_get_option( 'advanced-normalize_resize_on_mobile' ) ) {
+			return;
+		}
+		?>
+        <script type="text/javascript">
+            var originalAddEventListener, oldWidth;
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                originalAddEventListener = EventTarget.prototype.addEventListener;
+                oldWidth = window.innerWidth;
+
+                EventTarget.prototype.addEventListener = function (eventName, eventHandler) {
+                    originalAddEventListener.call(this, eventName, function (event) {
+                        if (event.type === "resize" && oldWidth === window.innerWidth) {
+                            return;
+                        }
+                        else if (event.type === "resize" && oldWidth !== window.innerWidth) {
+                            oldWidth = window.innerWidth;
+                        }
+                        eventHandler(event);
+                    });
+                };
+            }
+        </script>
+		<?php
+	}
+
+endif;

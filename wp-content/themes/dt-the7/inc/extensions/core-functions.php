@@ -1397,19 +1397,33 @@ function presscore_sanitize_classes( $classes ) {
 }
 
 function presscore_theme_is_activated() {
+	if ( defined( 'ENVATO_HOSTED_SITE' ) ) {
+		return true;
+	}
+
 	return ( 'yes' === get_site_option( 'the7_registered' ) );
 }
 
 function presscore_activate_theme() {
 	update_site_option( 'the7_registered', 'yes' );
+	do_action( 'the7_after_theme_activation' );
 }
 
 function presscore_deactivate_theme() {
 	delete_site_option( 'the7_registered' );
+	do_action( 'the7_after_theme_deactivation' );
+}
+
+function presscore_delete_purchase_code() {
+	delete_site_option( 'the7_purchase_code' );
 }
 
 function presscore_get_purchase_code() {
-    return get_site_option( 'the7_purchase_code' );
+	if ( defined( 'SUBSCRIPTION_CODE' ) ) {
+	    return 'envato_hosted:' . SUBSCRIPTION_CODE;
+	}
+
+	return get_site_option( 'the7_purchase_code' );
 }
 
 function presscore_get_censored_purchase_code() {

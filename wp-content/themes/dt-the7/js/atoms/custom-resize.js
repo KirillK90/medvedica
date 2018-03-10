@@ -38,20 +38,7 @@
 			$(".mobile-sticky-header-overlay").removeClass("active");
 			$(".dt-mobile-menu-icon").removeClass("active");
 			$html.removeClass("menu-open");
-			if (!headerBelowSliderExists ) {
-				if (!bodyTransparent) {
-					$('.masthead:not(.mixed-header):not(#phantom):not(.side-header)')
-					.velocity({
-						translateY : "",
-					}, 0);
-				}
-			}
-			if($(".is-safari").length > 0 && stickyTopLine.exists()){
-				stickyTopLine.css({
-					"width":  document.documentElement.clientWidth,
-					"max-width":  document.documentElement.clientWidth
-				});
-			}
+
 		}
 
 		if(window.innerWidth <= dtLocal.themeSettings.mobileHeader.firstSwitchPoint && !$body.hasClass("responsive-off")){

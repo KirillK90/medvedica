@@ -47,11 +47,11 @@ $options['general-filter_style'] = array(
 $options[] = array( "type" => "js_hide_begin", "class" => "general-filter_style general-filter_style-minimal" );
 
 $options['general-filter_style-minimal-border_radius'] = array(
-	"name"		=> _x( 'Border radius (px)', 'theme-options', 'the7mk2' ),
+	"name"		=> _x( 'Border radius', 'theme-options', 'the7mk2' ),
 	"id"		=> "general-filter_style-minimal-border_radius",
-	"std"		=> '100',
-	"type"		=> "text",
-	"sanitize"	=> 'dimensions',
+	"std"		=> '100px',
+	"type"		=> "number",
+	"units"     => "px",
 );
 
 $options[] = array( "type" => "js_hide_end" );
@@ -59,11 +59,11 @@ $options[] = array( "type" => "js_hide_end" );
 $options[] = array( "type" => "js_hide_begin", "class" => "general-filter_style general-filter_style-material" );
 
 $options['general-filter_style-material-line_size'] = array(
-	"name"		=> _x( 'Line size (px)', 'theme-options', 'the7mk2' ),
+	"name"		=> _x( 'Line size', 'theme-options', 'the7mk2' ),
 	"id"		=> "general-filter_style-material-line_size",
-	"std"		=> '2',
-	"type"		=> "text",
-	"sanitize"	=> 'dimensions'
+	"std"		=> '2px',
+	"type"		=> "number",
+	"units"     => "px",
 );
 
 $options[] = array( "type" => "js_hide_end" );
@@ -118,12 +118,11 @@ $options['general-filter-margin'] = array(
 $options[] = array(	"name" => _x('Gap below categorization & before pagination', 'theme-options', 'the7mk2'), "type" => "block" );
 
 $options['general-navigation_margin'] = array(
-	'id' => 'general-navigation_margin',
-	'name' => _x( 'Gap (px)', 'theme-options', 'the7mk2' ),
-	'type' => 'text',
-	'std' => '50',
-	'sanitize' => 'dimensions',
-	'class' => 'mini',
+	'id'    => 'general-navigation_margin',
+	'name'  => _x( 'Gap', 'theme-options', 'the7mk2' ),
+	'std'   => '50px',
+	'type'  => 'number',
+	'units' => 'px',
 );
 
 /**

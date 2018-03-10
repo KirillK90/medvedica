@@ -108,4 +108,7 @@ if ( is_admin() ) {
 	require_once PRESSCORE_ADMIN_DIR . '/admin-bulk-actions.php';
 
 	include_once locate_template( 'inc/admin/load-meta-boxes.php' );
+
+	require_once PRESSCORE_EXTENSIONS_DIR . '/class-the7-theme-auto-deactivation.php';
+	The7_Theme_Auto_Deactivation::add_hooks();
 }

@@ -487,18 +487,18 @@
 			$this.find(".post-entry-wrapper").each(function(){
 				var $this = $(this),
 					$thisOfTop = $this.find(".entry-excerpt").height() + $this.find(".post-details").innerHeight();
-				$this.stop().velocity({
-					translateY : $thisOfTop
-				}, 0);
+				$this.css(
+					'transform', 'translateY(' + $thisOfTop + 'px)'
+				);
 				$this.parents(".post").first().on("mouseenter", function(e) {
-					$this.stop().velocity({
-						translateY : 0
-					}, 0);
+					$this.css(
+						'transform', 'translateY(0px)'
+					);
 				});
 				$this.parents(".post").first().on("mouseleave", function(e) {
-					$this.stop().velocity({
-						translateY : $thisOfTop
-					}, 0);
+					$this.css(
+						'transform', 'translateY(' + $thisOfTop + 'px)'
+					);
 				});
 			})
 		}
@@ -516,18 +516,18 @@
 				$this.find(".post-entry-wrapper").each(function(){
 					var $this = $(this),
 						$thisOfTop = $this.find(".entry-excerpt").height() + $this.find(".post-details").innerHeight();
-					$this.stop().velocity({
-						translateY : $thisOfTop
-					}, 0);
+					$this.css(
+						'transform', 'translateY(' + $thisOfTop + 'px)'
+					);
 					$this.parents(".post").first().on("mouseenter", function(e) {
-						$this.stop().velocity({
-							translateY : 0
-						}, 0);
+						$this.css(
+							'transform', 'translateY(0px)'
+						);
 					});
 					$this.parents(".post").first().on("mouseleave", function(e) {
-						$this.stop().velocity({
-							translateY : $thisOfTop
-						}, 0);
+						$this.css(
+							'transform', 'translateY(' + $thisOfTop + 'px)'
+						);
 					});
 				})
 			}

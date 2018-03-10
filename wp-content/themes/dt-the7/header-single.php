@@ -18,9 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if ( presscore_responsive() ) : ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<?php endif ?>
+    <?php presscore_theme_color_meta() ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>" />
-	<?php wp_head(); ?>
+    <?php
+    presscore_js_resize_event_hack();
+    wp_head();
+    ?>
 </head>
 <body <?php body_class() ?>>
 <?php

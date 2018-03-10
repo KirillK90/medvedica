@@ -1829,18 +1829,6 @@ jQuery(document).ready(function($){
         $("<style type='text/css'>" + ' .content #jg-container-' + jgCounter + ' .wf-cell'  + '{padding:'  + $jgItemsPadding + ';}' + ' .content #jg-container-' + jgCounter + '.wf-container'  + '{'+ 'margin:'  + '-'+ $jgItemsPadding + ';}' + ' .content .full-width-wrap #jg-container-' + jgCounter + '.wf-container'  + '{'+ 'margin-left:'  + $jgItemsPadding + '; '+ 'margin-right:'  + $jgItemsPadding + '; '+ 'margin-top:' + '-' + $jgItemsPadding + '; '+ 'margin-bottom:' + '-' + $jgItemsPadding + ';}' +"</style>").insertAfter($jgContainer);
 
         $jgContainer.on("jgDone", function() {
-            // var layzrJGrid = new Layzr({
-            // //   container: ".jg-container",
-            //  selector: '[data-layzr-jgrid]',
-            //  attr: 'data-layzr-jgrid',
-            //  retinaAttr: 'data-layzr-jgrid-retina',
-            //  threshold: 0,
-            //  callback: function() {
-            //      $(this).velocity({
-            //          "opacity" : 1
-            //      }, 350);
-            //  }
-            // });
             var layzrJGrid = new Layzr({
                 selector: '.jgrid-lazy-load',
                 attr: 'data-src',

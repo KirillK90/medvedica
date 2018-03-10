@@ -981,7 +981,18 @@ function presscore_action_add_less_vars( $less_vars ) {
 		'footer-switch',
 		of_get_option( 'footer-collapse_after', '760' )
 	);
-
+	$less_vars->add_pixel_number(
+		'bottom-bar-switch',
+		of_get_option( 'bottom_bar-collapse_after', '990' )
+	);
+	$less_vars->add_pixel_number(
+		'bottom-bar-height',
+		of_get_option( 'bottom_bar-height', '60' )
+	);
+	$less_vars->add_paddings( array(
+		'bottom-bar-top-padding',
+		'bottom-bar-bottom-padding',
+	), of_get_option( 'bottom_bar-padding' ) );
 	/**
 	 * Page titles.
 	 */
@@ -1681,6 +1692,34 @@ function presscore_action_add_less_vars( $less_vars ) {
 	$less_vars->add_rgba_color(
 		'message-bg-color',
 		of_get_option( 'message_bg_color' )
+	);
+	/**
+	 * WC.
+	 */
+	if ( 'browser_width_based' === of_get_option( 'woocommerce_shop_template_responsiveness' ) ) {
+		$bwb_columns = of_get_option( 'woocommerce_shop_template_bwb_columns' ) ;
+		$columns = array(
+			'desktop'  => 'desktop',
+			'v_tablet' => 'v-tablet',
+			'h_tablet' => 'h-tablet',
+			'phone'    => 'phone',
+		);
+		foreach ( $columns as $column => $data_att ) {
+			$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
+			$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+			
+			$less_vars->add_keyword( $data_att. '-wc-columns-num', esc_attr( $val ) );
+	
+		};
+	};
+
+	$less_vars->add_pixel_number(
+		'wc-grid-product-gap',
+		of_get_option( 'woocommerce_shop_template_gap' )
+	);
+	$less_vars->add_pixel_number(
+		'wc-grid-product-min-width',
+		of_get_option( 'woocommerce_shop_template_column_min_width' )
 	);
 	/**
 	 * Stripes.

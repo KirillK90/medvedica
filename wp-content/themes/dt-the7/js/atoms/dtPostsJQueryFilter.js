@@ -603,7 +603,7 @@ $('.dt-shortcode.with-isotope').each(function () {
     }
 });
 
-$('.mode-masonry.jquery-filter, .mode-grid.jquery-filter').each(function () {
+$('.mode-masonry.jquery-filter, .mode-grid.jquery-filter:not(.dt-css-grid-wrap)').each(function () {
     var $this = $(this);
     var $container = $this.find('.iso-grid, .iso-container');
 

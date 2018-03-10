@@ -337,6 +337,7 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 				'layout_5' => 'layout-5',
 				'layout_6' => 'layout-6',
 			);
+			
 
 			$layout = $this->get_att( 'content_layout' );
 			if ( array_key_exists( $layout, $layout_classes ) ) {
@@ -388,7 +389,7 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 		 */
 		protected function iso_container_class( $class = array() ) {
 			if ( 'grid' === $this->get_att( 'type' ) ) {
-				$class[] = 'iso-grid';
+				$class[] = 'dt-css-grid';
 			} else {
 				$class[] = 'iso-container';
 			}
@@ -555,7 +556,26 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 			), $this->get_att( 'image_paddings' ), '%|px' );
 			$less_vars->add_pixel_number( 'img-border-radius', $this->get_att( 'img_border_radius' ) );
 			
+			if ( 'browser_width_based' === $this->get_att( 'responsiveness' ) ) {
+				$bwb_columns = DT_VCResponsiveColumnsParam::decode_columns( $this->get_att( 'bwb_columns' ) );
+				$columns = array(
+					'desktop'  => 'desktop',
+					'v_tablet' => 'v-tablet',
+					'h_tablet' => 'h-tablet',
+					'phone'    => 'phone',
+				);
 
+				foreach ( $columns as $column => $data_att ) {
+					$val = ( isset( $bwb_columns[ $column ] ) ? absint( $bwb_columns[ $column ] ) : '' );
+					$data_atts[] = 'data-' . $data_att . '-columns-num="' . esc_attr( $val ) . '"';
+					
+					$less_vars->add_keyword( $data_att. '-columns-num', esc_attr( $val ) );
+			
+				}
+			};
+			$less_vars->add_pixel_number( 'grid-posts-gap', $this->get_att( 'gap_between_posts' ) );
+			$less_vars->add_pixel_number( 'grid-post-min-width', $this->get_att( 'pwb_column_min_width' ));
+			$less_vars->add_pixel_number( 'grid-desire-col-num', $this->get_att( 'pwb_columns' ) );
 			//Post tab
 			$less_vars->add_font_style( array(
 				'post-title-font-style',

@@ -1207,6 +1207,116 @@ form.lost_reset_password label,
 
 
 //Products layouts
+//--Grid
+.wc-grid.dt-css-grid {
+	margin: 0;
+	.resize-by-browser-width& {
+		grid-template-columns: repeat(@desktop-wc-columns-num, 1fr);
+	  	grid-template-rows: auto;
+	  	grid-column-gap: @wc-grid-product-gap*2;
+	  	grid-row-gap: @wc-grid-product-gap*2;
+	  	
+	  	
+	  	.cssgridlegacy.no-cssgrid &,
+	  	.no-cssgridlegacy.no-cssgrid & {
+	  		margin: -@wc-grid-product-gap;
+	  		& .wf-cell {
+				width: 100%/@desktop-wc-columns-num;
+				padding: @wc-grid-product-gap;
+		  	}
+	  	}
+	}
+	&:not(.resize-by-browser-width) {
+	  	grid-row-gap: @wc-grid-product-gap*2;
+	  	grid-column-gap: @wc-grid-product-gap*2;
+    	grid-template-columns:repeat(auto-fit, minmax(@wc-grid-product-min-width, 1fr));
+	  	.cssgridlegacy.no-cssgrid &,
+	  	.no-cssgridlegacy.no-cssgrid & {
+	  		display: flex;
+	  		flex-flow: row wrap;
+	  		margin: -@wc-grid-product-gap;
+	  		& .wf-cell {
+	  			flex: 1 0 @wc-grid-product-min-width;
+				min-width: @wc-grid-product-min-width;
+				max-width: 100%;
+				padding: @wc-grid-product-gap;
+				box-sizing: border-box;
+		  	}
+	  	}
+	}
+}
+@media screen and (max-width: 1199px){
+	.dt-css-grid.wc-grid {
+		.resize-by-browser-width& {
+			grid-template-columns: repeat(@h-tablet-wc-columns-num, 1fr);
+			.cssgridlegacy.no-cssgrid &,
+	  		.no-cssgridlegacy.no-cssgrid & {
+		  		& .wf-cell {
+					width: 100%/@h-tablet-wc-columns-num;
+			  	}
+		  	}
+		}
+	}
+}
+@media screen and (max-width: 991px){
+	.dt-css-grid.wc-grid {
+		.resize-by-browser-width& {
+			grid-template-columns: repeat(@v-tablet-wc-columns-num, 1fr);
+			.cssgridlegacy.no-cssgrid &,
+	  		.no-cssgridlegacy.no-cssgrid & {
+		  		& .wf-cell {
+					width: 100%/@v-tablet-wc-columns-num;
+			  	}
+		  	}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.dt-css-grid.wc-grid {
+		.resize-by-browser-width& {
+			grid-template-columns: repeat(@phone-wc-columns-num, 1fr);
+			.cssgridlegacy.no-cssgrid &,
+	  		.no-cssgridlegacy.no-cssgrid & {
+		  		& .wf-cell {
+					width: 100%/@phone-wc-columns-num;
+			  	}
+		  	}
+		}
+	}
+
+}
+@media screen and (max-width: 568px){
+	.mixin (@a) when (isnumber(@a)) and (@a > 528) {
+		grid-template-columns:repeat(auto-fit, minmax(528px, 1fr));
+	}
+	.dt-css-grid.wc-grid {
+		&:not(.resize-by-browser-width) {
+	    	.mixin (@wc-grid-product-min-width);
+		}
+	}
+}
+@media screen and (max-width: 420px){
+	.mixin (@a) when (isnumber(@a)) and (@a > 370) {
+		grid-template-columns:repeat(auto-fit, minmax(100%, 1fr));
+	}
+	.dt-css-grid.wc-grid {
+		&:not(.resize-by-browser-width) {
+	    	.mixin (@wc-grid-product-min-width);
+	    	
+		}
+	}
+}
+@media screen and (max-width: 320px){
+	.mixin (@a) when (isnumber(@a)) and (@a > 280) {
+		grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+	}
+	.dt-css-grid.wc-grid {
+		&:not(.resize-by-browser-width) {
+	    	.mixin (@wc-grid-product-min-width);
+		}
+	}
+}
 //--List
 .view-mode-switcher {
 	& > a {

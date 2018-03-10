@@ -658,8 +658,7 @@ vc_map( array(
 	"base" => "dt_quote",
 	"icon" => "dt_vc_ico_quote",
 	"class" => "dt_vc_sc_quote",
-	"deprecated" => '5.2.1',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		array(
 			"type" => "textarea_html",
@@ -732,8 +731,7 @@ vc_map( array(
 	"base" => "dt_call_to_action",
 	"icon" => "dt_vc_ico_call_to_action",
 	"class" => "dt_vc_sc_call_to_action",
-	"deprecated" => '5.2.1',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		array(
 			"type" => "textarea_html",
@@ -812,8 +810,7 @@ vc_map( array(
 	"base" => "dt_teaser",
 	"icon" => "dt_vc_ico_teaser",
 	"class" => "dt_vc_sc_teaser",
-	"deprecated" => '5.2.1',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 
 		array(
@@ -1083,8 +1080,7 @@ vc_map( array(
 	"base" => "dt_banner",
 	"icon" => "dt_vc_ico_banner",
 	"class" => "dt_vc_sc_banner",
-	"deprecated" => '5.2.1',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		array(
 			"type" => "dropdown",
@@ -2754,16 +2750,15 @@ vc_map( array(
 			'edit_field_class' => 'vc_col-xs-12 vc_column dt_row-6',
 		),
 		array(
+
 			'heading' => __('Desired columns number', 'the7mk2'),
 			'param_name' => 'pwb_columns',
 			'type' => 'dt_number',
 			'value' => '',
 			'units' => '',
 			'max' => 12,
-			'dependency'	=> array(
-				'element'	=> 'responsiveness',
-				'value'		=> 'post_width_based',
-			),
+			'description' => __('Affects only masonry layout', 'the7mk2'),
+			"dependency" => array("element" => "responsiveness", "value" => 'post_width_based'),
 			'edit_field_class' => 'vc_col-xs-12 vc_column dt_row-6',
 		),
 		array(
@@ -4864,8 +4859,7 @@ vc_map( array(
 	"base" => "dt_blog_posts",
 	"icon" => "dt_vc_ico_blog_posts",
 	"class" => "dt_vc_sc_blog_posts",
-	"deprecated" => '4.6',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		// General group.
 		array(
@@ -5191,8 +5185,7 @@ vc_map( array(
 	"base" => "dt_blog_scroller",
 	"icon" => "dt_vc_ico_blog_posts",
 	"class" => "dt_vc_sc_blog_posts",
-	"deprecated" => '4.6',
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		// General group.
 		array(
@@ -5421,10 +5414,9 @@ vc_map( array(
 	"weight" => -1,
 	"name" => __("Gap (old) ", 'the7mk2'),
 	"base" => "dt_gap",
-	"deprecated" => '4.6',
 	"icon" => "dt_vc_ico_gap",
 	"class" => "dt_vc_sc_gap",
-	"category" => __('by Dream-Theme', 'the7mk2'),
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		array(
 			"type" => "textfield",
@@ -5788,8 +5780,7 @@ vc_map( array(
 	"base" => "dt_button",
 	"icon" => "dt_vc_ico_button",
 	"class" => "dt_vc_sc_button",
-	"category" => __('by Dream-Theme', 'the7mk2'),
-	"deprecated" => '5.2.0',
+	"category" => __('The7 Old', 'the7mk2'),
 	"params" => array(
 		array(
 			"type" => "textfield",

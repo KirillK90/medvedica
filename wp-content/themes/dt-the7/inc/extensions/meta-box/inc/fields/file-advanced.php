@@ -2,10 +2,10 @@
 // Prevent loading this file directly
 defined( 'ABSPATH' ) || exit;
 
-require_once RWMB_FIELDS_DIR . 'file.php';
-if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
+require_once THE7_RWMB_FIELDS_DIR . 'file.php';
+if ( ! class_exists( 'THE7_RWMB_File_Advanced_Field' ) )
 {
-	class RWMB_File_Advanced_Field extends RWMB_File_Field
+	class THE7_RWMB_File_Advanced_Field extends THE7_RWMB_File_Field
 	{
 		/**
 		 * Enqueue scripts and styles
@@ -18,9 +18,9 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 
 			// Make sure scripts for new media uploader in WordPress 3.5 is enqueued
 			wp_enqueue_media();
-			wp_enqueue_script( 'rwmb-file-advanced', RWMB_JS_URL . 'file-advanced.js', array( 'jquery', 'underscore' ), RWMB_VER, true );
-			wp_localize_script( 'rwmb-file-advanced', 'rwmbFileAdvanced', array(
-				'frameTitle' => __( 'Select Files', 'rwmb' ),
+			wp_enqueue_script( 'the7-mb-file-advanced', THE7_RWMB_JS_URL . 'file-advanced.js', array( 'jquery', 'underscore' ), THE7_RWMB_VER, true );
+			wp_localize_script( 'the7-mb-file-advanced', 'the7mbFileAdvanced', array(
+				'frameTitle' => __( 'Select Files', 'the7mk2' ),
 			) );
 		}
 
@@ -34,7 +34,7 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 			parent::add_actions();
 
 			// Attach images via Ajax
-			add_action( 'wp_ajax_rwmb_attach_file', array( __CLASS__, 'wp_ajax_attach_file' ) );
+			add_action( 'wp_ajax_the7_mb_attach_file', array( __CLASS__, 'wp_ajax_attach_file' ) );
 			add_action( 'print_media_templates', array( __CLASS__, 'print_templates' ) );
 		}
 
@@ -44,7 +44,7 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 			$field_id = isset( $_POST['field_id'] ) ? $_POST['field_id'] : 0;
 			$attachment_ids = isset( $_POST['attachment_ids'] ) ? $_POST['attachment_ids'] : array();
 
-			check_ajax_referer( "rwmb-attach-file_{$field_id}" );
+			check_ajax_referer( "the7-mb-attach-file_{$field_id}" );
 			foreach( $attachment_ids as $attachment_id )
 				add_post_meta( $post_id, $field_id, $attachment_id, false );
 
@@ -63,14 +63,14 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 		 */
 		static function html( $html, $meta, $field )
 		{
-			$i18n_title  = apply_filters( 'rwmb_file_advanced_select_string', _x( 'Select or Upload Files', 'file upload', 'rwmb' ), $field );
-			$attach_nonce = wp_create_nonce( "rwmb-attach-file_{$field['id']}" );
+			$i18n_title  = apply_filters( 'the7_mb_file_advanced_select_string', _x( 'Select or Upload Files', 'file upload', 'the7mk2' ), $field );
+			$attach_nonce = wp_create_nonce( "the7-mb-attach-file_{$field['id']}" );
 
 			// Uploaded files
 			$html = self::get_uploaded_files( $meta, $field );
 
 			// Show form upload
-			$classes = array( 'button', 'rwmb-file-advanced-upload', 'hide-if-no-js', 'new-files' );
+			$classes = array( 'button', 'the7-mb-file-advanced-upload', 'hide-if-no-js', 'new-files' );
 			if ( ! empty( $field['max_file_uploads'] ) && count( $meta ) >= (int) $field['max_file_uploads'] )
 				$classes[] = 'hidden';
 
@@ -99,18 +99,18 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 
 		static function print_templates()
 		{
-			$i18n_delete = apply_filters( 'rwmb_file_delete_string', _x( 'Delete', 'file upload', 'rwmb' ) );
-			$i18n_edit   = apply_filters( 'rwmb_file_edit_string', _x( 'Edit', 'file upload', 'rwmb' ) );
+			$i18n_delete = apply_filters( 'the7_mb_file_delete_string', _x( 'Delete', 'file upload', 'the7mk2' ) );
+			$i18n_edit   = apply_filters( 'the7_mb_file_edit_string', _x( 'Edit', 'file upload', 'the7mk2' ) );
 			?>
-            <script id="tmpl-rwmb-file-advanced" type="text/html">
+            <script id="tmpl-the7-mb-file-advanced" type="text/html">
 				<# _.each( attachments, function( attachment ) { #>
 				<li>
-					<div class="rwmb-icon"><img src="<# if ( attachment.type == 'image' ){ #>{{{ attachment.sizes.thumbnail.url }}}<# } else { #>{{{ attachment.icon }}}<# } #>"></div>
-					<div class="rwmb-info">
+					<div class="the7-mb-icon"><img src="<# if ( attachment.type == 'image' ){ #>{{{ attachment.sizes.thumbnail.url }}}<# } else { #>{{{ attachment.icon }}}<# } #>"></div>
+					<div class="the7-mb-info">
 						<a href="{{{ attachment.url }}}" target="_blank">{{{ attachment.title }}}</a>
 						<p>{{{ attachment.mime }}}</p>
 						<a title="<?php echo $i18n_edit; ?>" href="{{{ attachment.editLink }}}" target="_blank"><?php echo $i18n_edit; ?></a> |
-						<a title="<?php echo $i18n_delete; ?>" class="rwmb-delete-file" href="#" data-attachment_id="{{{ attachment.id }}}"><?php echo $i18n_delete; ?></a>
+						<a title="<?php echo $i18n_delete; ?>" class="the7-mb-delete-file" href="#" data-attachment_id="{{{ attachment.id }}}"><?php echo $i18n_delete; ?></a>
 					</div>
 				</li>
 				<# } ); #>

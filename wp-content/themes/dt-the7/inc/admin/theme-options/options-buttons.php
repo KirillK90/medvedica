@@ -237,11 +237,10 @@ foreach ( $buttons as $id=>$opts ) {
 		);
 
 		$options[] = array(
-			"name"		=> _x( "Border radius (px)", "theme-options", 'the7mk2' ),
-			"id"		=> "buttons-{$id}_border_radius",
-			"class"		=> "mini",
-			"std"		=> $opts['border_radius'],
-			"type"		=> "text",
-			"sanitize"	=> "dimensions"
+			'name'  => _x( 'Border radius', 'theme-options', 'the7mk2' ),
+			'id'    => "buttons-{$id}_border_radius",
+			'std'   => $opts['border_radius'],
+			'type'  => 'number',
+			'units' => 'px',
 		);
 }

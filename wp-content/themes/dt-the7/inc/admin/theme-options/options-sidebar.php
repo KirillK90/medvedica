@@ -24,35 +24,34 @@ $options[] = array( "name" => _x( 'Sidebar', 'theme-options', 'the7mk2' ), "type
 // block begin
 $options[] = array( "name" => _x( "Sidebar settings", "theme-options", 'the7mk2' ), "type" => "block_begin" );
 
-	$options[] = array(
-		"name"		=> _x( "Sidebar width (in 'px' or '%')", "theme-options", 'the7mk2' ),
-		"id"		=> "sidebar-width",
-		"std"		=> "30%",
-		"type"		=> "text",
-		"class"		=> "mini",
-		"sanitize" => "css_width_as_percents_on_default"
+	$options['sidebar-width'] = array(
+		'name'  => _x( 'Sidebar width', 'theme-options', 'the7mk2' ),
+		'id'    => 'sidebar-width',
+		'std'   => '30%',
+		'type'  => 'number',
+		'units' => 'px|%',
+// TODO: set % as units by default
+//		"sanitize" => "css_width_as_percents_on_default"
 	);
 
 	$options[] = array( "type" => "divider" );
 
-	$options[] = array(
-		"name"		=> _x( "Vertical distance between widgets (px)", "theme-options", 'the7mk2' ),
-		"id"		=> "sidebar-vertical_distance",
-		"std"		=> "60",
-		"type"		=> "text",
-		"class"		=> "mini",
-		"sanitize"	=> "dimensions"
+	$options['sidebar-vertical_distance'] = array(
+		'name'  => _x( 'Vertical distance between widgets', 'theme-options', 'the7mk2' ),
+		'id'    => 'sidebar-vertical_distance',
+		'std'   => '60px',
+		'type'  => 'number',
+		'units' => 'px',
 	);
 
 	$options[] = array( "type" => "divider" );
 
-	$options[] = array(
-		"name"		=> _x( "Distance between content area & sidebar (px)", "theme-options", 'the7mk2' ),
-		"id"		=> "sidebar-distance_to_content",
-		"std"		=> "50",
-		"type"		=> "text",
-		"class"		=> "mini",
-		"sanitize"	=> "dimensions"
+	$options['sidebar-distance_to_content'] = array(
+		'name'  => _x( 'Distance between content area & sidebar', 'theme-options', 'the7mk2' ),
+		'id'    => 'sidebar-distance_to_content',
+		'std'   => '50px',
+		'type'  => 'number',
+		'units' => 'px',
 	);
 
 	$options[] = array( "type" => "divider" );
@@ -212,12 +211,10 @@ $options[] = array(	"type" => "block_end");
  */
 $options[] = array(	"name" => _x('Responsiveness', 'theme-options', 'the7mk2'), "type" => "block" );
 
-// radio
-$options[] = array(
-	"name"		=> _x('Move sidebar below content after (px)', 'theme-options', 'the7mk2'),
-	"id"		=> 'sidebar-responsiveness',
-	"std"		=> "970px",
-	"type"		=> "text",
-	"class"		=> "mini",
-	"sanitize"	=> "dimensions"
+$options['sidebar-responsiveness'] = array(
+	'name'  => _x( 'Move sidebar below content after', 'theme-options', 'the7mk2' ),
+	'id'    => 'sidebar-responsiveness',
+	'std'   => '970px',
+	'type'  => 'number',
+	'units' => 'px',
 );

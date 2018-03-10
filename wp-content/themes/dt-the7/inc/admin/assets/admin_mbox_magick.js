@@ -189,9 +189,9 @@ $(window).trigger("resize");
 var pageSlideshowHeader = {
 	_isSlideshow: false,
 	_isTransOrNormal: false,
-	_headerTitle: $('.rwmb-input-_dt_header_title input'),
-	_headerBg: $('.rwmb-input-_dt_header_background input'),
-	_target: $( '.rwmb-input-_dt_header_header-below-slideshow' ),
+	_headerTitle: $('.the7-mb-input-_dt_header_title input'),
+	_headerBg: $('.the7-mb-input-_dt_header_background input'),
+	_target: $( '.the7-mb-input-_dt_header_header-below-slideshow' ),
 	init: function() {
 		var self = this;
 

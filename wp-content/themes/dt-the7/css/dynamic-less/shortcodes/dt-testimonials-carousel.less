@@ -7,6 +7,10 @@
 .bullets-position-horizontal(@position) when (@position = center) {
     left: 50%;
     transform: translateX(calc(-50% ~'+' @bullet-h-position));
+     @media all and (-ms-high-contrast: none) {
+     	transform: translateX(-50%);
+    	margin-left: @bullet-h-position;
+    }
 }
 .bullets-position-horizontal(@position) when (@position = right) {
     right: @bullet-h-position;
@@ -17,6 +21,10 @@
 .bullets-position-vertical(@position) when (@position = center) {
     top: 50%;
     transform: translateY(calc(-50% ~'+' @bullet-v-position));
+    @media all and (-ms-high-contrast: none) {
+     	transform: translateY(-50%);
+    	margin-top: @bullet-h-position;
+    }
 }
 .bullets-position-vertical(@position) when (@position = bottom) {
     top: calc(100% ~'+' @bullet-v-position);
@@ -32,6 +40,10 @@
 .nav-v-position(@position, @offset) when (@position = center) {
     top: 50%;
     transform: translateY(calc(-50% ~'+' @offset));
+    @media all and (-ms-high-contrast: none) {
+     	transform: translateY(-50%);
+    	margin-top: @offset;
+    }
 }
 .nav-v-position(@position, @offset) when (@position = bottom) {
     top: calc(100% ~'+' @offset);
@@ -46,6 +58,10 @@
 .nav-h-position(@position,@offset) when (@position = center) {
     left: 50%;
     transform: translateX(calc(-50% ~'+' @offset));
+    @media all and (-ms-high-contrast: none) {
+    	transform: translateX(-50%);
+    	margin-left: @offset;
+    }
 }
 .nav-h-position(@position,@offset) when (@position = right) {
     right: @offset;

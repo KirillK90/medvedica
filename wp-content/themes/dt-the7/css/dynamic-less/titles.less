@@ -10,12 +10,18 @@
 	background: linear-gradient(@dir, @startColor,@endColor); /* W3C */
 }
 /*Title background & lines -> Solid background*/
-.page-title {
+.page-title .wf-wrap {
 	min-height: @page-title-height;
-	& .wf-table {
+	padding-top: @page-title-top-padding;
+	padding-bottom: @page-title-bottom-padding;
+	border-bottom: @page-title-decorative-line-height @page-title-line-style @page-title-line-color;
+		
+}
+ @media all and (-ms-high-contrast: none) {
+ 	.page-title .wf-wrap {
 		height: @page-title-height;
 	}
-}
+ }
 .page-title.solid-bg {
 	background-color: @page-title-bg-color;
 }
@@ -44,14 +50,8 @@
 }
 
 /*Title background & lines -> Content-width line/Full-width line*/
-	//.page-title .wf-container-title,
-	//.page-title.full-width-line,
 	.article-top-bar .wf-container-top {
 		border-color: @divider-color;
-	}
-	.page-title .wf-container-title {
-		border-bottom: @page-title-decorative-line-height @page-title-line-style @page-title-line-color;
-		
 	}
 
 	.page-title > .wf-wrap,
@@ -59,15 +59,6 @@
 	#fancy-header > .wf-wrap {
 		width: @content-width;
 	}
-	#fancy-header.title-center > .wf-wrap,
-	#fancy-header.content-left > .wf-wrap,
-	#fancy-header.content-right > .wf-wrap {
-		max-width: @content-width;
-	}
-	.page-title .wf-table {
-		padding: @page-title-top-padding 0 @page-title-bottom-padding 0;
-	}
-
 	/*Page title -> Title color*/
 		.page-title h1,
 		.page-title h1 *,

@@ -20,7 +20,6 @@ if ( ! function_exists( 'presscore_register_scripts' ) ) :
     function presscore_register_scripts() {
         $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
         $template_uri = get_template_directory_uri();
-
 	    $register_styles = array(
 		    'dt-main'              => array(
 			    'src' => "{$template_uri}/css/main{$suffix}.css",
@@ -42,7 +41,6 @@ if ( ! function_exists( 'presscore_register_scripts' ) ) :
 		    );
 	        $register_styles['dt-awsome-fonts']['deps'] = array( 'dt-awsome-fonts-back' );
         }
-
         foreach ( $register_styles as $name => $props ) {
             $deps = isset( $props['deps'] ) ? $props['deps'] : array();
             wp_register_style( $name, $props['src'], $deps, THE7_VERSION, 'all' );
@@ -130,9 +128,8 @@ if ( ! function_exists( 'presscore_localize_main_script' ) ):
         $header = 'header-' . of_get_option( 'header-layout', 'inline' ) . '-';
         $header_height = '';
        	if ( in_array( $header_layout, array( 'classic', 'inline', 'split' ), true ) ) {
-        	 $header_height = of_get_option( "{$header}height" );
-        };
-       
+        	 $header_height = (int) of_get_option( "{$header}height" );
+        }
 
         $dt_local = array(
             'themeUrl' => get_template_directory_uri(),
@@ -156,9 +153,9 @@ if ( ! function_exists( 'presscore_localize_main_script' ) ):
                 	'height' => $header_height,
                 ),
                 'floatingHeader' => array(
-                    'showAfter' => $config->get( 'header.floating_navigation.show_after' ),
-                    'showMenu' => ( dt_sanitize_flag( $config->get( 'header.floating_navigation.enabled' ) ) ),
-                    'height' => of_get_option( 'header-floating_navigation-height' ),
+                    'showAfter' => (int) $config->get( 'header.floating_navigation.show_after' ),
+                    'showMenu' => dt_sanitize_flag( $config->get( 'header.floating_navigation.enabled' ) ),
+                    'height' => (int) of_get_option( 'header-floating_navigation-height' ),
                     'logo' => array(
                         'showLogo'      => ( 'none' !== $config->get( 'header.floating_navigation.logo.style' ) ),
                         'html'          => presscore_get_logo_image( presscore_get_floating_menu_logos_meta() ),
@@ -166,10 +163,10 @@ if ( ! function_exists( 'presscore_localize_main_script' ) ):
                     ),
                 ),
                 'mobileHeader' => array(
-                    'firstSwitchPoint' => of_get_option( 'header-mobile-first_switch-after', 1024 ),
-                    'secondSwitchPoint' => of_get_option( 'header-mobile-second_switch-after', 200 ),
-	                'firstSwitchPointHeight' => of_get_option( 'header-mobile-first_switch-height'),
-	                'secondSwitchPointHeight' => of_get_option( 'header-mobile-second_switch-height')
+                    'firstSwitchPoint' => (int) of_get_option( 'header-mobile-first_switch-after' ),
+                    'secondSwitchPoint' => (int) of_get_option( 'header-mobile-second_switch-after' ),
+	                'firstSwitchPointHeight' => (int) of_get_option( 'header-mobile-first_switch-height'),
+	                'secondSwitchPointHeight' => (int) of_get_option( 'header-mobile-second_switch-height'),
                 ),
                 'stickyMobileHeaderFirstSwitch' => array(
 	                'logo' => array(
@@ -178,7 +175,7 @@ if ( ! function_exists( 'presscore_localize_main_script' ) ):
                 ),
                 'stickyMobileHeaderSecondSwitch' => array(
 	                'logo' => array(
-		                'html' => presscore_get_logo_image(presscore_get_mobile_logos_meta_second()),
+		                'html' => presscore_get_logo_image( presscore_get_mobile_logos_meta_second() ),
 	                ),
                 ),
                 'content' => array(
@@ -752,6 +749,10 @@ if ( ! function_exists( 'presscore_body_class' ) ) :
 		}else{
 			$classes[] = 'inline-message-style';
 		}
+
+		if ( The7_Admin_Dashboard_Settings::get( 'fontawesome-4-compatibility' ) ) {
+		    $classes[] = 'dt-fa-compatibility';
+        }
 
 		/////////////
 		// return //

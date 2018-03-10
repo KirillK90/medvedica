@@ -44,7 +44,7 @@ class The7_Dynamic_Stylesheet {
 	public function enqueue() {
 		$css_url = $this->css_url;
 
-		if ( ! $css_url && $this->css_body ) {
+		if ( $this->css_body ) {
 			$css_body = $this->css_body;
 			if ( is_ssl() ) {
 				$css_body = str_replace( site_url( '', 'http' ), site_url( '', 'https' ), $css_body );

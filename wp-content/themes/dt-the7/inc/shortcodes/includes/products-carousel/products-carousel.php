@@ -409,24 +409,16 @@ if ( ! class_exists( 'DT_Shortcode_Products_Carousel', false ) ) :
 			$attributes = &$this->atts;
 			global $woocommerce;
 			$show_products_attd = $this->get_att( 'show_products' );
-			$orderby = '';
+			$orderby = $attributes['orderby'];
+			if ( 'id' === $orderby ) {
+				$orderby = 'ID';
+			}
+
 			$post_count = $this->get_att( 'dis_posts_total', '-1' );
 			$meta_query = $tax_query = '';
 			if(!isset($order)): $order = 'desc'; endif;
 			if(!isset($category)): $category = ''; endif;
 			if(!isset($ids)): $ids = ''; endif;
-			switch ( $attributes['orderby'] ) {
-				case 'date':
-					$orderby = 'date';
-					break;
-				case 'id':
-					$orderby = 'ID';
-					break;
-				case 'author':
-					$orderby = 'author';
-					break;
-			}
-
 
 			if($show_products_attd == "featured_products"){
 				$meta_query  = WC()->query->get_meta_query();

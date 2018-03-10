@@ -17,12 +17,11 @@ $options[] = array( "name" => _x('Contact Form Appearance', 'theme-options', 'th
 	$options[] = array(	"name" => _x('Contact form appearance', 'theme-options', 'the7mk2'), "type" => "block" );
 
 		$options[] = array(
-			"desc"		=> '',
-			"name"		=> _x( ' Input height (px)', 'theme-options', 'the7mk2' ),
-			"id"		=> "input_height",
-			"std"		=> '38px',
-			"type"		=> "text",
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Input height', 'theme-options', 'the7mk2' ),
+			'id'    => 'input_height',
+			'std'   => '38px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options[] = array(
@@ -40,26 +39,26 @@ $options[] = array( "name" => _x('Contact Form Appearance', 'theme-options', 'th
 		);
 
 		$options[] = array(
-			"name"		=> _x( 'Input border radius (px)', 'theme-options', 'the7mk2' ),
-			"id"		=> 'input_border_radius',
-			"std"		=> '0',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Input border radius', 'theme-options', 'the7mk2' ),
+			'id'    => 'input_border_radius',
+			'std'   => '0px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options[] = array(
-			"name"		=> _x( 'Border width  (px)', 'theme-options', 'the7mk2' ),
-			"id"		=> 'input_border_width',
-			"std"		=> '1',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			'name'  => _x( 'Border width', 'theme-options', 'the7mk2' ),
+			'id'    => 'input_border_width',
+			'std'   => '1px',
+			'type'  => 'number',
+			'units' => 'px',
 		);
 
 		$options[] = array(
-			"name"	=> _x( 'Border color', 'theme-options', 'the7mk2' ),
-			"id"	=> "input_border_color",
-			"std"	=> "rgba(173, 176, 182, 0.3)",
-			"type"	=> "alpha_color",
+			'name'	=> _x( 'Border color', 'theme-options', 'the7mk2' ),
+			'id'	=> 'input_border_color',
+			'std'	=> 'rgba(173, 176, 182, 0.3)',
+			'type'	=> 'alpha_color',
 		);
 
 	/**

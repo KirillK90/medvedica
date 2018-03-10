@@ -63,7 +63,6 @@ if(!$body.hasClass("responsive-off")){
 
 		$firstSwitchWidgetsNearLogo.removeClass("select-type-menu list-type-menu select-type-menu-second-switch list-type-menu-second-switch");
 		 $secondSwitchWidgetsNearLogo.removeClass("select-type-menu list-type-menu select-type-menu-first-switch list-type-menu-first-switch");
-
 		 $mobileWidgetsInTopBar.removeClass('show-on-desktop select-type-menu list-type-menu select-type-menu-first-switch list-type-menu-first-switch in-top-bar-left').addClass('hide-on-desktop hide-on-first-switch');
 		 $mobileWidgetsInTopBarLeft.removeClass('show-on-desktop select-type-menu list-type-menu select-type-menu-second-switch list-type-menu-second-switch in-top-bar').addClass('hide-on-desktop hide-on-second-switch');
 		 $mobileWidgetsInTopBarRight.removeClass('show-on-desktop select-type-menu list-type-menu  select-type-menu-second-switch list-type-menu-second-switch').addClass('hide-on-desktop');
@@ -116,11 +115,11 @@ if(!$body.hasClass("responsive-off")){
 					$floatMobBtn.parents(".masthead").removeClass("show-floating-icon");
 					isbtnMoved = false;
 				}
-				if(dtGlobals.winScrollTop > $(".masthead:not(.side-header)").height()){
-					$menu.addClass("stick-to-top");
-				}else{
-					$menu.removeClass("stick-to-top");
-				}
+				// if(dtGlobals.winScrollTop > $(".masthead:not(.side-header)").height()){
+				// 	$menu.addClass("stick-to-top");
+				// }else{
+				// 	$menu.removeClass("stick-to-top");
+				// }
 			});
 			var $Mobilehamburger = $(".dt-mobile-menu-icon");
 
@@ -185,31 +184,5 @@ if(!$body.hasClass("responsive-off")){
 			}
 
 		};
-		
-/*
-		$.mobileHeader = function() {
-			if($topBar.length > 0 && $topBar.css('display') != 'none'){
-				var topBarH = $topBar.innerHeight()
-			}else{
-				var topBarH = 0;
-			}
-
-			if($(".sticky-mobile-header ").length > 0){
-				if($(".mixed-header").length > 0){
-					var headerH = $(".mixed-header").height();
-				}else{
-					var headerH = $mastheadHeader.height();
-				}
-				var stickyMobileHeader = $('.masthead').first();
-				if(!$(".mobile-header-space").length > 0 && !$(".floating-navigation-below-slider").length > 0){
-					$("<div class='mobile-header-space'></div>").insertBefore(stickyMobileHeader);
-				}
-				$(".mobile-header-space").css({
-					height: headerH
-				});
-			}
-		}
-		$.mobileHeader();
-*/
 		
 	}

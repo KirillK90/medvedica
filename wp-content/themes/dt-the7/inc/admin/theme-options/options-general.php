@@ -19,11 +19,11 @@ $options[] = array( "name" => _x('General Appearance', 'theme-options', 'the7mk2
 		// text
 		$options[] = array(
 			"desc"		=> '',
-			"name"		=> _x( 'Content width (in "px" or "%")', 'theme-options', 'the7mk2' ),
+			"name"		=> _x( 'Content width', 'theme-options', 'the7mk2' ),
 			"id"		=> "general-content_width",
 			"std"		=> '1200px', 
-			"type"		=> "text",
-			"sanitize"	=> 'css_width'
+			"type"		=> "number",
+			"units"     => "px|%",
 		);
 
 		// radio
@@ -52,11 +52,11 @@ $options[] = array( "name" => _x('General Appearance', 'theme-options', 'the7mk2
 			// text
 			$options[] = array(
 				"desc"		=> '',
-				"name"		=> _x( 'Box width (in "px" or "%")', 'theme-options', 'the7mk2' ),
+				"name"		=> _x( 'Box width', 'theme-options', 'the7mk2' ),
 				"id"		=> "general-box_width",
-				"std"		=> '1320px', 
-				"type"		=> "text",
-				"sanitize"	=> 'css_width'
+				"std"		=> '1320px',
+				"type"		=> "number",
+				"units"     => "px|%",
 			);
 
 		$options[] = array( "type" => "js_hide_end" );
@@ -281,11 +281,11 @@ $options[] = array( "name" => _x('General Appearance', 'theme-options', 'the7mk2
 
 		// input
 		$options[] = array(
-			"name"		=> _x( 'Border radius (px)', 'theme-options', 'the7mk2' ),
+			"name"		=> _x( 'Border radius', 'theme-options', 'the7mk2' ),
 			"id"		=> 'general-border_radius',
 			"std"		=> '8',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			"type"		=> "number",
+			"units"     => "px",
 		);
 
 	$options[] = array(	"type" => "block_end");
@@ -437,7 +437,7 @@ $options[] = array( "name" => _x('General Appearance', 'theme-options', 'the7mk2
 
 		$options[] = array( 'type' => 'js_hide_end' );
 
-		/**
+	/**
 	 * Lightbox.
 	 */
 	$options[] = array( 'name' => _x( 'Lightbox', 'theme-options', 'the7mk2' ), 'type' => 'block' );
@@ -454,12 +454,9 @@ $options[] = array( "name" => _x('General Appearance', 'theme-options', 'the7mk2
 			),
 		);
 		$options['general-lightbox_arrow_size'] = array(
-			"name"		=> _x( 'Arrow size (px)', 'theme-options', 'the7mk2' ),
+			"name"		=> _x( 'Arrow size', 'theme-options', 'the7mk2' ),
 			"id"		=> 'general-lightbox_arrow_size',
 			"std"		=> '62px',
-			"type"		=> 'text',
-			"sanitize"	=> 'dimensions'
+			"type"		=> "number",
+			"units"     => "px",
 		);
-
-
-			

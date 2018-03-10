@@ -306,22 +306,21 @@ $new_options[] = array( "name" => _x("Portfolio", "theme-options", 'dt-the7-core
 
 			// input
 			$new_options[] = array(
-				"name"		=> _x( 'Related posts height for fullwidth posts (px)', 'theme-options', 'dt-the7-core' ),
-				"id"		=> 'general-rel_projects_fullwidth_height',
-				"std"		=> 210,
-				"type"		=> 'text',
-				// number
-				"sanitize"	=> 'ppp'
+				'name'		=> _x( 'Related posts height for fullwidth posts', 'theme-options', 'dt-the7-core' ),
+				'id'		=> 'general-rel_projects_fullwidth_height',
+				'std'		=> '210px',
+				'units'     => 'px',
+				'type'		=> 'number',
 			);
 
 			// radio
 			$new_options[] = array(
-				"name"		=> _x('Related posts width for fullwidth posts', 'theme-options', 'dt-the7-core'),
-				"id"		=> 'general-rel_projects_fullwidth_width_style',
-				"std"		=> 'prop',
-				"type"		=> 'radio',
-				"options"	=> $prop_fixed_options,
-				"show_hide"	=> array( 'fixed' => true ),
+				'name'		=> _x('Related posts width for fullwidth posts', 'theme-options', 'dt-the7-core'),
+				'id'		=> 'general-rel_projects_fullwidth_width_style',
+				'std'		=> 'prop',
+				'type'		=> 'radio',
+				'options'	=> $prop_fixed_options,
+				'show_hide'	=> array( 'fixed' => true ),
 			);
 
 			// hidden area
@@ -329,24 +328,22 @@ $new_options[] = array( "name" => _x("Portfolio", "theme-options", 'dt-the7-core
 
 				// input
 				$new_options[] = array(
-					"name"		=> _x( 'Width (px)', 'theme-options', 'dt-the7-core' ),
-					"id"		=> 'general-rel_projects_fullwidth_width',
-					"std"		=> '210',
-					"type"		=> 'text',
-					// number
-					"sanitize"	=> 'ppp'
+					'name'  => _x( 'Width', 'theme-options', 'dt-the7-core' ),
+					'id'    => 'general-rel_projects_fullwidth_width',
+					'std'   => '210px',
+					'type'  => 'number',
+					'units' => 'px',
 				);
 
 			$new_options[] = array( 'type' => 'js_hide_end' );
 
 			// input
 			$new_options[] = array(
-				"name"		=> _x( 'Related posts height for posts with sidebar (px)', 'theme-options', 'dt-the7-core' ),
-				"id"		=> 'general-rel_projects_height',
-				"std"		=> 180,
-				"type"		=> 'text',
-				// number
-				"sanitize"	=> 'ppp'
+				'name'  => _x( 'Related posts height for posts with sidebar', 'theme-options', 'dt-the7-core' ),
+				'id'    => 'general-rel_projects_height',
+				'std'   => '180px',
+				'type'  => 'number',
+				'units' => 'px',
 			);
 
 			// radio
@@ -364,12 +361,11 @@ $new_options[] = array( "name" => _x("Portfolio", "theme-options", 'dt-the7-core
 
 				// input
 				$new_options[] = array(
-					"name"		=> _x( 'Width (px)', 'theme-options', 'dt-the7-core' ),
-					"id"		=> 'general-rel_projects_width',
-					"std"		=> '180',
-					"type"		=> 'text',
-					// number
-					"sanitize"	=> 'ppp'
+					'name'  => _x( 'Width', 'theme-options', 'dt-the7-core' ),
+					'id'    => 'general-rel_projects_width',
+					'std'   => '180px',
+					'type'  => 'number',
+					'units' => 'px',
 				);
 
 			$new_options[] = array( 'type' => 'js_hide_end' );

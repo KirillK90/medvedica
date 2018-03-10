@@ -65,7 +65,7 @@ class RTEC_Email {
 		$this->set_content_type( $args['content_type'] );
 		$this->set_recipients( $args['recipients'] );
 		$this->set_subject( $args['subject'] );
-		$this->set_header( $event_id, $submission_email );
+		$this->set_header( $event_id, $submission_email, $args['body']['data'] );
 		$this->set_message_body( $args['body'] );
 	}
 
@@ -272,7 +272,7 @@ class RTEC_Email {
 	 * @param string $event_id
 	 * @param $submission_email
 	 */
-	protected function set_header( $event_id = '', $submission_email )
+	protected function set_header( $event_id = '', $submission_email, $data = array() )
 	{
 		global $rtec_options;
 
@@ -291,7 +291,8 @@ class RTEC_Email {
 		}
 
 		if ( ! empty ( $rtec_options[ $working_template_type . '_from'] ) && ! empty ( $rtec_options[ 'confirmation_from_address'] ) ) {
-			$email_from = $this->strip_malicious( $rtec_options[ $working_template_type . '_from'] ) . ' <' . $from_address . '>';
+			$from_name = strpos( $rtec_options[ $working_template_type . '_from'], '{' ) !== false ? $this->strip_malicious( $this->find_and_replace( $rtec_options[ $working_template_type . '_from'], $data ) ) : $this->strip_malicious( $rtec_options[ $working_template_type . '_from'] );
+			$email_from = str_replace( ':' , ' ', $from_name ) . ' <' . $from_address . '>';
 			$headers  = "From: " . $email_from. "\r\n";
 			$headers .= "Reply-To: " . $reply_to . "\r\n";
 		} else {
@@ -435,7 +436,7 @@ class RTEC_Email {
 			return $working_text;
 		}
 
-		$date_str = date_i18n( rtec_get_date_time_format(), strtotime( $sanitized_data['date'] ) );
+		$date_str = isset( $sanitized_data['date'] ) ? date_i18n( rtec_get_date_time_format(), strtotime( $sanitized_data['date'] ) ) : '';
 		$first = isset( $sanitized_data['first'] ) ? $sanitized_data['first'] : '';
 		$last = isset( $sanitized_data['last'] ) ? $sanitized_data['last'] : '';
 		$email = isset( $sanitized_data['email'] ) ? $sanitized_data['email'] : '';
@@ -502,35 +503,43 @@ class RTEC_Email {
 				$working_text = str_replace( $search, $replace, $working_text );
 			}
 
+			if ( strpos( $working_text, '{unregister-link}' ) !== false ) {
+				if ( isset( $sanitized_data['action_key'] ) && $sanitized_data['action_key'] != '' ) {
+					$unregister_link_text = isset( $rtec_options['unregister_link_text'] ) ? $rtec_options['unregister_link_text'] : __( 'Unregister from this event', 'registrations-for-the-events-calendar' );
+					$unregister_link_text = rtec_get_text( $unregister_link_text, __( 'Unregister from this event', 'registrations-for-the-events-calendar' ) );
+					$u_link = rtec_generate_unregister_link( $sanitized_data['event_id'], $sanitized_data['action_key'], $sanitized_data['email'], $unregister_link_text );
+				} else {
+					$u_link = '';
+				}
+
+				$working_text = str_replace( '{unregister-link}', $u_link, $working_text );
+			}
+
 		}
 
 		return $working_text;
 	}
-
 
 	/**
 	 * Removes anything that could potentially be malicious
 	 *
 	 * @param $value
 	 * @since 1.0
+	 * @since 2.1       replace to: with space instead of to
 	 * @return string
 	 */
 	private function strip_malicious( $value )
 	{
-		$malicious = array( 'to:', 'cc:', 'bcc:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:' );
+		$malicious = array( 'cc:', 'bcc:', 'content-type:', 'mime-version:', 'multipart-mixed:', 'content-transfer-encoding:' );
 
 		foreach ( $malicious as $m ) {
 
 			if ( stripos( $value, $m ) !== false ) {
-				if ( $m === 'to:' ) {
-					$value = str_replace( 'to:', 'to', $value );
-				} else {
-					return 'It looks like your message contains something potentially harmful.';
-				}
+				return 'It looks like your message contains something potentially harmful.';
 			}
 
 		}
-		$value = str_replace( array( '\r', '\n', '%0a', '%0d'), ' ' , $value);
+		$value = str_replace( array( '\r', '\n', '%0a', '%0d', 'to:' ), ' ' , $value);
 
 		return trim( $value );
 	}

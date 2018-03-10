@@ -1039,16 +1039,15 @@ vc_map( array(
 			'edit_field_class' => 'vc_col-xs-12 vc_column dt_row-6',
 		),
 		array(
+
 			'heading' => __('Desired columns number', 'the7mk2'),
 			'param_name' => 'pwb_columns',
 			'type' => 'dt_number',
 			'value' => '',
 			'units' => '',
 			'max' => 12,
-			'dependency'	=> array(
-				'element'	=> 'responsiveness',
-				'value'		=> 'post_width_based',
-			),
+			'description' => __('Affects only masonry layout', 'the7mk2'),
+			"dependency" => array("element" => "responsiveness", "value" => 'post_width_based'),
 			'edit_field_class' => 'vc_col-xs-12 vc_column dt_row-6',
 		),
 		array(

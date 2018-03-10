@@ -1,5 +1,4 @@
 // @codekit-append "atoms/plugins/easing.js";
-// @codekit-append "atoms/plugins/velocity.min.js";
 // @codekit-append "atoms/plugins/ripple.js";
 // @codekit-append "atoms/plugins/waves.js";
 // @codekit-append "atoms/plugins/layzr.js";

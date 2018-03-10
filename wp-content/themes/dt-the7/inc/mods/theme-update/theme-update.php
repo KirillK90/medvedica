@@ -29,10 +29,18 @@ if ( ! class_exists( 'Presscore_Modules_ThemeUpdateModule', false ) ) :
 			add_filter( 'pre_update_site_option_the7_purchase_code', array( __CLASS__, 'check_for_empty_code' ), 10, 2 );
 
 			if ( ! class_exists( 'The7_Install', false ) ) {
-				include_once( dirname( __FILE__ ) . '/class-the7-install.php' );
+				include dirname( __FILE__ ) . '/class-the7-install.php';
 			}
 
 			The7_Install::init();
+
+			if ( ! class_exists( 'The7_Registration_Warning', false ) ) {
+				include dirname( __FILE__ ) . '/class-the7-registration-warning.php';
+			}
+
+			add_action( 'admin_notices', array( 'The7_Registration_Warning', 'add_admin_notices' ) );
+			add_action( 'the7_after_theme_deactivation', array( 'The7_Registration_Warning', 'dismiss_admin_notices' ) );
+			add_action( 'the7_after_theme_registration', array( 'The7_Registration_Warning', 'setup_registration_warning' ) );
 		}
 
 		/**
@@ -97,6 +105,8 @@ if ( ! class_exists( 'Presscore_Modules_ThemeUpdateModule', false ) ) :
 			if ( class_exists( 'Presscore_Modules_TGMPAModule' ) ) {
 				Presscore_Modules_TGMPAModule::delete_plugins_list_cache();
 			}
+
+			do_action( 'the7_after_theme_registration', $the7_remote_api_response );
 
 			return $code;
 		}

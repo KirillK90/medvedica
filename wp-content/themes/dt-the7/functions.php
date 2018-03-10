@@ -1,7 +1,6 @@
 <?php
 /**
  * The7 theme.
- *
  * @package The7
  * @since   1.0.0
  */

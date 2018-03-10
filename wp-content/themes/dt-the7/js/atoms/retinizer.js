@@ -44,7 +44,8 @@ jQuery(document).ready(function($) {
 
 				this.style.willChange = 'opacity';
 
-	        	if($(this).parents(".blog-shortcode.mode-list").length > 0 || $(this).parents(".blog-media").length > 0 ){
+	        	if($(this).parents(".blog-shortcode.mode-list").length > 0 || $(this).parents(".blog-media").length > 0 || $(this).parents(".woocom-project").length > 0 ){
+	        		console.log(this)
 	        		this.setAttribute("sizes", this.width+"px");
 	        	}
 	        },

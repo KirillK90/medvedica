@@ -1361,6 +1361,17 @@ function optionsframework_interface( $options, $cur_page_id ) {
 
 			$output .= The7_Option_Field_Spacing::html( $field_name, $field_id, $val, $fields, $units );
 			break;
+
+		case 'number':
+			$field_id = $value['id'];
+			$field_name = "{$option_name}[{$field_id}]";
+			$units = 'px';
+			if ( isset( $value['units'] ) ) {
+				$units = $value['units'];
+			}
+
+			$output .= The7_Option_Field_Number::html( $field_name, $val, $units );
+			break;
 		}
 
 		if ( !in_array( $value['type'], $elements_without_wrap ) ) {

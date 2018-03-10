@@ -16,7 +16,7 @@ class The7_Admin_Notices {
 	public function add( $code, $callback, $type ) {
 		$this->registered_notices[ $code ] = array(
 			'callback' => $callback,
-			'type' => $type
+			'type'     => $type,
 		);
 	}
 
@@ -26,7 +26,7 @@ class The7_Admin_Notices {
 		$exclude_from_screen = apply_filters( 'the7_admin_notices_exclude_from_screen', array( 'options-general' ) );
 
 		if ( $notices_to_show && ! in_array( get_current_screen()->parent_base, $exclude_from_screen ) ) {
-			foreach( $notices_to_show as $code => $notice ) {
+			foreach ( $notices_to_show as $code => $notice ) {
 				$callback = $notice['callback'];
 				if ( ! is_callable( $callback ) ) {
 					continue;
