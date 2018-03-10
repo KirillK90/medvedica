@@ -15,17 +15,17 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('customize');
     $wp_admin_bar->remove_menu('comments');
 }
-add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links', 999 );
+//add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links', 999 );
 
 
 function log_me($message) {
-    if (WP_DEBUG === true) {
-        if (is_array($message) || is_object($message)) {
-            error_log(print_r($message, true));
-        } else {
-            error_log($message);
-        }
+    echo '<pre>';
+    if (is_array($message) || is_object($message)) {
+        print_r($message);
+    } else {
+        var_dump($message);
     }
+    echo '</pre>';
 }
 //
 function tinymce_paste_as_text( $init ) {
@@ -35,5 +35,24 @@ function tinymce_paste_as_text( $init ) {
 }
 add_filter('tiny_mce_before_init', 'tinymce_paste_as_text');
 
-add_image_size('doc-img', '80px', '160px');
+add_image_size('event-img', '500px', '500px');
+
+function replace_excerpt($content)
+{
+    return str_replace('read more', 'Читать далее', $content );
+}
+add_filter('the_excerpt', 'replace_excerpt');
+
+
+
+
+
+function manage_sidebar($index)
+{
+    presscore_config()->set( 'sidebar_position', 'disabled' );
+    return false;
+}
+add_filter( 'presscore_config_base_init_tribe_events', 'manage_sidebar' );
+
+
 
