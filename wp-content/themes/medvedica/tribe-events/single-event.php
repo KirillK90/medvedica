@@ -52,18 +52,20 @@ $event_id = get_the_ID();
     <?php while ( have_posts() ) :  the_post(); ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+            <!-- Event featured image, but exclude link -->
+            <?php echo tribe_event_featured_image( $event_id, 'event-img', false ); ?>
+
             <?php if ( tribe_get_cost() ) : ?>
                 <div class="tribe-events-event-cost">
                     <strong>Стоимость</strong> &emsp;
-                    <span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
+                    <span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>&emsp;
+                    <button class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться и оплатить</button>
                 </div>
+
             <?php endif; ?>
 
             <!-- Event content -->
             <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
-
-            <!-- Event featured image, but exclude link -->
-            <?php echo tribe_event_featured_image( $event_id, 'event-img', false ); ?>
 
             <div class="tribe-events-single-event-description tribe-events-content">
                 <?php the_content(); ?>
@@ -92,3 +94,46 @@ $event_id = get_the_ID();
     <!-- #tribe-events-footer -->
 
 </div><!-- #tribe-events-content -->
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
+        jQuery('.register-btn').click(function(){
+            jQuery("#reg-event-name").val(jQuery(this).data('title')).attr('readonly', true);
+            jQuery("#reg-event-date").val(jQuery(this).data('date')).attr('readonly', true);
+            jQuery("#reg-event-id").val(jQuery(this).data('id')).attr('readonly', true);
+            jQuery("#reg-event-cost").val(jQuery(this).data('cost')).attr('readonly', true);
+            jQuery("#popmake-1591").popmake('open');
+        });
+    });
+
+    function sendYandex() {
+        var form = jQuery('<form>', {
+            'action': 'https://demomoney.yandex.ru/eshop.xml',
+            'method': 'post'
+        });
+        var phone = jQuery("#reg-phone");
+        jQuery('body').append(form);
+        jQuery(form).append(jQuery('<input>', {'name': 'shopId', 'value': 151, 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'shopArticleId', 'value': 151, 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'scid', 'value': 59816, 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'sum', 'value': jQuery("#reg-event-cost").val(), 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'paymentType', 'value': 'AC', 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'custName', 'value': jQuery("#reg-name").val(), 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'customerNumber', 'value': phone.val(), 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'cps_phone', 'value': phone.val(), 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'cps_email', 'value': jQuery("#reg-email").val(), 'type': 'hidden'}));
+
+        form.submit();
+    }
+
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        console.log(event);
+        setInterval(function(){
+            jQuery("#popmake-1591").popmake('close');
+        }, 500);
+        if (jQuery("#reg-payonline").find('input').prop('checked')) {
+            sendYandex();
+        }
+        return false;
+    }, false );
+</script>
