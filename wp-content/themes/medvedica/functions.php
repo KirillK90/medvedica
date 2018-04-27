@@ -1,5 +1,7 @@
 <?php
 
+//flush_rewrite_rules();
+
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 function enqueue_parent_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
@@ -53,6 +55,12 @@ function manage_sidebar($index)
     return false;
 }
 add_filter( 'presscore_config_base_init_tribe_events', 'manage_sidebar' );
+
+function event_cat_slug($index)
+{
+    return 'topic';
+}
+add_filter( 'tribe_events_category_slug', 'event_cat_slug' );
 
 
 
