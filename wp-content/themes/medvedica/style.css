@@ -2,7 +2,7 @@
  Theme Name:   Medvedica Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.34
+ Version:      1.0.37
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  medvedica
 */
@@ -137,5 +137,12 @@ input[type=checkbox], input[type=radio] {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
+}
+
+/* Для Глубинная терапевтическая группа */
+@media (max-width: 450px) {
+    .h3-smaller-mobile h3 {
+    	font-size: 24px !important;
+	}
 }
 

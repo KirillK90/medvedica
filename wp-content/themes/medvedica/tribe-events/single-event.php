@@ -108,14 +108,13 @@ $event_id = get_the_ID();
 
     function sendYandex() {
         var form = jQuery('<form>', {
-            'action': 'https://demomoney.yandex.ru/eshop.xml',
+            'action': 'https://money.yandex.ru/eshop.xml',
             'method': 'post'
         });
         var phone = jQuery("#reg-phone");
         jQuery('body').append(form);
-        jQuery(form).append(jQuery('<input>', {'name': 'shopId', 'value': 151, 'type': 'hidden'}));
-        jQuery(form).append(jQuery('<input>', {'name': 'shopArticleId', 'value': 151, 'type': 'hidden'}));
-        jQuery(form).append(jQuery('<input>', {'name': 'scid', 'value': 59816, 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'shopId', 'value': 191334, 'type': 'hidden'}));
+        jQuery(form).append(jQuery('<input>', {'name': 'scid', 'value': 717481, 'type': 'hidden'}));
         jQuery(form).append(jQuery('<input>', {'name': 'sum', 'value': jQuery("#reg-event-cost").val(), 'type': 'hidden'}));
         jQuery(form).append(jQuery('<input>', {'name': 'paymentType', 'value': 'AC', 'type': 'hidden'}));
         jQuery(form).append(jQuery('<input>', {'name': 'custName', 'value': jQuery("#reg-name").val(), 'type': 'hidden'}));
