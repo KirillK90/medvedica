@@ -20,6 +20,16 @@ $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
 
+$taxonomies = get_the_taxonomies();
+$onclick = '';
+if (isset($taxonomies['tribe_events_cat']) && stripos($taxonomies['tribe_events_cat'], 'Тело как источник ресурса')) {
+    $onclick = 'onclick="yaCounter48194084.reachGoal(\'btn_telo_kak_istochnic\'); return true;" value="Заказать"';
+}
+//log_me(get_the_category_list());
+//log_me(get_the_taxonomies());
+//log_me();
+//log_me(get_cat_name());
+
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
@@ -54,22 +64,29 @@ $event_id = get_the_ID();
 
             <!-- Event featured image, but exclude link -->
             <?php echo tribe_event_featured_image( $event_id, 'event-img', false ); ?>
-
-            <?php if ( tribe_get_cost() ) : ?>
-                <div class="tribe-events-event-cost">
-                    <strong>Стоимость</strong> &emsp;
-                    <span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>&emsp;
-                    <button class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться и оплатить</button>
-                </div>
-
-            <?php endif; ?>
-
+            <? if (!tribe_is_past_event()): ?>
+            <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться</button>
+            <br><br>
+            <? endif; ?>
             <!-- Event content -->
             <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 
             <div class="tribe-events-single-event-description tribe-events-content">
                 <?php the_content(); ?>
             </div>
+            <br>
+            <hr style="width: 50%;">
+            <br>
+            <?php if ( tribe_get_cost() ) : ?>
+                <div class="tribe-events-event-cost">
+                    <strong>Стоимость</strong> &emsp;
+                    <span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>&emsp;
+                <? if (!tribe_is_past_event()): ?>
+                    <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться</button>
+                <?php endif; ?>
+                </div>
+
+            <?php endif; ?>
             <!-- .tribe-events-single-event-description -->
             <?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 

@@ -7,6 +7,25 @@ function enqueue_parent_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
+function add_social_scripts() {
+    wp_register_script( 'vk-api', 'http://vk.com/js/api/openapi.js?154');
+    wp_enqueue_script( 'vk-api' );
+}
+
+add_action( 'wp_enqueue_scripts', 'add_social_scripts' );
+
+function add_vk_chat() {
+    echo <<<HTML
+<!-- VK Widget -->
+<div id="vk_community_messages"></div>
+<script type="text/javascript">
+VK.Widgets.CommunityMessages("vk_community_messages", 160039823, {tooltipButtonText: "Есть вопрос?"});
+</script>
+HTML;
+}
+
+add_action( 'presscore_body_top', 'add_vk_chat' );
+
 function remove_admin_bar_links() {
     /** @var $wp_admin_bar WP_Admin_Bar */
     global $wp_admin_bar;
