@@ -1,0 +1,148 @@
+/*
+ Theme Name:   Medvedica Theme
+ Description:  Based on the7
+ Template:     dt-the7
+ Version:      1.0.37
+ Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
+ Text Domain:  medvedica
+*/
+
+.tribe-events-list-widget .tribe-events-list-widget-events {
+    padding: 0 0;
+    font-size: 0.8rem;
+}
+
+.tribe-events-list-widget .tribe-event-title {
+    font-size: 1.2rem;
+}
+
+.tribe-events-list-widget .tribe-event-title a:hover{
+    color: #222;
+}
+
+.sidebar-content .widget-title {
+    color: #303030;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+* {
+    transition: 0.5s;
+}
+
+.events-list .tribe-events-loop, .single-tribe_organizer .tribe-events-loop, .single-tribe_venue .tribe-events-loop, .tribe-events-day .tribe-events-loop {
+    max-width: 1000px;
+}
+
+.wpcf7-form {
+    padding-top: 20px;
+}
+
+a.tribe-events-ical.tribe-events-button {
+    display: none !important;
+}
+
+
+.tribe-events-list .tribe-events-list-event-title {
+    display: block;
+}
+
+.tribe-events-loop .tribe-events-event-meta {
+    clear: none;
+    font-size: 16px;
+}
+
+.tribe-events-event-cost span {
+    color: #000;
+    border-radius: 5px;
+}
+
+#tribe-bar-form label {
+    display: none;
+}
+
+.smile_icon_list .icon_list_item .icon_description h3 {
+    font-weight: normal;
+}
+
+@media (min-width: 1000px) {
+    .single-tribe_events .tribe-events-event-image {
+        float: right;
+    }
+}
+
+input#register-pay {
+    background-color: white;
+    color: #444;
+    border: 2px outset #ddd;
+}
+
+input#register-pay:hover {
+    color: #00938c;
+    border: 2px solid #ddd;
+}
+
+.wpcf7-number, input[type=text], input[type=search], input[type=tel], input[type=url], input[type=email], input[type=number], input[type=date], input[type=range], input[type=password], select, textarea {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.reg-hidden {
+    display: none;
+}
+
+.wpcf7-list-item.first.last {
+    margin-left: 0;
+}
+
+.wpcf7-form label {
+    font-weight: bold;
+}
+
+.wpcf7-submit {
+    margin-top: 20px;
+}
+
+input[type=checkbox], input[type=radio] {
+    zoom: 1.5;
+    vertical-align: text-bottom;
+}
+
+/* Для главной */
+.aio-icon-component, .wpb_column > .wpb_wrapper .aio-icon-component {
+     margin-bottom: 0;
+}
+
+.aio-icon.none {
+    line-height: 1.1rem;
+    vertical-align: middle;
+}
+
+.prog-icon-list .icon_list_item:hover .icon_description .ult-responsive:first-child {
+    border-bottom: 2px solid #feed00;
+}
+
+.prog-icon-list .icon_list_item .icon_description .ult-responsive:first-child {
+    border-bottom: 2px solid transparent;
+    padding: 5px 0;
+}
+
+.intesives-row .vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_title {
+    margin-bottom: -10px;
+}
+
+/* Для страницы обо мне */
+@media (max-width: 768px) {
+    #main .vc_custom_1520618045901 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Для Глубинная терапевтическая группа */
+@media (max-width: 450px) {
+    .h3-smaller-mobile h3 {
+    	font-size: 24px !important;
+	}
+}
+
