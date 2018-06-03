@@ -294,7 +294,7 @@ class PUM_Admin_Upgrades {
         $this->process_upgrades();
 
         if ( DOING_AJAX ) {
-            echo json_encode( array(
+            echo wp_json_encode( array(
                     'complete'  => true,
                     'status'    => sprintf(
                             '<strong>%s</strong><br/>%s',
@@ -354,8 +354,12 @@ class PUM_Admin_Upgrades {
      */
     public function get_pum_db_ver() {
 
-        // this is the current database schema version number
-        $pum_db_ver = pum_get_db_ver();
+    	static $pum_db_ver;
+
+    	if ( ! isset( $pum_db_ver ) ) {
+		    // this is the current database schema version number
+		    $pum_db_ver = pum_get_db_ver();
+	    }
 
         if ( ! $pum_db_ver ) {
             $this->set_pum_db_ver();
@@ -655,7 +659,7 @@ class PUM_Admin_Upgrades {
 
                     $(document).ready(function () {
                         // Trigger upgrades on page load
-                        next_step(<?php echo json_encode( $this->get_args() ); ?>);
+                        next_step(<?php echo wp_json_encode( $this->get_args() ); ?>);
                         update_status('<?php printf( '<strong>%s</strong>', $this->get_upgrade( $this->get_arg( 'pum-upgrade' ) ) ); ?>');
                     });
                 }(jQuery, document));

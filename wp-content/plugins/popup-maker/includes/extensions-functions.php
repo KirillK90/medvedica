@@ -5,6 +5,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function pum_enabled_extensions() {
+	return apply_filters( 'pum_enabled_extensions', array() );
+}
+
+function pum_extension_enabled( $extension = '' ) {
+	$enabled_extensions = pum_enabled_extensions();
+
+	return ! empty( $extension ) && array_key_exists( $extension, $enabled_extensions );
+}
+
 function popmake_available_extensions() {
 	$json_data = file_get_contents( POPMAKE_DIR . 'includes/extension-list.json' );
 

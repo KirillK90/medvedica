@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Get the current blog db_ver.
  *
- * @return mixed|void
+ * @return mixed
  */
 function pum_get_db_ver() {
 	return get_option( 'pum_db_ver', false );
@@ -33,7 +33,7 @@ function pum_get_db_ver() {
  * @return bool
  */
 function pum_is_v1_4_compatible() {
-	return pum_get_db_ver() >= 6;
+	return true;
 }
 
 /**

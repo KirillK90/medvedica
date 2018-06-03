@@ -476,7 +476,19 @@ if ( ! function_exists( 'tribe_format_currency' ) ) {
 			$reverse_position = tribe_get_option( 'reverseCurrencyPosition', false );
 		}
 
-		$cost = $reverse_position ? $cost . $currency_symbol : $currency_symbol . $cost;
+		/**
+		 * Add option to filter the cost value before is returned, allowing other providers to hook into it.
+		 *
+		 * @since 4.7.10
+		 *
+		 * @param string $cost
+		 * @param int $post_id
+		 */
+		$cost = apply_filters( 'tribe_currency_cost', $cost, $post_id );
+
+		$cost = $reverse_position
+			? $cost . $currency_symbol
+			: $currency_symbol . $cost;
 
 		return $cost;
 	}
@@ -690,5 +702,26 @@ if ( ! function_exists( 'tribe_is_frontend' ) ) {
 		 * @param bool $is_frontend
 		 */
 		return (bool) apply_filters( 'tribe_doing_frontend', false );
+	}
+}
+
+if ( ! function_exists( 'tribe_set_time_limit' ) ) {
+	/**
+	 * Wrapper for set_time_limit to suppress errors
+	 *
+	 * @since 4.7.12
+	 *
+	 * @param int $limit Time limit.
+	 */
+	function tribe_set_time_limit( $limit = 0 ) {
+		if (
+			! function_exists( 'set_time_limit' )
+			&& false !== strpos( ini_get( 'disable_functions' ), 'set_time_limit' )
+			&& ini_get( 'safe_mode' )
+		) {
+			return false;
+		}
+
+		return @set_time_limit( $limit );
 	}
 }

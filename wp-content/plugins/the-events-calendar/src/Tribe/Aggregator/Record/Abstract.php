@@ -87,6 +87,13 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 	);
 
 	/**
+	 * Cache variable to store the last child post.
+	 *
+	 * @var  WP_Post
+	 */
+	protected $last_child;
+
+	/**
 	 * Holds the event count temporarily while event counts (comment_count) is being updated
 	 *
 	 * @var int
@@ -343,6 +350,7 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			$error_message = __( 'Something went wrong while inserting the record in the database.', 'the-events-calendar' );
 			wp_delete_post( $result );
 
+
 			return new WP_Error( 'db-error-during-creation', $error_message );
 		}
 
@@ -449,7 +457,6 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			$post['meta_input'][ self::$meta_key_prefix . $key ] = $value;
 		}
 
-		$args = (object) $args;
 		$meta = (object) $meta;
 
 		if ( 'schedule' === $type ) {
@@ -493,6 +500,7 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			'post_parent'    => 0,
 			'meta_input'     => array(),
 		);
+
 
 		foreach ( $this->meta as $key => $value ) {
 			// don't propagate these meta keys to the scheduled record
@@ -693,6 +701,12 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			$defaults['allow_multiple_organizers'] = $this->meta['allow_multiple_organizers'];
 		}
 
+		if ( empty( $this->meta['next_batch_hash'] ) ) {
+			$next_batch_hash             = $this->generate_next_batch_hash();
+			$defaults['next_batch_hash'] = $next_batch_hash;
+			$this->update_meta( 'next_batch_hash', $next_batch_hash );
+		}
+
 		if ( $is_previewing ) {
 			$defaults['preview'] = true;
 		}
@@ -763,6 +777,21 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			$this->set_status_as_pending();
 		}
 
+		$service_supports_batch_push = ! empty( $response->batch_push );
+
+		/**
+		 * Whether batch pushing is supported for this record or not.
+		 *
+		 * @since 4.6.15
+		 *
+		 * @param bool $service_supports_batch_push Whether the Service supports batch pushing or not.
+		 * @param Tribe__Events__Aggregator__Record__Abstract $this
+		 */
+		$allow_batch_push = apply_filters( 'tribe_aggregator_allow_batch_push', $service_supports_batch_push, $this );
+		if ( $allow_batch_push ) {
+			$this->update_meta( 'allow_batch_push', true );
+		}
+
 		// store the import id
 		$this->update_meta( 'import_id', $response->data->import_id );
 		$this->should_queue_import( false );
@@ -770,9 +799,16 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 		return $response;
 	}
 
+	/**
+	 * Returns the record import data either fetching it locally or trying to retrieve
+	 * it from EA Service.
+	 *
+	 * @return stdClass|WP_Error An object containing the response data or a `WP_Error` on failure.
+	 */
 	public function get_import_data() {
 		/** @var \Tribe__Events__Aggregator $aggregator */
 		$aggregator = tribe( 'events-aggregator.main' );
+
 		$data       = array();
 
 		// For now only apply this to the URL type
@@ -822,7 +858,7 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 		) );
 
 		if ( ! is_wp_error( $status ) && ! empty( $this->post->post_parent ) ) {
-			wp_update_post( array(
+			$status = wp_update_post( array(
 				'ID' => $this->post->post_parent,
 				'post_modified' => date( Tribe__Date_Utils::DBDATETIMEFORMAT, current_time( 'timestamp' ) ),
 			) );
@@ -988,11 +1024,16 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			return false;
 		}
 
-		// If the last import status is an error and this scheduled import frequency is not on demand let's try again
+		$retry_interval = $this->get_retry_interval();
+		$failure_time_threshold = time() - $retry_interval;
+
+		// If the last import status is an error and it happened before half the frequency ago let's try again
 		if (
-			$this->get_last_import_status( 'error', true )
-			&& isset( $this->frequency->id )
-			&& 'on_demand' !== $this->frequency->id
+			(
+				$this->has_own_last_import_status()
+				&& $this->failed_before( $failure_time_threshold )
+			)
+			|| $this->last_child()->failed_before( $failure_time_threshold )
 		) {
 			return true;
 		}
@@ -1104,26 +1145,18 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 	 *                     is empty or not the one required.
 	 */
 	public function get_last_import_status( $type = 'error', $lookup_children = false ) {
-		$status = empty( $this->meta['last_import_status'] ) ? null : $this->meta['last_import_status'];
+		$status = $this->has_own_last_import_status() ? $this->meta['last_import_status'] : null;
 
 		if ( empty( $status ) && $lookup_children ) {
-			$children_query_args = array( 'posts_per_page' => 1, 'order' => 'DESC', 'order_by' => 'modified' );
+			$last_child = $this->get_last_child_post();
 
-			if ( ! empty( $this->post ) && $this->post instanceof WP_Post ) {
-				$children_query_args['post_parent'] = $this->post->ID;
-			}
-
-			$last_children_query = $this->query_child_records( $children_query_args );
-
-			if ( $last_children_query->have_posts() ) {
-				$last_children = reset( $last_children_query->posts );
-
+			if ( $last_child ) {
 				$map = array(
 					'tribe-ea-failed'  => 'error:import-failed',
 					'tribe-ea-success' => 'success:queued',
 				);
 
-				$status = Tribe__Utils__Array::get( $map, $last_children->post_status, null );
+				$status = Tribe__Utils__Array::get( $map, $last_child->post_status, null );
 			}
 		}
 
@@ -1172,19 +1205,24 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 	 * Queues events, venues, and organizers for insertion
 	 *
 	 * @param array $data Import data
+	 * @param bool $start_immediately Whether the data processing should start immediately or not.
 	 *
 	 * @return array|WP_Error|Tribe__Events__Aggregator__Record__Queue
 	 */
-	public function process_posts( $data = array() ) {
+	public function process_posts( $data = array(), $start_immediately = false ) {
 		if ( 'manual' === $this->type ) {
 			/** @var Tribe__Events__Aggregator__Service $service */
 			$service = tribe( 'events-aggregator.service' );
 			$service->confirm_import( $this->meta );
 		}
 
-		if ( $this->has_queue() ) {
-			$queue = new Tribe__Events__Aggregator__Record__Queue( $this );
-			return $queue->process();
+		// if this is a batch push record then set its queue to fetching
+		// to feed the UI something coherent
+		if ( ! $this->is_polling() ) {
+			// @todo let's revisit this to return when more UI is exposed
+			$queue = new Tribe__Events__Aggregator__Record__Queue( $this, 'fetch' );
+
+			return $queue;
 		}
 
 		$items = $this->prep_import_data( $data );
@@ -1193,9 +1231,13 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 			return $items;
 		}
 
-		$queue = new Tribe__Events__Aggregator__Record__Queue( $this, $items );
+		$queue = Tribe__Events__Aggregator__Record__Queue_Processor::build_queue( $this, $items );
 
-		return $queue->process();
+		if ( $start_immediately && is_array( $items ) ) {
+			$queue->process();
+		}
+
+		return $queue->activity();
 	}
 
 	/**
@@ -1267,7 +1309,7 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 	 *
 	 * @param array $data Dummy data var to allow children to optionally react to passed in data
 	 *
-	 * @return array|WP_Error
+	 * @return Tribe__Events__Aggregator__Record__Activity The import activity record.
 	 */
 	public function insert_posts( $items = array() ) {
 		add_filter( 'tribe-post-origin', array( Tribe__Events__Aggregator__Records::instance(), 'filter_post_origin' ), 10 );
@@ -1279,6 +1321,7 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 		 *
 		 * @param array $items An array of items to insert.
 		 * @param array $meta  The record meta information.
+
 		 */
 		do_action( 'tribe_aggregator_before_insert_posts', $items, $this->meta );
 
@@ -1287,6 +1330,8 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 
 		// Creates an Activity to log what Happened
 		$activity = new Tribe__Events__Aggregator__Record__Activity();
+		$initial_created_events = $activity->count( Tribe__Events__Main::POSTTYPE );
+		$expected_created_events = $initial_created_events + count( $items );
 
 		$args = array(
 			'post_status' => $this->meta['post_status'],
@@ -1457,7 +1502,24 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 							remove_filter( 'tribe_tracker_enabled', '__return_false' );
 						}
 					} else {
-						$venue_id = array_search( $event['Venue']['Venue'], $found_venues );
+						/**
+						 * Allows filtering the venue ID while searching for it.
+						 *
+						 * Use this filter to define custom ways to find a matching Venue provided the EA
+						 * record information; returning a non `null` value here will short-circuit the
+						 * check Event Aggregator would make.
+						 *
+						 * @since 4.6.15
+						 *
+						 * @param int|null $venue_id The matching venue ID if any
+						 * @param array $venue The venue data from the record.
+						 */
+						$venue_id = apply_filters( 'tribe_aggregator_find_matching_venue', null, $event['Venue'] );
+
+						if ( null === $venue_id ) {
+							// we search the venues already found in this request for this venue title
+							$venue_id = array_search( $event['Venue']['Venue'], $found_venues );
+						}
 
 						if ( ! $venue_id ) {
 							$venue_unique_field = $this->get_unique_field( 'venue' );
@@ -1562,6 +1624,15 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 				}
 
 				foreach ( $event['Organizer'] as $key => $organizer_data ) {
+					// if provided a valid Organizer ID right away use it
+					if ( ! empty( $organizer_data['OrganizerID'] ) ) {
+						if ( tribe_is_organizer( $organizer_data['OrganizerID'] ) ) {
+							$event_organizers[] = (int) $organizer_data['OrganizerID'];
+							continue;
+						}
+						unset( $organizer_data['OrganizerID'] );
+					}
+
 					//if we should create an organizer or use existing
 					if ( ! empty( $organizer_data['Organizer'] ) ) {
 						$organizer_data['Organizer'] = trim( $organizer_data['Organizer'] );
@@ -1616,7 +1687,24 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 									$activity->add( 'organizer', 'updated', $organizer->ID );
 								}
 							} else {
-								$organizer_id = array_search( $organizer_data['Organizer'], $found_organizers );
+								/**
+								 * Allows filtering the organizer ID while searching for it.
+								 *
+								 * Use this filter to define custom ways to find a matching Organizer provided the EA
+								 * record information; returning a non `null` value here will short-circuit the
+								 * check Event Aggregator would make.
+								 *
+								 * @since 4.6.15
+								 *
+								 * @param int|null $organizer_id The matching organizer ID if any
+								 * @param array $organizer The venue data from the record.
+								 */
+								$organizer_id = apply_filters( 'tribe_aggregator_find_matching_organizer', null, $organizer_data['Organizer'] );
+
+								if ( null === $organizer_id ) {
+									// we search the organizers already found in this request for this organizer title
+									$organizer_id = array_search( $organizer_data['Organizer'], $found_organizers );
+								}
 
 								if ( ! $organizer_id ) {
 									$organizer_unique_field = $this->get_unique_field( 'organizer' );
@@ -1862,6 +1950,17 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 					'meta_value' => $event[ $unique_field['target'] ],
 				);
 			}
+
+			/**
+			 * Fires after a single event has been created/updated, and  with it its linked
+			 * posts, with import data.
+			 *
+			 * @since 4.6.16
+			 *
+			 * @param array $event The final event data.
+			 * @param self $this
+			 */
+			do_action( 'tribe_aggregator_after_insert_post', $event, $this );
 		}
 
 		remove_filter( 'tribe-post-origin', array( Tribe__Events__Aggregator__Records::instance(), 'filter_post_origin' ), 10 );
@@ -1876,6 +1975,16 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 		 * @param Tribe__Events__Aggregator__Record__Activity $activity The record insertion activity report.
 		 */
 		do_action( 'tribe_aggregator_after_insert_posts', $items, $this->meta, $activity );
+
+		$final_created_events = (int) $activity->count( Tribe__Events__Main::POSTTYPE );
+
+		if ( $expected_created_events === $final_created_events ) {
+			$activity->set_last_status( Tribe__Events__Aggregator__Record__Activity::STATUS_SUCCESS );
+		} elseif ( $initial_created_events === $final_created_events ) {
+			$activity->set_last_status( Tribe__Events__Aggregator__Record__Activity::STATUS_FAIL );
+		} else {
+			$activity->set_last_status( Tribe__Events__Aggregator__Record__Activity::STATUS_PARTIAL );
+		}
 
 		return $activity;
 	}
@@ -2386,4 +2495,189 @@ abstract class Tribe__Events__Aggregator__Record__Abstract {
 
 		return false;
 	}
+
+	/**
+	 * Returns this record last child record or the record itself if no children are found.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return Tribe__Events__Aggregator__Record__Abstract
+	 */
+	public function last_child() {
+		$last_child_post = $this->get_last_child_post();
+
+		return $last_child_post && $last_child_post instanceof WP_Post
+			? Tribe__Events__Aggregator__Records::instance()->get_by_post_id( $last_child_post->ID )
+			: $this;
+	}
+
+	/**
+	 * Returns this record last child post object.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @param bool $force Whether to use the the last child cached value or refetch it.
+	 *
+	 * @return WP_Post|false Either the last child post object or `false` on failure.
+	 */
+	protected function get_last_child_post( $force = false ) {
+		if ( $this->post->post_parent ) {
+			return $this->post;
+		}
+
+		if ( ! $force && null !== $this->last_child ) {
+			return $this->last_child;
+		}
+
+		$children_query_args = array( 'posts_per_page' => 1, 'order' => 'DESC', 'order_by' => 'modified' );
+
+		if ( ! empty( $this->post ) && $this->post instanceof WP_Post ) {
+			$children_query_args['post_parent'] = $this->post->ID;
+		}
+
+		$last_children_query = $this->query_child_records( $children_query_args );
+
+		if ( $last_children_query->have_posts() ) {
+			return reset( $last_children_query->posts );
+		}
+
+		return false;
+	}
+
+	/**
+	 * Whether this record failed before a specific time.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @param string|int $time A timestamp or a string parseable by the `strtotime` function.
+	 *
+	 * @return bool
+	 */
+	public function failed_before( $time ) {
+		$last_import_status = $this->get_last_import_status( 'error', true );
+
+		if ( empty( $last_import_status ) ) {
+			return false;
+		}
+
+		if ( ! is_numeric( $time ) ) {
+			$time = strtotime( $time );
+		}
+
+		return strtotime( $this->post->post_modified ) <= (int) $time;
+	}
+
+	/**
+	 * Whether the record has its own last import status stored in the meta or
+	 * it should be read from its last child record.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return bool
+	 */
+	protected function has_own_last_import_status() {
+		return ! empty( $this->meta['last_import_status'] );
+	}
+
+	/**
+	 * Returns the default retry interval depending on this record frequency.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return int
+	 */
+	public function get_retry_interval() {
+		if ( $this->frequency->interval === DAY_IN_SECONDS ) {
+			$retry_interval = 6 * HOUR_IN_SECONDS;
+		} elseif ( $this->frequency->interval < DAY_IN_SECONDS ) {
+			// do not retry and let the scheduled import try again next time
+			$retry_interval = 0;
+		} else {
+			$retry_interval = DAY_IN_SECONDS;
+		}
+
+		/**
+		 * Filters the retry interval between a failure and a retry for a scheduled record.
+		 *
+		 * @since 4.6.15
+		 *
+		 * @param int $retry_interval An interval in seconds; defaults to the record frequency / 2.
+		 * @param Tribe__Events__Aggregator__Record__Abstract $this
+		 */
+		return apply_filters( 'tribe_aggregator_scheduled_records_retry_interval', $retry_interval, $this );
+	}
+
+	/**
+	 * Returns the record retry timestamp.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return int|bool Either the record retry timestamp or `false` if the record will
+	 *                  not retry to import.
+	 */
+	public function get_retry_time() {
+		$retry_interval = $this->get_retry_interval();
+
+		if ( empty( $retry_interval ) ) {
+			return false;
+		}
+
+		if ( ! $this->get_last_import_status( 'error', true ) ) {
+			return false;
+		}
+
+		$last_attempt_time = strtotime( $this->last_child()->post->post_modified_gmt );
+		$retry_time        = $last_attempt_time + (int) $retry_interval;
+
+		if ( $retry_time < time() ) {
+			$retry_time = false;
+		}
+
+		/**
+		 * Filters the retry timestamp for a scheduled record.
+		 *
+		 * @since 4.6.15
+		 *
+		 * @param int $retry_time A timestamp.
+		 * @param Tribe__Events__Aggregator__Record__Abstract $this
+		 */
+		return apply_filters( 'tribe_aggregator_scheduled_records_retry_interval', $retry_time, $this );
+	}
+
+	/**
+	 * Whether the record will try to fetch the import data polling EA Service or
+	 * expecting batches of data being pushed to it by EA Service.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return bool
+	 */
+	public function is_polling() {
+		$is_polling = empty( $this->meta['allow_batch_push'] ) || false === (bool) $this->meta['allow_batch_push'];
+
+		/**
+		 * Whether the current record is a Service polling one or not.
+		 *
+		 * @since 4.6.15
+		 *
+		 * @param bool $is_polling
+		 * @param Tribe__Events__Aggregator__Record__Abstract $record
+		 */
+		$is_polling = apply_filters( 'tribe_aggregator_record_is_polling', $is_polling, $this );
+
+		return $is_polling;
+	}
+
+	/*
+	*
+	 * Generates the hash that will be expected in the for the next batch of events.
+	 *
+	 * @since 4.6.15
+	 *
+	 * @return string
+	 */
+	public function generate_next_batch_hash() {
+		return md5( uniqid( '', true ) );
+	}
 }
+

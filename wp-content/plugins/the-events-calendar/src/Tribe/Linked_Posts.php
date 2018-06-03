@@ -173,6 +173,34 @@ class Tribe__Events__Linked_Posts {
 	}
 
 	/**
+	 * Returns the meta key for linked post order
+	 *
+	 * @since 4.6.13
+	 *
+	 * @param string $post_type Post Type
+	 *
+	 * @return bool|string
+	 */
+	public function get_order_meta_key( $post_type ) {
+
+		if ( 'tribe_organizer' === $post_type ) {
+			return '_EventOrganizerID_Order';
+		}
+
+		/**
+		 * This allows for things like Extensions to hook in here and return their own key
+		 * See '_EventOrganizerID_Order' above for an example
+		 *
+		 * @since 4.6.14
+		 *
+		 * @param bool false (not linked)
+		 * @param string $post_type current (potentially linked) post type
+		 * @return string
+		 */
+		return apply_filters( 'tribe_events_linked_post_type_meta_key', false, $post_type );
+	}
+
+	/**
 	 * Returns the post type's form field container name
 	 *
 	 * @since 4.2
@@ -377,7 +405,19 @@ class Tribe__Events__Linked_Posts {
 		$result = array();
 
 		if ( $linked_post_ids = get_post_meta( $post_id, $this->get_meta_key( $post_type ) ) ) {
-			$result = $this->get_linked_post_info( $post_type, array(), $linked_post_ids );
+			$args = array();
+			// Sort by drag-n-drop order
+			$linked_ids_order_meta_key = $this->get_order_meta_key( $post_type );
+			$linked_ids_order          = empty( $linked_ids_order_meta_key )
+				? false
+				: get_post_meta( $post_id, $linked_ids_order_meta_key, true );
+			$linked_post_ids           = tribe_sanitize_organizers( $linked_post_ids, $linked_ids_order );
+			if ( ! empty( $linked_ids_order ) ) {
+				$args['post__in'] = $linked_post_ids;
+				$args['orderby'] = 'post__in';
+			}
+
+			$result = $this->get_linked_post_info( $post_type, $args, $linked_post_ids );
 		}
 
 		/**
@@ -572,6 +612,19 @@ class Tribe__Events__Linked_Posts {
 	}
 
 	/**
+	 * Save Order of Linked Posts
+	 *
+	 * @since 4.6.13
+	 *
+	 * @param int $target_post_id post id to save meta from
+	 * @param string $post_type the post-type to get the key for
+	 * @param array $current_order an array of the linked post ids being saved
+	 */
+	public function order_linked_posts( $target_post_id, $post_type, $current_order ) {
+		update_post_meta( $target_post_id, $this->get_order_meta_key( $post_type ), $current_order );
+	}
+
+	/**
 	 * Unlinks two posts from eachother
 	 *
 	 * @since 4.2
@@ -654,16 +707,25 @@ class Tribe__Events__Linked_Posts {
 			return;
 		}
 
-		if ( ! isset( $submission[ $linked_post_type_id_field ] ) ) {
-			$submission[ $linked_post_type_id_field ] = array( 0 );
-		}
-
 		$temp_submission = $submission;
 		$submission = array();
 
 		// make sure all elements are arrays
 		foreach ( $temp_submission as $key => $value ) {
 			$submission[ $key ] = is_array( $value ) ? $value : array( $value );
+		}
+
+		// setup key(s) if all new post(s)
+		if ( ! isset( $submission[ $linked_post_type_id_field ] ) ) {
+			$first_item                               = current( $submission );
+			$multiple_posts                           = is_array( $first_item ) ? count( $first_item ) - 1 : 0;
+			$submission[ $linked_post_type_id_field ] = array();
+			$post_count                               = 0;
+
+			do {
+				$submission[ $linked_post_type_id_field ][] = '';
+				$post_count ++;
+			} while ( $multiple_posts > $post_count );
 		}
 
 		$fields = array_keys( $submission );
@@ -727,6 +789,11 @@ class Tribe__Events__Linked_Posts {
 		// if we don't allow multiples, make sure there's only 1
 		if ( ! $this->allow_multiple( $linked_post_type ) && count( $linked_posts ) > 1 ) {
 			$linked_posts = array( $linked_posts[0] );
+		}
+
+		// if we allow multiples and there is more then one save current order
+		if ( $this->allow_multiple( $linked_post_type ) ) {
+			$this->order_linked_posts( $event_id, $linked_post_type, $submission[ $linked_post_type_id_field ] );
 		}
 
 		$currently_linked_posts = $this->get_linked_posts_by_post_type( $event_id, $linked_post_type );
