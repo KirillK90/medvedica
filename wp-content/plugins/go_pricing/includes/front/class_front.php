@@ -55,7 +55,6 @@ class GW_GoPricing_Front {
 		
 	}
 
-
 	/**
 	 * Return an instance of this class
 	 *
@@ -81,18 +80,19 @@ class GW_GoPricing_Front {
 		$settings = get_option( self::$plugin_prefix . '_table_settings', array() );
 		global $post;		
 		
-		if ( isset( $_GET['go_pricing_preview_id'] ) ) { 
-			do_action( 'go_pricing/enque_public_scripts', $settings );
+		global $go_pricing_preview;
+		if ( isset( $go_pricing_preview ) ) { 
+			do_action( 'go_pricing/enque_public_scripts' );
 			return;
 		}
 		
-		if ( empty( $settings['public_assets'] ) ) $settings['public_assets'] = 'auto';
+		if ( empty( $settings['public_assets'] ) ) $settings['public_assets'] = 'auto';		
 		
 		switch( $settings['public_assets'] ) {
 
 			// Auto detect shortcode
 			case 'auto':
-				if ( $post instanceof WP_Post && !has_shortcode( $post->post_content, 'go_pricing' ) ) return;
+				if ( !GW_GoPricing_Helper::has_shortcode( 'go_pricing', array( 'go_pricing', 'go-pricing' ) ) ) return;
 				break;
 			
 			// Manual restriction
@@ -112,8 +112,8 @@ class GW_GoPricing_Front {
 				}
 				break;			
 		}
-		
-		do_action( 'go_pricing/enque_public_scripts', $settings );
+	
+		do_action( 'go_pricing/enque_public_scripts' );
 				
 	}	
 	
@@ -125,8 +125,9 @@ class GW_GoPricing_Front {
 	 */
 	 
 	 
-	public function enqueue_public_styles( $general_settings ) {
-						
+	public function enqueue_public_styles() {
+		
+		$general_settings = get_option( self::$plugin_prefix . '_table_settings', array() );
 		wp_enqueue_style( self::$plugin_slug . '-styles', $this->plugin_url . 'assets/css/go_pricing_styles.css', false, self::$plugin_version );	
 		if ( !empty( $general_settings['custom-css'] ) ) wp_add_inline_style( self::$plugin_slug . '-styles', $general_settings['custom-css'] );
 		
@@ -139,7 +140,9 @@ class GW_GoPricing_Front {
 	 * @return void
 	 */	
 	
-	public function enqueue_public_scripts( $general_settings ) {
+	public function enqueue_public_scripts() {
+		
+		$general_settings = get_option( self::$plugin_prefix . '_table_settings', array() );		
 				
 		$gmap_api_key = isset( $general_settings['gmap-apikey'] ) ? $general_settings['gmap-apikey'] : '';
 		

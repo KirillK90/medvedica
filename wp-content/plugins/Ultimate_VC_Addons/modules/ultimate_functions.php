@@ -259,3 +259,18 @@ function ult_getBrowser()
         // 'pattern'    => $pattern
     );
 } 
+
+function ult_prepareAtts( $atts ) {
+	if ( isset( $atts ) ) {
+			$return = str_replace( array(
+				//'`{`',
+				//'`}`',
+				'``',
+			), array(
+				//'[',
+				//']',
+				'"',
+			), $atts );
+	}
+	return $return;
+}

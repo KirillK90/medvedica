@@ -331,7 +331,7 @@ if(!class_exists('Ultimate_Highlight_Box'))
 									__("Full Width","ultimate_vc")=>"full",
 									__("Maximum Full Width","ultimate_vc")=>"ex-full",
 								),
-								"description" => __("By default, the map will be given to the Visual Composer row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
+								"description" => __("By default, the map will be given to the WPBakery Page Builder row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
 							),
 							array(
 								"type" => "number",

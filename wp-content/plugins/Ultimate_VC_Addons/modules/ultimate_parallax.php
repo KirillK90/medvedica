@@ -1,8 +1,8 @@
 <?php
 /*
-Add-on: Ultimate Parallax Background for VC
+Add-on: Ultimate Parallax Background for WPBakery Page Builder
 Add-on URI: https://brainstormforce.com/demos/parallax/
-Description: Display interactive image and video parallax background in visual composer row
+Description: Display interactive image and video parallax background in WPBakery Page Builder row
 Version: 1.0
 */
 $ultimate_row = get_option('ultimate_row');
@@ -809,7 +809,7 @@ if(!class_exists('VC_Ultimate_Parallax')){
 							__("Maximum Full Width","ultimate_vc")=>"ex-full",
 							__("Browser Full Dimension","ultimate_vc")=>"browser_size"
 						),
-						"description" => __("By default, the background will be given to the Visual Composer row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
+						"description" => __("By default, the background will be given to the WPBakery Page Builder row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
 						"dependency" => Array("element" => "bg_type","value" => array("u_iframe","image","video","grad","bg_color","animated")),
 						"group" => $group_name,
 					)

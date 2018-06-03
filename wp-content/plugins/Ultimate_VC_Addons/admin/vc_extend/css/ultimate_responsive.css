@@ -89,6 +89,7 @@
 .ultimate-responsive-wrapper .ultimate-responsive-items .ult-responsive-item {
   position: relative;
   margin-right: 10px;
+  margin-left: 0;
   white-space: nowrap;
   float: left;
   display: inline-block;

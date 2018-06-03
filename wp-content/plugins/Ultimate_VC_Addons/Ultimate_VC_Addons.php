@@ -1,20 +1,28 @@
 <?php
 /*
-Plugin Name: The7 Ultimate Addons for Visual Composer
+Plugin Name: The7 Ultimate Addons for WPBakery Page Builder
 Plugin URI: https://brainstormforce.com/demos/ultimate/
 Author: Brainstorm Force
 Author URI: https://www.brainstormforce.com
-Version: 3.16.21
-Description: Includes Visual Composer premium addon elements like Icon, Info Box, Interactive Banner, Flip Box, Info List & Counter. Best of all - provides A Font Icon Manager allowing users to upload / delete custom icon fonts.
+Version: 3.16.23
+Description: Includes WPBakery Page Builder premium addon elements like Icon, Info Box, Interactive Banner, Flip Box, Info List & Counter. Best of all - provides A Font Icon Manager allowing users to upload / delete custom icon fonts.
 Text Domain: ultimate_vc
 */
+
+// Refresh bundled products on activate
+
+register_activation_hook( __FILE__, 'on_ultimate_vc_addons_activate' );
+
+function on_ultimate_vc_addons_activate() {
+	update_site_option( 'bsf_force_check_extensions', true );
+}
 
 if ( ! defined( '__ULTIMATE_ROOT__' ) ) {
 	define( '__ULTIMATE_ROOT__', dirname( __FILE__ ) );
 }
 
 if ( ! defined( 'ULTIMATE_VERSION' ) ) {
-	define( 'ULTIMATE_VERSION', '3.16.21' );
+	define( 'ULTIMATE_VERSION', '3.16.23' );
 }
 
 if ( ! defined( 'ULTIMATE_URL' ) ) {
@@ -102,6 +110,9 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'aio_front_scripts' ), 99 );
 			add_action( 'admin_init', array( $this, 'toggle_updater' ), 1 );
 			add_filter( 'bsf_registration_page_url_6892199', array( $this, 'uavc_bsf_registration_page_url' ) );
+			add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'Ultimate_VC_Addons_license_form_and_links' ) );
+			add_action( 'network_admin_plugin_action_links_' . plugin_basename( __FILE__ ),  array( $this, 'Ultimate_VC_Addons_license_form_and_links' ) );
+			add_filter( 'bsf_registration_page_url_6892199', array( $this, 'Ultimate_VC_Addons_bsf_registration_page_url' ) );
 
 			if ( ! get_option( 'ultimate_row' ) ) {
 				update_option( 'ultimate_row', 'enable' );
@@ -115,14 +126,44 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			add_filter( 'bsf_skip_braisntorm_menu', array( $this, 'uavc_skip_brainstorm_menu' ) );
 		}
 
+		/**
+		 * Show action links on the plugin screen.
+		 *
+		 * @param   mixed $links Plugin Action links.
+		 * @return  array        Filtered plugin action links.
+		 */
+		function Ultimate_VC_Addons_license_form_and_links( $links = array() ) {
+
+			if ( function_exists( 'get_bsf_inline_license_form' ) ) {
+
+				$args = array(
+					'product_id'         		=> '6892199',
+					'popup_license_form' 		=> true,
+					'bsf_license_allow_email' 	=> true
+				);
+
+				return get_bsf_inline_license_form( $links, $args, 'envato' );
+			}
+
+			return $links;
+		}
+
 		function uavc_skip_brainstorm_menu( $products ) {
-			$products[] = 6892199;
+			$products[] = '6892199';
 			return $products;
+		}
+
+		function Ultimate_VC_Addons_bsf_registration_page_url() {
+			if ( is_multisite() ) {
+				return network_admin_url( 'plugins.php?bsf-inline-license-form=6892199' );
+			} else {
+				return admin_url( 'plugins.php?bsf-inline-license-form=6892199' );
+			}
 		}
 
 		function uavc_bsf_registration_page_url() {
 			if ( is_multisite() ) {
-				return network_admin_url( 'settings.php?page=ultimate-product-license' );
+				return network_admin_url( 'plugins.php?bsf-inline-license-form=6892199' );
 			} else {
 				return admin_url( 'admin.php?page=ultimate-product-license' );
 			}
@@ -155,7 +196,7 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			$peak_memory = memory_get_peak_usage( true );
 
 			if ( $memory_limit - $peak_memory <= 14436352 && ! defined( 'WP_CLI' ) ) {
-				$msg  = __('Unfortunately, plugin could not be activated as the memory allocated by your host has almost exhausted. <i>Ultimate Addons for Visual Composer</i> plugin recommends that your site should have 15M PHP memory remaining. ', 'ultimate_vc');
+				$msg  = __('Unfortunately, plugin could not be activated as the memory allocated by your host has almost exhausted. <i>Ultimate Addons for WPBakery Page Builder</i> plugin recommends that your site should have 15M PHP memory remaining. ', 'ultimate_vc');
 				$msg .= '<br/><br/>' . __('Please check ', 'ultimate_vc') . '<a target="_blank" href="https://docs.brainstormforce.com/increasing-memory-limit/">' . __('this article', 'ultimate_vc') . '</a> ';
 				$msg .= __(' for solution or contact ', 'ultimate_vc') . '<a target="_blank" href="http://support.brainstormforce.com">' . __(' support', 'ultimate_vc') . '</a>.';
 				$msg .= '<br/><br/><a class="button button-primary" href="'.network_admin_url( 'plugins.php' ). '">' . __('Return to Plugins Page', 'ultimate_vc') . '</a>';
@@ -223,13 +264,10 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			}
 		}
 
+
 		function ultimate_plugins_page_link( $links ) {
 			$tutorial_link = '<a href="http://bsf.io/y7ajc" target="_blank">' . __( 'Video Tutorials', 'ultimate_vc' ) . '</a>';
-			if ( is_multisite() ) {
-				$settins_link = '<a href="' . network_admin_url( 'admin.php?page=ultimate-dashboard' ) . '" target="_blank">' . __( 'Settings', 'ultimate_vc' ) . '</a>';
-			} else {
 				$settins_link = '<a href="' . admin_url( 'admin.php?page=ultimate-dashboard' ) . '" target="_blank">' . __( 'Settings', 'ultimate_vc' ) . '</a>';
-			}
 
 			array_unshift( $links, $tutorial_link );
 
@@ -243,7 +281,7 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			$is_multisite     = is_multisite();
 			$is_network_admin = is_network_admin();
 			if ( ( $is_multisite && $is_network_admin ) || ! $is_multisite ) {
-				echo '<div class="updated"><p>' . __( 'The', 'ultimate_vc' ) . ' <strong>Ultimate addons for Visual Composer</strong> ' . __( 'plugin requires', 'ultimate_vc' ) . ' <strong>Visual Composer</strong> ' . __( 'version 3.7.2 or greater.', 'ultimate_vc' ) . '</p></div>';
+				echo '<div class="updated"><p>' . __( 'The', 'ultimate_vc' ) . ' <strong>Ultimate addons for WPBakery Page Builder</strong> ' . __( 'plugin requires', 'ultimate_vc' ) . ' <strong>WPBakery Page Builder</strong> ' . __( 'version 3.7.2 or greater.', 'ultimate_vc' ) . '</p></div>';
 			}
 		}
 
@@ -252,7 +290,7 @@ if ( ! class_exists( 'Ultimate_VC_Addons' ) ) {
 			$is_multisite     = is_multisite();
 			$is_network_admin = is_network_admin();
 			if ( ( $is_multisite && $is_network_admin ) || ! $is_multisite ) {
-				echo '<div class="updated"><p>' . __( 'The', 'ultimate_vc' ) . ' <strong>Ultimate addons for Visual Composer</strong> ' . __( 'plugin requires', 'ultimate_vc' ) . ' <strong>Visual Composer</strong> ' . __( 'Plugin installed and activated.', 'ultimate_vc' ) . '</p></div>';
+				echo '<div class="updated"><p>' . __( 'The', 'ultimate_vc' ) . ' <strong>Ultimate addons for WPBakery Page Builder</strong> ' . __( 'plugin requires', 'ultimate_vc' ) . ' <strong>WPBakery Page Builder</strong> ' . __( 'Plugin installed and activated.', 'ultimate_vc' ) . '</p></div>';
 			}
 		}
 

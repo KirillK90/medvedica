@@ -3,7 +3,7 @@
  * Plugin Name: The7 Go Pricing - WordPress Responsive Pricing Tables
  * Plugin URI:  http://www.go-pricing.com
  * Description: The New Generation Pricing Tables. If you like traditional Pricing Tables, but you would like get much more out of it, then this rodded product is a useful tool for you.
- * Version:     3.3.8
+ * Version:     3.3.9
  * Author:      Granth
  * Author URI:  http://granthweb.com
  * Text Domain: go_pricing_textdomain

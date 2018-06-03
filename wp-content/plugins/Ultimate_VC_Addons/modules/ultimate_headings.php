@@ -31,12 +31,44 @@ if(!class_exists("Ultimate_Headings")){
 					   "category" => "Ultimate VC Addons",
 					   "description" => __("Awesome heading styles.","ultimate_vc"),
 					   "params" => array(
+					   		array(
+								'type' => 'dropdown',
+								'heading' => __( 'Text source', 'ultimate_vc' ),
+								'param_name' => 'source',
+								'value' => array(
+									__( 'Custom text', 'ultimate_vc' ) => '',
+									__( 'Post or Page Title', 'ultimate_vc' ) => 'post_title',
+								),
+								'std' => '',
+								'description' => __( 'Select text source.', 'ultimate_vc' ),
+							),
 							array(
 								'type' => 'textfield',
 								'heading' => __( 'Title', 'ultimate_vc' ),
 								'param_name' => 'main_heading',
 								'holder' => 'div',
-								'value' => ''
+								'value' => '',
+								'dependency' => array(
+									'element' => 'source',
+									'is_empty' => true,
+								),
+							),
+							array(
+								"type" => "dropdown",
+								"heading" => __("Tag","ultimate_vc"),
+								"param_name" => "heading_tag",
+								"value" => array(
+									__("Default","ultimate_vc") => "h2",
+									__("H1","ultimate_vc") => "h1",
+									__("H3","ultimate_vc") => "h3",
+									__("H4","ultimate_vc") => "h4",
+									__("H5","ultimate_vc") => "h5",
+									__("H6","ultimate_vc") => "h6",
+									__("Div","ultimate_vc") => "div",
+									__("p","ultimate_vc") => "p",
+									__("span","ultimate_vc") => "span",
+								),
+								"description" => __("Default is H2", "ultimate_vc"),
 							),
 							array(
 								"type" => "ult_param_heading",
@@ -133,23 +165,6 @@ if(!class_exists("Ultimate_Headings")){
 								"param_name" => "content",
 								"value" => "",
 								//"description" => __("Sub heading text", "smile"),
-							),
-							array(
-								"type" => "dropdown",
-								"heading" => __("Tag","ultimate_vc"),
-								"param_name" => "heading_tag",
-								"value" => array(
-									__("Default","ultimate_vc") => "h2",
-									__("H1","ultimate_vc") => "h1",
-									__("H3","ultimate_vc") => "h3",
-									__("H4","ultimate_vc") => "h4",
-									__("H5","ultimate_vc") => "h5",
-									__("H6","ultimate_vc") => "h6",
-									__("Div","ultimate_vc") => "div",
-									__("p","ultimate_vc") => "p",
-									__("span","ultimate_vc") => "span",
-								),
-								"description" => __("Default is H2", "ultimate_vc"),
 							),
 							array(
 								"type" => "ult_param_heading",
@@ -523,6 +538,7 @@ if(!class_exists("Ultimate_Headings")){
 		function ultimate_headings_shortcode($atts, $content = null){
 			$wrapper_style = $main_heading_style_inline = $sub_heading_style_inline = $line_style_inline = $icon_inline = $output = $el_class = '';
 			extract(shortcode_atts(array(
+				'source'	=> "",
 				'main_heading' => "",
 				"main_heading_font_size"	=> "",
 				"main_heading_line_height" 	=> "",
@@ -570,6 +586,11 @@ if(!class_exists("Ultimate_Headings")){
 
 			if($heading_tag == '')
 				$heading_tag = 'h2';
+			
+			if( $source == 'post_title' ){
+				global $post;
+				$main_heading = $post->post_title;
+			}
 
 			/* ---- main heading styles ---- */
 			if($main_heading_font_family != '')

@@ -200,7 +200,7 @@ if ( ! function_exists( 'presscore_populate_album_post_config' ) ) :
 
 		$config->set( 'post.media.featured_image.enabled', !get_post_meta( $post_id, "{$prefix}exclude_featured_image", true ), true );
 
-		if ( post_password_required( $post_id ) ) {
+		if ( post_password_required( $post_id ) || is_search() ) {
 			$open_as = 'post';
 		} else {
 			$open_as = get_post_meta( $post_id, "{$prefix}open_album", true );

@@ -92,9 +92,14 @@ class Presscore_Mod_Albums_Public {
 	}
 
 	public function archive_page_id( $page_id ) {
+		if ( $page_id ) {
+			return $page_id;
+		}
+
 		if ( is_tax( 'dt_gallery_category' ) || is_post_type_archive( 'dt_gallery' ) ) {
 			$page_id = of_get_option( 'template_page_id_gallery_category', null );
 		}
+
 		return $page_id;
 	}
 

@@ -304,81 +304,66 @@
 .info-circle-push {
     -webkit-animation-name: circle_push;
     animation-name: circle_push;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
 }
-
 @-webkit-keyframes circle_push {
-  from {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  to {
-    opacity: 1;
-  }
+    50% {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
 }
-
 @keyframes circle_push {
-  from {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  to {
-    opacity: 1;
-  }
+    50% {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1)
+    }
 }
-
 .info-circle-pop {
     -webkit-animation-name: circle_pop;
     animation-name: circle_pop;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
 }
 @-webkit-keyframes circle_pop {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
 }
 @keyframes circle_pop {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
+    50% {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1)
+    }
 }
 .smile_icon_list.ic-resp-img li.icon_list_item {
     min-height: .5em !important

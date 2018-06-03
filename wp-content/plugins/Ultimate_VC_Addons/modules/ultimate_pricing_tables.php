@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Pricing Tables for Visual Composer
+* Add-on Name: Pricing Tables for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists("Ultimate_Pricing_Table")){
@@ -101,6 +101,7 @@ if(!class_exists("Ultimate_Pricing_Table")){
 							"admin_label" => true,
 							"value" => "",
 							"description" => __("Enter the package name or table heading", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-8',
 						),
 						array(
 							"type" => "dropdown",
@@ -118,6 +119,7 @@ if(!class_exists("Ultimate_Pricing_Table")){
 								__("span","ultimate_vc") => "span",
 							),
 							"description" => __("Default is H3", "ultimate_vc"),
+							'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 						),
 						array(
 							"type" => "textfield",
@@ -126,6 +128,7 @@ if(!class_exists("Ultimate_Pricing_Table")){
 							"param_name" => "package_sub_heading",
 							"value" => "",
 							"description" => __("Enter short description for this package", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-8',
 						),
 						array(
 							"type" => "dropdown",
@@ -143,6 +146,7 @@ if(!class_exists("Ultimate_Pricing_Table")){
 								__("span","ultimate_vc") => "span",
 							),
 							"description" => __("Default is H5", "ultimate_vc"),
+							'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 						),
 						array(
 							"type" => "textfield",

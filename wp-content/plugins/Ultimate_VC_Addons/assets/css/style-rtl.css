@@ -1,7 +1,7 @@
 /**
- * Plugin Name: Ultimate Addons for Visual Composer
+ * Plugin Name: Ultimate Addons for WPBakery Page Builder
  * Plugin URI: http://codecanyon.net/item/ultimate-addons-for-visual-composer/6892199
- * Description: All in one plugin for your Visual Composer needs!
+ * Description: All in one plugin for your WPBakery Page Builder needs!
  * Version: 3.16.6
  * Author: BrainstormForce
  * Author URI: http://codecanyon.net/user/BrainstormForce
@@ -281,6 +281,17 @@ a.ulimate-info-list-link {
     clear: none !important
 }
 .smile_icon_list li .icon_description h3 a {
+    text-decoration: none
+}
+.smile_icon_list li .icon_description .info-list-heading {
+    font-size: 17px;
+    line-height: 1.846153846;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    clear: none !important
+}
+.smile_icon_list li .icon_description .info-list-heading a {
     text-decoration: none
 }
 .smile_icon_list li .icon_description p {

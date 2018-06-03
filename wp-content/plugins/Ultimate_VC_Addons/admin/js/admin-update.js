@@ -12,7 +12,7 @@ jQuery(window).load(function(e) {
 	jQuery("#ultimate-addons-for-visual-composer").addClass("update");
 	var html = '<tr class="plugin-update-tr">\
 				<td colspan="3" class="plugin-update colspanchange">\
-					<div class="update-message">There is a new version of Ultimate Addons for Visual Composer available. \
+					<div class="update-message">There is a new version of Ultimate Addons for WPBakery Page Builder available. \
 					<a href="update-core.php#brainstormforce-plugins">Check update details.</a>\
 					</div>\
 				</td>\

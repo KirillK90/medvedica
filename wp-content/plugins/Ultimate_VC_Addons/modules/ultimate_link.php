@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Creatve Link for Visual Composer
+* Add-on Name: Creatve Link for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_creative_link'))

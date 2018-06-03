@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Adjustable Spacer for Visual Composer
+* Add-on Name: Adjustable Spacer for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists("Ultimate_Spacer")){

@@ -295,14 +295,14 @@ if(!class_exists("WooComposer")){
 		$is_multisite = is_multisite();
 		$is_network_admin = is_network_admin();
 		if(($is_multisite && $is_network_admin) || !$is_multisite)
-			echo '<div class="updated"><p>'.__('The','ultimate_vc').' <strong>WooComposer</strong> '.__('plugin requires','ultimate_vc').' <strong>Visual Composer</strong> '.__('version 3.7.2 or greater.','ultimate_vc').'</p></div>';
+			echo '<div class="updated"><p>'.__('The','ultimate_vc').' <strong>WooComposer</strong> '.__('plugin requires','ultimate_vc').' <strong>WPBakery Page Builder</strong> '.__('version 3.7.2 or greater.','ultimate_vc').'</p></div>';
 	}
 	function woocomposer_admin_notice_for_vc_activation()
 	{
 		$is_multisite = is_multisite();
 		$is_network_admin = is_network_admin();
 		if(($is_multisite && $is_network_admin) || !$is_multisite)
-			echo '<div class="updated"><p>'.__('The','ultimate_vc').' <strong>WooComposer</strong> '.__('plugin requires','ultimate_vc').' <strong>Visual Composer</strong> '.__('Plugin installed and activated.').'</p></div>';
+			echo '<div class="updated"><p>'.__('The','ultimate_vc').' <strong>WooComposer</strong> '.__('plugin requires','ultimate_vc').' <strong>WPBakery Page Builder</strong> '.__('Plugin installed and activated.').'</p></div>';
 	}
 }
 

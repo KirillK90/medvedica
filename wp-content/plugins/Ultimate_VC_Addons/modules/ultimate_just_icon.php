@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Just Icon for Visual Composer
+* Add-on Name: Just Icon for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_Just_Icon'))

@@ -80,7 +80,6 @@ if(!class_exists('Ultimate_Admin_Area')){
 			
 			/* add admin menu */
 			add_action( 'admin_menu', array($this,'register_brainstorm_menu'),99);
-			add_action( 'network_admin_menu', array( $this, 'register_brainstorm_network_menu' ) );
 
 			add_action( 'admin_enqueue_scripts', array($this, 'bsf_admin_scripts_updater'), 1);
 			add_action( 'wp_ajax_update_ultimate_options', array($this,'update_settings'));
@@ -120,7 +119,7 @@ if(!class_exists('Ultimate_Admin_Area')){
 			}
 
 			$link .= '<a href="' . $debug_url . ' ">Ultimate Addons debug settings</a>';
-			$link .= ' | <a href="' . $license_link . ' ">Activate license using purchase key</a>';
+			//$link .= ' | <a href="' . $license_link . ' ">Activate license using purchase key</a>';
 
 			return $link;
 		}
@@ -223,19 +222,6 @@ if(!class_exists('Ultimate_Admin_Area')){
 			) );
 		}/* end admin_scripts */
 
-		function register_brainstorm_network_menu() {
-
-			add_submenu_page(
-				"settings.php",
-				__("UAVC","ultimate_vc"),
-				__("UAVC","ultimate_vc"),
-				'manage_network_options',
-				"ultimate-product-license",
-				array($this,'product_license')
-			);
-
-		}
-
 		function register_brainstorm_menu(){
 
 			if ( is_multisite() && ! current_user_can( 'manage_network_options' ) ) {
@@ -307,7 +293,6 @@ if(!class_exists('Ultimate_Admin_Area')){
 					"ultimate-product-license",
 					array($this,'product_license')
 				);
-
 			}
 
 			add_submenu_page(
@@ -699,7 +684,7 @@ if(!class_exists('Ultimate_Admin_Area')){
                                             <div class="ult_button"><span class="dashicons-before dashicons-admin-network" style="padding-right: 6px;"></span><?php __('Activate your license', 'ultimate_vc');?></div>
                                         </div>
                                     </div>
-                                    <div class="ult_description"><h3 style="margin:0;padding: 2px 0px;"><strong><?php _e('Almost done!','ultimate_vc'); ?></strong></h3><p style="margin: 0;"><?php _e('Please activate your copy of the Ultimate Addons for Visual Composer to receive automatic updates & get premium support','ultimate_vc'); ?></p></div>
+                                    <div class="ult_description"><h3 style="margin:0;padding: 2px 0px;"><strong><?php _e('Almost done!','ultimate_vc'); ?></strong></h3><p style="margin: 0;"><?php _e('Please activate your copy of the Ultimate Addons for WPBakery Page Builder to receive automatic updates & get premium support','ultimate_vc'); ?></p></div>
                                 </div>
                         </div>
 					<?php
@@ -714,7 +699,7 @@ if(!class_exists('Ultimate_Admin_Area')){
 
                         <div class="updated fade">
 
-                            <p><?php echo _e('Howdy! Please','ultimate_vc').' <a href="'.$reg_link.'">'.__('activate your copy','ultimate_vc').' </a> '.__('of the Ultimate Addons for Visual Composer to receive automatic updates & get premium support.','ultimate_vc');?>
+                            <p><?php echo _e('Howdy! Please','ultimate_vc').' <a href="'.$reg_link.'">'.__('activate your copy','ultimate_vc').' </a> '.__('of the Ultimate Addons for WPBakery Page Builder to receive automatic updates & get premium support.','ultimate_vc');?>
                             <span style="float: right; padding: 0px 4px; cursor: pointer;" class="uavc-activation-notice">X</span>
                             </p>
                         </div>
@@ -803,4 +788,16 @@ function ultimate_bsf_core_frosty_hooks($hooks) {
 		array_push($hooks, $hook);
 	}
 	return $hooks;
+}
+
+
+function UAVC_product_license_redirect_to_modal_popup($url, $original_url, $_context){
+    if ($url == 'admin.php?page=ultimate-product-license'){
+        remove_filter('clean_url', 'UAVC_product_license_redirect_to_modal_popup', 10);
+        return bsf_registration_page_url( false, '6892199' );
+    }
+    return $url;
+}
+if (is_admin()){
+add_filter('clean_url', 'UAVC_product_license_redirect_to_modal_popup', 10, 3);
 }

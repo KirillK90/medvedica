@@ -35,15 +35,8 @@ if(!class_exists('Ultimate_Interactive_Banner'))
 								"param_name" => "banner_title",
 								"admin_label" => true,
 								"value" => "",
-								"description" => __("Give a title to this banner.","ultimate_vc")
-							),
-							array(
-								"type" => "textarea",
-								"class" => "",
-								"heading" => __("Description","ultimate_vc"),
-								"param_name" => "banner_desc",
-								"value" => "",
-								"description" => __("Text that comes on mouse hover.","ultimate_vc")
+								"description" => __("Give a title to this banner.","ultimate_vc"),
+								'edit_field_class' => 'vc_col-sm-8',
 							),
 							array(
 								"type" => "dropdown",
@@ -61,7 +54,16 @@ if(!class_exists('Ultimate_Interactive_Banner'))
 									__("span","ultimate_vc") => "span",
 								),
 								"description" => __("Default is H2.", "ultimate_vc"),
-								),
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
+							),
+							array(
+								"type" => "textarea",
+								"class" => "",
+								"heading" => __("Description","ultimate_vc"),
+								"param_name" => "banner_desc",
+								"value" => "",
+								"description" => __("Text that comes on mouse hover.","ultimate_vc")
+							),
 							array(
 								"type" => "ult_img_single",
 								"class" => "",

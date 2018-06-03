@@ -51,7 +51,7 @@ class RevSliderTinyBox {
 			
 			if(!function_exists('vc_map') || !function_exists('vc_action')) return false;
 			
-			if('vc_inline' === vc_action() || is_admin()){
+			if('true' === vc_request_param('vc_editable') || 'vc_inline' === vc_action() || is_admin()){
 				add_action( 'init', array('RevSliderTinyBox', 'add_to_VC' ));
 			}
 		}

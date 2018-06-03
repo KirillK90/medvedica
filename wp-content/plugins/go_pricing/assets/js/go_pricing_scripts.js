@@ -2,11 +2,11 @@
  * Go Pricing - WordPress Responsive Pricing Tables
  * 
  * Description: The New Generation Pricing Tables. If you like traditional Pricing Tables, but you would like get much more out of it, then this rodded product is a useful tool for you.
- * Version:     3.3.8
+ * Version:     3.3.9
  * Author:      Granth
  * License:		http://codecanyon.net/licenses/
  * 
- * (C) 2017 Granth (http://granthweb.com)
+ * (C) 2018 Granth (http://granthweb.com)
  */
 
 var gwGS = gwGS || {}; 
@@ -469,45 +469,91 @@ var gwGS = gwGS || {};
 		});			
 
 
-		/* Event handling */
-		$('body').on('touchstart pointerdown MSPointerDown mouseenter mouseleave', '.gw-go-col-wrap', function(e) {
-			var $this = $(this);
+		/* Column hover / touch - supports mouse, touch and pointers */
+		
+		// Pointer enter event
+		function enterEvent( $elem ) {
+			$elem.addClass('gw-go-curr');					
+			$elem.siblings().data('leave-event', null).data('enter-event', null);
+			$elem.data('leave-event', null);
+			if ($elem.hasClass('gw-go-disable-hover')) {
+				$elem.siblings(':not(.gw-go-disable-hover)').removeClass('gw-go-hover');
+			} else {
+				$elem.addClass('gw-go-hover').siblings(':not(.gw-go-disable-hover)').removeClass('gw-go-hover');
+				$elem.closest('.gw-go').addClass('gw-go-hover');
+			}
+		};
+		
+		// Pointer leave event
+		function leaveEvent( $elem ) {
+			$elem.siblings().data('leave-event', null).data('enter-event', null);
+			$elem.data('enter-event', null);
+			$elem.removeClass('gw-go-curr');
+			if ($elem.hasClass('gw-go-disable-hover')) {
+				$elem.closest('.gw-go').find('[data-current="1"]:not(.gw-go-disable-hover)').addClass('gw-go-hover');
+			} else {
+				$elem.removeClass('gw-go-hover');
+				$elem.closest('.gw-go').find('[data-current="1"]:not(.gw-go-disable-hover)').addClass('gw-go-hover');
+				$elem.closest('.gw-go').removeClass('gw-go-hover');
+			}			
+		};		
+		
+		// Enter event handling			
+		$(document).on('pointerenter mouseenter pointerdown touchstart', '.gw-go-col-wrap', function(e) {
+			e.stopPropagation();
+			var $this = $(this);			
+			if ($this.hasClass('gw-go-disable-hover')) return;
+			
+			$this.data('leave-event', null);	
+			
+			if ($this.data('enter-event')) return;
+			var event = {
+				pointer : e.originalEvent.pointerType == 'touch' || e.type == 'touchstart' ? 'touch' : 'mouse',
+				pageX : e.originalEvent.changedTouches ? e.originalEvent.changedTouches[0].pageX : e.originalEvent.pageX,
+				pageY : e.originalEvent.changedTouches ? e.originalEvent.changedTouches[0].pageY : e.originalEvent.pageY,				
+			};
+			if (event.pointer == 'mouse') { 
+				enterEvent($this);
+			};
+			$this.data('enter-event', event);			
+		});
+
+		// Leave event handling			
+		$(document).on('pointerleave mouseleave pointerup touchend', '.gw-go-col-wrap', function(e) {
 			
 			e.stopPropagation();
+			var $this = $(this);
 
-			if(e.handled !== true) {
-	
-				if (e.type == 'mouseenter' || e.type == 'touchstart' || e.type == 'pointerdown' || e.type == 'MSPointerDown') {	
-				
-					$this.addClass('gw-go-curr');					
-					if ($this.hasClass('gw-go-disable-hover')) {
-						$this.siblings(':not(.gw-go-disable-hover)').removeClass('gw-go-hover');
-					} else {
-						$this.addClass('gw-go-hover').siblings(':not(.gw-go-disable-hover)').removeClass('gw-go-hover');
-						$this.closest('.gw-go').addClass('gw-go-hover');
-					}
-					$(document).on('touchstart.gopricing touchstart.gopricing pointerdown.gopricing MSPointerDown.gopricing mousemove.gopricing', function(e) {
-						if ( !$(e.target).closest('.go-pricing').length ) {
-							$this.trigger('mouseleave');
-						}
-					});
-				} else {
-					$this.removeClass('gw-go-curr');
-					if ($this.hasClass('gw-go-disable-hover')) {
-						$this.closest('.gw-go').find('[data-current="1"]:not(.gw-go-disable-hover)').addClass('gw-go-hover');
-					} else {
-						$this.closest('.gw-go').find('[data-current="1"]:not(.gw-go-disable-hover)').addClass('gw-go-hover');
-						$this.removeClass('gw-go-hover');
-						$this.closest('.gw-go').removeClass('gw-go-hover');
-					}				
-					$(document).off('touchstart.gopricing touchstart.gopricing pointerdown.gopricing MSPointerDown.gopricing mousemove.gopricing');
-				}
-				e.handled = true;
-			} else {
-				return false;
-			}
-		});			
+			if ($this.hasClass('gw-go-disable-hover')) return;
 			
+			if (!$this.data('enter-event') || $this.data('leave-event')) return;
+			var event = {
+				pointer : e.originalEvent.pointerType == 'touch' || e.type == 'touchend' ? 'touch' : 'mouse',
+				pageX : e.originalEvent.changedTouches ? e.originalEvent.changedTouches[0].pageX : e.originalEvent.pageX,
+				pageY : e.originalEvent.changedTouches ? e.originalEvent.changedTouches[0].pageY : e.originalEvent.pageY,				
+			};
+			if (event.pointer == 'mouse') {
+				$this.data('leave-event', event);				
+				leaveEvent($this);				
+			} else {
+				if (!$this.data('leave-event')) {
+					if (Math.abs($this.data('enter-event').pageX-event.pageX) > 20 || Math.abs($this.data('enter-event').pageY-event.pageY) > 20) {
+						$this.data('enter-event', null);						
+						return;
+					}
+					enterEvent($this);
+					$this.data('leave-event', event);					
+					$(document).on('touchstart.goprEvent pointermove.goprEvent mousemove.goprEvent', function(e) {
+						if ( $(e.target).closest('.go-pricing').length ) return;
+						leaveEvent($this);
+						$this.data('leave-event', null);
+						$this.data('enter-event', null);
+						$(document).off('.goprEvent');
+					});			
+				}
+			}
+			
+		});
 
 		/**
 	 	 * Google map

@@ -39,7 +39,7 @@ if(!class_exists('Ultimate_Google_Font_Manager'))
 	{
 		function __construct()
 		{
-			add_option('ultimate_google_fonts',array());
+			add_option('ultimate_google_fonts', array(), '', false);
 			//delete_option('ultimate_google_fonts');
 			add_option('ultimate_selected_google_fonts',array());
 			//add_action('admin_menu',array($this, 'google_font_manager_menu'));
@@ -311,7 +311,7 @@ if(!class_exists('Ultimate_Google_Font_Manager'))
 			{
 				$google_fonts = $fonts->items;
 				$google_font_count = count($google_fonts);
-				update_option('ultimate_google_fonts',$google_fonts);
+				update_option('ultimate_google_fonts',$google_fonts,false);
 				$response['count'] = ($google_font_count - $temp_count);
 				$response['message'] = __(($google_font_count - $temp_count).' new fonts added. ','ultimate_vc');
 			}

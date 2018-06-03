@@ -567,7 +567,7 @@ jQuery(document).ready(function(){
         var indexOf=jQuery(this).data('activeindex');       
         var p = jQuery(this).find("ul.ult_tabmenu li.ult_tab_li:nth-child("+indexOf+")" ).find(".ult_a").attr("id");
 
-        if(URL_ID && Cur_URL.includes("#")) {
+        if(URL_ID !== Cur_URL) {
           p = URL_ID;
         }
         if(typeof p !== "undefined") {

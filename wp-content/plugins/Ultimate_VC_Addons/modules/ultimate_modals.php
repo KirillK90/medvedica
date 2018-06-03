@@ -10,7 +10,7 @@ if(!class_exists('Ultimate_Modals'))
 		function __construct()
 		{
 			if ( Ultimate_VC_Addons::$uavc_editor_enable ) {
-				// Initialize the modal popup component for Visual Composer
+				// Initialize the modal popup component for WPBakery Page Builder
 				add_action('init', array( $this, 'ultimate_modal_init' ) );
 			}
 			// Add shortcode for modal popup

@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Info List for Visual Composer
+* Add-on Name: Info List for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_Info_list'))
@@ -150,10 +150,11 @@ if(!class_exists('AIO_Info_list'))
 		function info_list_item($atts,$content = null)
 		{
 			// Do nothing
-			$list_title = $list_icon = $animation = $icon_color = $icon_bg_color = $icon_img = $icon_type = $desc_font_line_height = $title_font_line_height = '';
+			$list_title = $heading_tag = $list_icon = $animation = $icon_color = $icon_bg_color = $icon_img = $icon_type = $desc_font_line_height = $title_font_line_height = '';
 			$title_font = $title_font_style = $title_font_size = $title_font_color = $desc_font = $desc_font_style = $desc_font_size = $desc_font_color = '';
 			extract(shortcode_atts(array(
 				'list_title' => '',
+				"heading_tag" => 'h3',
 				'animation' => '',
 				'list_icon' => '',
 				'icon_img' => '',
@@ -215,7 +216,7 @@ if(!class_exists('AIO_Info_list'))
 			}
 			$info_list_id = 'Info-list-wrap-'.rand(1000, 9999);
 			$info_list_args = array(
-                'target' => '#'.$info_list_id.' h3', // set targeted element e.g. unique class/id etc.
+                'target' => '#'.$info_list_id.' '.$heading_tag, // set targeted element e.g. unique class/id etc.
                 'media_sizes' => array(
                     'font-size' => $title_font_size, // set 'css property' & 'ultimate_responsive' sizes. Here $title_responsive_font_size holds responsive font sizes from user input.
                    	'line-height' => $title_font_line_height
@@ -304,12 +305,12 @@ if(!class_exists('AIO_Info_list'))
 			$output .= '<div class="icon_description" id="'.esc_attr($info_list_id).'" style="font-size:'.esc_attr($this->icon_size).'px;">';
 			if($list_title != '')
 			{
-				$output .= '<h3 class="ult-responsive" '.$info_list_data_list.' style="'.esc_attr($title_style).'">';
+				$output .= '<'.$heading_tag.' class="ult-responsive info-list-heading" '.$info_list_data_list.' style="'.esc_attr($title_style).'">';
 				if($is_link && $info_list_link_apply == 'title')
 					$output .= '<a '. Ultimate_VC_Addons::uavc_link_init($url, $target, $link_title, $rel ).'>'.$list_title.'</a>';
 				else
 					$output .= $list_title;
-				$output .= '</h3>';
+				$output .= '</'.$heading_tag.'>';
 			}
 			$output .= '<div class="icon_description_text ult-responsive" '.$info_list_desc_data_list.' style="'.esc_attr($desc_style).'">'.wpb_js_remove_wpautop($content, true).'</div>';
 			$output .= '</div>';
@@ -459,7 +460,7 @@ if(!class_exists('AIO_Info_list'))
 			$output = '<li class="icon_list_item">';
 			$output .= $icon_html;
 			$output .= '<div class="icon_description">';
-			$output .= '<h3>'.$list_title.'</h3>';
+			$output .= '<'.$heading_tag.'>'.$list_title.'</'.$heading_tag.'>';
 			$output .= wpb_js_remove_wpautop($content, true);
 			$output .= '</div>';
 			$output .= '<div class="icon_list_connector" '.$connector_trans.' style="'.esc_attr($this->connect_color_style).';"></div>';
@@ -667,8 +668,27 @@ if(!class_exists('AIO_Info_list'))
 							"admin_label" => true,
 							"param_name" => "list_title",
 							"value" => "",
-							"description" => __("Provide a title for this icon list item.","ultimate_vc")
+							"description" => __("Provide a title for this icon list item.","ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-8',
 						),
+						array(
+								"type" => "dropdown",
+								"heading" => __("Tag","ultimate_vc"),
+								"param_name" => "heading_tag",
+								"value" => array(
+									__("Default","ultimate_vc") => "h3",
+									__("H1","ultimate_vc") => "h1",
+									__("H2","ultimate_vc") => "h2",
+									__("H4","ultimate_vc") => "h4",
+									__("H5","ultimate_vc") => "h5",
+									__("H6","ultimate_vc") => "h6",
+									__("Div","ultimate_vc") => "div",
+									__("p","ultimate_vc") => "p",
+									__("span","ultimate_vc") => "span",
+								),
+								"description" => __("Default is H3", "ultimate_vc"),
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
+							),
 						array(
 							"type" => "dropdown",
 							"class" => "",

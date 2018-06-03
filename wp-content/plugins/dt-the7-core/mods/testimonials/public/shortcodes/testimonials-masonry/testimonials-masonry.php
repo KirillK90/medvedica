@@ -125,6 +125,11 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 				$query = $this->get_posts_by_taxonomy( 'dt_testimonials', 'dt_testimonials_category', $category_terms, $category_field );
 			}
 
+			$query_new = apply_filters( 'the7_shortcode_query', null, $this->sc_name, $this->atts );
+			if ( is_a( $query_new, 'WP_Query' ) ) {
+				$query = $query_new;
+			}
+
 			do_action( 'presscore_before_shortcode_loop', $this->sc_name, $this->atts );
 
 			$loading_mode = $this->get_att( 'loading_mode' );
@@ -178,34 +183,39 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 									$proportion = $this->get_proportion( $this->get_att( 'resized_image_dimensions' ) );
 								}
 								echo '<div class="testimonial-avatar">';
-									$img_width = absint( $this->get_att( 'img_max_width', '' ) );
-									$avatar = '<span class=" no-avatar" ></span>';
+
+								$img_width = absint( $this->get_att( 'img_max_width', '' ) );
+
+								if ( has_post_thumbnail( $post_id ) ) {
+									$thumb_id = get_post_thumbnail_id( $post_id );
+									$avatar_args = array(
+										'img_meta'      => wp_get_attachment_image_src( $thumb_id, 'full' ),
+										'prop'          => $proportion,
+										'echo'			=> false,
+										'wrap'			=> '<img %IMG_CLASS% %SRC% %SIZE% %IMG_TITLE% %ALT% />',
+									);
+									if ( $img_width ) {
+										$avatar_args['options'] = array( 'w' => $img_width, 'z' => 0 );
+									}
+
+									$avatar_wrap_class = 'testimonial-thumb';
+									if ( presscore_lazy_loading_enabled() ) {
+										$avatar_wrap_class .= ' layzr-bg';
+									}
+
+									$avatar = '<span class="' . $avatar_wrap_class . '">' . dt_get_thumb_img( $avatar_args ) . '</span>';
+								} else {
+									$no_avatar_width = $no_avatar_height = $img_width ? $img_width : 60;
+
 									if ( 'resize' === $this->get_att( 'image_sizing' ) ) {
-										$no_avatar_width = ( $img_width ? $img_width : 60 );
-										$avatar = '<span class=" no-avatar" style="height:'.round($no_avatar_width / $proportion, 2) .'px"></span>';
+										$no_avatar_height = round( $no_avatar_width / $proportion, 2 );
 									}
 
-									if ( has_post_thumbnail( $post_id ) ) {
-										$thumb_id = get_post_thumbnail_id( $post_id );
-										$avatar_args = array(
-											'img_meta'      => wp_get_attachment_image_src( $thumb_id, 'full' ),
-											//'options'       => array( 'w' => $img_width, 'z' => 0 ),
-											'prop'          => $proportion,
-											'echo'			=> false,
-											'wrap'			=> '<img %IMG_CLASS% %SRC% %SIZE% %IMG_TITLE% %ALT% />',
-										);
-										if ( $img_width ) {
-											$avatar_args['options'] = array( 'w' => $img_width, 'z' => 0 );
-										}
+									$avatar = the7_core_testimonials_get_no_avatar( $no_avatar_width, $no_avatar_height );
+									$avatar = '<span class="testim-no-avatar">' . $avatar . '</span>';
+								}
 
-										$avatar_wrap_class = 'testimonial-thumb';
-										if ( presscore_lazy_loading_enabled() ) {
-											$avatar_wrap_class .= ' layzr-bg';
-										}
-
-										$avatar = '<span class="' . $avatar_wrap_class . '">' . dt_get_thumb_img( $avatar_args ) . '</span>';
-									}
-									echo $avatar;
+								echo $avatar;
 								echo '</div>';
 							}
 
@@ -356,10 +366,15 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 			if ( !$this->get_flag( 'image_hover_bg_color' ) ) {
 				$class[] = 'disable-bg-rollover';
 			}
-
+			if ( 'grid' === $this->get_att( 'type' ) ) {
+				$class[] = 'dt-css-grid-wrap';
+			}
 			$loading_mode = $this->get_att( 'loading_mode' );
 			if ( 'standard' !== $loading_mode ) {
 				$class[] = 'jquery-filter';
+			}
+			if ( 'grid' === $this->get_att( 'type' ) ) {
+				$class[] = 'dt-css-grid-wrap';
 			}
 
 			if ( 'js_lazy_loading' === $loading_mode ) {
@@ -454,12 +469,7 @@ if ( ! class_exists( 'DT_Shortcode_Testimonials_Masonry', false ) ) :
 				$excerpt = apply_filters( 'the_content', $content );
 			} else {
 				$length = absint( $this->atts['excerpt_words_limit'] );
-				$excerpt = get_the_excerpt();
-
-				// VC excerpt fix.
-				if ( function_exists( 'vc_manager' ) ) {
-					$excerpt = vc_manager()->vc()->excerptFilter( $excerpt );
-				}
+				$excerpt = apply_filters( 'the7_shortcodeaware_excerpt', get_the_excerpt() );
 
 				if ( $length ) {
 					$trimmed_excerpt = wp_trim_words( $excerpt, $length );

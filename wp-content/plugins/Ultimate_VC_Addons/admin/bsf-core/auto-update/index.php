@@ -461,6 +461,11 @@ $is_product_theme = false;
 								continue;
 							}
 
+							$remove_frm_registration = apply_filters( 'bsf_remove_'. $id .'_from_registration_listing', false, $id );
+							if ( $remove_frm_registration ) {
+								continue;
+							}
+
 							$step = ( isset( $plugin_data['step'] ) && $plugin_data['step'] != '' ) ? $plugin_data['step'] : 'step-product-registration';
 
 							$common_data = ' data-product-id="' . $id . '" ';

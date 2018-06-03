@@ -135,21 +135,50 @@ class RevSliderAdmin extends RevSliderBaseAdmin{
 		}
 		
 		// Add-on Admin
-		$addon_admin = new Rev_addon_Admin( 'rev_addon', RevSliderGlobals::SLIDER_REVISION );
-		add_action( 'admin_enqueue_scripts', array( $addon_admin, 'enqueue_styles') );
-		add_action( 'admin_enqueue_scripts', array( $addon_admin, 'enqueue_scripts') );
-		add_action( 'admin_menu', array( $addon_admin, 'add_plugin_admin_menu'), 11 );
-		// Add-on Admin Button Ajax Actions
-		add_action( 'wp_ajax_activate_plugin', array( $addon_admin, 'activate_plugin') );
-		//add_action( 'wp_ajax_nopriv_activate_plugin', array( $addon_admin, 'activate_plugin') );
-		add_action( 'wp_ajax_deactivate_plugin', array( $addon_admin, 'deactivate_plugin'));
-		//add_action( 'wp_ajax_nopriv_deactivate_plugin', array( $addon_admin, 'deactivate_plugin') );
-		add_action( 'wp_ajax_install_plugin', array( $addon_admin, 'install_plugin'));
-		//add_action( 'wp_ajax_nopriv_install_plugin', array( $addon_admin, 'install_plugin') );
-		
-		//add_filter('plugin_action_links', array('RevSliderAdmin', 'plugin_action_links' ), 10, 2);
+        if (!defined( 'REVSLIDER_THE7')) {
+            $addon_admin = new Rev_addon_Admin( 'rev_addon', RevSliderGlobals::SLIDER_REVISION );
+            add_action( 'admin_enqueue_scripts', array( $addon_admin, 'enqueue_styles' ) );
+            add_action( 'admin_enqueue_scripts', array( $addon_admin, 'enqueue_scripts' ) );
+            add_action( 'admin_menu', array( $addon_admin, 'add_plugin_admin_menu' ), 11 );
+                // Add-on Admin Button Ajax Actions
+            add_action( 'wp_ajax_activate_plugin', array( $addon_admin, 'activate_plugin' ) );
+                //add_action( 'wp_ajax_nopriv_activate_plugin', array( $addon_admin, 'activate_plugin') );
+            add_action( 'wp_ajax_deactivate_plugin', array( $addon_admin, 'deactivate_plugin' ) );
+                //add_action( 'wp_ajax_nopriv_deactivate_plugin', array( $addon_admin, 'deactivate_plugin') );
+            add_action( 'wp_ajax_install_plugin', array( $addon_admin, 'install_plugin' ) );
+                //add_action( 'wp_ajax_nopriv_install_plugin', array( $addon_admin, 'install_plugin') );
+
+                //add_filter('plugin_action_links', array('RevSliderAdmin', 'plugin_action_links' ), 10, 2);
+        }
+
+
+		// Privacy
+		add_action( 'admin_init', array( $this, 'add_suggested_privacy_content'), 15 );
 	}
 	
+	/**
+	 * Return the default suggested privacy policy content.
+	 *
+	 * @return string The default policy content.
+	 */
+	public function get_default_privacy_content() {
+		return
+		__('<h2>In case you’re using Google Web Fonts (default) or playing videos or sounds via YouTube or Vimeo in Slider Revolution we recommend to add the corresponding text phrase to your privacy police:</h2>
+		<h3>YouTube</h3> <p>Our website uses plugins from YouTube, which is operated by Google. The operator of the pages is YouTube LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.</p> <p>If you visit one of our pages featuring a YouTube plugin, a connection to the YouTube servers is established. Here the YouTube server is informed about which of our pages you have visited.</p> <p>If you\'re logged in to your YouTube account, YouTube allows you to associate your browsing behavior directly with your personal profile. You can prevent this by logging out of your YouTube account.</p> <p>YouTube is used to help make our website appealing. This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.</p> <p>Further information about handling user data, can be found in the data protection declaration of YouTube under <a href="https://www.google.de/intl/de/policies/privacy" target="_blank">https://www.google.de/intl/de/policies/privacy</a>.</p>
+		<h3>Vimeo</h3> <p>Our website uses features provided by the Vimeo video portal. This service is provided by Vimeo Inc., 555 West 18th Street, New York, New York 10011, USA.</p> <p>If you visit one of our pages featuring a Vimeo plugin, a connection to the Vimeo servers is established. Here the Vimeo server is informed about which of our pages you have visited. In addition, Vimeo will receive your IP address. This also applies if you are not logged in to Vimeo when you visit our plugin or do not have a Vimeo account. The information is transmitted to a Vimeo server in the US, where it is stored.</p> <p>If you are logged in to your Vimeo account, Vimeo allows you to associate your browsing behavior directly with your personal profile. You can prevent this by logging out of your Vimeo account.</p> <p>For more information on how to handle user data, please refer to the Vimeo Privacy Policy at <a href="https://vimeo.com/privacy" target="_blank">https://vimeo.com/privacy</a>.</p>
+		<h3>Google Web Fonts</h3> <p>For uniform representation of fonts, this page uses web fonts provided by Google. When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.</p> <p>For this purpose your browser has to establish a direct connection to Google servers. Google thus becomes aware that our web page was accessed via your IP address. The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our plugin. This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.</p> <p>If your browser does not support web fonts, a standard font is used by your computer.</p> <p>Further information about handling user data, can be found at <a href="https://developers.google.com/fonts/faq" target="_blank">https://developers.google.com/fonts/faq</a> and in Google\'s privacy policy at <a href="https://www.google.com/policies/privacy/" target="_blank">https://www.google.com/policies/privacy/</a>.</p>
+		<h3>SoundCloud</h3><p>On our pages, plugins of the SoundCloud social network (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, UK) may be integrated. The SoundCloud plugins can be recognized by the SoundCloud logo on our site.</p>
+			<p>When you visit our site, a direct connection between your browser and the SoundCloud server is established via the plugin. This enables SoundCloud to receive information that you have visited our site from your IP address. If you click on the “Like” or “Share” buttons while you are logged into your SoundCloud account, you can link the content of our pages to your SoundCloud profile. This means that SoundCloud can associate visits to our pages with your user account. We would like to point out that, as the provider of these pages, we have no knowledge of the content of the data transmitted or how it will be used by SoundCloud. For more information on SoundCloud’s privacy policy, please go to https://soundcloud.com/pages/privacy.</p><p>If you do not want SoundCloud to associate your visit to our site with your SoundCloud account, please log out of your SoundCloud account.</p>','revslider');
+	}
+	/**
+	 * Add the suggested privacy policy text to the policy postbox.
+	 */
+	public function add_suggested_privacy_content() {
+		if(function_exists("wp_add_privacy_policy_content")){
+			$content = $this->get_default_privacy_content();
+			wp_add_privacy_policy_content( __( 'Slider Revolution' ), $content );
+		}
+	}
 	
 	public static function add_plugins_page_notices(){
 		$plugins = get_plugins();
@@ -1145,6 +1174,7 @@ class RevSliderAdmin extends RevSliderBaseAdmin{
 					case 'import_slide_template_slidersview':
 					case 'import_slider_online_template_slidersview_new':
 					case 'fix_database_issues':
+					case 'trigger_font_deletion':
 						RevSliderFunctions::throwError(__('Function Only Available for Adminstrators', 'revslider'));
 						exit;
 					break;
@@ -1732,6 +1762,11 @@ class RevSliderAdmin extends RevSliderBaseAdmin{
 					RevSliderFront::createDBTables();
 					
 					self::ajaxResponseSuccess(__('Database structure creation/update done','revslider'));
+				break;
+				case "trigger_font_deletion":
+					RevSliderOperations::deleteGoogleFonts();
+					
+					self::ajaxResponseSuccess(__('Downloaded Google Fonts will be updated','revslider'));
 				break;
 				case "update_posts_sortby":
 					$slider->updatePostsSortbyFromData($data);

@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Info Circle for Visual Composer
+* Add-on Name: Info Circle for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('Ultimate_Info_Circle'))

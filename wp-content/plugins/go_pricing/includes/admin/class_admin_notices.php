@@ -38,6 +38,7 @@ class GW_GoPricing_AdminNotices {
 		self::$plugin_path = $this->globals['plugin_path'];
 
 		// Admin notices action - remotes messages
+		if (!defined('GO_PRICING_THEME_CODE'))
 		add_action( 'admin_notices', array( $this, 'print_remote_admin_notices' ) );	
 
 		// Admin notices action

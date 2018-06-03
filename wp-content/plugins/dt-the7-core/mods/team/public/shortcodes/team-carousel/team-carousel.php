@@ -63,6 +63,7 @@ if ( ! class_exists( 'DT_Shortcode_Team_Carousel', false ) ) :
 				'image_scale_animation_on_hover' => 'y',
 				'image_hover_bg_color' => 'y',
 				'slide_to_scroll' => 'single',
+				'slides_on_wide_desk' => '4',
 				'slides_on_desk' => '4',
 				'slides_on_lapt' => '4',
 				'slides_on_h_tabs' => '3',
@@ -390,12 +391,7 @@ if ( ! class_exists( 'DT_Shortcode_Team_Carousel', false ) ) :
 				$excerpt = apply_filters( 'the_content', get_the_content() );
 			} else {
 				$length = absint( $this->atts['excerpt_words_limit'] );
-				$excerpt = apply_filters( 'the_excerpt', get_the_excerpt() );
-
-				// VC excerpt fix.
-				if ( function_exists( 'vc_manager' ) ) {
-					$excerpt = vc_manager()->vc()->excerptFilter( $excerpt );
-				}
+				$excerpt = apply_filters( 'the7_shortcodeaware_excerpt', get_the_excerpt() );
 
 				if ( $length ) {
 					$excerpt = wp_trim_words( $excerpt, $length );
@@ -412,6 +408,7 @@ if ( ! class_exists( 'DT_Shortcode_Team_Carousel', false ) ) :
 			$data_atts = array(
 				'scroll-mode' => ($this->atts['slide_to_scroll'] == "all") ? 'page' : '1',
 				'col-num' => $this->atts['slides_on_desk'],
+				'wide-col-num' => $this->atts['slides_on_wide_desk'],
 				'laptop-col' => $this->atts['slides_on_lapt'],
 				'h-tablet-columns-num' => $this->atts['slides_on_h_tabs'],
 				'v-tablet-columns-num' => $this->atts['slides_on_v_tabs'],

@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Expandable Section for Visual Composer
+* Add-on Name: Expandable Section for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_ultimate_exp_section'))
@@ -882,7 +882,7 @@ $output.='<div class="ult_exp_section_layer '.esc_attr($is_vc_49_plus).' '.esc_a
 									"Full Width "=>"full",
 									"Maximum Full Width"=>"ex-full",
 								),
-								"description" => __("By default, the section will be given to the Visual Composer row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
+								"description" => __("By default, the section will be given to the WPBakery Page Builder row. However, in some cases depending on your theme's CSS - it may not fit well to the container you are wishing it would. In that case you will have to select the appropriate value here that gets you desired output..", "ultimate_vc"),
 								'group' => __( 'Design ', 'ultimate_vc' ),
 								),
 							array(

@@ -32,7 +32,9 @@ if(!class_exists("Ultimate_Buttons")){
 			$btn_shadow_color = $btn_bg_color_hover = $btn_border_style = $btn_color_border = $btn_border_size = $btn_shadow_size = $el_class = '';
 			$btn_font_family = $btn_font_style = $btn_title_color = $btn_font_size = $icon = $icon_size = $icon_color = $btn_icon_pos = $btn_anim_effect = '';
 			$btn_padding_left = $btn_padding_top = $button_bg_img = $btn_title_color_hover = $btn_align = $btn_color_border_hover = $btn_shadow_color_hover = '';
-			$btn_shadow_click = $enable_tooltip = $tooltip_text = $tooltip_pos = $rel_attr = $btn_line_height = $target = $link_title = '';
+
+			$btn_shadow_click = $enable_tooltip = $tooltip_text = $tooltip_pos = $rel_attr = $btn_line_height = $target = $link_title = $ult_btn_custom_onclick = $ult_btn_custom_onclick_code = '';
+
 			extract(shortcode_atts(array(
 				'btn_title' => '',
 				'btn_link' => '',
@@ -73,6 +75,8 @@ if(!class_exists("Ultimate_Buttons")){
 				'rel_attr' => '',
 				'el_class' => '',
 				'css_adv_btn' => '',
+				'ult_btn_custom_onclick' => '',
+				'ult_btn_custom_onclick_code' => '',
 			),$atts));
 
 			$style = $hover_style = $btn_style_inline = $link_sufix = $link_prefix = $img = $shadow_hover = $shadow_click = $shadow_color = $box_shadow = $main_extra_class = '';
@@ -114,7 +118,11 @@ if(!class_exists("Ultimate_Buttons")){
 					$target 		= ( isset( $href['target'] ) && $href['target'] !== '' ) ? esc_attr( trim( $href['target'] ) ) : '';
 					$link_title 	= ( isset( $href['title'] ) && $href['title'] !== '' ) ? esc_attr($href['title']) : '';
 					$rel 			= ( isset( $href['rel'] ) && $href['rel'] !== '' ) ? esc_attr($href['rel']) : '';
-					$rel 			.= ' ' . esc_attr($rel_attr);
+					if( $rel == "" ) {
+						$rel 			.= esc_attr($rel_attr);
+					}else {	
+						$rel 			.= ' ' . esc_attr($rel_attr);
+					}
 
 					if($btn_size == "ubtn-block"){
 						$tooltip_class .= ' ubtn-block';
@@ -210,6 +218,11 @@ if(!class_exists("Ultimate_Buttons")){
 						break;
 				}
 			}
+
+			$btn_custom_onclick_code = '';
+			if ( ! empty( $ult_btn_custom_onclick ) && $ult_btn_custom_onclick_code ) {
+				$btn_custom_onclick_code = 'onclick="' . esc_attr( ult_prepareAtts( $ult_btn_custom_onclick_code ) ) . '"';
+			}
 			if($btn_bg_color !== ''){
 				$style .= 'background: '.$btn_bg_color.';';
 			}
@@ -230,7 +243,7 @@ if(!class_exists("Ultimate_Buttons")){
 				$el_class .= $main_extra_class;
 			}
 
-			$output .= '<button type="button" id="'. esc_attr( $adv_btn_id ).'" class="ubtn '.esc_attr( $is_vc_49_plus ).' ult-responsive '.esc_attr($btn_size).' '.esc_attr($btn_hover).' '.esc_attr($el_class).' '.esc_attr($btn_shadow).' '.esc_attr($tooltip_class).'" '.$tooltip.' data-hover="'.esc_attr($btn_title_color_hover).'" data-border-color="'.esc_attr($btn_color_border).'" data-bg="'.esc_attr($btn_bg_color).'" data-hover-bg="'.esc_attr($btn_bg_color_hover).'" data-border-hover="'.esc_attr($btn_color_border_hover).'" data-shadow-hover="'.esc_attr($shadow_hover).'" data-shadow-click="'.esc_attr($shadow_click).'" data-shadow="'.esc_attr($box_shadow).'" data-shd-shadow="'.esc_attr($btn_shadow_size).'" '.$data_list.' style="'.esc_attr($style).'">';
+			$output .= '<button type="button" id="'. esc_attr( $adv_btn_id ).'" '.$btn_custom_onclick_code.' class="ubtn '.esc_attr( $is_vc_49_plus ).' ult-responsive '.esc_attr($btn_size).' '.esc_attr($btn_hover).' '.esc_attr($el_class).' '.esc_attr($btn_shadow).' '.esc_attr($tooltip_class).'" '.$tooltip.' data-hover="'.esc_attr($btn_title_color_hover).'" data-border-color="'.esc_attr($btn_color_border).'" data-bg="'.esc_attr($btn_bg_color).'" data-hover-bg="'.esc_attr($btn_bg_color_hover).'" data-border-hover="'.esc_attr($btn_color_border_hover).'" data-shadow-hover="'.esc_attr($shadow_hover).'" data-shadow-click="'.esc_attr($shadow_click).'" data-shadow="'.esc_attr($box_shadow).'" data-shd-shadow="'.esc_attr($btn_shadow_size).'" '.$data_list.' style="'.esc_attr($style).'">';
 
 			if($icon !== ''){
 				$output .= '<span class="ubtn-data ubtn-icon"><i class="'.esc_attr($icon).'" style="font-size:'.esc_attr($icon_size).'px;color:'.esc_attr($icon_color).';"></i></span>';
@@ -438,6 +451,24 @@ if(!class_exists("Ultimate_Buttons")){
 								"heading" => __("Rel Attribute", "ultimate_vc"),
 								"param_name" => "rel_attr",
 								"description" => __("This is useful when you want to trigger third party features. Example- prettyPhoto, thickbox etc", "ultimate_vc"),
+								"group" => "General",
+							),
+							array(
+								'type' => 'checkbox',
+								'heading' => __( 'Advanced on click action', 'ultimate_vc' ),
+								'param_name' => 'ult_btn_custom_onclick',
+								'description' => __( 'Insert inline onclick javascript action.', 'ultimate_vc' ),
+								"group" => "General",
+							),
+							array(
+								'type' => 'textfield',
+								'heading' => __( 'On click code', 'ultimate_vc' ),
+								'param_name' => 'ult_btn_custom_onclick_code',
+								'description' => __( 'Enter onclick action code.', 'ultimate_vc' ),
+								'dependency' => array(
+									'element' => 'ult_btn_custom_onclick',
+									'not_empty' => true,
+								),
 								"group" => "General",
 							),
 							array(

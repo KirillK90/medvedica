@@ -52,6 +52,9 @@
 	text-align: center;
 	margin: 0 auto;
 }
+.ult-param-padding-remove.vc_col-sm-4{
+	padding-top: 0 !important;
+}
 
 .uvc-divider{
 	background: #F7F7F7;

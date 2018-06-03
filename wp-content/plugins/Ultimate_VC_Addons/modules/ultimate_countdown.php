@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: CountDown for Visual Composer
+* Add-on Name: CountDown for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('Ultimate_CountDown'))

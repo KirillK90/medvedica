@@ -16,7 +16,7 @@ if( !defined( 'ABSPATH') ) exit();
 				<span class="template_filter_button" data-type="temp_carousel"><?php _e('Carousel', 'revslider'); ?></span>			
 				<span class="template_filter_button" data-type="temp_hero"><?php _e('Hero', 'revslider'); ?></span>
 				<span class="template_filter_button" data-type="template_free"><?php _e('Revolution Defaults', 'revslider'); ?></span>
-				<span class="template_filter_button" data-type="template_premium"><?php _e('Premium Slider', 'revslider'); ?></span>	
+				<span class="template_filter_button" data-type="template_premium"><?php _e('Exclusive by Dream-Theme', 'revslider'); ?></span>
 				<span class="template_filter_button template_local_filter" data-type="temp_existing"><?php _e('Local Slides', 'revslider'); ?></span>			
 				<span class="template_filter_button template_local_filter" data-type="temp_custom"><?php _e('User Templates', 'revslider'); ?></span>			
 			</span>

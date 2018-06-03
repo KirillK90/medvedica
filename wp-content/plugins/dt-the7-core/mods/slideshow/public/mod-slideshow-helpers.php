@@ -56,6 +56,7 @@ if ( ! function_exists( 'presscore_render_porthole_slider_data' ) ) :
 					'img_meta'	=> wp_get_attachment_image_src( $post->ID, 'full' ),
 					'img_id'	=> $post->ID,
 					'custom'	=> $img_custom,
+					'alt'       => get_post_meta( $post->ID, '_wp_attachment_image_alt', true ),
 					'echo'		=> false,
 					'wrap'		=> '<img %IMG_CLASS% %SRC% %CUSTOM% %ALT% %SIZE% />',
 				);

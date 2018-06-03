@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Info Tables for Visual Composer
+* Add-on Name: Info Tables for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists("Ultimate_Info_Table")){
@@ -101,6 +101,25 @@ if(!class_exists("Ultimate_Info_Table")){
 							"admin_label" => true,
 							"value" => "",
 							"description" => __("The title of Info Table", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-8',
+						),
+						array(
+							"type" => "dropdown",
+							"heading" => __("Tag","ultimate_vc"),
+							"param_name" => "heading_tag",
+							"value" => array(
+								__("Default","ultimate_vc") => "h3",
+								__("H1","ultimate_vc") => "h1",
+								__("H2","ultimate_vc") => "h2",
+								__("H4","ultimate_vc") => "h4",
+								__("H5","ultimate_vc") => "h5",
+								__("H6","ultimate_vc") => "h6",
+								__("Div","ultimate_vc") => "div",
+								__("p","ultimate_vc") => "p",
+								__("span","ultimate_vc") => "span",
+							),
+							"description" => __("Default is H3", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-4',
 						),
 						array(
 							"type" => "textfield",
@@ -109,6 +128,25 @@ if(!class_exists("Ultimate_Info_Table")){
 							"param_name" => "package_sub_heading",
 							"value" => "",
 							"description" => __(" Describe the info table in one line", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-8',
+						),
+						array(
+							"type" => "dropdown",
+							"heading" => __("Tag","ultimate_vc"),
+							"param_name" => "sub_heading_tag",
+							"value" => array(
+								__("Default","ultimate_vc") => "h5",
+								__("H1","ultimate_vc") => "h1",
+								__("H2","ultimate_vc") => "h2",
+								__("H3","ultimate_vc") => "h3",
+								__("H4","ultimate_vc") => "h4",
+								__("H6","ultimate_vc") => "h6",
+								__("Div","ultimate_vc") => "div",
+								__("p","ultimate_vc") => "p",
+								__("span","ultimate_vc") => "span",
+							),
+							"description" => __("Default is H5", "ultimate_vc"),
+							'edit_field_class' => 'vc_col-sm-4',
 						),
 						array(
 							"type" => "dropdown",

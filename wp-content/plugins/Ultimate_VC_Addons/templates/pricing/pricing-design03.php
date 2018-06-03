@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Stats Counter for Visual Composer
+* Add-on Name: Stats Counter for WPBakery Page Builder
 * Template : Design layout 03
 */
 if(!function_exists('ult_price_generate_design03')) {

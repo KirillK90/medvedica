@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Go Pricing - WordPress Responsive Pricing Tables\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 12:12+0000\n"
+"POT-Creation-Date: 2018-02-09 14:00+0000\n"
 "POT-Revision-Date: Tue Aug 09 2016 15:11:43 GMT+0200 (Közép-európai nyári "
 "idő )\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,13 +22,13 @@ msgstr ""
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
 "esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
+"X-Generator: Loco https://localise.biz/"
 
 #: go_pricing.php:17
 msgid "GW_GoPricing class has already been declared!"
 msgstr ""
 
-#: includes/preview.php:98
+#: includes/preview.php:100
 msgid "Oops, Forbidden!"
 msgstr ""
 
@@ -1233,26 +1233,26 @@ msgstr ""
 msgid "%1$s 4 (%2$s)"
 msgstr ""
 
-#: includes/shortcodes/class_shortcodes.php:110
+#: includes/shortcodes/class_shortcodes.php:119
 msgid "You must set a Table ID or Post ID."
 msgstr ""
 
-#: includes/shortcodes/class_shortcodes.php:136
+#: includes/shortcodes/class_shortcodes.php:142
 #, php-format
 msgid "Pricing table with an %1$s of \"%2$s\" is not defined."
 msgstr ""
 
-#: includes/shortcodes/class_shortcodes.php:136
+#: includes/shortcodes/class_shortcodes.php:142
 #: includes/admin/views/page/table_editor.php:96
 msgid "Table ID"
 msgstr ""
 
-#: includes/shortcodes/class_shortcodes.php:136
+#: includes/shortcodes/class_shortcodes.php:142
 #: includes/admin/views/page/table_manager.php:103
 msgid "Post ID"
 msgstr ""
 
-#: includes/shortcodes/class_shortcodes.php:138
+#: includes/shortcodes/class_shortcodes.php:144
 msgid "There is nothing to see here, yet. Please, first create columns!"
 msgstr ""
 
@@ -1260,7 +1260,6 @@ msgstr ""
 msgid "Content & Style Settings"
 msgstr ""
 
-#: includes/admin/views/view_editor_popup.php:42
 #: includes/admin/views/view_editor_popup.php:42
 msgid "Apply"
 msgstr ""
@@ -1283,7 +1282,6 @@ msgstr ""
 msgid "Clone"
 msgstr ""
 
-#: includes/admin/views/view_editor_popup.php:45
 #: includes/admin/views/view_editor_popup.php:45
 #: includes/admin/views/column/body.php:74
 #: includes/admin/views/column/body.php:74
@@ -2365,7 +2363,6 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/page/general_settings.php:20
-#: includes/admin/views/page/general_settings.php:20
 #: includes/admin/views/page/general_settings.php:213
 #: includes/admin/views/page/general_settings.php:295
 #: includes/admin/views/page/table_editor.php:39
@@ -2724,7 +2721,6 @@ msgid "Drop file here or"
 msgstr ""
 
 #: includes/admin/views/page/impex.php:65
-#: includes/admin/views/page/impex.php:65
 #: includes/admin/views/page/update.php:110
 #: includes/admin/views/page/update.php:110
 msgid "Select File"
@@ -2790,7 +2786,6 @@ msgstr ""
 msgid "Please save the table first!"
 msgstr ""
 
-#: includes/admin/views/page/table_editor.php:42
 #: includes/admin/views/page/table_editor.php:42
 #: includes/admin/views/page/table_manager.php:76
 #: includes/admin/views/page/table_manager.php:76
@@ -3068,7 +3063,6 @@ msgid "This code will be applied to the current table style."
 msgstr ""
 
 #: includes/admin/views/page/table_editor.php:328
-#: includes/admin/views/page/table_editor.php:328
 #: includes/admin/views/page/table_editor.php:367
 #: includes/admin/views/page/table_editor.php:367
 msgid "Go to Dashboard"
@@ -3092,7 +3086,6 @@ msgid "Dashboard"
 msgstr ""
 
 #: includes/admin/views/page/table_manager.php:71
-#: includes/admin/views/page/table_manager.php:71
 #: includes/admin/views/page/table_manager.php:196
 #: includes/admin/views/page/table_manager.php:196
 msgid "Create"
@@ -3110,7 +3103,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: includes/admin/views/page/table_manager.php:97
 #: includes/admin/views/page/table_manager.php:97
 msgid "Reset"
 msgstr ""
@@ -3315,7 +3307,6 @@ msgstr ""
 msgid "Custom icon."
 msgstr ""
 
-#: includes/admin/views/popup/sc_button_icon.php:94
 #: includes/admin/views/popup/sc_button_icon.php:94
 #: includes/admin/views/popup/sc_font_icon.php:43
 #: includes/admin/views/popup/sc_font_icon.php:43

@@ -1,3 +1,12 @@
+08.03.2018 - ver 5.4.7
+   - Fix: Custom shortcode mapping
+
+07.03.2018 - ver 5.4.6
+   - Update: Compatibility with PHP 7.2 added
+   - Update: Compatibility filters for WP Toolset added
+   - Update: French translation updated
+   - Update: Persian translation updated
+
 24.11.2017 - ver 5.4.5
    - Fix: Firefox tinymce and vc_link issue
    - Fix: WooCommerce vendor categories list

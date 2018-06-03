@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Just Dual Button for Visual Composer
+* Add-on Name: Just Dual Button for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 //error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);

@@ -487,6 +487,7 @@ class RevSliderOutput {
 		}
 		
 		$index = 0;
+		
 		foreach($slides as $slide){
 			
 			$params = $slide->getParams();
@@ -1840,7 +1841,8 @@ class RevSliderOutput {
 				}
 
 				$svg_val = RevSliderFunctions::getVal($layer, 'svg', false);
-
+				$svg_val = (array)$svg_val;
+				
 				$static_styles = RevSliderFunctions::getVal($layer, 'static_styles', array());
 				
 				if(!empty($static_styles)){
@@ -4071,7 +4073,7 @@ class RevSliderOutput {
 			}
 		}
 		
-		if (!empty($svg_val) &&  sizeof($svg_val)>0) $outputClass .=' tp-svg-layer'; 
+		if (!empty($svg_val) && is_array($svg_val) && sizeof($svg_val)>0) $outputClass .=' tp-svg-layer'; 
 		
 		$layer_id = $this->zIndex - 4;
 		
@@ -4118,11 +4120,11 @@ class RevSliderOutput {
 		echo $a_html;
 		
 		// SVG OUTPUT
-		if (!empty($svg_val) && sizeof($svg_val)>0) {				
-			echo '			data-svg_src="'.$svg_val->{'src'}.'"'." \n";
-			echo '			data-svg_idle="sc:'.$svg_val->{'svgstroke-color'}.';sw:'.$svg_val->{'svgstroke-width'}.';sda:'.$svg_val->{'svgstroke-dasharray'}.';sdo:'.$svg_val->{'svgstroke-dashoffset'}.';"'." \n";
+		if (!empty($svg_val) && is_array($svg_val) && sizeof($svg_val)>0){
+			echo '			data-svg_src="'.$svg_val['src'].'"'." \n";
+			echo '			data-svg_idle="sc:'.$svg_val['svgstroke-color'].';sw:'.$svg_val['svgstroke-width'].';sda:'.$svg_val['svgstroke-dasharray'].';sdo:'.$svg_val['svgstroke-dashoffset'].';"'." \n";
 			if($is_hover_active){
-				echo '			data-svg_hover="sc:'.$svg_val->{'svgstroke-hover-color'}.';sw:'.$svg_val->{'svgstroke-hover-width'}.';sda:'.$svg_val->{'svgstroke-hover-dasharray'}.';sdo:'.$svg_val->{'svgstroke-hover-dashoffset'}.';"'." \n";
+				echo '			data-svg_hover="sc:'.$svg_val['svgstroke-hover-color'].';sw:'.$svg_val['svgstroke-hover-width'].';sda:'.$svg_val['svgstroke-hover-dasharray'].';sdo:'.$svg_val['svgstroke-hover-dashoffset'].';"'." \n";
 			}
 		}
 
@@ -4680,16 +4682,9 @@ if (setREVStartSize!==undefined) setREVStartSize(
 var revapi<?php echo $sliderID; ?>,
 	tpj;	
 (function() {			
-	if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad)
-		else
-	onLoad();
-	
+	if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();	
 	function onLoad() {				
-		if (tpj===undefined) {
-			tpj = jQuery;
-
-			if("<?php echo $noConflict; ?>" == "on") tpj.noConflict();		
-		}
+		if (tpj===undefined) { tpj = jQuery; if("<?php echo $noConflict; ?>" == "on") tpj.noConflict();}
 <?php		
 	echo '	if(tpj("#'.$this->sliderHtmlID.'").revolution == undefined){'."\n";
 	echo '		revslider_showDoubleJqueryError("#'.$this->sliderHtmlID.'");'."\n";

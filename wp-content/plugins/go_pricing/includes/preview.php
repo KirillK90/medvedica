@@ -13,6 +13,8 @@ if ( !defined( 'WP_USE_THEMES' ) ) {
 } else {
 	$go_pricing_id = !empty( $_GET['go_pricing_preview_id'] ) ? (int)$_GET['go_pricing_preview_id'] : NULL;
 }
+global $go_pricing_preview;
+$go_pricing_preview = true;
 ?>
 <!DOCTYPE HTML>
 <html>

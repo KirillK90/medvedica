@@ -36,6 +36,8 @@ $width_mobile = RevSliderBase::getVar($arrValues, 'width_mobile', 480);
 
 $force_activation_box = RevSliderBase::getVar($arrValues, 'force_activation_box', 'off');
 
+$load_google_fonts = RevSliderBase::getVar($arrValues, 'load_google_fonts', 'off');
+
 ?>
 <div class='wrap'>
 	<div class="clear_both"></div>
@@ -270,6 +272,26 @@ $force_activation_box = RevSliderBase::getVar($arrValues, 'force_activation_box'
 				</div>
 				<div class="rs-gs-tc">
 					<i style=""><?php _e("Force creation of Slider Revolution database structure to fix table issues that may occur for example at the Slider creation process.",'revslider'); ?></i>
+				</div>
+			</div>
+			
+			<div class="rs-global-setting">
+				<div class="rs-gs-tc">
+					<label><?php _e("Enable Google Font Download:",'revslider'); ?></label>
+				</div>
+				<div class="rs-gs-tc">
+					<select id="load_google_fonts" name="load_google_fonts">
+						<option <?php selected($load_google_fonts, 'off'); ?> value="off"><?php _e('Load from Google','revslider'); ?></option>
+						<option <?php selected($load_google_fonts, 'preload'); ?> value="preload"><?php _e('Preload from Google','revslider'); ?></option>
+						<option <?php selected($load_google_fonts, 'disable'); ?> value="disable"><?php _e('Disable, Load on your own','revslider'); ?></option>
+					</select>
+					<p><a id="trigger_font_deletion" class="button-primary revblue" original-title="" href="javascript:void(0);"><?php _e('Update Preload Fonts', 'revslider'); ?></a></p>
+				</div>
+				<div class="rs-gs-tc">
+					<i style=""><?php _e("Set this option on how to handle Google Fonts:",'revslider'); ?></i>
+					<i style=""><?php _e("- Load from Google: will include fonts from Google Server.",'revslider'); ?></i>
+					<i style=""><?php _e("- Preload from Google: will download used fonts from Google Server and store them on your installation.",'revslider'); ?></i>
+					<i style=""><?php _e("- Disable: No fonts will be loaded, please include them yourself.",'revslider'); ?></i>
 				</div>
 			</div>
 			

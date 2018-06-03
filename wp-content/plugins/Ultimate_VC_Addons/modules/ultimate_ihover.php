@@ -524,6 +524,7 @@
 							  "param_name" => "title",
 							  "admin_label" => true,
 							  "value" => "",
+							  'edit_field_class' => 'vc_col-sm-8',
 							  /*"description" => __("Provide the title for the iHover.", 'ultimate')*/
 						  ),
 						  array(
@@ -542,6 +543,7 @@
 									__("span","ultimate_vc") => "span",
 								),
 								"description" => __("Default is H3", "ultimate_vc"),
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 								),
 						  array(
 							  "type" => "ult_img_single",

@@ -146,7 +146,12 @@ if ( ! class_exists( 'DT_Shortcode_Team_Masonry', false ) ) :
 
 				$query = $this->get_posts_by_taxonomy( 'dt_team', 'dt_team_category', $category_terms, $category_field );
 			}
-			
+
+			$query_new = apply_filters( 'the7_shortcode_query', null, $this->sc_name, $this->atts );
+			if ( is_a( $query_new, 'WP_Query' ) ) {
+				$query = $query_new;
+			}
+
 			do_action( 'presscore_before_shortcode_loop', $this->sc_name, $this->atts );
 
 			$loading_mode = $this->get_att( 'loading_mode' );
@@ -326,9 +331,15 @@ if ( ! class_exists( 'DT_Shortcode_Team_Masonry', false ) ) :
 			if($this->atts['team_position'] === 'n'){
 				$class[] = 'hide-team-position';
 			}
+			if ( 'grid' === $this->get_att( 'type' ) ) {
+				$class[] = 'dt-css-grid-wrap';
+			}
 
 			if ( $this->get_flag( 'image_scale_animation_on_hover' ) ) {
 				$class[] = 'scale-img';
+			}
+			if ( 'grid' === $this->get_att( 'type' ) ) {
+				$class[] = 'dt-css-grid-wrap';
 			}
 			if ( !$this->get_flag( 'image_hover_bg_color' ) ) {
 				$class[] = 'disable-bg-rollover';
@@ -430,12 +441,7 @@ if ( ! class_exists( 'DT_Shortcode_Team_Masonry', false ) ) :
 				$excerpt = apply_filters( 'the_content', get_the_content() );
 			} else {
 				$length = absint( $this->atts['excerpt_words_limit'] );
-				$excerpt = apply_filters( 'the_excerpt', get_the_excerpt() );
-
-				// VC excerpt fix.
-				if ( function_exists( 'vc_manager' ) ) {
-					$excerpt = vc_manager()->vc()->excerptFilter( $excerpt );
-				}
+				$excerpt = apply_filters( 'the7_shortcodeaware_excerpt', get_the_excerpt() );
 
 				if ( $length ) {
 					$excerpt = wp_trim_words( $excerpt, $length );

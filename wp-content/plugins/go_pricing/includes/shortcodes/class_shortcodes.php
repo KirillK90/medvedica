@@ -98,10 +98,19 @@ class GW_GoPricing_Shortcodes {
 			'postid' => null,
 			'margin_bottom' => '20px',
 			'preview' => false,
+			'highlight' => null,
 			'data' => null
 		), $atts ) );
 		
 		global $go_pricing;
+		
+		// Check highlighted columns in param
+		$highlight = array_map( 'trim', explode(',',$highlight) );
+		foreach($highlight as &$col_id) {
+			if ( filter_var($col_id, FILTER_VALIDATE_INT) === false) $col_id = null;
+		}
+		unset($col_id);
+		$highlight = array_filter( $highlight , 'strlen' );
 		
 		$general_settings = get_option( self::$plugin_prefix . '_table_settings' ); 
 
@@ -117,11 +126,8 @@ class GW_GoPricing_Shortcodes {
 			$pricing_table = GW_GoPricing_Data::get_table( $postid );
 
 		} else {
-			
 			$id = sanitize_key( $id );
-			
 			$pricing_table = GW_GoPricing_Data::get_table( $id, true, 'id' );
-					
 			$postid = isset( $pricing_table['postid'] ) ? $pricing_table['postid'] : 0;
 			
 		}
@@ -355,6 +361,9 @@ class GW_GoPricing_Shortcodes {
 			if ( !empty( $col_data['col-disable-hover'] ) ) $col_data['layout-style']['disable-hover'] = $col_data['col-disable-hover'];
 			if ( !empty( $col_data['col-disable-enlarge'] ) ) $col_data['layout-style']['disable-enlarge'] = $col_data['col-disable-enlarge'];
 			if ( !empty( $col_data['main-color'] ) ) $col_data['layout-style']['main-color'] = $col_data['main-color'];			
+			 
+			// Override Highlight by shortcode param
+			if ( in_array( $col_index, $highlight ) ) $col_data['layout-style']['highlight'] = '1';
 			 
 			/* Decoration */
 			if ( isset( $col_data['decoration'] ) && is_string( $col_data['decoration'] ) ) $col_data['decoration'] = GW_GoPricing_Helper::parse_data( $col_data['decoration'] );			

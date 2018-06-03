@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Icons Block for Visual Composer
+* Add-on Name: Icons Block for WPBakery Page Builder
 */
 if(!class_exists('Ultimate_Icons'))
 {

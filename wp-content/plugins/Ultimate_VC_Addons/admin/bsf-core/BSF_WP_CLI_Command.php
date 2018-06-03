@@ -24,9 +24,9 @@ class BSF_WP_CLI_Command extends WP_CLI_Command {
 	 *
 	 * ## EXAMPLES
 	 *
-	 *  1. wp brainstormforce activate uabb <purchase-key>
+	 *  1. wp brainstormforce license activate uabb <purchase-key>
 	 *      - This will activate the license for plugin Ultimate Addons for beaver builder with purchase key <purchase-key>
-	 *  2. wp brainstormforce deactivate uabb <purchase-key>
+	 *  2. wp brainstormforce license deactivate uabb <purchase-key>
 	 *      - This will deactivate the license for plugin Ultimate Addons for beaver builder with purchase key <purchase-key>
 	 *
 	 */

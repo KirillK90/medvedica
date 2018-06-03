@@ -84,7 +84,11 @@ if ( ! class_exists( 'Presscore_Mod_Albums', false ) ) {
 			$mod_public = new Presscore_Mod_Albums_Public();
 
 			add_filter( 'presscore_ajax_pagination_response', array( $mod_public, 'resolve_template_ajax' ), 20, 3 );
+			/**
+			 * @deprecated 1.6.1
+			 */
 			add_filter( 'presscore_config_post_id_filter', array( $mod_public, 'archive_page_id' ), 15 );
+			add_filter( 'the7_archive_page_template_id', array( $mod_public, 'archive_page_id' ) );
 			add_filter( 'presscore_archive_post_content-dt_gallery', array( $mod_public, 'archive_post_content' ) );
 			add_filter( 'presscore_posted_on_wrap_class', array( $mod_public, 'post_meta_wrap_class_filter' ) );
 			add_filter( 'presscore_get_page_title', array( $mod_public, 'filter_page_title' ) );

@@ -34,7 +34,7 @@ $glob_vals = $operations->getGeneralSettingsValues();
 				<span  style="display:none" id="leave_selected_template_package"><?php _e('Back', 'revslider'); ?></span>
 				<span class="template_filter_button selected" data-type="temp_all"><?php _e('All Templates', 'revslider'); ?></span>
 				<span class="template_filter_button" data-type="template_free"><?php _e('Free Templates', 'revslider'); ?></span>
-				<span class="template_filter_button" data-type="template_premium"><?php _e('Premium Templates', 'revslider'); ?></span>
+				<span class="template_filter_button" data-type="template_premium"><?php _e('Exclusive by Dream-Theme', 'revslider'); ?></span>
 				<span class="template_filter_button" data-type="template_package_parent"><?php _e('Packages', 'revslider'); ?></span>
 				<span class="template_filter_button" data-type="temp_slider"><?php _e('Slider', 'revslider'); ?></span>
 				<span class="template_filter_button" data-type="temp_carousel"><?php _e('Carousel', 'revslider'); ?></span>			

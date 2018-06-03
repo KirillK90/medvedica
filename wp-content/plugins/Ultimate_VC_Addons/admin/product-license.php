@@ -12,7 +12,7 @@
   <div class="wrap-container">
     <div class="bend-heading-section ultimate-header">
       <h1><?php _e( "Product License", "ultimate_vc" ); ?></h1>
-      <h3><?php _e( "Let's activate your license of Ultimate Addons for Visual Composer that enable you automatic updates, direct support and many other benefits.", "ultimate_vc" ); ?></h3>
+      <h3><?php _e( "Let's activate your license of Ultimate Addons for WPBakery Page Builder that enable you automatic updates, direct support and many other benefits.", "ultimate_vc" ); ?></h3>
       <div class="bend-head-logo">
         <div class="bend-product-ver">
           <?php _e( "Version", "ultimate_vc" ); echo ' '.ULTIMATE_VERSION; ?>
@@ -30,7 +30,6 @@
 		    	<a href="<?php echo admin_url('admin.php?page=ultimate-dashboard'.$author_extend); ?>" data-tab="ultimate-modules" class="nav-tab"> <?php echo __('Modules','ultimate_vc'); ?> </a>
 		    	<a href="<?php echo admin_url('admin.php?page=ultimate-smoothscroll'.$author_extend); ?>" data-tab="css-settings" class="nav-tab"> <?php echo __('Smooth Scroll','ultimate_vc'); ?> </a>
 		        <a href="<?php echo admin_url('admin.php?page=ultimate-scripts-and-styles'.$author_extend); ?>" data-tab="css-settings" class="nav-tab"> <?php echo __('Scripts and Styles','ultimate_vc'); ?> </a>
-		         <a href="<?php echo bsf_registration_page_url( $author_extend, '6892199' ); ?>" data-tab="product-license" class="nav-tab nav-tab-active"> <?php echo __('Product License','ultimate_vc'); ?> </a>
 		        <?php if($author) : ?>
 					<a href="<?php echo admin_url('admin.php?page=ultimate-debug-settings'); ?>" data-tab="ultimate-debug" class="nav-tab"> Debug </a>
 				<?php endif; ?>

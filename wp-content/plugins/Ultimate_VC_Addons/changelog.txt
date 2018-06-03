@@ -1,3 +1,24 @@
+3.16.23 - 15-April-2018
+- Improvement: Added post/page title select option for headings.
+- Improvement: Added div, paragraph and span tag options with heading tags for Timeline.
+- Improvement: Added custom JS option on click of the advanced button.
+- Fix: Advanced Tabs accordion issue on default active tab.
+- Fix: Set false to PauseOnFocus in advance carousel settings.
+- Fix: Flipbox visibility issue while using custom height option.
+
+3.16.22 - 11-April-2018
+- Improvement: Updated page builder name as WPBakery Page Builder instead of visual composer.
+- Improvement: Added div, paragraph and span tag options with heading tags for package title and for subheading in Info table.
+- Improvement: New registration form popup for updater.
+- Improvement: Added div, paragraph and span tag options with heading tags for list item title in Info list.
+- Improvement: Added Focus on select option on advanced carousel.
+- Improvement: Improve UI.
+- Fix: Rel Attribute option space issue.
+- Fix: Icon not uploaded due to server issue.
+- Fix: Advanced tab js causing issue in IE.
+- Fix: Flipbox module animation issue in firefox browser.
+- Fix: Info circle item animation issue in different Browsers while initial load.
+
 3.16.21 - 3-January-2018
 - Improvement: Added div, paragraph and span tag options with heading tags for package title and for subheading in Price Box.
 - Fix: Conflict with venus theme function name.

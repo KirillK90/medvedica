@@ -1,15 +1,17 @@
 <?php
 /*
-* Add-on Name: Info Tables for Visual Composer
+* Add-on Name: Info Tables for WPBakery Page Builder
 * Template : Design layout 04
 */
 if(!function_exists('ult_info_table_generate_design04')) {
 	function ult_info_table_generate_design04($atts,$content = null){
-		$icon_type = $icon_img = $img_width = $icon = $icon_color = $icon_color_bg = $icon_size = $icon_style = $icon_border_style = $icon_border_radius = $icon_color_border = $icon_border_size = $icon_border_spacing = $el_class = $package_heading = $package_sub_heading = $package_price = $package_unit = $package_btn_text = $package_link = $package_featured = $color_bg_main = $color_txt_main = $color_bg_highlight = $color_txt_highlight = $color_scheme = $use_cta_btn = $target = $link_title  = $rel  = '';
+		$icon_type = $icon_img = $img_width = $icon = $icon_color = $icon_color_bg = $icon_size = $icon_style = $icon_border_style = $icon_border_radius = $icon_color_border = $icon_border_size = $icon_border_spacing = $el_class = $package_heading = $heading_tag = $package_sub_heading = $sub_heading_tag = $package_price = $package_unit = $package_btn_text = $package_link = $package_featured = $color_bg_main = $color_txt_main = $color_bg_highlight = $color_txt_highlight = $color_scheme = $use_cta_btn = $target = $link_title  = $rel  = '';
 		extract(shortcode_atts(array(
 			'color_scheme' => 'black',
 			'package_heading' => '',
+			'heading_tag' =>'h3',
 			'package_sub_heading' => '',
+			'sub_heading_tag' => 'h5',
 			'icon_type' => 'none',
 			'icon' => '',
 			'icon_img' => '',
@@ -106,6 +108,10 @@ if(!function_exists('ult_info_table_generate_design04')) {
 				$heading_style_inline .= 'font-family:\''.$hdfont_family.'\';';
 		}
 
+		if('span' == $heading_tag){
+			$heading_style_inline .= 'display:block;';
+		}
+
 		$heading_style_inline .= get_ultimate_font_style($heading_font_style);
 
 		// if($heading_font_size != '')
@@ -124,7 +130,7 @@ if(!function_exists('ult_info_table_generate_design04')) {
 
 			$info_table_id = 'Info-table-wrap-'.rand(1000, 9999);
 			$info_table_args = array(
-                'target' => '#'.$info_table_id.' h3', // set targeted element e.g. unique class/id etc.
+                'target' => '#'.$info_table_id.' '.$heading_tag, // set targeted element e.g. unique class/id etc.
                 'media_sizes' => array(
                     'font-size' => $heading_font_size, // set 'css property' & 'ultimate_responsive' sizes. Here $title_responsive_font_size holds responsive font sizes from user input.
                    	'line-height' => $heading_line_height
@@ -165,7 +171,7 @@ if(!function_exists('ult_info_table_generate_design04')) {
 			}
 
 			$info_table_sub_head_args = array(
-                'target' => '#'.$info_table_id.' h5', // set targeted element e.g. unique class/id etc.
+                'target' => '#'.$info_table_id.' '.$sub_heading_tag, // set targeted element e.g. unique class/id etc.
                 'media_sizes' => array(
                     'font-size' => $subheading_font_size, // set 'css property' & 'ultimate_responsive' sizes. Here $title_responsive_font_size holds responsive font sizes from user input.
                    	'line-height' => $subheading_line_height
@@ -179,6 +185,10 @@ if(!function_exists('ult_info_table_generate_design04')) {
 			$featuresfont_family = get_ultimate_font_family($features_font_family);
 			if($featuresfont_family !== '')
 				$features_inline .= 'font-family:\''.$featuresfont_family.'\';';
+		}
+
+		if('span' == $sub_heading_tag){
+			$sub_heading_inline .= 'display:block;';
 		}
 
 		$features_inline .= get_ultimate_font_style($features_font_style);
@@ -259,9 +269,9 @@ if(!function_exists('ult_info_table_generate_design04')) {
 		$output .= '<div class="ult_pricing_table_wrap ult_info_table ult_design_4 '.esc_attr($featured).' ult-cs-'.esc_attr($color_scheme).' '.esc_attr($el_class).' '.esc_attr($css_info_tables).'">
 					<div class="ult_pricing_table '.esc_attr($info_tab_ht).'" style="'.esc_attr($normal_style).' '.$info_tab_ht_style.'">';
 			$output .= '<div id="'.esc_attr($info_table_id).'" class="ult_pricing_heading">
-							<h3 class="ult-responsive" '.$info_table_data_list.' style="'.esc_attr($heading_style_inline).'">'.$package_heading.'</h3>';
+							<'.esc_attr($heading_tag).' class="ult-responsive" '.$info_table_data_list.' style="'.esc_attr($heading_style_inline).'">'.$package_heading.'</'.esc_attr($heading_tag).'>';
 						if($package_sub_heading !== ''){
-							$output .= '<h5 class="ult-responsive" style="'.esc_attr($sub_heading_inline).'">'.$package_sub_heading.'</h5>';
+							$output .= '<'.esc_attr($sub_heading_tag).' class="ult-responsive" style="'.esc_attr($sub_heading_inline).'">'.$package_sub_heading.'</'.esc_attr($sub_heading_tag).'>';
 						}
 			$output .= '</div><!--ult_pricing_heading-->';
 			if(isset($box_icon) && $box_icon != '') :

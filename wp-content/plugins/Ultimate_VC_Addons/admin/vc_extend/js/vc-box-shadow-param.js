@@ -13,7 +13,7 @@
 
 /*
  *  Project: Box Shadow
- *  Description: Ultimate Box Shadow for Visual Composer
+ *  Description: Ultimate Box Shadow for WPBakery Page Builder
  *  Author: BrainStorm Force
  *  License: 
  */

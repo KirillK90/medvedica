@@ -38,7 +38,8 @@ if(!class_exists('Ultimate_Info_Banner'))
 								"param_name" => "banner_title",
 								"admin_label" => true,
 								"value" => "",
-								"description" => __("Give a title to this banner","ultimate_vc")
+								"description" => __("Give a title to this banner","ultimate_vc"),
+								'edit_field_class' => 'vc_col-sm-8',
 							),
 							array(
 								"type" => "dropdown",
@@ -56,6 +57,7 @@ if(!class_exists('Ultimate_Info_Banner'))
 									__("span","ultimate_vc") => "span",
 								),
 								"description" => __("Default is Div", "ultimate_vc"),
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 							),
 							array(
 								"type" => "textarea",

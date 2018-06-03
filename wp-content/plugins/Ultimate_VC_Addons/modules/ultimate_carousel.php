@@ -1,6 +1,6 @@
 <?php
 /*
-Module Name: Ultimate Carousel for Visual Composer
+Module Name: Ultimate Carousel for WPBakery Page Builder
 Module URI: https://www.brainstormforce.com/demos/ultimate-carousel
 */
 if ( ! class_exists( "Ultimate_Carousel" ) ) {
@@ -506,6 +506,23 @@ if ( ! class_exists( "Ultimate_Carousel" ) ) {
 								"group"      => "Advanced",
 							),
 							array(
+								"type"       => "ult_switch",
+								"class"      => "",
+								"heading"    => __( "Focus on select", "ultimate_vc" ),
+								"param_name" => "focusonselect",
+								// "admin_label" => true,
+								"value"      => "off",
+								"options"    => array(
+									"on" => array(
+										"label" => __( "Middle the slide on select", "ultimate_vc" ),
+										"on"    => "Yes",
+										"off"   => "No",
+									),
+								),
+								"dependency" => Array("element" => "centermode", "value" => "on" ),
+								"group"      => "Advanced",
+							),
+							array(
 								"type"       => "number",
 								"class"      => "",
 								"heading"    => __( "Space between two items", "ultimate_vc" ),
@@ -578,6 +595,7 @@ if ( ! class_exists( "Ultimate_Carousel" ) ) {
 				"adaptive_height"    => "",
 				"css_ad_caraousel"   => "",
 				"pauseohover" 		 => "on",
+				"focusonselect"		 => "off",
 				"centermode" 		 => "off"
 			), $atts ) );
 
@@ -698,10 +716,15 @@ if ( ! class_exists( "Ultimate_Carousel" ) ) {
 			} else {
 				$settings .= 'pauseOnHover: false,';
 			}
+			$settings .= 'pauseOnFocus: false,';
 
 			if ( $centermode == 'on' ) {
 				$settings .= 'centerMode: true,';
 			}
+
+			if ( $focusonselect == 'on' && $centermode == 'on' ) {
+				$settings .= 'focusOnSelect: true,';
+			} 
 
 			if ( $adaptive_height === 'on' ) {
 				$settings .= 'adaptiveHeight: true,';

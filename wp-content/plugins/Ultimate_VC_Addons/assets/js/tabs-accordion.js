@@ -341,7 +341,7 @@ jQuery(document).ready(function(a) {
   jQuery(".ult-tabto-accordion").each(function() {
     var index = jQuery(this).data("activeindex");
     index = index-1;
-    if(index >= 1){
+    if(index >= 0){
       var current_tab = jQuery(this).find("dl dt:nth("+index+")");
       var id = current_tab.find(".ult-tabto-actitle").attr("id");
       if( id !== '' && typeof id!='undefined'){

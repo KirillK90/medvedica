@@ -480,25 +480,26 @@ class GW_GoPricing_Admin {
 			array( $this, 'addons_page' )
 		);
 
-		
-		if ( !is_multisite() || ( is_multisite() && get_current_blog_id() == 1 ) ) {
-		
-			$capability = is_multisite() ? 'manage_network' : ( isset( $general_settings['capability'] ) ? $general_settings['capability'] : 'manage_options' );
-		
-			// Plugin Update page
-			self::add_submenu_page(
-				__( 'Update', 'go_pricing_textdomain' ),
-				__( 'Update', 'go_pricing_textdomain' ),
-				$capability, 
-				self::$plugin_slug . '-update',
-				array( $this, 'plugin_updater_page' )
-			);	
-	
-		}
-		
-		// Admin menu page action
-		do_action( 'go_pricing_menu_pages', self::$screen_hooks );	
-		
+		if (!defined('GO_PRICING_THE7')){
+            if ( !is_multisite() || ( is_multisite() && get_current_blog_id() == 1 ) ) {
+
+                $capability = is_multisite() ? 'manage_network' : ( isset( $general_settings['capability'] ) ? $general_settings['capability'] : 'manage_options' );
+
+                // Plugin Update page
+                self::add_submenu_page(
+                    __( 'Update', 'go_pricing_textdomain' ),
+                    __( 'Update', 'go_pricing_textdomain' ),
+                    $capability,
+                    self::$plugin_slug . '-update',
+                    array( $this, 'plugin_updater_page' )
+                );
+
+            }
+
+            // Admin menu page action
+            do_action( 'go_pricing_menu_pages', self::$screen_hooks );
+
+        }
 	}
 	
 	

@@ -386,14 +386,24 @@ if ( ! class_exists( 'AIO_Icon_Manager' ) ) {
 				$this->delete_folder( $this->paths['tempdir'] );
 				die( __( 'selection.json or SVG file not found. Was not able to create the necessary config files', 'ultimate_vc' ) );
 			}
-			//$response 	= wp_remote_get( $this->paths['tempurl'].$this->svg_file );
-			$response = wp_remote_fopen( trailingslashit( $this->paths['tempurl'] ) . $this->svg_file );
-			//if wordpress wasnt able to get the file which is unlikely try to fetch it old school
-			$json = file_get_contents( trailingslashit( $this->paths['tempdir'] ) . $this->json_file );
-			if ( empty( $response ) ) {
-				$response = file_get_contents( trailingslashit( $this->paths['tempdir'] ) . $this->svg_file );
+			$json = '';
+			$response = '';
+
+			global $wp_filesystem;
+			if ( empty( $wp_filesystem ) ) {
+			    require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			    WP_Filesystem();
 			}
-			if ( ! is_wp_error( $json ) && ! empty( $json ) ) {
+
+			if ( file_exists( trailingslashit( $this->paths['tempdir'] )  . $this->svg_file ) ) {
+			    $response = $wp_filesystem->get_contents( trailingslashit( $this->paths['tempdir'] ) . $this->svg_file );
+			}
+
+			if ( file_exists( trailingslashit( $this->paths['tempdir'] ) . $this->svg_file ) ) {
+				$json = $wp_filesystem->get_contents( trailingslashit( $this->paths['tempdir'] ) . $this->json_file );
+			}
+
+			if ( '' !== $json && '' !== $response  ) {
 				$xml             = simplexml_load_string( $response );
 				$font_attr       = $xml->defs->font->attributes();
 				$glyphs          = $xml->defs->font->children();

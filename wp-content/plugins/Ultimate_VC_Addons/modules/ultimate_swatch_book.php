@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Swatch Book for Visual Composer
+* Add-on Name: Swatch Book for WPBakery Page Builder
 * Add-on URI: http://.brainstormforce.com/demos/ultimate/swatch-book
 */
 if(!class_exists('Ultimate_Swatch_Book')){

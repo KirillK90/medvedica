@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Flip Box for Visual Composer
+* Add-on Name: Flip Box for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_Flip_Box'))
@@ -296,7 +296,8 @@ if(!class_exists('AIO_Flip_Box'))
 								 "admin_label" => true,
 								 "value" => "",
 								 "description" => __("Perhaps, this is the most highlighted text.","ultimate_vc"),
-								 "group" => "Front"
+								 "group" => "Front",
+								 'edit_field_class' => 'vc_col-sm-8',
 							),
 							array(
 								"type" => "dropdown",
@@ -314,7 +315,8 @@ if(!class_exists('AIO_Flip_Box'))
 									__("span","ultimate_vc") => "span",
 								),
 								"description" => __("Default is H3", "ultimate_vc"),
-								"group" => "Front"
+								"group" => "Front",
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 							),
 							array(
 								 "type" => "textarea",
@@ -364,7 +366,8 @@ if(!class_exists('AIO_Flip_Box'))
 								 "admin_label" => true,
 								 "value" => "",
 								 "description" => __("Some nice heading for the back side of the flip.","ultimate_vc"),
-								 "group" => "Back"
+								 "group" => "Back",
+								 'edit_field_class' => 'vc_col-sm-8',
 							),
 							array(
 								"type" => "dropdown",
@@ -382,7 +385,8 @@ if(!class_exists('AIO_Flip_Box'))
 									__("span","ultimate_vc") => "span",
 								),
 								"description" => __("Default is H3", "ultimate_vc"),
-								"group" => "Back"
+								"group" => "Back",
+								'edit_field_class' => 'ult-param-padding-remove vc_col-sm-4',
 							),
 							array(
 								 "type" => "textarea",
@@ -672,7 +676,7 @@ if(!class_exists('AIO_Flip_Box'))
 							),
 							array(
 						            "type" => "ultimate_spacing",
-						            "heading" => " Content Padding ",
+						            "heading" => "Padding",
 						            "param_name" => "flipbx_padding",
 						            "mode"  => "padding",                    //  margin/padding
 						            "unit"  => "px",                        //  [required] px,em,%,all     Default all
@@ -683,7 +687,7 @@ if(!class_exists('AIO_Flip_Box'))
 						              	"Left" => "",
 						            ),
 									 'group' => __( 'Design ', 'ultimate_vc' ),
-									 "description" => __("Add spacing from inside to content.", "ultimate_vc"),
+									 "description" => __("Add Padding to FlipBox.", "ultimate_vc"),
 							      ),
 							array(
 						            "type" => "ultimate_spacing",
@@ -698,7 +702,7 @@ if(!class_exists('AIO_Flip_Box'))
 						              	"Left" => "",
 						            ),
 									 'group' => __( 'Design ', 'ultimate_vc' ),
-									 "description" => __("Add spacing to FlipBox.", "ultimate_vc"),
+									 "description" => __("Add Margin to FlipBox.", "ultimate_vc"),
 						        ),
 						),
 					)

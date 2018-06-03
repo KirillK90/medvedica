@@ -2191,6 +2191,15 @@ ob_end_clean();
 	
 	
 	/**
+	 * set the rs_google_font to current date, so that it will be redownloaded
+	 *
+	 */
+	public static function deleteGoogleFonts(){
+		update_option('rs_google_font', time());
+	}
+	
+	
+	/**
 	 * print html font import
 	 *
 	 */
@@ -2202,38 +2211,55 @@ ob_end_clean();
 		$ret = '';
 		$tcf = '';
 		$tcf2 = '';
+		$temp = '';
+		$fonts = array();
+		$glob_vals = RevSliderOperations::getGeneralSettingsValues();
+		$dl_fonts = RevSliderFunctions::getVal($glob_vals, 'load_google_fonts', 'off');
+		
+		if($dl_fonts === 'disable') return $ret;
 		
 		if(!empty($revslider_fonts)){
 			foreach($revslider_fonts as $f_n => $f_s){
 				if($f_n !== ''){
 					if(isset($f_s['variants']) && !empty($f_s['variants']) || isset($f_s['subsets']) && !empty($f_s['subsets'])){
+						$temp = '';
 						if(strpos($f_n, "href=") === false){
 							if($font_first == false) $tcf .= '%7C'; //'|';
-							$tcf .= urlencode($f_n).':';
+							$temp .= urlencode($f_n).':';
 							
 							if(isset($f_s['variants']) && !empty($f_s['variants'])){
 								$mgfirst = true;
 								foreach($f_s['variants'] as $mgvk => $mgvv){
-									if(!$mgfirst) $tcf .= urlencode(',');
-									$tcf .= urlencode($mgvv);
+									if(!$mgfirst) $temp .= urlencode(',');
+									$temp .= urlencode($mgvv);
 									$mgfirst = false;
 								}
 							}
+							
+							
+							$fonts[$f_n] = $temp; //we do not want to add the subsets
 							
 							if(isset($f_s['subsets']) && !empty($f_s['subsets'])){
 								$mgfirst = true;
 								foreach($f_s['subsets'] as $ssk => $ssv){
-									if($mgfirst) $tcf .= urlencode('&subset=');
-									if(!$mgfirst) $tcf .= urlencode(',');
-									$tcf .= urlencode($ssv);
+									if($mgfirst) $temp .= urlencode('&subset=');
+									if(!$mgfirst) $temp .= urlencode(',');
+									$temp .= urlencode($ssv);
 									$mgfirst = false;
 								}
 							}
 							
+							$tcf .= $temp;
 						}else{
 							$f_n = str_replace(array('http://', 'https://'), array($setBase, $setBase), $f_n);
-							$tcf2 .= html_entity_decode(stripslashes($f_n));
+							
+							$temp = html_entity_decode(stripslashes($f_n)); 
+							$tcf2 .= $temp;
+							
+							$fonts[$f_n] = $temp;
+							
 						}
+						
 					}
 					$font_first = false;
 				}
@@ -2242,14 +2268,78 @@ ob_end_clean();
 	
 		$setBase = (is_ssl()) ? "https://" : "http://";
 		
-		$url = RevSliderFront::modify_punch_url($setBase . 'fonts.googleapis.com/css?family=');
-		if($tcf !== ''){
-			$ret .= '<link href="'.$url.$tcf.'" rel="stylesheet" property="stylesheet" type="text/css" media="all">'; //id="rev-google-font"
+		if($dl_fonts === 'preload'){
+			if(!empty($fonts)){
+				$upload_dir	= wp_upload_dir();
+				$base_dir	= $upload_dir['basedir'];
+				$base_url	= $upload_dir['baseurl'];
+				$rs_google_ts = get_option('rs_google_font', 0);
+				
+				foreach($fonts as $key => $font){
+					//check if we downloaded the font already
+					$font_name = preg_replace('/[^-a-z0-9 ]+/i', '', $key);
+					$font_name = strtolower(str_replace(' ', '-', esc_attr($font_name)));
+					
+					if(!is_file($base_dir.'/revslider/gfonts/'. $font_name . '/' . $font_name . '.woff2') || filemtime($base_dir.'/revslider/gfonts/'. $font_name . '/' . $font_name . '.woff2') < $rs_google_ts){
+						if(!is_dir($base_dir.'/revslider/gfonts/')){
+							mkdir($base_dir.'/revslider/gfonts/');
+						}
+						
+						if(!is_dir($base_dir.'/revslider/gfonts/'.$font_name)){
+							mkdir($base_dir.'/revslider/gfonts/'.$font_name);
+						}
+						
+						$regex_url	= "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+						$url		= $setBase.'fonts.googleapis.com/css?family='.$font;
+						$content	= file_get_contents($url);
+						
+						
+						if(preg_match_all($regex_url, $content, $found_fonts)){
+							foreach($found_fonts as $found_font){
+								$found_font = $found_font[0];
+								$found_font = rtrim($found_font, ')');
+								
+								$f_c = file_get_contents($found_font);
+								
+								$file = $base_dir.'/revslider/gfonts/'. $font_name . '/' . $font_name . '.woff2';
+								@mkdir(dirname($file));
+								@file_put_contents($file, $f_c);
+								
+								break;
+							}
+						}
+					}
+					
+					$f_raw		= explode(':', $font);
+					$weights	= (!empty($f_raw) && is_array($f_raw) && isset($f_raw[1])) ? explode(',', $f_raw[1]) : array('400');
+					$f_family	= str_replace('+', ' ', $f_raw[0]);
+					
+					if(!empty($weights) && is_array($weights)){
+						$ret .= '<style type="text/css">';
+						foreach($weights as $weight){
+							$ret .=
+"@font-face {
+  font-family: '".$f_family."';
+  font-style: normal;
+  font-weight: ".$weight.";
+  src: local('".$f_family."'), local('".$f_family."'), url(".$base_url.'/revslider/gfonts/'. $font_name . '/' . $font_name . '.woff2'.") format('woff2');
+}";
+						}
+						$ret .= '</style>';
+					}
+				}
+			}
+			
+		}else{
+			$url = RevSliderFront::modify_punch_url($setBase . 'fonts.googleapis.com/css?family=');
+			
+			if($tcf !== ''){
+				$ret .= '<link href="'.$url.$tcf.'" rel="stylesheet" property="stylesheet" type="text/css" media="all">'; //id="rev-google-font"
+			}
+			if($tcf2 !== ''){
+				$ret .= html_entity_decode(stripslashes($tcf2));
+			}
 		}
-		if($tcf2 !== ''){
-			$ret .= html_entity_decode(stripslashes($tcf2));
-		}
-		
 		return apply_filters('revslider_printCleanFontImport', $ret);
 	}
 	
@@ -2257,6 +2347,7 @@ ob_end_clean();
 	/**
 	 *
 	 * get html font import
+	 * OBSOLOETE FUNCTION
 	 */
 	public static function getCleanFontImport($font, $class = '', $url = '', $variants = array(), $subsets = array()){
 		global $revslider_fonts;
@@ -2324,7 +2415,6 @@ ob_end_clean();
 			}
 		}
 		
-		
 		if($do_print){
 			$setBase = (is_ssl()) ? "https://" : "http://";
 			
@@ -2336,12 +2426,15 @@ ob_end_clean();
 			if(strpos($font, "href=") === false){ //fallback for old versions
 				$url = RevSliderFront::modify_punch_url($setBase . 'fonts.googleapis.com/css?family=');
 				$ret = '<link href="'.$url.urlencode($font.$tcf).'"'.$class.' rel="stylesheet" property="stylesheet" type="text/css" media="all">'; //id="rev-google-font"
+				
 			}else{
 				$font = str_replace(array('http://', 'https://'), array($setBase, $setBase), $font);
 				$ret = html_entity_decode(stripslashes($font));
+				
+				echo $ret;
 			}
+			
 		}
-		
 		
 		return apply_filters('revslider_getCleanFontImport', $ret, $font, $class, $url, $variants, $subsets);
 	}

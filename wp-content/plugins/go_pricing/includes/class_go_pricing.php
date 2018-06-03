@@ -13,7 +13,7 @@ class GW_GoPricing {
 	protected static $instance = null;
 	protected $globals;
 	
-	protected static $plugin_version = '3.3.8';
+	protected static $plugin_version = '3.3.9';
 	protected static $db_version = '2.1.0';
 	protected static $plugin_prefix = 'go_pricing';
 	protected static $plugin_slug = 'go-pricing';

@@ -160,7 +160,54 @@ class GW_GoPricing_Helper {
 		return $content;
 		
 	}
+	
+	/**
+	 * Has shortcode
+	 * Check if the shortcode exist in post content and in builder metas
+	 *
+	 * @param string $tag Shortcode tag.
+	 * @param string|array $text(s) Text to find in the content.
+	 * @return bool True on success or false on failure.
+	 */		
+	
+	public static function has_shortcode( $tag, $text = '' ) {
+
+		global $post;
+
+		// Search in content
+		if ( $post instanceof WP_Post && GW_GoPricing_Helper::find_shortcode( $post->post_content, $tag, $text ) ) return true;
+
+		// Muffin Buider (find in meta)
+		if ( defined( 'MFN_OPTIONS_DIR' ) ) {
+			$meta = get_post_meta( $post->ID, 'mfn-page-items-seo', true );
+			if ( !empty( $meta ) && GW_GoPricing_Helper::find_shortcode( $meta, $tag, $text ) ) return true;
+		}
+		return false;		
+	}
 		
+	/**
+	 * Find shortcode
+	 *
+	 * @param string $content Content to seach.
+	 * @param string $tag Shortcode tag.
+	 * @param string|array $text(s) Text to find in the content
+	 * @return bool True on success or false on failure.
+	 */		
+	
+	public static function find_shortcode( $content, $tag, $text = '' ) {
+		
+		if ( !is_string( $content ) || !is_string( $tag ) ) return false;
+		// If shortcode found
+		if ( has_shortcode( $content, $tag ) ) return true;
+				
+		// Check given text(s) if shortcode not found
+		if ( empty( $text ) || !is_string( $text ) && !is_array( $text ) ) return false;
+		foreach( array_filter( array_map( 'trim', (array)$text) ) as $value) {
+			if ( strstr(  $content, $value ) ) return true;	
+		}
+		return false;
+		
+	}	
 	
 }
 

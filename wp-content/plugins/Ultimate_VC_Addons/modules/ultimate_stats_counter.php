@@ -1,6 +1,6 @@
 <?php
 /*
-* Add-on Name: Stats Counter for Visual Composer
+* Add-on Name: Stats Counter for WPBakery Page Builder
 * Add-on URI: http://dev.brainstormforce.com
 */
 if(!class_exists('AIO_Stats_Counter'))

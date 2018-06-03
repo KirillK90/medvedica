@@ -10,7 +10,7 @@ if(!class_exists('AIO_Icons_Box'))
 		function __construct()
 		{
 			if ( Ultimate_VC_Addons::$uavc_editor_enable ) {
-				// Initialize the icon box component for Visual Composer
+				// Initialize the icon box component for WPBakery Page Builder
 				add_action('init', array( &$this, 'icon_box_init' ) );
 			}
 			// Add shortcode for icon box
@@ -506,6 +506,26 @@ if(!class_exists('AIO_Icons_Box'))
 								"admin_label" => true,
 								"value" => "",
 								"description" => __("Provide the title for this icon box.", "ultimate_vc"),
+								'edit_field_class' => 'vc_col-sm-8',
+							),
+							array(
+								"type" => "dropdown",
+								"heading" => __("Tag","ultimate_vc"),
+								"param_name" => "heading_tag",
+								"value" => array(
+									__("Default","ultimate_vc") => "h3",
+									__("H1","ultimate_vc") => "h1",
+									__("H2","ultimate_vc") => "h2",
+									__("H4","ultimate_vc") => "h4",
+									__("H5","ultimate_vc") => "h5",
+									__("H6","ultimate_vc") => "h6",
+									__("Div","ultimate_vc") => "div",
+									__("p","ultimate_vc") => "p",
+									__("span","ultimate_vc") => "span",
+								),
+								"description" => __("Default is H3", "ultimate_vc"),
+								'edit_field_class' => 'vc_col-sm-4',
+								// "group" => "Typography"
 							),
 							// Add some description
 							array(
@@ -651,24 +671,6 @@ if(!class_exists('AIO_Icons_Box'))
 								"value" => "",
 								"group" => "Typography",
 								'edit_field_class' => 'ult-param-heading-wrapper no-top-margin vc_column vc_col-sm-12',
-							),
-							array(
-								"type" => "dropdown",
-								"heading" => __("Tag","ultimate_vc"),
-								"param_name" => "heading_tag",
-								"value" => array(
-									__("Default","ultimate_vc") => "h3",
-									__("H1","ultimate_vc") => "h1",
-									__("H2","ultimate_vc") => "h2",
-									__("H4","ultimate_vc") => "h4",
-									__("H5","ultimate_vc") => "h5",
-									__("H6","ultimate_vc") => "h6",
-									__("Div","ultimate_vc") => "div",
-									__("p","ultimate_vc") => "p",
-									__("span","ultimate_vc") => "span",
-								),
-								"description" => __("Default is H3", "ultimate_vc"),
-								"group" => "Typography"
 							),
 							array(
 								"type" => "ultimate_google_fonts",

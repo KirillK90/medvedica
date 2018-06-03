@@ -27,9 +27,6 @@
 	    	<a href="<?php echo admin_url('admin.php?page=ultimate-dashboard'.$author_extend); ?>" data-tab="ultimate-modules" class="nav-tab"> <?php echo __('Modules','ultimate_vc'); ?> </a>
 	    	<a href="<?php echo admin_url('admin.php?page=ultimate-smoothscroll'.$author_extend); ?>" data-tab="css-settings" class="nav-tab"> <?php echo __('Smooth Scroll','ultimate_vc'); ?> </a>
 	        <a href="<?php echo admin_url('admin.php?page=ultimate-scripts-and-styles'.$author_extend); ?>" data-tab="css-settings" class="nav-tab"> <?php echo __('Scripts and Styles','ultimate_vc'); ?> </a>
-	        <?php if (!defined('BRAINSTORM_THEME_ACTIVATED_URL')): ?>
-                <a href="<?php echo bsf_registration_page_url( $author_extend, '6892199' ); ?>" data-tab="product-license" class="nav-tab"> <?php echo __('Product License','ultimate_vc'); ?> </a>
-	        <?php endif; ?>
 	        <?php if($author) : ?>
 				<a href="<?php echo admin_url('admin.php?page=ultimate-debug-settings'); ?>" data-tab="ultimate-debug" class="nav-tab nav-tab-active"> Debug </a>
 			<?php endif; ?>

@@ -38,6 +38,8 @@ class The7PT_Modules {
 					include $file_path;
 				}
 			}
+
+			require_once "{$plugin_path}/includes/functions.php";
 		}
 	}
 
