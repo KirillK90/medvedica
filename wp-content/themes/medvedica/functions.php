@@ -2,6 +2,11 @@
 
 //flush_rewrite_rules();
 
+function is_dev()
+{
+    return !isset($_SERVER['HTTP_HOST']) || $_SERVER['HTTP_HOST'] != 'medvedica.top';
+}
+
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 function enqueue_parent_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
@@ -12,8 +17,6 @@ function add_social_scripts() {
     wp_enqueue_script( 'vk-api' );
 }
 
-add_action( 'wp_enqueue_scripts', 'add_social_scripts' );
-
 function add_vk_chat() {
     echo <<<HTML
 <!-- VK Widget -->
@@ -23,8 +26,6 @@ VK.Widgets.CommunityMessages("vk_community_messages", 160039823, {tooltipButtonT
 </script>
 HTML;
 }
-
-add_action( 'presscore_body_top', 'add_vk_chat' );
 
 function add_fb_js() {
     echo <<<HTML
@@ -48,7 +49,11 @@ function add_fb_js() {
 HTML;
 }
 // Add hook for front-end <head></head>
-add_action('wp_head', 'add_fb_js');
+if (!is_dev()) {
+    add_action('wp_head', 'add_fb_js');
+    add_action( 'presscore_body_top', 'add_vk_chat' );
+    add_action( 'wp_enqueue_scripts', 'add_social_scripts' );
+}
 
 function remove_admin_bar_links() {
     /** @var $wp_admin_bar WP_Admin_Bar */
@@ -63,14 +68,10 @@ function remove_admin_bar_links() {
 //add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links', 999 );
 
 
-function log_me($message) {
-    echo '<pre>';
-    if (is_array($message) || is_object($message)) {
-        print_r($message);
-    } else {
-        var_dump($message);
-    }
-    echo '</pre>';
+function dump($obj)
+{
+    $json = json_encode($obj);
+    echo "<script type='text/javascript'>console.log($json)</script>";
 }
 //
 function tinymce_paste_as_text( $init ) {
