@@ -2,7 +2,7 @@
  Theme Name:   Medvedica Theme
  Description:  Based on the7
  Template:     dt-the7
- Version:      1.0.37
+ Version:      1.0.40
  Tags:         multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site
  Text Domain:  medvedica
 */
@@ -59,6 +59,19 @@ a.tribe-events-ical.tribe-events-button {
 
 #tribe-bar-form label {
     display: none;
+}
+
+.tribe-events-event-image img {
+    padding: 10px;
+}
+
+.tribe-events-single-event-description h1, 
+.tribe-events-single-event-description h2, 
+.tribe-events-single-event-description h3, 
+.tribe-events-single-event-description h4, 
+.tribe-events-single-event-description h5, 
+.tribe-events-single-event-description h6 {
+    clear: none;
 }
 
 .smile_icon_list .icon_list_item .icon_description h3 {

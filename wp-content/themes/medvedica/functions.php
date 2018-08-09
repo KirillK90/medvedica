@@ -26,7 +26,12 @@ VK.Widgets.CommunityMessages("vk_community_messages", 160039823, {tooltipButtonT
 </script>
 HTML;
 }
-
+function add_vk_pixel() {
+    echo <<<HTML
+<!— Vk Pixel Code —>
+<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?154",t.onload=function(){VK.Retargeting.Init("VK-RTRG-251175-7FoSQ"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-251175-7FoSQ" style="position:fixed; left:-999px;" alt=""/></noscript>
+HTML;
+}
 function add_fb_js() {
     echo <<<HTML
 <!— Facebook Pixel Code —>
@@ -51,6 +56,7 @@ HTML;
 // Add hook for front-end <head></head>
 if (!is_dev()) {
     add_action('wp_head', 'add_fb_js');
+	add_action('wp_head', 'add_vk_pixel');
     add_action( 'presscore_body_top', 'add_vk_chat' );
     add_action( 'wp_enqueue_scripts', 'add_social_scripts' );
 }
