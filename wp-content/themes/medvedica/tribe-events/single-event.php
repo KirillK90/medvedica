@@ -65,7 +65,7 @@ if (isset($taxonomies['tribe_events_cat']) && stripos($taxonomies['tribe_events_
             <!-- Event featured image, but exclude link -->
             <?php echo tribe_event_featured_image( $event_id, 'event-img', false ); ?>
             <? if (!tribe_is_past_event()): ?>
-            <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться</button>
+            <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Оплатить</button>
             <br><br>
             <? endif; ?>
             <!-- Event content -->
@@ -82,7 +82,7 @@ if (isset($taxonomies['tribe_events_cat']) && stripos($taxonomies['tribe_events_
                     <strong>Стоимость</strong> &emsp;
                     <span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>&emsp;
                 <? if (!tribe_is_past_event()): ?>
-                    <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Записаться</button>
+                    <button <?=$onclick?> class="dt-btn register-btn" data-id="<?=$event_id?>" data-cost="<?=tribe_get_cost()?>" data-date="<?=esc_attr(tribe_get_start_date())?>" data-title="<?=esc_attr(tribe_get_events_title())?>">Оплатить</button>
                 <?php endif; ?>
                 </div>
 
@@ -119,6 +119,7 @@ if (isset($taxonomies['tribe_events_cat']) && stripos($taxonomies['tribe_events_
             jQuery("#reg-event-date").val(jQuery(this).data('date')).attr('readonly', true);
             jQuery("#reg-event-id").val(jQuery(this).data('id')).attr('readonly', true);
             jQuery("#reg-event-cost").val(jQuery(this).data('cost')).attr('readonly', true);
+            jQuery("#reg-payonline").find('input').prop('checked', true).parents('p').hide().next().hide();
             jQuery("#popmake-1591").popmake('open');
         });
     });
